@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_131449) do
+ActiveRecord::Schema.define(version: 2020_03_02_150732) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "columns", force: :cascade do |t|
+    t.bigint "table_id"
+    t.string "name"
+    t.integer "data_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["table_id"], name: "index_columns_on_table_id"
+  end
+
+  create_table "databases", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.text "schema_file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_databases_on_user_id"
+  end
+
+  create_table "tables", force: :cascade do |t|
+    t.bigint "database_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["database_id"], name: "index_tables_on_database_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +53,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_131449) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "columns", "tables"
+  add_foreign_key "databases", "users"
+  add_foreign_key "tables", "databases"
 end
