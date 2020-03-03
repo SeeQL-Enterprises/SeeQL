@@ -18,11 +18,15 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @collaborator = Collaborator.new
-    @other_users = User.where.not(id: current_user.id)
+    @other_users = User.where.not(id: get_project_members)
   end
 
   private
   def project_params
     params.require(:project).permit(:name)
+  end
+
+  def get_project_members
+    @project.collaborators.map {|c| c.user.id }.push(current_user.id)
   end
 end
