@@ -17,6 +17,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @collaborator = Collaborator.new
+    @other_users = User.where.not(id: current_user.id)
   end
 
   private
