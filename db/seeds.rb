@@ -1,3 +1,7 @@
+Table.destroy_all
+Column.destroy_all
+Database.destroy_all
+
 puts "destroying projects..."
 Project.destroy_all
 
@@ -35,4 +39,6 @@ emails.each do |email|
   Collaborator.create!(user: other_user, project: project)
 end
 
-Database.create!(name: "db_test", schema_file: "test_filepath", project: project)
+database = Database.create!(name: "db_test", schema_file: "test_filepath", project: project)
+
+Table.create!(database: database, name: "test_table")
