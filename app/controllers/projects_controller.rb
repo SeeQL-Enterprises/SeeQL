@@ -1,8 +1,11 @@
 class ProjectsController < ApplicationController
 
+  def index
+    @projects = current_user.projects # only shows where user admin
+  end
+
   def new
     @project = Project.new
-    raise
   end
 
   def create
