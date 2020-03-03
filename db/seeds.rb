@@ -35,3 +35,4 @@ emails.each do |email|
   Collaborator.create!(user: other_user, project: project)
 end
 
+Database.create!(name: "db_test", schema_file: "test_filepath", project: project)
