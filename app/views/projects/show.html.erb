@@ -9,8 +9,10 @@
   <% end %>
       </div>
       <% @project.databases.each do |database| %>
-        <p><%= database.name %></p>
-      <% end %>
+        <%= link_to database_path(database) do %>
+          <p><%= database.name %></p>
+        <% end %>
+        <% end %>
     <div>
 </div>
 <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
