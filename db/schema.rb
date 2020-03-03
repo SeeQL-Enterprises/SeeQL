@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_03_104711) do
+ActiveRecord::Schema.define(version: 2020_03_03_110952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,15 +34,12 @@ ActiveRecord::Schema.define(version: 2020_03_03_104711) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.bigint "table_id"
-    t.bigint "column_id"
-    t.bigint "user_id"
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["column_id"], name: "index_comments_on_column_id"
-    t.index ["table_id"], name: "index_comments_on_table_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.string "commentable_type"
+    t.bigint "commentable_id"
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
   create_table "databases", force: :cascade do |t|
@@ -85,9 +82,6 @@ ActiveRecord::Schema.define(version: 2020_03_03_104711) do
   add_foreign_key "collaborators", "projects"
   add_foreign_key "collaborators", "users"
   add_foreign_key "columns", "tables"
-  add_foreign_key "comments", "columns"
-  add_foreign_key "comments", "tables"
-  add_foreign_key "comments", "users"
   add_foreign_key "databases", "users"
   add_foreign_key "projects", "users"
   add_foreign_key "tables", "databases"
