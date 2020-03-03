@@ -1,1 +1,11 @@
 <h1><%= @project.name %></h1>
+<div id="collaborators">
+  <% if @project.collaborators.blank? %>
+    Add Collaborators
+  <% else %>
+    <% @project.collaborators.each do |collaborator| %>
+      <%= render 'collaborators/show', collaborator: collaborator %>
+    <% end %>
+  <% end %>
+</div>
+<%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
