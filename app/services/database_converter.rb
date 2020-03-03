@@ -1,7 +1,7 @@
 require 'json'
 
 class DatabaseConverter
-  # This SO takes in a database and converts all tables and its respective columns into a JSON object
+  # This Service Object takes in a database and converts all tables and its respective columns into a JSON object
   def initiaize(database_instance)
     @database = database_instance
   end
