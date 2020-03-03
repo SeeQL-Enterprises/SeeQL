@@ -1,3 +1,3 @@
 class Project < ApplicationRecord
-  belongs_to :database
+  belongs_to :user
 end
