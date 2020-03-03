@@ -18,7 +18,7 @@ class DatabaseConverter
       end
     end
 
-    table_hash.to_json
+    save(table_hash.to_json)
   end
 
   def save(db_json)
