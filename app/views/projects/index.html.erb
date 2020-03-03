@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>This is projects index</h1>
+  <% @projects.each do |project| %>
+  <div class="card">
+    <p><strong><%= project.name %></strong> </p>
+    <%= link_to 'Databases', project_databases_path(project) %>
+    <% project.collaborators.each do |collaborator| %>
+      <p><%= collaborator.user.email %></p>
+    <% end %>
+  </div>
+  <% end %>
+  <%= link_to new_project_path do %>
+    <p class="btn btn-primary">Add Project</p>
+  <% end %>
+</div>
