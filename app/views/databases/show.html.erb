@@ -1,0 +1,24 @@
+
+<%= @database.name %>
+<% JSON.parse(@database.db_json).each do |key, value| %>
+  <div class="container d-flex">
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th><%= key %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% value.each do |element| %>
+          <tr>
+            <td><%= element %></td>
+          </tr>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% end %>
