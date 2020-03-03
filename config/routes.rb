@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :databases, only: [:show]
   devise_for :users
   resources :projects, only: [:new, :create, :show] do
     resources :collaborators, only: [:new, :create]
