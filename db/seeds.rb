@@ -41,4 +41,6 @@ end
 
 database = Database.create!(name: "db_test", schema_file: "test_filepath", project: project)
 
-Table.create!(database: database, name: "test_table")
+table = Table.create!(database: database, name: "test_table")
+
+Column.create!(name: "test_column", data_type: "integer", table: table)
