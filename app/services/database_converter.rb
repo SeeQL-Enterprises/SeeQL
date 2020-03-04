@@ -7,30 +7,30 @@ class DatabaseConverter
   end
 
   def convert
-    table_headers = @database.tables
+    tables = @database.tables
     table_hash = {}
 
-    table_headers.each do |table|
-      table_hash["#{table}"] = []
+    tables.each do |table_header|
+      table_hash["#{table_header}"] = {}
 
-      @database.columns(table).each do |column|
-        table_hash["#{table}"] << column.name
+      @database.columns(table_header).each do |column|
+        table_hash["#{table_header}"]["#{column.name}"] = column.type
       end
     end
 
     save(table_hash.to_json)
   end
 
-  def save(db_json)
-    user = User.create!(email: "email@gmail.com", password: "123456")
-    project = Project.create!(name: "test project", user: user)
+#   def save(db_json)
+#     user = User.create!(email: "email@gmail.com", password: "123456")
+#     project = Project.create!(name: "test project", user: user)
 
-    database = Database.new(name: "Our Database", db_json: db_json, project: project)
+#     database = Database.new(name: "Our Database", db_json: db_json, project: project)
 
-    if database.save
-      puts "SAVED"
-    else
-      puts "REKT"
-    end
-  end
+#     if database.save
+#       puts "SAVED"
+#     else
+#       puts "REKT"
+#     end
+#   end
 end
