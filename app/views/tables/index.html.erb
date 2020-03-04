@@ -1,7 +1,12 @@
 <h1>This is the table index</h1>
 
-<% if @tables.display %>
-  <li style="list-style: none"><input type="checkbox" checked> This task is completed</li>
-<% else %>
-  <li style="list-style: none"><input type="checkbox"> This task is <strong>NOT</strong> completed yet</li>
+<% @tables.each do |table| %>
+  <%= table.name %>
+  <% if table.display %>
+    <p><%= "display" %></p>
+  <% else %>
+    <p><%= "not displayed" %></p>
+  <% end %>
 <% end %>
+
+

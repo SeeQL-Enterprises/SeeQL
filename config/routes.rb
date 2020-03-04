@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     resources :collaborators, only: [:new, :create]
     resources :databases, only: [:index]
   end
-  resources :databases, only: :show
-  resources :tables, only: [:index]
+  resources :databases, only: [] do
+    resources :tables, only: [:index]
+  end
+
 
 
   root to: 'pages#home'
