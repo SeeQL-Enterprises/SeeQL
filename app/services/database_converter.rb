@@ -21,16 +21,27 @@ class DatabaseConverter
     save(table_hash.to_json)
   end
 
-#   def save(db_json)
-#     user = User.create!(email: "email@gmail.com", password: "123456")
-#     project = Project.create!(name: "test project", user: user)
+  def save_database(db_json)
+    user = User.create!(email: "THIS@gmail.com", password: "123456")
+    project = Project.create!(name: "THIS PROJECT", user: user)
 
-#     database = Database.new(name: "Our Database", db_json: db_json, project: project)
+    database = Database.new(name: "THIS DATABASE", db_json: db_json, project: project)
 
-#     if database.save
-#       puts "SAVED"
-#     else
-#       puts "REKT"
-#     end
-#   end
+    save_tables(db_json)
+    save_columns(db_json)
+
+    if save_tables == true && save_columns == true
+      if database.save
+        puts "SAVED"
+      else
+        puts "REKT"
+      end
+    end
+  end
+
+  def save_tables
+  end
+
+  def save_columns
+  end
 end
