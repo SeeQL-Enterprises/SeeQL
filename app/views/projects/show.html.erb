@@ -1,4 +1,5 @@
 <h1><%= @project.name %></h1>
+
 <div id="collaborators">
   <% if @project.collaborators.blank? %>
     Add Collaborators
@@ -7,13 +8,13 @@
       <%= render 'collaborators/show', collaborator: collaborator %>
     <% end %>
   <% end %>
-      </div>
-      <% @project.databases.each do |database| %>
-        <%= link_to database_path(database) do %>
-          <p><%= database.name %></p>
-        <% end %>
-        <% end %>
-    <div>
 </div>
+
+<% @project.databases.each do |database| %>
+  <%= link_to database_path(database) do %>
+    <p><%= database.name %></p>
+  <% end %>
+<% end %>
+
 <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
 <%= link_to "go to projects", projects_path %>

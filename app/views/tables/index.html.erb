@@ -1,0 +1,10 @@
+<h1>This is the table index</h1>
+
+<% @tables.each do |table| %>
+  <p><%= table.name %></p>
+  <%@columns.each do |column| %>
+    <p><%= column.name %></p>
+  <% end %>
+<% end %>
+
+

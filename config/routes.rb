@@ -5,10 +5,14 @@ Rails.application.routes.draw do
     resources :collaborators, only: [:new, :create]
     resources :databases, only: [:index]
   end
-  resources :databases, only: :show
-  resources :tables, only: [] do
-    resources :comments, only: :create
+  
+  resources :databases, only: [] do
+    resources :tables, only: [:index] do
+      resources :comments, only: :create
+    end
   end
+  
+  resources :database_table_preferences, only: :update
 
   resources :columns, only: [] do
     resources :comments, only: :create

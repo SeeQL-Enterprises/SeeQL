@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @collaborator = Collaborator.new
     @other_users = User.where.not(id: get_project_members)
+    @database = @project.databases
   end
 
   private

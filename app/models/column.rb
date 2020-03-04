@@ -1,46 +1,4 @@
 class Column < ApplicationRecord
   belongs_to :table
    has_many :comments, as: :commentable
-
-  enum data_type: [
-    "bigint",
-    "bigserial",
-    "bit",
-    "bit varying",
-    "boolean",
-    "box",
-    "bytea",
-    "character",
-    "character varying",
-    "cidr",
-    "circle",
-    "date",
-    "double precision",
-    "inet",
-    "integer",
-    "interval",
-    "json",
-    "jsonb",
-    "line",
-    "lseg",
-    "macaddr",
-    "money",
-    "numeric",
-    "path",
-    "pg_lsn",
-    "point",
-    "polygon",
-    "real",
-    "smallint",
-    "smallserial",
-    "serial",
-    "text",
-    "time",
-    "timestamp",
-    "tsquery",
-    "tsvector",
-    "txid_snapshot",
-    "uuid",
-    "xml"
-  ]
 end
