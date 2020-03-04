@@ -1,11 +1,9 @@
 <h1>This is the table index</h1>
 
 <% @tables.each do |table| %>
-  <%= table.name %>
-  <% if table.display %>
-    <p><%= "display" %></p>
-  <% else %>
-    <p><%= "not displayed" %></p>
+  <p><%= table.name %></p>
+  <%@columns.each do |column| %>
+    <p><%= column.name %></p>
   <% end %>
 <% end %>
 

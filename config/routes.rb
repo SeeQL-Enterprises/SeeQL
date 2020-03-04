@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :databases, only: [] do
     resources :tables, only: [:index]
   end
+  resources :database_table_preferences, only: :update
 
 
 

@@ -2,13 +2,11 @@
 
 <%= @database.name %>
 
-<% @tables.each do |table| %>
-  <div class="container d-flex">
-    <div class="card">
-      <p><input type="checkbox" ><%= table.name %></p>
-    </div>
-  </div>
+<%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
+  <%= f.input :tables, collection: @database.tables, as: :check_boxes, lable_value: :name %>
+  <%= f.submit %>
 <% end %>
 
 
-<%= link_to "Display tables", database_tables_path(@database) %>
+
+
