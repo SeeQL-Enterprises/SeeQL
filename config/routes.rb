@@ -5,12 +5,18 @@ Rails.application.routes.draw do
     resources :collaborators, only: [:new, :create]
     resources :databases, only: [:index]
   end
+  
   resources :databases, only: [] do
-    resources :tables, only: [:index]
+    resources :tables, only: [:index] do
+      resources :comments, only: :create
+    end
   end
+  
   resources :database_table_preferences, only: :update
 
-
+  resources :columns, only: [] do
+    resources :comments, only: :create
+  end
 
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
