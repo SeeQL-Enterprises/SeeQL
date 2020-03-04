@@ -1,9 +1,9 @@
 
 <%= @database.name %>
 <%# JSON.parse(@database.db_json).each do |key, value| %>
-<%= @database.tables.each do |table| %>
+<% @database.tables.each do |table| %>
   <div class="container d-flex">
-    <div class="card">
+    <div class="card m-3">
       <table>
         <thead>
           <tr>
@@ -18,10 +18,15 @@
           </tr>
             <% end %>
           </tr>
-          <tr>
             <%= render 'comments/form', table: table, comment: @comment %>
-          </tr>
         </tbody>
+        <div id="comments">
+          <% unless @database.tables.comments.blank? %>
+            <% @databases.tables.comments.each do |comment| %>
+              <%= comment.content %>
+            <% end %>
+          <% end %>
+        </div>
       </table>
     </div>
   </div>
