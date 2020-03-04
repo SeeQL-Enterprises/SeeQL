@@ -1,7 +1,8 @@
 require 'json'
 
 class DatabaseConverter
-  # This Service Object takes in a database and converts all tables and its respective columns into a JSON object
+  # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
+  # and converts all tables and its respective columns into a JSON object
   def initialize(database_instance)
     @database = database_instance
   end
@@ -24,16 +25,16 @@ class DatabaseConverter
   end
 
   def save_database(db_json)
-    user = User.create!(email: "THIS@gmail.com", password: "123456")
-    project = Project.create!(name: "THIS PROJECT", user: user)
+    # user = User.create!(email: "THIS@gmail.com", password: "123456")
+    # project = Project.create!(name: "THIS PROJECT", user: user)
 
-    @database = Database.new(name: "THIS DATABASE", db_json: db_json, project: project)
+    @database = Database.new(name: @database.name, db_json: db_json, project: Project.find(params[:project_id]))
 
     if save_tables(db_json)
-      if @database.save == true
-        puts "SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      if @database.save
+        # TODO: tie in with success alert
       else
-        puts "REKT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        # TODO: tie in with error alert
       end
     end
   end
