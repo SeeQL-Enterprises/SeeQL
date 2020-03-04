@@ -1,7 +1,8 @@
 
 <%= @database.name %>
+
 <% JSON.parse(@database.db_json).each do |key, value| %>
-  <div class="container d-flex">
+  <div class="container d-flex draggable">
     <div class="card">
       <table>
         <thead>
@@ -22,3 +23,4 @@
     </div>
   </div>
 <% end %>
+
