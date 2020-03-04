@@ -1,16 +1,8 @@
+<h1>This is database show</h1>
 
 <%= @database.name %>
-<div class="container d-flex" style="height: 100vh; width: 100%">
-  <% db = JSON.parse(@database.db_json) %>
-  <% db.each do |key, value| %>
-    <div class="draggable">
-      <div class="tablecard">
-        <div class="top text-center"><h3><%= key.capitalize %><h3></div>
-        <% value[0..-2].each do |element| %>
-        <div class="column text-center"><%= element.capitalize %> </div>
-        <% end %>
-        <div class="bottom text-center"><%= value.last.capitalize %> </div>
-      </div>  
-    </div>
-  <% end %>
-</div>
+
+<%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
+  <%= f.input :tables, collection: @database.tables, as: :check_boxes, lable_value: :name %>
+  <%= f.submit %>
+<% end %>
