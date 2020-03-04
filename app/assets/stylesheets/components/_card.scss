@@ -1,7 +1,7 @@
 .draggable {
   touch-action: none;
   user-select: none;
-  padding: 4%;
+  margin: 3%;
   -webkit-transform: translate(0px, 0px);
   transform: translate(0px, 0px);
 }
@@ -17,10 +17,13 @@
   border: 1px solid black;
   border-top: 0.5px solid grey;
   border-bottom: 0.5px solid grey;
+  box-shadow: 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e, 0px 10px 5px #999;
 }
 .bottom {
   background-color: rgb(146, 146, 255);
   padding: 5px 10px 10px 20px;
   border-radius: 0 0 10px 10px;
   border: 1px solid black;
+  box-shadow: inset 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e,
+    0px 10px 5px #999;
 }
