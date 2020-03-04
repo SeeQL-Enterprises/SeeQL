@@ -7,10 +7,12 @@ class DatabaseConverter
   end
 
   def convert
+    # This is the method that converts the DB into JSON
     tables = @database.tables
     table_hash = {}
 
     tables.each do |table_header|
+      # Building Ruby Hash with table names, columns and column types
       table_hash["#{table_header}"] = {}
 
       @database.columns(table_header).each do |column|
@@ -18,30 +20,33 @@ class DatabaseConverter
       end
     end
 
-    save(table_hash.to_json)
+    save_database(table_hash.to_json)
   end
 
   def save_database(db_json)
     user = User.create!(email: "THIS@gmail.com", password: "123456")
     project = Project.create!(name: "THIS PROJECT", user: user)
 
-    database = Database.new(name: "THIS DATABASE", db_json: db_json, project: project)
+    @database = Database.new(name: "THIS DATABASE", db_json: db_json, project: project)
 
-    save_tables(db_json)
-    save_columns(db_json)
-
-    if save_tables == true && save_columns == true
+    if save_tables(db_json) == true && save_columns(db_json) == true
       if database.save
-        puts "SAVED"
+        puts "SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       else
-        puts "REKT"
+        puts "REKT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       end
     end
   end
 
-  def save_tables
+  def save_tables(db_json)
+    JSON.parse(db_json).each do |key, _|
+      table = Table.new(name: key)
+      table.database = @database
+
+      table.save ? true : false
+    end
   end
 
-  def save_columns
+  def save_columns(db_json)
   end
 end
