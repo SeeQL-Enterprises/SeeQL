@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :databases, only: [:index]
   end
   resources :databases, only: :show
+  resources :tables, only: [:index]
 
 
   root to: 'pages#home'
