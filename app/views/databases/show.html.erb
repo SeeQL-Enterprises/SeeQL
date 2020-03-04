@@ -1,31 +1,16 @@
 
 <%= @database.name %>
-<%# JSON.parse(@database.db_json).each do |key, value| %>
-<% @database.tables.each do |table| %>
-  <div class="container d-flex">
-    <div class="card m-3">
-      <table>
-        <thead>
-            <h2><%= table.name %></h2>
-        </thead>
-        <tbody>
-
-            <% table.columns.each do |column| %>
-              <p><%= column.name %></p>
-              <%= render 'comments/column_form', column: column, comment: @comment %>
-            <% end %>
-
-            <%= render 'comments/form', table: table, comment: @comment %>
-            <div id="comments">
-              <% unless table.comments.blank? %>
-                <% table.comments.each do |comment| %>
-                  <p><strong>Table Comment:</strong> <%= comment.content %></p>
-                <% end %>
-              <% end %>
-            </div>
-        </tbody>
-      </table>
+<div class="container d-flex" style="height: 100vh; width: 100%">
+  <% db = JSON.parse(@database.db_json) %>
+  <% db.each do |key, value| %>
+    <div class="draggable">
+      <div class="tablecard">
+        <div class="top text-center"><h3><%= key.capitalize %><h3></div>
+        <% value[0..-2].each do |element| %>
+        <div class="column text-center"><%= element.capitalize %> </div>
+        <% end %>
+        <div class="bottom text-center"><%= value.last.capitalize %> </div>
+      </div>  
     </div>
-<% end %>
-
-
+  <% end %>
+</div>
