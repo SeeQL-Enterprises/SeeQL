@@ -44,5 +44,19 @@ database = Database.create!(name: "db_test", db_json: {}, project: project)
 
 table = Table.create!(database: database, name: "test_table")
 
-Column.create!(name: "test_column", data_type: "integer", table: table)
+Column.create!(name: "one_column", data_type: "integer", table: table)
+Column.create!(name: "two_column", data_type: "integer", table: table)
+Column.create!(name: "three_column", data_type: "integer", table: table)
+
+table_2 = Table.create!(database: database, name: "test_table_two")
+
+Column.create!(name: "one_column", data_type: "integer", table: table_2)
+Column.create!(name: "two_column", data_type: "integer", table: table_2)
+Column.create!(name: "three_column", data_type: "integer", table: table_2)
+
+table_3 = Table.create!(database: database, name: "test_table_two")
+
+Column.create!(name: "one_column", data_type: "integer", table: table_3)
+Column.create!(name: "two_column", data_type: "integer", table: table_3)
+Column.create!(name: "three_column", data_type: "integer", table: table_3)
 
