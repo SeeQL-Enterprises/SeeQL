@@ -1,4 +1,26 @@
 .draggable {
   touch-action: none;
   user-select: none;
+  padding: 4%;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
+}
+
+.top {
+  background-color: rgb(146, 146, 255);
+  padding: 20px 10px 10px 5px;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid black;
+}
+.column {
+  background-color: rgb(242, 243, 198);
+  border: 1px solid black;
+  border-top: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
+}
+.bottom {
+  background-color: rgb(146, 146, 255);
+  padding: 5px 10px 10px 20px;
+  border-radius: 0 0 10px 10px;
+  border: 1px solid black;
 }
