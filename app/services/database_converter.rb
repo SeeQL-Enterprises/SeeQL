@@ -29,8 +29,8 @@ class DatabaseConverter
 
     @database = Database.new(name: "THIS DATABASE", db_json: db_json, project: project)
 
-    if save_tables(db_json) == true && save_columns(db_json) == true
-      if database.save
+    if save_tables(db_json)
+      if @database.save == true
         puts "SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       else
         puts "REKT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
@@ -43,10 +43,25 @@ class DatabaseConverter
       table = Table.new(name: key)
       table.database = @database
 
-      table.save ? true : false
+      if save_columns(db_json, table) == true
+        table.save
+        true
+      else
+        false
+      end
     end
   end
 
-  def save_columns(db_json)
+  def save_columns(db_json, table)
+    JSON.parse(db_json).each do |key , value|
+      if key == table.name
+        value.each do |key, value|
+          column = Column.new(name: key, data_type: value)
+          column.table = table
+
+          column.save ? true : false
+        end
+      end
+    end
   end
 end
