@@ -6,27 +6,24 @@
     <div class="card m-3">
       <table>
         <thead>
-          <tr>
-            <th><%= table.name %></th>
-          </tr>
+            <h2><%= table.name %></h2>
         </thead>
         <tbody>
-          <tr>
+
             <% table.columns.each do |column| %>
-          <tr>
-            <td><%= column.name %></td>
-          </tr>
+              <p><%= column.name %></p>
+              <%= render 'comments/column_form', column: column, comment: @comment %>
             <% end %>
-          </tr>
+
             <%= render 'comments/form', table: table, comment: @comment %>
+            <div id="comments">
+              <% unless table.comments.blank? %>
+                <% table.comments.each do |comment| %>
+                  <p><strong>Table Comment:</strong> <%= comment.content %></p>
+                <% end %>
+              <% end %>
+            </div>
         </tbody>
-        <div id="comments">
-          <% unless @database.tables.comments.blank? %>
-            <% @databases.tables.comments.each do |comment| %>
-              <%= comment.content %>
-            <% end %>
-          <% end %>
-        </div>
       </table>
     </div>
   </div>
