@@ -1,6 +1,5 @@
 
 <%= @database.name %>
-
 <div class="container d-flex" style="height: 100vh; width: 100%">
   <% db = JSON.parse(@database.db_json) %>
   <% db.each do |key, value| %>
@@ -15,5 +14,3 @@
     </div>
   <% end %>
 </div>
-
-
