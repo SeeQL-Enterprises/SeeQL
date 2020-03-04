@@ -1,11 +1,16 @@
 
 <%= @database.name %>
-<% JSON.parse(@database.db_json).each do |key, value| %>
-  <div class="container d-flex">
-    <div class="card">
-      <p><input type="checkbox" ><%= key %></p>
+<div class="container d-flex" style="height: 100vh; width: 100%">
+  <% db = JSON.parse(@database.db_json) %>
+  <% db.each do |key, value| %>
+    <div class="draggable">
+      <div class="tablecard">
+        <div class="top text-center"><h3><%= key.capitalize %><h3></div>
+        <% value[0..-2].each do |element| %>
+        <div class="column text-center"><%= element.capitalize %> </div>
+        <% end %>
+        <div class="bottom text-center"><%= value.last.capitalize %> </div>
+      </div>  
     </div>
-  </div>
-<% end %>
-
-
+  <% end %>
+</div>
