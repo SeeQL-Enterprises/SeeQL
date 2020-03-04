@@ -40,7 +40,7 @@ emails.each do |email|
   Collaborator.create!(user: other_user, project: project)
 end
 
-database = Database.create!(name: "db_test", db_json: {}, project: project)
+database = Database.create!(name: "db_test", db_json: {test_key: "test_value"}, project: project)
 
 table = Table.create!(database: database, name: "test_table")
 
