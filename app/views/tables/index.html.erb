@@ -6,14 +6,22 @@
         <div class="top text-center"><h3><%= table.name.capitalize %><h3></div>
         <% table.columns.each do |column| %>
         <div class="column text-center"><%= column.name.capitalize %> </div>
+        <div id="comments" class="column">
+          <% unless column.comments.blank? %>
+            <% column.comments.each do |comment| %>
+              <%= comment.content %>
+            <% end %>
+          <% end %>
+        </div>
         <div class="comment hidden"><%= render 'comments/column_form', database: @database, column: column, comment: @comment %></div>
         <% end %>
         <div class="bottom text-center">
-          <div class="comment hidden"> 
-            <%= render 'comments/form', table: table, database: @database, comment: @comment %> 
+          <div class="comment hidden">
+            <%= render 'comments/form', table: table, database: @database, comment: @comment %>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   <% end %>
 </div>
+
