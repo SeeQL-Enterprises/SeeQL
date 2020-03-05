@@ -1,6 +1,10 @@
+<% url = "/databases/#{database.id}/tables/#{table.id}/comments" %>
 <div>
-  <%= simple_form_for [column, comment] do |f| %>
+  <%= simple_form_for(:comment_proxy, url: url, method: :post, remote: true) do |f| %>
     <%= f.input :content %>
-    <%= f.submit "Add commentzy" %>
+    <%= f.input :data_comment,:input_html => { :value => counter }, as: :hidden %>
+    <%= f.input :column_id,:input_html => { :value => column.id }, as: :hidden %>
+    <%= f.submit "Add comment" %>
   <% end %>
 </div>
+

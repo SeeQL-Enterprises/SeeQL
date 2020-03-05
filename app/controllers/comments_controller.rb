@@ -2,16 +2,36 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    if params[:table_id]
-      @table = Table.find(params[:table_id])
+    unless params[:comment_proxy][:column_id]
+      @table = Table.find(params[:comment_proxy][:table_id])
       @comment.commentable = @table
-      @comment.save
-      redirect_to database_path(@table.database)
+      if @comment.save
+      respond_to do |format|
+        format.html { redirect_to database_path(@table.database) }
+        format.js {
+          @data_set = params[:comment_proxy][:data_comment]
+        }
+        end
+      else
+        respond_to do |format|
+        format.html { render 'tables/index' }
+        format.js
+        end
+      end
     else
-      @column = Column.find(params[:column_id])
+      @column = Column.find(params[:comment_proxy][:column_id])
       @comment.commentable = @column
-      @comment.save
-      redirect_to database_path(@column.table.database)
+      if @comment.save
+      respond_to do |format|
+        format.html { redirect_to database_path(@table.database) }
+        format.js  { @data_set = params[:comment_proxy][:data_comment] }
+        end
+      else
+      respond_to do |format|
+        format.html { render 'tables/index' }
+        format.js
+        end
+      end
     end
 
   end
@@ -19,6 +39,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment_proxy).permit(:content)
   end
 end
