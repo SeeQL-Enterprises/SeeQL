@@ -7,19 +7,33 @@
         <div class="top text-center"><h3><%= table.name.capitalize %><h3></div>
         <% table.columns.each do |column| %>
           <% counter += 1 %>
-          <div class="column text-center">
+          <div class="column text-center" data-comment-list="<%= counter %>" >
+              <% unless column.comments.blank? %>
+                <% column.comments.each do |comment| %>
+            <div id="comments" class="column comment-content">
+                  <%= comment.content %>
+            </div>
+                <% end %>
+              <% end %>
             <div class="comment-button" data-commentbutton="<%= counter %>"><i class="far fa-comment"></i></div>
-            <div class="column-comment" > <%= column.name.capitalize %></div>
+            <div class="column-comment"> <%= column.name.capitalize %></div>
           </div>
-        <div class="column comment hidden" data-comment="<%= counter %>"><%= render 'comments/column_form', database: @database, column: column, comment: @comment %></div>
+        <div class="column comment hidden" data-comment="<%= counter %>" ><%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %></div>
           <% counter += 1 %>
         <% end %>
         <div class="bottom text-center">
         <div class="comment-button" data-commentbutton="<%= counter %>">
           <i class="far fa-comment" aria-hidden="true"></i>
           </div>
-            <div class="comment hidden" data-comment="<%= counter %>">
-              <%= render 'comments/form', table: table, database: @database, comment: @comment %>
+            <div class="comment hidden" data-comment="<%= counter %>" data-comment-list="<%= counter %>">
+                <% unless table.comments.blank? %>
+                  <% table.comments.each do |comment| %>
+              <div id="comments" class="column comment-content">
+                    <%= comment.content %>
+              </div>
+                  <% end %>
+                <% end %>
+              <%= render 'comments/form', table: table, database: @database, comment: @comment, counter: counter %>
             </div>
         </div>
       </div>
