@@ -40,23 +40,22 @@ emails.each do |email|
   Collaborator.create!(user: other_user, project: project)
 end
 
-database = Database.create!(name: "db_test", db_json: {test_key: "test_value"}, project: project)
+database = Database.create!(name: "db_test", project: project)
 
 table = Table.create!(database: database, name: "test_table")
 
-Column.create!(name: "one_column", data_type: "integer", table: table)
-Column.create!(name: "two_column", data_type: "integer", table: table)
-Column.create!(name: "three_column", data_type: "integer", table: table)
+Column.create!(name: "one_column", datatype: "integer", table: table)
+Column.create!(name: "two_column", datatype: "integer", table: table)
+Column.create!(name: "three_column", datatype: "integer", table: table)
 
 table_2 = Table.create!(database: database, name: "test_table_two")
 
-Column.create!(name: "one_column", data_type: "integer", table: table_2)
-Column.create!(name: "two_column", data_type: "integer", table: table_2)
-Column.create!(name: "three_column", data_type: "integer", table: table_2)
+Column.create!(name: "one_column", datatype: "integer", table: table_2)
+Column.create!(name: "two_column", datatype: "integer", table: table_2)
+Column.create!(name: "three_column", datatype: "integer", table: table_2)
 
 table_3 = Table.create!(database: database, name: "test_table_two")
 
-Column.create!(name: "one_column", data_type: "integer", table: table_3)
-Column.create!(name: "two_column", data_type: "integer", table: table_3)
-Column.create!(name: "three_column", data_type: "integer", table: table_3)
-
+Column.create!(name: "one_column", datatype: "integer", table: table_3)
+Column.create!(name: "two_column", datatype: "integer", table: table_3)
+Column.create!(name: "three_column", datatype: "integer", table: table_3)
