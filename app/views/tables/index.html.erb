@@ -1,7 +1,20 @@
+<% db = @database %>
+<% iterator = 0 %>
+<% db_hash = {} %>
+
+<% db.tables.each do |table_name| %>
+  <% db_hash[table_name] = [iterator, {}] %>
+  <% iterator += 1 %>
+
+  <% db.columns(table_name).each do |column| %>
+    <% db_hash[table_name][1][column.name] = iterator %>
+    <% iterator += 1 %>
+  <% end %>
+<% end %>
+
 <div class="container d-flex" style="height: 100vh; width: 100%">
-  <% db = @database.tables %>
-    <% counter = 1 %>
-  <% db.each do |table| %>
+  <% counter = 1 %>
+  <% db.tables.each do |table| %>
     <div class="draggable">
       <div class="tablecard">
         <div class="top text-center"><h3><%= table.name.capitalize %><h3></div>
@@ -16,13 +29,13 @@
         <% end %>
         <div class="bottom text-center">
         <div class="comment-button" data-commentbutton="<%= counter %>">
-          <i class="far fa-comment" aria-hidden="true"></i> 
+          <i class="far fa-comment" aria-hidden="true"></i>
           </div>
-            <div class="comment hidden" data-comment="<%= counter %>"> 
+            <div class="comment hidden" data-comment="<%= counter %>">
               <%= render 'comments/form', table: table, database: @database, comment: @comment %>
             </div>
         </div>
-      </div>  
+      </div>
     </div>
   <% end %>
 </div>
