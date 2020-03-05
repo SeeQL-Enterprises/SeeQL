@@ -1,7 +1,7 @@
 <div class="container">
   <h1>This is projects index</h1>
   <% @projects.each do |project| %>
-  <div class="card d-flex space-between">
+  <div class="d-flex space-between">
     <div>
       <p><strong><%= project.name %></strong> </p>
       <%= link_to 'Databases', project_databases_path(project) %>
