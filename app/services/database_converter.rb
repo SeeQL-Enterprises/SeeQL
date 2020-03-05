@@ -32,10 +32,10 @@ class DatabaseConverter
 
     # @database = Database.new(name: @database.name, project: Project.find(params[:project_id]))
 
-    @database = Database.new(name: @database.name, project: Project.find(project)
+    database = Database.new(name: @database.current_database, project: project)
 
-    if save_tables(tables)
-      if @database.save
+    if save_tables(database, tables)
+      if database.save
         puts "SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       else
         # TODO: tie in with error alert
@@ -43,10 +43,10 @@ class DatabaseConverter
     end
   end
 
-  def save_tables(tables)
+  def save_tables(database, tables)
     tables.each do |key, _|
       table = Table.new(name: key)
-      table.database = @database
+      table.database = database
 
       if save_columns(table)
         table.save
@@ -59,7 +59,7 @@ class DatabaseConverter
 
   def save_columns(table)
     @database.columns(table.name).each do |column|
-      Column.new(name: column.name, datatype: column.type)
+      column = Column.new(name: column.name, datatype: column.type)
       column.table = table
 
       column.save ? true : false
