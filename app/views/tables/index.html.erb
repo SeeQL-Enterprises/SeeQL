@@ -8,7 +8,7 @@
         <% table.columns.each do |column| %>
           <% counter += 1 %>
           <div class="column text-center">
-            <div class="comment-button" data-commentbutton="<%= counter %>"><i class="fas fa-comment"></i></div>
+            <div class="comment-button" data-commentbutton="<%= counter %>"><i class="far fa-comment"></i></div>
             <div class="column-comment" > <%= column.name.capitalize %></div>
           </div>
         <div class="column comment hidden" data-comment="<%= counter %>"><%= render 'comments/column_form', database: @database, column: column, comment: @comment %></div>
@@ -16,7 +16,7 @@
         <% end %>
         <div class="bottom text-center">
         <div class="comment-button" data-commentbutton="<%= counter %>">
-          <i class="fa fa-comment" aria-hidden="true"></i> 
+          <i class="far fa-comment" aria-hidden="true"></i> 
           </div>
             <div class="comment hidden" data-comment="<%= counter %>"> 
               <%= render 'comments/form', table: table, database: @database, comment: @comment %>
