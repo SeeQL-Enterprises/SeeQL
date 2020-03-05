@@ -1,5 +1,3 @@
-require 'json'
-
 class DatabaseConverter
   # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
   # and converts all tables and its respective columns into a JSON object
@@ -7,36 +5,17 @@ class DatabaseConverter
     @database = database_instance
   end
 
-  # def convert
-  #   # This is the method that converts the DB into JSON
-  #   tables = @database.tables
-  #   table_hash = {}
-  #
-  #   tables.each do |table_header|
-  #     # Building Ruby Hash with table names, columns and column types
-  #     table_hash["#{table_header}"] = {}
-  #
-  #     @database.columns(table_header).each do |column|
-  #       table_hash["#{table_header}"]["#{column.name}"] = column.type
-  #     end
-  #   end
-  #
-  #   save_database(table_hash.to_json)
-  # end
-
   def save_database
     user = User.create!(email: "THIS@gmail.com", password: "123456")
     project = Project.create!(name: "THIS PROJECT", user: user)
 
     tables = @database.tables
 
-    # @database = Database.new(name: @database.name, project: Project.find(params[:project_id]))
-
     database = Database.new(name: @database.current_database, project: project)
 
     if save_tables(database, tables)
       if database.save
-        puts "SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+        # TODO: tie in with success alert
       else
         # TODO: tie in with error alert
       end
