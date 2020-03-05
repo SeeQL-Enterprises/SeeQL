@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_05_105930) do
   create_table "columns", force: :cascade do |t|
     t.bigint "table_id"
     t.string "name"
-    t.string "data_type"
+    t.string "datatype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["table_id"], name: "index_columns_on_table_id"
