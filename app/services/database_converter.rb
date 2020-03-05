@@ -7,44 +7,48 @@ class DatabaseConverter
     @database = database_instance
   end
 
-  def convert
-    # This is the method that converts the DB into JSON
+  # def convert
+  #   # This is the method that converts the DB into JSON
+  #   tables = @database.tables
+  #   table_hash = {}
+  #
+  #   tables.each do |table_header|
+  #     # Building Ruby Hash with table names, columns and column types
+  #     table_hash["#{table_header}"] = {}
+  #
+  #     @database.columns(table_header).each do |column|
+  #       table_hash["#{table_header}"]["#{column.name}"] = column.type
+  #     end
+  #   end
+  #
+  #   save_database(table_hash.to_json)
+  # end
+
+  def save_database
+    user = User.create!(email: "THIS@gmail.com", password: "123456")
+    project = Project.create!(name: "THIS PROJECT", user: user)
+
     tables = @database.tables
-    table_hash = {}
 
-    tables.each do |table_header|
-      # Building Ruby Hash with table names, columns and column types
-      table_hash["#{table_header}"] = {}
+    # @database = Database.new(name: @database.name, project: Project.find(params[:project_id]))
 
-      @database.columns(table_header).each do |column|
-        table_hash["#{table_header}"]["#{column.name}"] = column.type
-      end
-    end
+    @database = Database.new(name: @database.name, project: Project.find(project)
 
-    save_database(table_hash.to_json)
-  end
-
-  def save_database(db_json)
-    # user = User.create!(email: "THIS@gmail.com", password: "123456")
-    # project = Project.create!(name: "THIS PROJECT", user: user)
-
-    @database = Database.new(name: @database.name, db_json: db_json, project: Project.find(params[:project_id]))
-
-    if save_tables(db_json)
+    if save_tables(tables)
       if @database.save
-        # TODO: tie in with success alert
+        puts "SAVED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       else
         # TODO: tie in with error alert
       end
     end
   end
 
-  def save_tables(db_json)
-    JSON.parse(db_json).each do |key, _|
+  def save_tables(tables)
+    tables.each do |key, _|
       table = Table.new(name: key)
       table.database = @database
 
-      if save_columns(db_json, table) == true
+      if save_columns(table)
         table.save
         true
       else
@@ -53,16 +57,12 @@ class DatabaseConverter
     end
   end
 
-  def save_columns(db_json, table)
-    JSON.parse(db_json).each do |key , value|
-      if key == table.name
-        value.each do |key, value|
-          column = Column.new(name: key, data_type: value)
-          column.table = table
+  def save_columns(table)
+    @database.columns(table.name).each do |column|
+      Column.new(name: column.name, datatype: column.type)
+      column.table = table
 
-          column.save ? true : false
-        end
-      end
+      column.save ? true : false
     end
   end
 end
