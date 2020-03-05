@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_140232) do
+ActiveRecord::Schema.define(version: 2020_03_05_105930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_04_140232) do
   create_table "columns", force: :cascade do |t|
     t.bigint "table_id"
     t.string "name"
-    t.string "data_type"
+    t.string "datatype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["table_id"], name: "index_columns_on_table_id"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_03_04_140232) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "project_id"
-    t.json "db_json"
     t.index ["project_id"], name: "index_databases_on_project_id"
   end
 
