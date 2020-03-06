@@ -1,0 +1,15 @@
+<%= simple_form_for :table do |f| %>
+  <%= f.input :name %>
+  <h3>Columns</h3>
+  <div id='columns'>
+    <%= f.fields_for :columns do |builder| %>
+      <%= render 'column_fields', :f => builder %>
+    <% end %>
+    <div class='links'>
+      <%#= link_to_add_association 'add column', f, :columns,  data: {association_insert_node: '#column',
+                                                    association_insert_method: :append
+                                              } %>
+    </div>
+  </div>
+  <%= f.submit 'Save' %>
+<% end %>

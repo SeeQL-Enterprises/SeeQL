@@ -3,7 +3,7 @@ class Table < ApplicationRecord
 
   has_many :columns
   has_many :comments, as: :commentable
-  accepts_nested_attributes_for :columns
+  accepts_nested_attributes_for :columns, allow_destroy: true
 
   scope :displayed, -> { where(display: true) }
 end

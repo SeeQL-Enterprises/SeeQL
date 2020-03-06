@@ -7,14 +7,14 @@ Rails.application.routes.draw do
   end
 
   resources :databases, only: [] do
-    resources :tables, only: [:index] do
+    resources :tables, only: [:index, :create] do
       resources :comments, only: :create
     end
   end
 
   resources :database_table_preferences, only: :update
 
-  resources :columns, only: [] do
+  resources :columns, only: [:create, :destroy] do
     resources :comments, only: :create
   end
 
