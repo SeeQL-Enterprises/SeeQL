@@ -64,4 +64,22 @@
   -moz-box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
   box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
 }
+.bg {
+  border-radius: 5px;
+  background-color: rgba($color: #fff, $alpha: 0.2);
+}
+.project_name {
+  font-size: 25px;
+}
+.collab_list {
+  padding: 5px;
+  margin: 5px;
+  background-color: rgba($color: #fff, $alpha: 0.4);
+}
+.projcard a:hover {
+  text-decoration: none;
+  -webkit-box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
+  -moz-box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
+  box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
+}
 

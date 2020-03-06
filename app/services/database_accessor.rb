@@ -30,8 +30,8 @@ class DatabaseAccessor
   end
 
   def save_database(tables)
-    user = User.create!(email: "THIS@gmail.com", password: "123456")
-    project = Project.create!(name: "THIS PROJECT", user: user)
+    user = User.first
+    project = Project.create!(name: "Real Project", user: user)
 
     database = Database.new(name: @connection.db, project: project)
 
