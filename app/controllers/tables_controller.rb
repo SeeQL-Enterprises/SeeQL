@@ -5,4 +5,8 @@ class TablesController < ApplicationController
     @tables = @database.tables.displayed
     @columns = @tables.columns
   end
+
+  def create
+
+  end
 end
