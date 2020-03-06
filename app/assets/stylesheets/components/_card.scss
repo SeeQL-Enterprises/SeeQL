@@ -31,7 +31,20 @@
 }
 
 .comment-content {
-  background-color: green
+  background-color: green;
+}
+
+.bg {
+  border-radius: 5px;
+  background-color: rgba($color: #fff, $alpha: 0.2);
+}
+.project_name {
+  font-size: 25px;
+}
+.collab_list {
+  padding: 5px;
+  margin: 5px;
+  background-color: rgba($color: #fff, $alpha: 0.4);
 }
 .bg {
   border-radius: 5px;
