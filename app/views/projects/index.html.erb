@@ -1,21 +1,29 @@
 <div class="container">
-  <h1>This is projects index</h1>
-  <% @projects.each do |project| %>
-  <div class="d-flex space-between">
-    <div>
-      <p><strong><%= project.name %></strong> </p>
-      <%= link_to 'Databases', project_databases_path(project) %>
-      <% project.collaborators.each do |collaborator| %>
-        <p><%= collaborator.user.email %></p>
-      <% end %>
-      <%= link_to project_path(project) do %>
-        <p class="btn btn-primary">View Project</p>
-      <% end %>
+  <h1>Your Projects</h1>
+    <div class="container mt-5">
+      <div class="row w-100 justify-content-around">
+        <% @projects.each do |project| %>
+          <div class="col-3">
+            <div class="card bg border text-center">
+              <p class="project_name" ><strong><%= project.name.capitalize %></strong> </p>
+                <div class="collab_list">
+                <p><strong><u>Collaborators:</u></strong></p>
+                <% project.collaborators.each do |collaborator| %>
+                  <p><%= collaborator.user.email %></p>
+                <% end %>
+                </div>
+        <%= link_to project_path(project) do %>
+          <p class="btn btn-primary">View this Project</p>
+        <% end %>
 
-    </div>
-  </div>
-  <% end %>
+            </div>
+          </div>
+        <% end %>
+
   <%= link_to new_project_path do %>
-    <p class="btn btn-primary">Add Project</p>
+    <p class="btn btn-primary btn-lg mt-5">Add a new Project</p>
   <% end %>
 </div>
+
+</div>
+<div class="bgimg"></div>
