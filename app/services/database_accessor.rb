@@ -80,7 +80,7 @@ class DatabaseAccessor
     AND tc.table_name='#{table.name}"
 
     columns.each do |column|
-      column = Column.new(name: column["column_name"], datatype: column["data_type"])
+      column = Column.new(name: column["column_name"], datatype: column["data_type"], foreign_keys: foreign_keys)
       column.table = table
 
       column.save ? true : false
