@@ -3,38 +3,36 @@ require 'pg'
 class DatabaseAccessor
   # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
   # and converts all tables and its respective columns into a JSON object
-  def initialize(database_instance)
+  def initialize(db_name, user, password)
+    @user = connection.user
+    @db_name = connection.db
+    @password = connection.pass
+  end
+
+  def call
     begin
-      connection = PG.connect :dbname => 'thisdb', :user => 'bruncky', :password => '2203'
+      @connection = PG.connect dbname: @db_name, user: @user, password: @password
 
-      user = connection.user
-      db_name = connection.db
-      password = connection.pass
+      # Each table is a hash where the key is "table_name" and the value is the actual name of the table
+      tables = @connection.exec "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"
 
-      puts "User: #{user}"
-      puts "Database name: #{db_name}"
-      puts "Password: #{password}"
-
+      save_database(tables)
     rescue PG::Error => error
 
-      puts error.message
+      puts "Error, fam: #{error.message}"
 
     ensure
 
-      connection.close if connection
+      @connection.close if @connection
 
     end
-
-    @database = database_instance
   end
 
-  def save_database
+  def save_database(tables)
     user = User.create!(email: "THIS@gmail.com", password: "123456")
     project = Project.create!(name: "THIS PROJECT", user: user)
 
-    tables = @database.tables
-
-    database = Database.new(name: @database.current_database, project: project)
+    database = Database.new(name: @connection.db, project: project)
 
     if save_tables(database, tables)
       if database.save
@@ -47,8 +45,10 @@ class DatabaseAccessor
 
   def save_tables(database, tables)
     tables.each do |key, _|
-      table = Table.new(name: key)
-      table.database = database
+      key.each do |_ , value|
+        table = Table.new(name: value)
+        table.database = database
+      end
 
       if save_columns(table)
         table.save
@@ -60,8 +60,10 @@ class DatabaseAccessor
   end
 
   def save_columns(table)
-    @database.columns(table.name).each do |column|
-      column = Column.new(name: column.name, datatype: column.type)
+    columns = @connection.exec "SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'table'"
+
+    columns.each do |column|
+      column = Column.new(name: column["column_name"], datatype: column["data_type"])
       column.table = table
 
       column.save ? true : false
