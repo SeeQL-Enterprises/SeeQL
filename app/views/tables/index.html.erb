@@ -12,7 +12,7 @@
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
             <div id="comments" class="column comment-content">
-                  <%= comment.content %>
+                <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
             </div>
                 <% end %>
               <% end %>
@@ -33,7 +33,7 @@
                 <% unless table.comments.blank? %>
                   <% table.comments.each do |comment| %>
               <div id="comments" class="column comment-content">
-                  <p><strong><%= comment.user.name %></strong><%= comment.content %></p>
+                  <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
               </div>
                   <% end %>
                 <% end %>
