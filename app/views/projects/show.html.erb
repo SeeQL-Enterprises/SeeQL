@@ -13,12 +13,14 @@
 
 <% @project.databases.each do |database| %>
   <%= link_to database_path(database) do %>
-    <p><%= database.name %></p>
+    <p class="btn btn-primary">View: <%= database.name %></p>
   <% end %>
 <% end %>
 
 <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
-<%= link_to "go to projects", projects_path %>
+<%= link_to projects_path do %>
+<div class="btn btn-danger mt-2">Go to project selection</div>
+<% end %>
 </div>
 <div class="container d-flex align-items-center" style="margin-top: 630px">
 <i class="fa fa-eye" aria-hidden="true" style="font-size: 150px"></i>
