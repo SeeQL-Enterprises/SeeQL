@@ -1,7 +1,8 @@
-<div class="container w-50" style="position: absolute; top: 150px; left: 150px">
+<div class="container w-50" style="position: absolute; top: 100px; left: 150px">
+<%= link_to " < Go to project selection", projects_path, style: "display: block; color: white; margin-bottom: 10px;"%>
 <h2 class="mb-5">Please add the collaborators to the <%= @project.name %> project:</h2>
-
-<div id="collaborators">
+<p>Your Collaborators:</p>
+<div id="collaborators" class="bg collab border">
   <% if @project.collaborators.blank? %>
     Add Collaborators
   <% else %>
@@ -18,10 +19,6 @@
 <% end %>
 
 <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
-<%= link_to projects_path do %>
-<div class="btn btn-danger mt-2">Go to project selection</div>
-<% end %>
-</div>
 <div class="container d-flex align-items-center" style="margin-top: 630px">
 <i class="fa fa-eye" aria-hidden="true" style="font-size: 150px"></i>
 <div class="text pl-3 ">
