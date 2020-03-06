@@ -1,6 +1,7 @@
 class CollaboratorsController < ApplicationController
   def create
     @collaborator = Collaborator.new
+    authorize @collaborator
     @collaborator.user = set_user
     @project = Project.find(params[:project_id])
     @collaborator.project = @project
