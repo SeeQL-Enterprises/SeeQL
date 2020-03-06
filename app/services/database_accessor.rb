@@ -3,10 +3,10 @@ require 'pg'
 class DatabaseAccessor
   # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
   # and converts all tables and its respective columns into a JSON object
-  def initialize(db_name, user, password)
-    @user = connection.user
-    @db_name = connection.db
-    @password = connection.pass
+  def initialize(options = {})
+    @db_name = options[:db_name]
+    @user = options[:user]
+    @password = options[:password]
   end
 
   def call
@@ -36,9 +36,9 @@ class DatabaseAccessor
 
     if save_tables(database, tables)
       if database.save
-        # TODO: tie in with success alert
+        puts "SUCCESS: DB saved"
       else
-        # TODO: tie in with error alert
+        puts "ERROR: DB not saved"
       end
     end
   end
@@ -48,19 +48,20 @@ class DatabaseAccessor
       key.each do |_ , value|
         table = Table.new(name: value)
         table.database = database
-      end
 
-      if save_columns(table)
-        table.save
-        true
-      else
-        false
+        if save_columns(table)
+          table.save
+          true
+        else
+          false
+        end
+
       end
     end
   end
 
   def save_columns(table)
-    columns = @connection.exec "SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'table'"
+    columns = @connection.exec "SELECT column_name, data_type FROM information_schema.columns WHERE table_name = '#{table.name}'"
 
     columns.each do |column|
       column = Column.new(name: column["column_name"], datatype: column["data_type"])
