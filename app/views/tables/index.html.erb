@@ -1,16 +1,4 @@
 <% db = @database %>
-<% iterator = 0 %>
-<% db_hash = {} %>
-
-<% db.tables.each do |table_name| %>
-  <% db_hash[table_name] = [iterator, {}] %>
-  <% iterator += 1 %>
-
-  <% db.columns(table_name).each do |column| %>
-    <% db_hash[table_name][1][column.name] = iterator %>
-    <% iterator += 1 %>
-  <% end %>
-<% end %>
 
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
@@ -42,7 +30,7 @@
                 <% unless table.comments.blank? %>
                   <% table.comments.each do |comment| %>
               <div id="comments" class="column comment-content">
-                    <%= comment.content %>
+                  <p><strong><%= comment.user.name %></strong><%= comment.content %></p>
               </div>
                   <% end %>
                 <% end %>
