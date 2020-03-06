@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
   def index
     # @projects = current_user.projects # only shows where user admin
     # @projects = policy_scope(Project).all
+    # This is a test
     @projects = policy_scope(Project)
   end
 
