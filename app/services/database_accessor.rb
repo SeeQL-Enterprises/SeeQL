@@ -4,6 +4,7 @@ class DatabaseAccessor
   # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
   # and converts all tables and its respective columns into a JSON object
   def initialize(options = {})
+    @host = options[:host]
     @db_name = options[:db_name]
     @user = options[:user]
     @password = options[:password]
@@ -11,7 +12,7 @@ class DatabaseAccessor
 
   def call
     begin
-      @connection = PG.connect dbname: @db_name, user: @user, password: @password
+      @connection = PG.connect host: @host, dbname: @db_name, user: @user, password: @password
 
       # Each table is a hash where the key is "table_name" and the value is the actual name of the table
       tables = @connection.exec "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"
