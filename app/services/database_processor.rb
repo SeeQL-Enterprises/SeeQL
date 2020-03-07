@@ -29,7 +29,8 @@ class DatabaseProcessor
 
   def convert_to_xml(tables)
     tables.map do |table|
-      @connection.exec table_to_xml()
+      @connection.exec "SELECT table_to_xml('#{table}', false, false, '')"
+      # query_to_xml(query text, nulls boolean, tableforest boolean, targetns text)
     end
   end
 end
