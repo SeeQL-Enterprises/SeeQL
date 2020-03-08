@@ -72,3 +72,5 @@ class DatabaseAccessor
     end
   end
 end
+
+# Adding a comment to test my new GitHub Action
