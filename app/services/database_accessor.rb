@@ -20,7 +20,7 @@ class DatabaseAccessor
       save_database(tables)
     rescue PG::Error => error
 
-      puts "Error, fam: #{error.message}"
+      puts error.message
 
     ensure
 
