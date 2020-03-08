@@ -1,4 +1,6 @@
-import interact from "interactjs";
+import interact, { init } from "interactjs";
+
+const items = document.querySelectorAll(".draggable");
 
 // target elements with the "draggable" class
 interact(".draggable").draggable({
@@ -20,10 +22,37 @@ interact(".draggable").draggable({
   }
 });
 
+function animatePositions() {
+  items.forEach((target) => {
+    const rect = target.getBoundingClientRect();
+    const winHeight = window.innerHeight;
+    const winWidth = window.innerWidth;
+
+    const yCenter = winHeight / 2 - rect.y - 100;
+    const xCenter = winWidth / 2 - rect.x - rect.width / 2;
+
+    target.style.webkitTransform = target.style.transform =
+      "translate(" + xCenter + "px, " + yCenter + "px)";
+  });
+
+  setTimeout(() => {
+    items.forEach((target) => (target.style.transition = "transform .6s ease"));
+  }, 300);
+
+  setTimeout(() => {
+    restorePositions();
+  }, 600);
+
+  setTimeout(() => {
+    items.forEach((item) => {
+      item.style.transition = "";
+    });
+  }, 1200);
+}
+
 function restorePositions() {
   const data = localStorage.getItem("position") || "{}";
   const currentData = JSON.parse(data);
-  const items = document.querySelectorAll(".draggable");
 
   items.forEach((target) => {
     const id = target.getAttribute("data-id");
@@ -41,8 +70,6 @@ function restorePositions() {
     }
   });
 }
-
-restorePositions();
 
 function rememberPosition(target) {
   const data = localStorage.getItem("position") || "{}";
@@ -68,3 +95,5 @@ function dragMoveListener(event) {
 
   rememberPosition(target);
 }
+
+animatePositions();
