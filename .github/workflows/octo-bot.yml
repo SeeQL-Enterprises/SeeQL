@@ -13,7 +13,7 @@ jobs:
         with:
           username: OctoBot
           avatarUrl: https://res.cloudinary.com/bruncky/image/upload/v1583697615/Main/github_2_lhf53a.png
-          description: "**Event:** ${{ github.EVENT_NAME }}\n**Repo:** ${{ github.REPOSITORY }}\n**Author:** ${{ github.ACTOR }}"
+          description: "**Event:** ${{ github.EVENT_NAME }}\n**Repo:** ${{ github.REPOSITORY }}\n**Author:** ${{ github.ACTOR }}\n**Branch:** ${{ github.HEAD_REF }}"
           severity: info
           color: '#ff00aa'
           webhookUrl: ${{ secrets.OCTO_BOT }}
