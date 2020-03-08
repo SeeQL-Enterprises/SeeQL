@@ -1,0 +1,16 @@
+name: OctoBot Notification
+on:
+  pull_request:
+    branches:
+      - master
+jobs:
+  pull_request_notification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR Opened
+        uses: rjstone/discord-webhook-notify@v1.0.4
+        with:
+          severity: info
+          color: '#ff00aa'
+          details: 'Custom details: Somebody set up us the bomb.'
+          webhookUrl: ${{ secrets.OCTO_BOT }}
