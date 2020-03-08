@@ -1,3 +1,4 @@
+ 
 name: OctoBot Notification
 on:
   pull_request:
@@ -10,7 +11,9 @@ jobs:
       - name: PR Opened
         uses: rjstone/discord-webhook-notify@v1.0.4
         with:
+          username: OctoBot
+          avatarUrl: https://res.cloudinary.com/bruncky/image/upload/v1583697615/Main/github_2_lhf53a.png
+          description: "**Event:** ${{ github.EVENT_NAME }}\n**Repo:** ${{ github.REPOSITORY }}\n**Author:** ${{ github.ACTOR }}"
           severity: info
           color: '#ff00aa'
-          details: 'Custom details: Somebody set up us the bomb.'
           webhookUrl: ${{ secrets.OCTO_BOT }}
