@@ -8,12 +8,16 @@ class DatabasesController < ApplicationController
   end
 
   def create
-    DatabaseAccessor.new(database_params)
+    @db_accessor = DatabaseAccessor.new(database_params)
+    authorize @db_accessor
+    @db_accessor.call
+    @project = Project.find(params[:project_id])
+    redirect_to project_path(@project)
   end
 
   private
 
   def database_params
-    params.require(:database).permit(:host, :db_name, :user, :password)
+    params.require(:new_database).permit(:name, :host, :db_name, :user, :password, :project_id)
   end
 end
