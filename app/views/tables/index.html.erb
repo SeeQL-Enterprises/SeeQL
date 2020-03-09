@@ -47,6 +47,10 @@
   <% end %>
 </div>
 <% table = Table.new %>
-<%= render 'tables/form', table: table%>
+<div class="draggable">
+  <div class="tablecard" style="background-color: green; width: 200px">
+    <%= render 'tables/form', table: table%>
+  </div>
+</div>
 <div class="bgimg">
 </div>
