@@ -1,4 +1,8 @@
 <% db = @database %>
+
+<%= social_share_button_tag('Share to Facebook', desc: db.tables.first.name) %>
+
+
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
   <% db.tables.each do |table| %>
