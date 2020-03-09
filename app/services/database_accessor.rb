@@ -4,10 +4,12 @@ class DatabaseAccessor
   # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
   # and converts all tables and its respective columns into a JSON object
   def initialize(options = {})
+    @name = options[:name]
     @host = options[:host]
     @db_name = options[:db_name]
     @user = options[:user]
     @password = options[:password]
+    @project_id = options[:project_id]
   end
 
   def call
@@ -19,9 +21,9 @@ class DatabaseAccessor
 
       save_database(tables)
     rescue PG::Error => error
-      
+
       puts error.message
-      
+
     ensure
 
       @connection.close if @connection
@@ -31,9 +33,9 @@ class DatabaseAccessor
 
   def save_database(tables)
     user = User.first
-    project = Project.create!(name: "Real Project", user: user)
+    project = Project.find(@project_id)
 
-    database = Database.new(name: @connection.db, project: project)
+    database = Database.new(name: @name, project: project)
 
     if save_tables(database, tables)
       if database.save
