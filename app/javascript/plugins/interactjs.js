@@ -1,15 +1,14 @@
 import interact, { init } from "interactjs";
+import { allLines } from "./leaderlinejs";
+// const restaurants = document.getElementById("Restaurants");
+// const reviews = document.getElementById("Reviews");
+// console.log(allLines());
+// let line = undefined;
+let arry = allLines();
 
-const restaurants = document.getElementById("Restaurants");
-const reviews = document.getElementById("Reviews");
-
-let line = undefined
-setTimeout(() => {
-  line = new LeaderLine(restaurants, reviews);
-}, 1200);
-
-
+// console.log(arry);
 const items = document.querySelectorAll(".draggable");
+
 // target elements with the "draggable" class
 interact(".draggable").draggable({
   // enable inertial throwing
@@ -101,7 +100,10 @@ function dragMoveListener(event) {
   target.setAttribute("data-x", x);
   target.setAttribute("data-y", y);
 
-  line.position();
+  arry.forEach((line) => {
+    line.position();
+  });
+
 
   rememberPosition(target);
 }

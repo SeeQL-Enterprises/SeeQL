@@ -7,12 +7,12 @@
   <% db.tables.each do |table| %>
     <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
       <div class="tablecard">
-        <div class="top text-center" id="<%= table.name %>">
+        <div class="top text-center table-name" id="<%= table.name %>">
           <h3><%= table.name.capitalize %><h3>
         </div>
         <% table.columns.each do |column| %>
           <% counter += 1 %>
-          <div class="column text-center" data-comment-list="<%= counter %>" >
+          <div class="column text-center" data-comment-list="<%= counter %>"> 
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
                   <div id="comments" class="column comment-content">
@@ -23,7 +23,7 @@
             <div class="comment-button" data-commentbutton="<%= counter %>"><i class="far fa-comment"></i>
             </div>
             <div class="d-flex justify-content-between">
-              <div class="column-comment"> <%= column.name.capitalize %> 
+              <div class="column-comment column-name"> <%= column.name.capitalize %> 
               </div>
               <div class="column-comment"> <%= column.datatype %> 
               </div>
