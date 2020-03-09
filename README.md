@@ -1,4 +1,4 @@
-# SeeQL - PostgreSQL Database Visualization Tool ![language](https://img.shields.io/badge/language-ruby-red.svg) ![language](https://img.shields.io/badge/language-HTML-orange.svg) ![language](https://img.shields.io/badge/language-javascript-yellow.svg) ![language](https://img.shields.io/badge/language-CSS-blueviolet.svg)
+# SeeQL - PostgreSQL Database Visualization Tool ![language](https://img.shields.io/badge/language-Ruby-red.svg) ![language](https://img.shields.io/badge/language-HTML-orange.svg) ![language](https://img.shields.io/badge/language-Javascript-yellow.svg) ![language](https://img.shields.io/badge/language-CSS-blueviolet.svg)
 
 ## Visualisation
 Database schema visualisation is an essential process when starting a new project. SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park.
