@@ -1,5 +1,12 @@
 import interact, { init } from "interactjs";
+import { allLines } from "./leaderlinejs";
+// const restaurants = document.getElementById("Restaurants");
+// const reviews = document.getElementById("Reviews");
+// console.log(allLines());
+// let line = undefined;
+let arry = allLines();
 
+// console.log(arry);
 const items = document.querySelectorAll(".draggable");
 
 // target elements with the "draggable" class
@@ -93,8 +100,12 @@ function dragMoveListener(event) {
   target.setAttribute("data-x", x);
   target.setAttribute("data-y", y);
 
+  arry.forEach((line) => {
+    line.position();
+  });
+
+
   rememberPosition(target);
 }
 
 animatePositions();
-
