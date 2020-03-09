@@ -1,5 +1,14 @@
 import interact, { init } from "interactjs";
 
+const restaurants = document.getElementById("Restaurants");
+const reviews = document.getElementById("Reviews");
+
+let line = undefined
+setTimeout(() => {
+  line = new LeaderLine(restaurants, reviews);
+}, 1200);
+
+
 const items = document.querySelectorAll(".draggable");
 // target elements with the "draggable" class
 interact(".draggable").draggable({
@@ -91,6 +100,8 @@ function dragMoveListener(event) {
   // update the posiion attributes
   target.setAttribute("data-x", x);
   target.setAttribute("data-y", y);
+
+  line.position();
 
   rememberPosition(target);
 }
