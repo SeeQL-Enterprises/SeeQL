@@ -1,8 +1,12 @@
 <% db = @database %>
+
+<%= social_share_button_tag('Share to Facebook', desc: db.tables.first.name) %>
+
+
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
   <% db.tables.each do |table| %>
-    <div class="draggable">
+    <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
       <div class="tablecard">
         <div class="top text-center"><h3><%= table.name.capitalize %><h3></div>
         <% table.columns.each do |column| %>
@@ -11,7 +15,7 @@
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
             <div id="comments" class="column comment-content">
-                  <%= comment.content %>
+                <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
             </div>
                 <% end %>
               <% end %>
@@ -32,7 +36,7 @@
                 <% unless table.comments.blank? %>
                   <% table.comments.each do |comment| %>
               <div id="comments" class="column comment-content">
-                    <%= comment.content %>
+                  <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
               </div>
                   <% end %>
                 <% end %>
@@ -41,7 +45,16 @@
         </div>
       </div>
     </div>
+    <div id="column">
+
+    </div>
   <% end %>
+</div>
+<% table = Table.new %>
+<div class="draggable">
+  <div class="tablecard" style="background-color: green; width: 200px">
+    <%= render 'tables/form', table: table%>
+  </div>
 </div>
 <div class="bgimg">
 </div>

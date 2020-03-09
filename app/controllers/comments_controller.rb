@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
+    authorize @comment
     @comment.user = current_user
     unless params[:comment_proxy][:column_id]
       @table = Table.find(params[:comment_proxy][:table_id])
