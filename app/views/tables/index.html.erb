@@ -14,7 +14,7 @@
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
             <div id="comments" class="column comment-content">
-                  <%= comment.content %>
+                <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
             </div>
                 <% end %>
               <% end %>
@@ -35,7 +35,7 @@
                 <% unless table.comments.blank? %>
                   <% table.comments.each do |comment| %>
               <div id="comments" class="column comment-content">
-                    <%= comment.content %>
+                  <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
               </div>
                   <% end %>
                 <% end %>
@@ -44,7 +44,16 @@
         </div>
       </div>
     </div>
+    <div id="column">
+
+    </div>
   <% end %>
+</div>
+<% table = Table.new %>
+<div class="draggable">
+  <div class="tablecard" style="background-color: green; width: 200px">
+    <%= render 'tables/form', table: table%>
+  </div>
 </div>
 <div class="bgimg">
 </div>

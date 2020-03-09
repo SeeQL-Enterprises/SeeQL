@@ -3,18 +3,18 @@ Rails.application.routes.draw do
   devise_for :users
   resources :projects, only: [:new, :create, :show, :index] do
     resources :collaborators, only: [:new, :create]
-    resources :databases, only: [:index]
+    resources :databases, only: [:index, :create]
   end
-  
+
   resources :databases, only: [] do
-    resources :tables, only: [:index] do
+    resources :tables, only: [:index, :create] do
       resources :comments, only: :create
     end
   end
-  
+
   resources :database_table_preferences, only: :update
 
-  resources :columns, only: [] do
+  resources :columns, only: [:create, :destroy] do
     resources :comments, only: :create
   end
 
