@@ -1,7 +1,12 @@
-<%= simple_form_for :new_database do |f| %>
+<% url = "/projects/#{project.id}/databases" %>
+
+
+<%= simple_form_for(:new_database, url: url, method: :post) do |f| %>
 <%= f.input :name %>
 <%= f.input :host %>
-<%= f.input :database %>
+<%= f.input :db_name %>
 <%= f.input :user %>
 <%= f.input :password, as: :password %>
+<%= f.input :project_id, :input_html => { :value => project.id }, as: :hidden %>
+<%= f.submit "Connect your Database" %>
 <% end %>
