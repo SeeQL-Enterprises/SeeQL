@@ -2,7 +2,6 @@
 
 <%= rails_social_share_button_tag("Database Schema for the #{db.name} project", url: "https://seeql.dev/", image: "https://seeql.dev/.jpg", desc: "Visualisation and navigation for your database project.") %>
 
-
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
   <% db.tables.each do |table| %>
