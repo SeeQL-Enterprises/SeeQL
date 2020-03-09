@@ -19,9 +19,9 @@ class DatabaseAccessor
 
       save_database(tables)
     rescue PG::Error => error
-
-      puts "#{error.message}"
-
+      
+      puts error.message
+      
     ensure
 
       @connection.close if @connection
