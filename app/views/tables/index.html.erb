@@ -1,5 +1,10 @@
 <% db = @database %>
 
+
+<%= social_share_button_tag('Share to Facebook', desc: db.tables.first.name) %>
+
+
+
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
   <% db.tables.each do |table| %>
@@ -11,10 +16,32 @@
         <% table.columns.each do |column| %>
           <% counter += 1 %>
           <div class="column text-center" data-comment-list="<%= counter %>" >
-            <% unless column.comments.blank? %>
-            <% column.comments.each do |comment| %>
+
+              <% unless column.comments.blank? %>
+                <% column.comments.each do |comment| %>
+            <div id="comments" class="column comment-content">
+                <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
+            </div>
+                <% end %>
+              <% end %>
+            <div class="comment-button" data-commentbutton="<%= counter %>"><i class="far fa-comment"></i></div>
+            <div class="d-flex justify-content-between">
+              <div class="column-comment"> <%= column.name.capitalize %> </div>
+              <div class="column-comment"> <%= column.datatype %> </div>
+            </div>
+          </div>
+        <div class="column comment hidden" data-comment="<%= counter %>" ><%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %></div>
+          <% counter += 1 %>
+        <% end %>
+        <div class="bottom text-center">
+        <div class="comment-button" data-commentbutton="<%= counter %>">
+          <i class="far fa-comment" aria-hidden="true"></i>
+          </div>
+            <div class="comment hidden" data-comment="<%= counter %>" data-comment-list="<%= counter %>">
+                <% unless table.comments.blank? %>
+                  <% table.comments.each do |comment| %>
               <div id="comments" class="column comment-content">
-                <%= comment.content %>
+                  <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
               </div>
             <% end %>
         <% end %>
@@ -27,6 +54,7 @@
         </div>
       </div>
     </div>
+<<<<<<< HEAD
     <div class="column comment hidden" data-comment="<%= counter %>" ><%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
     </div>
     <% counter += 1 %>
@@ -48,7 +76,18 @@
     </div>
     </div>
   </div>
+=======
+    <div id="column">
+
+    </div>
+>>>>>>> master
   <% end %>
+</div>
+<% table = Table.new %>
+<div class="draggable">
+  <div class="tablecard" style="background-color: green; width: 200px">
+    <%= render 'tables/form', table: table%>
+  </div>
 </div>
 <div class="bgimg">
 </div>
