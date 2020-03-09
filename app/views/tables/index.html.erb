@@ -5,7 +5,7 @@
   <% db.tables.each do |table| %>
     <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
       <div class="tablecard">
-        <div class="top text-center">
+        <div class="top text-center" id="<%= table.name %>">
           <h3><%= table.name.capitalize %><h3>
         </div>
         <% table.columns.each do |column| %>
@@ -30,7 +30,7 @@
     <div class="column comment hidden" data-comment="<%= counter %>" ><%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
     </div>
     <% counter += 1 %>
-    <% end %>
+  <% end %>
     <div class="bottom text-center">
       <div class="comment-button" data-commentbutton="<%= counter %>">
         <i class="far fa-comment" aria-hidden="true"></i>

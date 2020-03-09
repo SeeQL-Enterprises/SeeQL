@@ -1,7 +1,6 @@
 import interact, { init } from "interactjs";
 
 const items = document.querySelectorAll(".draggable");
-
 // target elements with the "draggable" class
 interact(".draggable").draggable({
   // enable inertial throwing
@@ -97,4 +96,3 @@ function dragMoveListener(event) {
 }
 
 animatePositions();
-
