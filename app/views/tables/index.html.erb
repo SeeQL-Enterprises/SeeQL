@@ -1,9 +1,8 @@
 <% db = @database %>
-
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
   <% db.tables.each do |table| %>
-    <div class="draggable">
+    <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
       <div class="tablecard">
         <div class="top text-center"><h3><%= table.name.capitalize %><h3></div>
         <% table.columns.each do |column| %>

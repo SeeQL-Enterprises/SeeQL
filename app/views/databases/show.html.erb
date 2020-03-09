@@ -1,8 +1,11 @@
-<h1>This is database show</h1>
+<div class="container mt-5">
+<h1>Which tables do you want to display?</h1>
 
 <%= @database.name %>
 
 <%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
-  <%= f.input :tables, collection: @database.tables, as: :check_boxes, lable_value: :name %>
-  <%= f.submit %>
+  <%= f.input :tables, collection: @database.tables, as: :check_boxes, lable_value: :name, :input_html => { :checked => true }%>
+  <%= f.submit "View this Database", class: "btn btn-primary my-4" %>
+
 <% end %>
+</div>
