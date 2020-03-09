@@ -1,0 +1,7 @@
+<%= simple_form_for :new_database do |f| %>
+<%= f.input :name %>
+<%= f.input :host %>
+<%= f.input :database %>
+<%= f.input :user %>
+<%= f.input :password, as: :password %>
+<% end %>
