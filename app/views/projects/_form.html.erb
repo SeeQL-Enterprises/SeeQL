@@ -8,5 +8,5 @@
 <%= f.input :user %>
 <%= f.input :password, as: :password %>
 <%= f.input :project_id, :input_html => { :value => project.id }, as: :hidden %>
-<%= f.submit "Connect your Database" %>
+<%= f.submit "Connect your Database", class: "btn btn-light btn-lg" %>
 <% end %>
