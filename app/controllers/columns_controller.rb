@@ -6,7 +6,7 @@ class ColumnsController < ApplicationController
     @database = @column.table.database
     @column.save!
     respond_to do |format|
-      format.js { @counter = column_params[:counter] }
+      format.js { @counter = params[:column_proxy][:counter] }
       format.html { redirect_to database_tables_path(@database) }
     end
 
@@ -27,6 +27,6 @@ class ColumnsController < ApplicationController
   private
 
   def column_params
-    params.require(:column_proxy).permit(:name, :datatype, :table_id, :edit, :counter)
+    params.require(:column_proxy).permit(:name, :datatype, :table_id, :edit)
   end
 end
