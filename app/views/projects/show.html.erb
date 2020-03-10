@@ -13,11 +13,11 @@
     </div>
     <% @project.databases.each do |database| %>
         <%= link_to database_path(database) do %>
-            <p class="btn btn-primary mt-5">View: <%= database.name %></p>
+            <button class="btn-treehouse" style="margin-top: 20px">View: <%= database.name %></button>
         <% end %>
     <% end %>
-    <button type="button" class="btn btn-light" id="add-collaborator-button">Choose Collaborators</button>
+    <button type="button" class="btn-treehouse" id="add-collaborator-button">Choose Collaborators</button>
     <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
-    <button type="button" class="btn btn-light" id="add-database-button">Add Database</button>
+    <button type="button" class="btn-treehouse" id="add-database-button">Add Database</button>
     <%= render 'form', new_database: Database.new, project: @project %>
 </div>

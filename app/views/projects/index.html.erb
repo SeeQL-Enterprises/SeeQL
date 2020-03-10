@@ -1,5 +1,8 @@
 <div class="container">
     <h1>Your Projects:</h1>
+    <%= link_to new_project_path do %>
+        <button class="btn-treehouse" style="margin-top: 20px"> <i class="far fa-plus-square"></i> Add Project</button>
+    <% end %>
     <div class="container mt-5">
         <div class="row w-100">
             <% @projects.sort_by! { |project| project.created_at } %>
@@ -20,9 +23,6 @@
             <% end %>
         </div>
     </div>
-    <%= link_to new_project_path do %>
-        <p class="btn btn-primary btn-lg mt-5"> <i class="far fa-plus-square"></i> Add a new Project</p>
-    <% end %>
 </div>
 
 <div class="bgimg"></div>
