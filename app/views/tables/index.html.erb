@@ -15,6 +15,8 @@
                 <% column.comments.each do |comment| %>
                   <div id="comments" class="column comment-content">
                   <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+<%# please add the connection to delete comment into the trash icon %>
                   </div>
                 <% end %>
               <% end %>
@@ -29,7 +31,9 @@
           </div>
           <div class="column comment hidden text-center" data-comment="<%= counter %>" >
             <i class="fas fa-edit"></i>
+<%# please add the edit coloumn link here %>
             <i class="fa fa-trash" aria-hidden="true"></i>
+<%# please add the delete coloumn here %>
             <%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
           </div>
           <% counter += 1 %>
@@ -60,8 +64,12 @@
   <% end %>
   <% table = Table.new %>
   <div class="draggable">
-    <div class="tablecard" style="background-color: green; width: 200px">
-      <%= render 'tables/form', table: table%>
+    <div class="tablecard tool-table bg">
+      <p>Show/ Hide all comments <i class="fas fa-comment"></i></p>
+      <p>Add a new Table <i class="fa fa-plus" aria-hidden="true"></i></p>
+      <div class= "add-table hidden">
+        <%= render 'tables/form', table: table%>
+      </div>
     </div>
   </div>
 </div>
