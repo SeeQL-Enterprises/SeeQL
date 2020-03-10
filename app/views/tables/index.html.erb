@@ -8,7 +8,7 @@
       <div class="tablecard">
 
         <div class="top text-center table-name" id="<%= table.name %>">
-          <h3><%= table.name %><h3>
+          <h3><%= table.name.downcase %><h3>
         </div>
 
         <% table.columns.each do |column| %>
