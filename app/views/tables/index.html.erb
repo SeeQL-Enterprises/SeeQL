@@ -15,9 +15,9 @@
                 <% column.comments.each do |comment| %>
                   <div id="comments" class="column comment-content">
                   <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-                  <%= link_to column_path, method: :delete do%>
+           <!--        <%= link_to column_path, method: :delete do%>
                     <i class="fa fa-trash" aria-hidden="true"></i>
-                  <% end %>
+                  <% end %> -->
       <%# please add the connection to delete comment into the trash icon %>
                   </div>
                 <% end %>
@@ -62,6 +62,7 @@
         </div>
       </div>
     </div>
+  </div>
   <% end %>
   <% table = Table.new %>
   <div class="draggable">
