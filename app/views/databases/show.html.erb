@@ -1,7 +1,7 @@
 <div class="container mt-5">
-  <h1>Which tables do you want to display?</h1>
+    <h1>Which tables do you want to display?</h1>
 
-  <%= @database.name %>
+    <%= @database.name %>
 
   <%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
     <%= f.input :tables, collection: @database.tables, as: :check_boxes, label_value: :name, :input_html => { :checked => true }%>
@@ -9,6 +9,5 @@
   <% end %>
 
   <button type="button" id='select_all' class="btn btn-success my-4">Select All</button>
+
 </div>
-
-

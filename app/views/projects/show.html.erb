@@ -1,28 +1,22 @@
 <div class="container w-50" style="position: absolute; top: 100px; left: 150px">
-  <%= link_to " < Go to project selection", projects_path, style: "display: block; color: white; margin-bottom: 10px;"%>
-  <h2 class="mb-5">Please add the collaborators to the <%= @project.name %> project:</h2>
-  <p>Your Collaborators:</p>
-  <div id="collaborators" class="bg collab border">
-    <% if @project.collaborators.blank? %>
-      Add Collaborators
-    <% else %>
-      <% @project.collaborators.each do |collaborator| %>
-        <%= render 'collaborators/show', collaborator: collaborator %>
-      <% end %>
+    <%= link_to " < Go to project selection", projects_path, style: "display: block; color: white; margin-bottom: 10px;"%>
+    <h2 class="mb-5">Please add the collaborators to the <%= @project.name %> project:</h2>
+    <p>Your Collaborators:</p>
+    <div id="collaborators" class="bg collab border">
+        <% if @project.collaborators.blank? %>
+            Add Collaborators
+        <% else %>
+            <% @project.collaborators.each do |collaborator| %>
+                <%= render 'collaborators/show', collaborator: collaborator %>
+            <% end %>
+        <% end %>
+    </div>
+    <% @project.databases.each do |database| %>
+        <%= link_to database_path(database) do %>
+            <p class="btn btn-primary mt-5">View: <%= database.name %></p>
+        <% end %>
     <% end %>
-  </div>
-  <% @project.databases.each do |database| %>
-    <%= link_to database_path(database) do %>
-      <p class="btn btn-primary mt-5">View: <%= database.name %></p>
-    <% end %>
-  <% end %>
-  <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
+    <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
+    <button type="button" class="btn btn-light" id="add-database-button">Add Database</button>
+        <%= render 'form', new_database: Database.new, project: @project %>
 </div>
-
-<% @project.databases.each do |database| %>
-  <%= link_to database_path(database) do %>
-    <p class="btn btn-primary mt-5">View: <%= database.name %></p>
-  <% end %>
-<% end %>
-<%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
-<%= render 'form', new_database: Database.new, project: @project %>
