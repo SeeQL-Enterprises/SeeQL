@@ -8,10 +8,10 @@ addCollaboratorButton.addEventListener("click", () => {
     addCollaboratorButton.classList.toggle("btn-danger");
 
     // Check inner text and change accordingly
-    if (addCollaboratorButton.innerText === "Add Collaborator") {
+    if (addCollaboratorButton.innerText === "Choose Collaborators") {
     addCollaboratorButton.innerText = "Cancel";
     } else {
-    addCollaboratorButton.innerText = "Add Collaborator";
+    addCollaboratorButton.innerText = "Choose Collaborators";
     }
 
     // Unfocus the button after pressing
