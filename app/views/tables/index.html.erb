@@ -38,7 +38,7 @@
             <% end %>
 <%# please add the delete coloumn here %>
               <i class="fa fa-plus" aria-hidden="true"></i>
-              <%= render 'columns/form', column_proxy: column, table: table %>
+              <%= render 'columns/form', column_proxy: column, table: table, counter: counter %>
             <%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
           </div>
           <% counter += 1 %>

@@ -5,7 +5,11 @@ class ColumnsController < ApplicationController
     authorize @column
     @database = @column.table.database
     @column.save!
-    redirect_to database_tables_path(@database)
+    respond_to do |format|
+      format.js { @counter = column_params[:counter] }
+      format.html { redirect_to database_tables_path(@database) }
+    end
+
   end
 
   def destroy
@@ -23,6 +27,6 @@ class ColumnsController < ApplicationController
   private
 
   def column_params
-    params.require(:column_proxy).permit(:name, :datatype, :table_id, :edit)
+    params.require(:column_proxy).permit(:name, :datatype, :table_id, :edit, :counter)
   end
 end
