@@ -4,5 +4,6 @@
   <%= f.input :name %>
   <%= f.input :datatype %>
   <%= f.input :table_id, :input_html => { :value => table.id }, as: :hidden %>
+  <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
   <%= f.submit as: "Add Column" %>
 <% end %>

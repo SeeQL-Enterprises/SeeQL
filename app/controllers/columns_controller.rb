@@ -11,6 +11,6 @@ class ColumnsController < ApplicationController
   private
 
   def column_params
-    params.require(:column_proxy).permit(:name, :datatype, :table_id)
+    params.require(:column_proxy).permit(:name, :datatype, :table_id, :edit)
   end
 end
