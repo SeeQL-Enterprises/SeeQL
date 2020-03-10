@@ -36,4 +36,6 @@ const selectAllInputs = () => {
   })
 }
 
-selectAllBtn.addEventListener('click', selectAllInputs)
+if (selectAllBtn) {
+    selectAllBtn.addEventListener('click', selectAllInputs);
+}
