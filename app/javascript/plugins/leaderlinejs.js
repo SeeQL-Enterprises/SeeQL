@@ -20,7 +20,8 @@ allColumns.forEach((column) => {
     setTimeout(() => {
       line = new LeaderLine(
         column.parentElement,
-        table.parentElement.children[1]
+        table.parentElement.children[1],
+        { size: 2, dash: { animation: true } }
       );
       lineAry.push(line);
     }, 1200);
