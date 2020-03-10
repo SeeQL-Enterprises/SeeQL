@@ -64,11 +64,18 @@
   <% end %>
   <% table = Table.new %>
   <div class="draggable">
-    <div class="tablecard tool-table bg">
-      <p>Show/ Hide all comments <i class="fas fa-comment"></i></p>
-      <p>Add a new Table <i class="fa fa-plus" aria-hidden="true"></i></p>
-      <div class= "add-table hidden">
-        <%= render 'tables/form', table: table%>
+    <div class="tablecard tool-table">
+      <h3>Tools</h3>
+      <div class="comment-toggle">
+        <i class="fas fa-comment"></i>
+        <p>Show/ Hide all comments</p>
+      </div>
+      <div class="new-table-toggle">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <p>Add a new Table</p>
+        <div class= "add-table">
+          <%= render 'tables/form', table: table%>
+        </div>
       </div>
     </div>
   </div>
