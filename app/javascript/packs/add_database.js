@@ -1,5 +1,5 @@
-const addDatabaseButton = document.getElementById('add-database-button');
-const databaseForm = document.getElementById('database-form');
+const addDatabaseButton = document.getElementById("add-database-button");
+const databaseForm = document.getElementById("database-form");
 
 addDatabaseButton.addEventListener("click", () => {
 
