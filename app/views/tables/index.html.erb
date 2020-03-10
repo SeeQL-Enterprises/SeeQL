@@ -10,7 +10,7 @@
         </div>
         <% table.columns.each do |column| %>
           <% counter += 1 %>
-          <div class="column text-center" data-comment-list="<%= counter %>"> 
+          <div class="column text-center" data-comment-list="<%= counter %>">
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
                   <div id="comments" class="column comment-content">
@@ -25,10 +25,11 @@
             <div class="d-flex justify-content-between">
               <div class="column-comment column-name"> <%= column.name %> 
               </div>
-              <div class="column-comment"> <%= column.datatype %> 
+              <div class="column-comment"> <%= column.datatype %>
               </div>
             </div>
           </div>
+
           <div class="column comment hidden text-center" data-comment="<%= counter %>" >
             <i class="fas fa-edit"></i>
 <%# please add the edit coloumn link here %>
@@ -57,7 +58,6 @@
               <div class="column-comment"><%= @column.name %></div>
               <div class="column-comment"><%= @column.datatype %></div>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -78,10 +78,8 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
 
 <div class="bgimg">
 </div>
-
-<%# why? %>
+<#%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
