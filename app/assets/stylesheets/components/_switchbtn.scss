@@ -4,6 +4,12 @@ input[type=checkbox] {
   visibility: hidden;
 }
 
+.col-form-label {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
 .form-check-label {
   padding-left: 40px;
 }
@@ -17,6 +23,7 @@ input[type=checkbox] {
   width: 45px;
   border: 1px solid grey;
 }
+
 .form-check:after {
   content: "off";
   font-size: 10px;
@@ -35,6 +42,7 @@ input[type=checkbox] {
   -moz-box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
   box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
 }
+
 .on:after {
   content: "on";
   font-size: 10px;
@@ -55,6 +63,7 @@ input[type=checkbox] {
   -webkit-animation: rotate-center 0.25s linear both;
   animation: rotate-center 0.25s linear both;
 }
+
 .form-check.on {
   background-color: lightgreen;
 }
