@@ -9,9 +9,15 @@ class ColumnsController < ApplicationController
   end
 
   def destroy
-    @column = Column.find(params[:column_id])
-    @column.destroy
-    redirect_to database_tables_path(@database)
+    @column = Column.find(params[:id])
+    @database = @column.table.database
+    authorize @column
+    if @column.edit
+      @column.destroy
+      redirect_to database_tables_path(@database)
+    else
+      redirect_to database_tables_path(@database), flash: { error: "You can only delete columns that are not in your DB" }
+    end
   end
 
   private
