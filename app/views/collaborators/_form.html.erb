@@ -1,4 +1,6 @@
 <%= simple_form_for([ project, collaborator ]) do |form| %>
-    <%= form.input :user, collection: @other_users, label_method: :email, value_method: :id %>
-    <%= form.submit "Add Collaborator", class: "btn btn-light btn-lg" %>
+    <div id="collaborator-form">
+        <%= form.input :user, collection: @other_users, label_method: :email, value_method: :id %>
+        <%= form.submit "Add Collaborator", class: "btn btn-light btn-lg" %>
+    </div>
 <% end %>
