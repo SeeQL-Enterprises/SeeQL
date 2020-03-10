@@ -72,14 +72,37 @@
         <p>Show/ Hide all comments</p>
       </div>
       <div class="new-table-toggle subheader">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-        <p>Add a new Table</p>
-        <div class= "add-table">
-          <%= render 'tables/form', table: table%>
-        </div>
-      </div>
+        <button id="btn-for-add-table" type="button" data-toggle="modal" data-target="#modalForTable">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          <p>Add a new Table</p>
+        </button>
     </div>
   </div>
 </div>
 <div class="bgimg">
+</div>
+
+
+
+<!-- Modal for add table -->
+<div class="modal fade" id="modalForTable" tabindex="-1" role="dialog" aria-labelledby="tableModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="tableModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class= "add-table">
+            <%= render 'tables/form', table: table%> </>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
