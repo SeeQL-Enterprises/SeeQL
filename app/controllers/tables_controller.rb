@@ -20,7 +20,6 @@ class TablesController < ApplicationController
     @database = Database.find(params[:database_id])
     @table.database = @database
     columns_params = table_params[:columns_attributes]
-    raise
     @table.save!
     redirect_to database_tables_path
   end

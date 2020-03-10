@@ -37,6 +37,15 @@ class CommentsController < ApplicationController
 
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize @comment
+    @comment.destroy
+    @column = Column.find(@comment.commentable.id)
+    @database = @column.table.database
+    redirect_to database_tables_path(@database)
+  end
+
   private
 
   def comment_params
