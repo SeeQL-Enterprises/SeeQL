@@ -1,3 +1,14 @@
+#database-form {
+  margin-top: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.7s;
+
+  &.active {
+    max-height: 450px;
+  }
+}
+
 #collaborator-form {
   margin-top: 15px;
   max-height: 0;
