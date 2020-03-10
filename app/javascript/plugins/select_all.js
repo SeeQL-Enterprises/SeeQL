@@ -1,4 +1,6 @@
 selectAllBtn = document.querySelector('#select_all');
+console.log(selectAllBtn)
+const btnText = document.querySelector('#select_all_text');
 
 buttons = document.querySelectorAll(".form-check");
 buttons.forEach((button) => {
@@ -26,11 +28,11 @@ const selectAllInputs = () => {
   toggles.forEach((toggle) =>{
     if (toggle.checked === true) {
       toggle.checked = false
-      selectAllBtn.innerText = 'Select all'
+      btnText.innerText = 'Select all'
       changeVisiblesOff();
     }else {
       toggle.checked = true
-      selectAllBtn.innerText = 'Unselect all'
+      btnText.innerText = 'Unselect all'
       changeVisiblesOn();
     }
   })

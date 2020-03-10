@@ -28,6 +28,11 @@ input[type=checkbox] {
   border: 1px solid grey;
 }
 
+.label_select_all {
+  padding-left: 20px;
+  font-weight: bold;
+}
+
 .form-check:after {
   content: "off";
   font-size: 10px;
