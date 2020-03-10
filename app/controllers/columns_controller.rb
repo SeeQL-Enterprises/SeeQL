@@ -6,7 +6,10 @@ class ColumnsController < ApplicationController
     @database = @column.table.database
     @column.save!
     respond_to do |format|
-      format.js { @counter = params[:column_proxy][:counter] }
+      format.js {
+        @counter = params[:column_proxy][:counter]
+        @table = @column.table
+        }
       format.html { redirect_to database_tables_path(@database) }
     end
 

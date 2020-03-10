@@ -1,8 +1,7 @@
-document.querySelector('#column_proxy_name').value = ""
-document.querySelector('#column_proxy_datatype').value = ""
+document.querySelector('#column_proxy_name').value = "";
+document.querySelector('#column_proxy_datatype').value = "";
 
-var columnBox = '<div class="d-flex justify-content-between"><div class="column-comment"><%= @column.name %></div><div class="column-comment"><%= @column.datatype %></div></div>'
-console.log("<%= @params%>")
-var commentList = document.querySelector('[data-comment-list="<%= @counter%>"]')
+var columnBox = '<%= render "column", counter: @counter, column: @column, table: @table %>';
+var commentList = document.querySelector('[data-comment-list="<%= @counter%>"]');
 
 commentList.insertAdjacentHTML('beforeend', columnBox);

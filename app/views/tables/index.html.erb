@@ -43,27 +43,7 @@
           </div>
           <% counter += 1 %>
         <% end %>
-        <div class="bottom">
-          <div class="comment-button text-center" data-commentbutton="<%= counter %>">
-            <i class="fas fa-bars" aria-hidden="true"></i>
-          </div>
-          <div class="comment hidden" data-comment="<%= counter %>" data-comment-list="<%= counter %>">
-            <% unless table.comments.blank? %>
-              <% table.comments.each do |comment| %>
-                <div id="comments" class="column comment-content">
-                  <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-                </div>
-              <% end %>
-            <% end %>
-            <div class="comment-button" data-commentbutton="<%= counter %>">
-              <i class="fas fa-bars"></i></i>
-            </div>
-            <div class="d-flex justify-content-between">
-              <div class="column-comment"><%= @column.name %></div>
-              <div class="column-comment"><%= @column.datatype %></div>
-            </div>
-          </div>
-        </div>
+        <%= render "columns/column", counter: @counter, column: @column, table: table %>
       </div>
     </div>
   <% end %>
