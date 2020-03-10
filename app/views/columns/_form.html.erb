@@ -1,0 +1,8 @@
+
+
+<%= simple_form_for(:column_proxy, url: columns_path, method: :post) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :datatype %>
+  <%= f.input :table_id, :input_html => { :value => table.id }, as: :hidden %>
+  <%= f.submit as: "Add Column" %>
+<% end %>
