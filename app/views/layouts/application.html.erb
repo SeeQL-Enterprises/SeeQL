@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A new tool to easily visualise table relations and navigate through your database in an instant.Start now, create your project and invite your team!.">
@@ -17,19 +17,18 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %>
     <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
     <div class="page_content">
-      <%= yield %>
+        <%= yield %>
     </div>
 
     <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-
-  </body>
+</body>
 </html>

@@ -2,11 +2,11 @@
 
 
 <%= simple_form_for(:new_database, url: url, method: :post) do |f| %>
-<%= f.input :name %>
-<%= f.input :host %>
-<%= f.input :db_name %>
-<%= f.input :user %>
-<%= f.input :password, as: :password %>
-<%= f.input :project_id, :input_html => { :value => project.id }, as: :hidden %>
-<%= f.submit "Connect your Database", class: "btn btn-light btn-lg" %>
+    <%= f.input :name, label: "DB Nickname", placeholder: "give your DB a nickname to identify it more easily" %>
+    <%= f.input :host, placeholder: "where is your DB hosted?" %>
+    <%= f.input :db_name, label: "DB Name", placeholder: "the actual name of your DB" %>
+    <%= f.input :user, placeholder: "the username that will connect" %>
+    <%= f.input :password, as: :password, placeholder: "we promise we won't save it!" %>
+    <%= f.input :project_id, :input_html => { :value => project.id }, as: :hidden %>
+    <%= f.submit "Connect your Database", class: "btn btn-light btn-lg" %>
 <% end %>

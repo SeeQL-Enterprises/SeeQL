@@ -4,25 +4,24 @@
     <p>Your Collaborators:</p>
     <div id="collaborators" class="bg collab border">
         <% if @project.collaborators.blank? %>
-        Add Collaborators
+            Add Collaborators
         <% else %>
-        <% @project.collaborators.each do |collaborator| %>
-        <%= render 'collaborators/show', collaborator: collaborator %>
-        <% end %>
+            <% @project.collaborators.each do |collaborator| %>
+                <%= render 'collaborators/show', collaborator: collaborator %>
+            <% end %>
         <% end %>
     </div>
     <% @project.databases.each do |database| %>
-    <%= link_to database_path(database) do %>
-    <p class="btn btn-primary mt-5">View: <%= database.name %></p>
-    <% end %>
+        <%= link_to database_path(database) do %>
+            <p class="btn btn-primary mt-5">View: <%= database.name %></p>
+        <% end %>
     <% end %>
     <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
+    <%= render 'form', new_database: Database.new, project: @project %>
 </div>
 
 <% @project.databases.each do |database| %>
-<%= link_to database_path(database) do %>
-<p class="btn btn-primary mt-5">View: <%= database.name %></p>
+    <%= link_to database_path(database) do %>
+        <p class="btn btn-primary mt-5">View: <%= database.name %></p>
+    <% end %>
 <% end %>
-<% end %>
-<%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
-<%= render 'form', new_database: Database.new, project: @project %>
