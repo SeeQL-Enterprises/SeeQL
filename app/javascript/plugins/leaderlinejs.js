@@ -6,7 +6,7 @@ const allTableNamesStr = allTableNames.forEach((tablediv) => {
 });
 
 let counter = 0;
-let lineAry = []
+let lineAry = [];
 
 allColumns.forEach((column) => {
   const keyWord = column.innerText.toLowerCase().split("_")[0] + "s";
@@ -18,14 +18,18 @@ allColumns.forEach((column) => {
     const table = allTableNames[index];
     let line = undefined;
     setTimeout(() => {
-    line = new LeaderLine(table.parentElement.children[1], column.parentElement);
-    lineAry.push(line)
+      line = new LeaderLine(
+        column.parentElement,
+        table.parentElement.children[1],
+        { size: 2, dash: { animation: true } }
+      );
+      lineAry.push(line);
     }, 1200);
   }
 });
 
 const allLines = () => {
-  return lineAry
-}
+  return lineAry;
+};
 
-export { allLines }
+export { allLines };

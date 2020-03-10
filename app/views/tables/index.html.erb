@@ -1,16 +1,12 @@
 <% db = @database %>
-
-
-<%= rails_social_share_button_tag("Database Schema for the #{db.name} project", url: "https://seeql.dev/", image: "https://seeql.dev/.jpg", desc: "Visualisation and navigation for your database project.") %>
-
-
+<h2 class="project-name"><u><%= @project[0].name.capitalize %></u></h2>
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
   <% db.tables.each do |table| %>
     <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
       <div class="tablecard">
         <div class="top text-center table-name" id="<%= table.name %>">
-          <h3><%= table.name.capitalize %><h3>
+          <h3><%= table.name.downcase %><h3>
         </div>
         <% table.columns.each do |column| %>
           <% counter += 1 %>
@@ -19,24 +15,33 @@
                 <% column.comments.each do |comment| %>
                   <div id="comments" class="column comment-content">
                   <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+<%# please add the connection to delete comment into the trash icon %>
                   </div>
                 <% end %>
               <% end %>
-            <div class="comment-button" data-commentbutton="<%= counter %>"><i class="far fa-comment"></i>
+            <div class="comment-button" data-commentbutton="<%= counter %>"><i class="fas fa-bars"></i></i>
             </div>
             <div class="d-flex justify-content-between">
-              <div class="column-comment column-name"> <%= column.name.capitalize %>
+              <div class="column-comment column-name"> <%= column.name %> 
               </div>
               <div class="column-comment"> <%= column.datatype %>
               </div>
             </div>
           </div>
-          <div class="column comment hidden" data-comment="<%= counter %>" ><%= render 'columns/form', column_proxy: column, table: table %></div>
+
+          <div class="column comment hidden text-center" data-comment="<%= counter %>" >
+            <i class="fas fa-edit"></i>
+<%# please add the edit coloumn link here %>
+            <i class="fa fa-trash" aria-hidden="true"></i>
+<%# please add the delete coloumn here %>
+            <%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
+          </div>
           <% counter += 1 %>
         <% end %>
-        <div class="bottom text-center">
-          <div class="comment-button" data-commentbutton="<%= counter %>">
-            <i class="far fa-comment" aria-hidden="true"></i>
+        <div class="bottom">
+          <div class="comment-button text-center" data-commentbutton="<%= counter %>">
+            <i class="fas fa-bars" aria-hidden="true"></i>
           </div>
           <div class="comment hidden" data-comment="<%= counter %>" data-comment-list="<%= counter %>">
             <% unless table.comments.blank? %>
@@ -47,27 +52,35 @@
               <% end %>
             <% end %>
             <div class="comment-button" data-commentbutton="<%= counter %>">
-              <i class="far fa-comment"></i>
+              <i class="fas fa-bars"></i></i>
             </div>
             <div class="d-flex justify-content-between">
               <div class="column-comment"><%= @column.name %></div>
               <div class="column-comment"><%= @column.datatype %></div>
             </div>
-          </div>
         </div>
       </div>
     </div>
   <% end %>
   <% table = Table.new %>
   <div class="draggable">
-    <div class="tablecard" style="background-color: green; width: 200px">
-      <%= render 'tables/form', table: table%>
+    <div class="tablecard tool-table">
+      <h3>Tools</h3>
+      <div class="comment-toggle">
+        <i class="fas fa-comment"></i>
+        <p>Show/ Hide all comments</p>
+      </div>
+      <div class="new-table-toggle">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        <p>Add a new Table</p>
+        <div class= "add-table">
+          <%= render 'tables/form', table: table%>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 
 <div class="bgimg">
 </div>
-
 
 <#%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
