@@ -9,12 +9,19 @@
   z-index: 100;
 }
 
+.table-name {
+  font-size: 20px;
+}
+.subheader {
+  font-size: 14px;
+  padding: 0 5px 5px 5px;
+}
 .top {
   background-color: rgba($color: #3a506b, $alpha: 0.9);
   padding: 20px 10px 10px 5px;
   border-radius: 10px 10px 0 0;
   border: 1px solid black;
-  box-shadow: inset 0px 1px 0px #2ab7ec
+  box-shadow: inset 0px 1px 0px #2ab7ec;
 }
 .column {
   padding: 0 5px 0 5px;
@@ -35,7 +42,7 @@
 }
 
 .comment-content {
-  background-color: #597ca7;
+  background-color: #52657c;
 }
 
 .bg {
