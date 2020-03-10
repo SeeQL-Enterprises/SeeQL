@@ -8,6 +8,12 @@ class ColumnsController < ApplicationController
     redirect_to database_tables_path(@database)
   end
 
+  def destroy
+    @column = Column.find(params[:column_id])
+    @column.destroy
+    redirect_to database_tables_path(@database)
+  end
+
   private
 
   def column_params
