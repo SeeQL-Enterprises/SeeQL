@@ -6,16 +6,15 @@
 //     $('input[type="checkbox"]').prop('checked', false);
 // });
 
-// selectAllBtn = document.querySelector('#select_all')
-// checkbox = document.querySelector('.form-check-input')
+selectAllBtn = document.querySelector('#select_all')
+checkbox = document.querySelector('.form-check-input')
 
-// selectAllBtn.addEventListener("click", () => {
-//   checkbox.classList.toggle(true);
-//     if (checkbox.checked === true) {
-//     (checkbox.checked === false);
-//   } else {
-//     (checkbox.checked === true);
-//   }});
+selectAllBtn.addEventListener("click", () => {
+  if (checkbox.checked === true) {
+  (checkbox.checked === false);
+} else {
+  (checkbox.checked === true);
+}});
 
 buttons = document.querySelectorAll(".form-check");
 buttons.forEach((button) => {

@@ -4,8 +4,7 @@
   <%= @database.name %>
 
   <%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
-    <%= f.input :tables, collection: @database.tables, as: :check_boxes, label_value: :name, :input_html => { :checked => true }, class: "switchbtn" %>
-    <%= f.label :tables, class: "label" %>
+    <%= f.input :tables, collection: @database.tables, as: :check_boxes, label_value: :name, :input_html => { :checked => true }%>
     <%= f.submit "View this Database", class: "btn btn-primary my-4" %>
   <% end %>
 
