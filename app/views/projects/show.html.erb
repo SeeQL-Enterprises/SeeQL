@@ -17,8 +17,6 @@
         <% end %>
     <% end %>
     <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
-    <button type="button" class="btn btn-light" id: "add-database-button">Add Database</button>
-    <div class="database-form">
+    <button type="button" class="btn btn-light" id="add-database-button">Add Database</button>
         <%= render 'form', new_database: Database.new, project: @project %>
-    </div>
 </div>
