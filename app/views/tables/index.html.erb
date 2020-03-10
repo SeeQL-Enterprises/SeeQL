@@ -13,9 +13,9 @@
           <div class="column text-center" data-comment-list="<%= counter %>">
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
-                  <div id="comments" class="column comment-content">
+                  <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
                   <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-                  <%= link_to comment_path(comment), method: :delete do %>
+                  <%= link_to comment_path(comment), method: :delete, remote: true do %>
                     <i class="fa fa-trash" aria-hidden="true"></i>
                   <% end %>
                   </div>

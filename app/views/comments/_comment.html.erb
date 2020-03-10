@@ -1,0 +1,6 @@
+ <div id="comments" class="column comment-content">
+  <%= comment.content %>
+   <%= link_to column_path(column), method: :delete do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+</div>

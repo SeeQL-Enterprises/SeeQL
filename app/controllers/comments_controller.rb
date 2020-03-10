@@ -8,14 +8,14 @@ class CommentsController < ApplicationController
       @comment.commentable = @table
       if @comment.save
       respond_to do |format|
-        format.html { redirect_to database_path(@table.database) }
+        format.html { redirect_to database_tables_path(@table.database) }
         format.js {
           @data_set = params[:comment_proxy][:data_comment]
         }
         end
       else
         respond_to do |format|
-        format.html { render 'tables/index' }
+        format.html { redirect_to database_tables_path(@table.database) }
         format.js
         end
       end
@@ -24,12 +24,12 @@ class CommentsController < ApplicationController
       @comment.commentable = @column
       if @comment.save
       respond_to do |format|
-        format.html { redirect_to database_path(@table.database) }
+        format.html { redirect_to database_tables_path(@table.database) }
         format.js  { @data_set = params[:comment_proxy][:data_comment] }
         end
       else
       respond_to do |format|
-        format.html { render 'tables/index' }
+        format.html { redirect_to database_tables_path(@table.database) }
         format.js
         end
       end
@@ -43,7 +43,10 @@ class CommentsController < ApplicationController
     @comment.destroy
     @column = Column.find(@comment.commentable.id)
     @database = @column.table.database
-    redirect_to database_tables_path(@database)
+    respond_to do |format|
+      format.js
+      format.html { redirect_to database_tables_path(@database) }
+    end
   end
 
   private
