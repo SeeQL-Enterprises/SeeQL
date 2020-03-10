@@ -1,0 +1,16 @@
+.leader-line {
+  animation: fade-in 0.5s;
+}
+
+.draggable {
+  animation: fade-in 0.7s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
