@@ -13,10 +13,11 @@
           <div class="column text-center" data-comment-list="<%= counter %>">
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
-                  <div id="comments" class="column comment-content">
+                  <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
                   <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-                  <i class="fa fa-trash" aria-hidden="true"></i>
-<%# please add the connection to delete comment into the trash icon %>
+                  <%= link_to comment_path(comment), method: :delete, remote: true do %>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  <% end %>
                   </div>
                 <% end %>
               <% end %>
@@ -32,9 +33,12 @@
           <div class="column comment hidden text-center subheader" data-comment="<%= counter %>" >
             <i class="fas fa-edit"></i>
 <%# please add the edit coloumn link here %>
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <%= link_to column_path(column), method: :delete do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            <% end %>
 <%# please add the delete coloumn here %>
-            <i class="fa fa-plus" aria-hidden="true"></i>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              <%= render 'columns/form', column_proxy: column, table: table %>
             <%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
           </div>
           <% counter += 1 %>

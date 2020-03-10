@@ -1,10 +1,10 @@
 var box = document.querySelector('[data-comment="<%= @data_set%>"]')
 box.querySelector('#comment_proxy_content').value = ""
 
+var commentBox = '<div id="comments" class="column comment-content" data-comment-id="<%= @comment.id %>" ><p class="subheader"><strong><%= @comment.user.name %>: </strong><%= @comment.content %></p><%= link_to comment_path(@comment), method: :delete, remote: true do %><i class="fa fa-trash" aria-hidden="true"></i><% end %></div>'
 var commentList = document.querySelector('[data-comment-list="<%= @data_set%>"]')
-var greenBox = '<div id="comments" class="column comment-content"><%= @comment.content %></div>'
 
-commentList.insertAdjacentHTML('beforeend', greenBox);
+commentList.insertAdjacentHTML('beforeend', commentBox);
 
 
 
