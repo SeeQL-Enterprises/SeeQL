@@ -49,7 +49,6 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
-    bootstrap-toggle-rails (2.2.1.0)
     builder (3.2.4)
     byebug (11.1.1)
     cocoon (1.2.14)
@@ -199,7 +198,6 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
-  bootstrap-toggle-rails
   cocoon
   devise
   dotenv-rails
