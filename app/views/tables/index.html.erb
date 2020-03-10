@@ -1,5 +1,5 @@
 <% db = @database %>
-
+<h2 class="project-name"><u><%= @project[0].name.capitalize %></u></h2>
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
 
@@ -8,7 +8,7 @@
       <div class="tablecard">
 
         <div class="top text-center table-name" id="<%= table.name %>">
-          <h3><%= table.name.capitalize %><h3>
+          <h3><%= table.name %><h3>
         </div>
 
         <% table.columns.each do |column| %>
@@ -26,7 +26,7 @@
             <div class="comment-button" data-commentbutton="<%= counter %>"><i class="far fa-comment"></i>
             </div>
             <div class="d-flex justify-content-between">
-              <div class="column-comment column-name"> <%= column.name.capitalize %> 
+              <div class="column-comment column-name"> <%= column.name %> 
               </div>
               <div class="column-comment"> <%= column.datatype %> 
               </div>
