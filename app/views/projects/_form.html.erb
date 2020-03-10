@@ -2,7 +2,7 @@
 
 
 <%= simple_form_for(:new_database, url: url, method: :post) do |f| %>
-    <div id="database-form">
+    <div class="database-form" id="database-form">
         <%= f.input :name, label: "DB Nickname", placeholder: "give your DB a nickname to identify it more easily" %>
         <%= f.input :host, placeholder: "where is your DB hosted?" %>
         <%= f.input :db_name, label: "DB Name", placeholder: "the actual name of your DB" %>
