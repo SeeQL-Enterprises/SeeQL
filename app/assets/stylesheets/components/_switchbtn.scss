@@ -1,0 +1,121 @@
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+// label {
+//   cursor: pointer;
+//   text-indent: -9999px;
+//   width: 200px;
+//   height: 100px;
+//   background: grey;
+//   display: block;
+//   border-radius: 100px;
+//   position: relative;
+// }
+
+// label:after {
+//   content: '';
+//   position: absolute;
+//   top: 5px;
+//   left: 5px;
+//   width: 90px;
+//   height: 90px;
+//   background: #fff;
+//   border-radius: 90px;
+//   transition: 0.3s;
+// }
+
+// input:checked + label {
+//   background: #bada55;
+// }
+
+// input:checked + label:after {
+//   left: calc(100% - 5px);
+//   transform: translateX(-100%);
+// }
+
+// label:active:after {
+//   width: 130px;
+// }
+
+// // centering
+// body {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 100vh;
+// }
+
+.form-check {
+  position: relative;
+  background-color: rgb(100, 100, 100);
+  border-radius: 30px;
+  height: 20px;
+  width: 45px;
+  border: 1px solid grey;
+}
+.form-check:after {
+  content: "off";
+  font-size: 10px;
+  color: rgb(134, 134, 134);
+  line-height: 18px;
+  text-align: center;
+  position: absolute;
+  top: 0.4px;
+  left: 1px;
+  width: 19px;
+  height: 19px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+  -webkit-box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
+}
+.on:after {
+  content: "on";
+  font-size: 10px;
+  color: black;
+  line-height: 18px;
+  text-align: center;
+  position: absolute;
+  top: 0.4px;
+  left: 25px;
+  width: 19px;
+  height: 19px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+  -webkit-box-shadow: inset -2px 0px 4px 1px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: inset -2px 0px 4px 1px rgba(0, 0, 0, 0.23);
+  box-shadow: inset -2px 0px 4px 1px rgba(0, 0, 0, 0.23);
+  -webkit-animation: rotate-center 0.25s linear both;
+  animation: rotate-center 0.25s linear both;
+}
+.form-check.on {
+  background-color: lightgreen;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
