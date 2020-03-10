@@ -1,20 +1,20 @@
 <% db = @database %>
 
-<%= rails_social_share_button_tag("Database Schema for the #{db.name} project", url: "https://seeql.dev/", image: "https://seeql.dev/.jpg", desc: "Visualisation and navigation for your database project.") %>
-
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
+
   <% db.tables.each do |table| %>
     <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
       <div class="tablecard">
         <div class="top text-center"><h3><%= table.name.capitalize %><h3></div>
+
         <% table.columns.each do |column| %>
           <% counter += 1 %>
           <div class="column text-center" data-comment-list="<%= counter %>" >
               <% unless column.comments.blank? %>
                 <% column.comments.each do |comment| %>
             <div id="comments" class="column comment-content">
-                <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
+              <p><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
             </div>
                 <% end %>
               <% end %>

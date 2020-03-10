@@ -1,4 +1,5 @@
 .navbar-lewagon {
+  height: 80px;
   justify-content: space-between;
   background: rgba($color: #ffffff, $alpha: 0);
 }
@@ -8,11 +9,13 @@
 }
 
 .navbar-lewagon .navbar-brand img {
+  padding: 16px;
   width: 40px;
 }
 * {
   color: #ffffff;
 }
 .nav-link {
+  padding: 16px;
   color: #ffffff !important;
 }

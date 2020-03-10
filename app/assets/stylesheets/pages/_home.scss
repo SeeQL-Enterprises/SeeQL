@@ -5,5 +5,5 @@ body {
 }
 
 .page_content {
-  min-height: 80vh;
+  min-height: calc(100vh - 80px - 185px);
 }
