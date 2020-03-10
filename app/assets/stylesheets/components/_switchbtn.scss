@@ -4,6 +4,10 @@ input[type=checkbox] {
   visibility: hidden;
 }
 
+.was-validated.form-check-input:valid ~.form-check-label,.form-check-input.is-valid ~.form-check-label {
+  color: #5BC0BE;
+}
+
 .col-form-label {
   height: 0;
   width: 0;
@@ -22,6 +26,11 @@ input[type=checkbox] {
   height: 20px;
   width: 45px;
   border: 1px solid grey;
+}
+
+.label_select_all {
+  padding-left: 20px;
+  font-weight: bold;
 }
 
 .form-check:after {
@@ -65,7 +74,7 @@ input[type=checkbox] {
 }
 
 .form-check.on {
-  background-color: lightgreen;
+  background-color: #5BC0BE;
 }
 
 @-webkit-keyframes rotate-center {

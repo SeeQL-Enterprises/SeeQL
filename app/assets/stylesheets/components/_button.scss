@@ -1,7 +1,35 @@
-#add-collaborator-button {
-    margin-top: 20px;
+// #add-collaborator-button {
+//     margin-top: 20px;
+// }
+
+// #add-database-button {
+//     margin-top: 25px;
+// }
+
+.btn-treehouse {
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  background: #5BC0BE;
+  opacity: 0.8;
+  justify-content: center;
 }
 
-#add-database-button {
-    margin-top: 25px;
+.btn-treehouse:hover {
+  opacity: 1;
+}
+
+.btn {
+  color: white;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  background: #5BC0BE;
+  opacity: 0.8;
+  justify-content: center;
+}
+
+.btn:hover {
+  opacity: 1;
 }
