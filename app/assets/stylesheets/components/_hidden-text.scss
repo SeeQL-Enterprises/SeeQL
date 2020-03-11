@@ -1,0 +1,16 @@
+.hidden-text {
+  display: block;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hidden-text:active {
+  display: block;
+  width: 100px;
+  overflow: visible;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
