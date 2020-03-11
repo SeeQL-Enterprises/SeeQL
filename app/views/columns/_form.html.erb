@@ -2,7 +2,7 @@
 
 <%= simple_form_for(:column_proxy, url: columns_path, method: :post, remote: true) do |f| %>
   <%= f.input :name %>
-  <%= f.input :datatype %>
+  <%= f.input :datatype, collection: Table::DATATYPES %>
   <%= f.input :table_id, :input_html => { :value => table.id }, as: :hidden %>
   <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
   <%= f.input :counter, :input_html => { :value => counter }, as: :hidden %>
