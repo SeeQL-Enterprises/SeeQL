@@ -4,9 +4,9 @@ const databaseForm = document.getElementById("database-form");
 if (addDatabaseButton) {
     addDatabaseButton.addEventListener("click", () => {
 
-    // Toggle SCSS classes to turn from treehouse to gray
-    addDatabaseButton.classList.toggle("btn-treehouse");
-    addDatabaseButton.classList.toggle("btn-cancel");
+        // Toggle SCSS classes to turn from treehouse to gray
+        addDatabaseButton.classList.toggle("btn-treehouse");
+        addDatabaseButton.classList.toggle("btn-cancel");
 
         // Check inner text and change accordingly
         if (addDatabaseButton.innerText === "Add Database") {
