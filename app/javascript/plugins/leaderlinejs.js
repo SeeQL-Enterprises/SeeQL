@@ -18,10 +18,11 @@ if (allColumns) {
             const index = tableNames.findIndex(getIndex);
             const table = allTableNames[index];
             let line = undefined;
+            console.log(table.parentElement);
             setTimeout(() => {
                 line = new LeaderLine(
                     column.parentElement,
-                    table.parentElement.children[1],
+                    table.parentElement.children[1].children[0],
                     { size: 2, dash: { animation: true } }
                 );
                 lineAry.push(line);
