@@ -4,6 +4,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: right;
 }
 
 .hidden-text:active {
@@ -12,5 +13,6 @@
   overflow: visible;
   white-space: nowrap;
   text-overflow: ellipsis;
+  text-align: right;
 }
 
