@@ -1,0 +1,7 @@
+document.querySelector('#column_proxy_name').value = "";
+document.querySelector('#column_proxy_datatype').value = "";
+
+var columnBox = `<%= render "column", counter: @counter, column: @column, table: @table %>`;
+var commentList = document.querySelector('[data-table-id="<%= @table.id %>"]');
+
+commentList.insertAdjacentHTML('beforeend', columnBox);
