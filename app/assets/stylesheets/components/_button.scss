@@ -7,11 +7,12 @@
   background: #5BC0BE;
   opacity: 0.8;
   justify-content: center;
+
+  &:hover {
+      opacity: 1;
+  }
 }
 
-.btn-treehouse:hover {
-  opacity: 1;
-}
 
 .btn {
   color: white;
@@ -21,11 +22,12 @@
   background: #5BC0BE;
   opacity: 0.8;
   justify-content: center;
+
+  &:hover {
+      opacity: 1;
+  }
 }
 
-.btn:hover {
-  opacity: 1;
-}
 
 .btn-cancel {
   margin-top: 20px;
@@ -36,10 +38,10 @@
   font-weight: bold;
   opacity: 0.8;
   justify-content: center;
-}
 
-.btn-cancel:hover {
-  opacity: 1;
+  &:hover {
+      opacity: 1;
+  }
 }
 
 #add-table-button {
