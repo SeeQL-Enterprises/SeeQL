@@ -32,7 +32,7 @@
           <div class="d-flex justify-content-between">
             <div class="column-comment column-name subheader"> <%= column.name %>
             </div>
-            <div class="column-comment subheader"> <%= column.datatype %>
+            <div class="column-comment subheader"> <%= column.datatype.to_s.split(" ")[0] %>
             </div>
           </div>
         </div>
