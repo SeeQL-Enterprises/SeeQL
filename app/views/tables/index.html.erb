@@ -52,16 +52,19 @@
             </div>
           </div>
         </div>
-        <div class="column comment hidden text-center subheader" data-comment="<%= counter %>" >
-          <i class="fas fa-edit"></i>
-          <%# please add the edit coloumn link here %>
+        <div class="column comment hidden subheader" data-comment="<%= counter %>" >
+          <div class="text-center mt-3">
+          <p><strong>Edit</strong> this column</p>
+          </div>
+          <div class="text-center">
           <%= link_to column_path(column), method: :delete, remote: true do %>
-          <i class="fa fa-trash" aria-hidden="true"></i>
+          <p><strong>Delete</strong> this column</p>
           <% end %>
-          <%# please add the delete coloumn here %>
-            <button type="button" class="plus-button text-center" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
-              <i class="fa fa-plus" aria-hidden="true"></i>
+          </div>
+            <button type="button" class="plus-button w-100" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
+              <p><strong>Add a comment</strong> </p>
             </button>
+         
         </div>
         <% counter += 1 %>
         <% end %>
