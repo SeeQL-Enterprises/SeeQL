@@ -1,20 +1,37 @@
 <% db = @database %>
-<h2 class="project-name"><u><%= @project[0].name.capitalize %></u></h2>
+<div class="project-name">
+<h2 ><%= db.name.capitalize %></h2>
+</div>
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
   <% db.tables.each do |table| %>
+    <!-- Modal -->
+    <div class="modal fade" id="create-column-<%= table.id %>" tabindex="-1" role="dialog" aria-labelledby="createColumn" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add a Column</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= render 'columns/form', column_proxy: Column.new, table: table, counter: counter %>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
     <div class="tablecard">
       <div class="top text-center table-name" id="<%= table.name %>">
         <h3 class="table-name"><%= table.name.downcase %></h3>
-        <div class="hidden">
-        <%= render 'columns/form', column_proxy: Column.new, table: table, counter: counter %>
-        </div>
+      
       </div>
       <div class="tablecard-columns" data-table-id="<%= table.id %>">
         <% table.columns.each do |column| %>
         <% counter += 1 %>
-        <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= column.id %>">
+        <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>">
+        <div class="comments-list" data-column-id="<%= column.id %>">
           <% unless column.comments.blank? %>
           <% column.comments.each do |comment| %>
           <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
@@ -25,12 +42,13 @@
           </div>
           <% end %>
           <% end %>
-          <div class="comment-button" data-commentbutton="<%= counter %>"><i class="fas fa-bars"></i></i>
+          </div>
+          <div class="comment-button text-right" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i></i>
           </div>
           <div class="d-flex justify-content-between">
             <div class="column-comment column-name subheader"> <%= column.name %>
             </div>
-            <div class="column-comment subheader"> <%= column.datatype %>
+            <div class="column-comment subheader"> <%= column.datatype.to_s.split(" ")[0] %>
             </div>
           </div>
         </div>
@@ -41,14 +59,19 @@
           <i class="fa fa-trash" aria-hidden="true"></i>
           <% end %>
           <%# please add the delete coloumn here %>
-          <i class="fa fa-plus" aria-hidden="true"></i>
-          <%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
+            <button type="button" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
         </div>
         <% counter += 1 %>
         <% end %>
       </div>
     </div>
-    <div class="bottom">
+    <div class="bottom text-center">
+      <button id="btn-for-add-table" type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          
+        </button>
     </div>
   </div>
   <% end %>
@@ -56,7 +79,7 @@
   <div class="draggable">
     <div class="tablecard tool-table text-center">
       <h3 class="table-name">Tools</h3>
-      <div class="comment-toggle subheader">
+      <div class="comment-toggle subheader text-left">
         <i class="fas fa-comment"></i>
         <p class="subheader">Show/ Hide all comments</p>
       </div>
@@ -95,3 +118,28 @@
       </div>
     </div>
   </div>
+
+<% counter = 1 %>
+<% db.tables.each do |table| %>
+  <% counter += 1 %>
+  <% table.columns.each do |column| %>
+  <% counter += 1 %>
+    <!-- Modal -->
+    <div class="modal fade" id="create-comment-<%= table.id %>-<%= column.id %>" tabindex="-1" role="dialog" aria-labelledby="createColumn" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add a Column</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= render 'comments/column_form', database: @database, column: column, comment: Comment.new, counter: counter, table: table %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% counter += 1 %>
+  <% end %>
+<% end %>
