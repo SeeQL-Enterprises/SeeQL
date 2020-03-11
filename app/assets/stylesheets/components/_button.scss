@@ -1,3 +1,17 @@
+.btn {
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    background: #5BC0BE;
+    opacity: 0.8;
+    justify-content: center;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
 .btn-treehouse {
   margin-top: 20px;
   color: white;
@@ -12,22 +26,6 @@
       opacity: 1;
   }
 }
-
-
-.btn {
-  color: white;
-  padding: 15px 25px;
-  border-radius: 8px;
-  font-weight: bold;
-  background: #5BC0BE;
-  opacity: 0.8;
-  justify-content: center;
-
-  &:hover {
-      opacity: 1;
-  }
-}
-
 
 .btn-cancel {
   margin-top: 20px;
