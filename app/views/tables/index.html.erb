@@ -59,7 +59,7 @@
           <i class="fa fa-trash" aria-hidden="true"></i>
           <% end %>
           <%# please add the delete coloumn here %>
-            <button type="button" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
+            <button type="button" class="plus-button text-center" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
         </div>
@@ -68,7 +68,7 @@
       </div>
     </div>
     <div class="bottom text-center">
-      <button id="btn-for-add-table" type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
+      <button id="btn-for-add-table" class="plus-button text-center"  type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
     </div>
