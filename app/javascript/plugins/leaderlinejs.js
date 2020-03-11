@@ -21,7 +21,7 @@ if (allColumns) {
             setTimeout(() => {
                 line = new LeaderLine(
                     column.parentElement,
-                    table.parentElement.children[1],
+                    table.parentElement.children[1].children[0],
                     { size: 2, dash: { animation: true } }
                 );
                 lineAry.push(line);
