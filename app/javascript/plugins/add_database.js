@@ -4,8 +4,8 @@ const databaseForm = document.getElementById("database-form");
 addDatabaseButton.addEventListener("click", () => {
 
     // Toggle Bootstrap classes to turn from white to red
-    addDatabaseButton.classList.toggle("btn-light");
-    addDatabaseButton.classList.toggle("btn-danger");
+    addDatabaseButton.classList.toggle("btn-treehouse");
+    addDatabaseButton.classList.toggle("btn-cancel");
 
     // Check inner text and change accordingly
     if (addDatabaseButton.innerText === "Add Database") {
