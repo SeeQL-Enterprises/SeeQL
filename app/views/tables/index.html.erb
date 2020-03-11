@@ -24,7 +24,7 @@
   <% if table.display %>
   <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
     <div class="tablecard">
-      <div class="top text-center table-name" id="<%= table.name %>">
+      <div class="top text-center table-name <%= 'edit' if table.edit %>" id="<%= table.name %>">
         <h3 class="table-name"><%= table.name.downcase %></h3>
       </div>
       <div class="tablecard-columns" data-table-id="<%= table.id %>">
@@ -70,7 +70,7 @@
         <% end %>
       </div>
     </div>
-    <div class="bottom text-center">
+    <div class="bottom text-center <%= 'edit' if table.edit %>">
       <button id="btn-for-add-table" class="plus-button text-center"  type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
@@ -108,7 +108,7 @@
         </div>
         <div class="modal-body">
           <div class= "add-table">
-            <%= render 'tables/form', table: table%>
+            <%= render 'tables/form', table: Table.new %>
           </div>
         </div>
         <div class="modal-footer">
