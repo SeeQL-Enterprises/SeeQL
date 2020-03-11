@@ -4,7 +4,6 @@
 </div>
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
-
   <% db.tables.each do |table| %>
     <!-- Modal -->
     <div class="modal fade" id="create-column-<%= table.id %>" tabindex="-1" role="dialog" aria-labelledby="createColumn" aria-hidden="true">
@@ -27,7 +26,6 @@
     <div class="tablecard">
       <div class="top text-center table-name" id="<%= table.name %>">
         <h3 class="table-name"><%= table.name.downcase %></h3>
-      
       </div>
       <div class="tablecard-columns" data-table-id="<%= table.id %>">
         <% table.columns.each do |column| %>
@@ -47,37 +45,13 @@
           </div>
           <div class="comment-button text-right" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i></i>
           </div>
-          <div class="tablecard-columns" data-table-id="<%= table.id %>">
-            <% table.columns.each do |column| %>
-            <% counter += 1 %>
-            <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>">
-              <% unless column.comments.blank? %>
-              <% column.comments.each do |comment| %>
-              <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
-                <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-                <%= link_to comment_path(comment), method: :delete, remote: true do %>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-                <% end %>
-              </div>
-              <% end %>
-              <% end %>
-              <div class="comment-button" data-commentbutton="<%= counter %>"><i class="fas fa-bars"></i>
-              </div>
-              <div class="d-flex justify-content-between">
-                <div class="column-comment column-name subheader"> <%= column.name %>
-                </div>
-                <div class="column-comment subheader"> <%= column.datatype %>
-                </div>
-              </div>
+          <div class="d-flex justify-content-between">
+            <div class="column-comment column-name subheader"> <%= column.name %>
             </div>
-
             <div class="column-comment subheader"> <%= column.datatype.to_s.split(" ")[0] %>
             </div>
-            <% counter += 1 %>
-            <% end %>
           </div>
         </div>
-
         <div class="column comment hidden text-center subheader" data-comment="<%= counter %>" >
           <i class="fas fa-edit"></i>
           <%# please add the edit coloumn link here %>
@@ -89,18 +63,18 @@
               <i class="fa fa-plus" aria-hidden="true"></i>
             </button>
         </div>
+        <% counter += 1 %>
+        <% end %>
       </div>
-    <% end %>
     </div>
     <div class="bottom text-center">
       <button id="btn-for-add-table" type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
           <i class="fa fa-plus" aria-hidden="true"></i>
-          
         </button>
     </div>
   </div>
   <% end %>
-
+  <% end %>
   <% table = Table.new %>
   <div class="draggable">
     <div class="tablecard tool-table text-center">
@@ -119,9 +93,6 @@
   </div>
   <div class="bgimg">
   </div>
-
-
-
   <!-- Modal for add table -->
   <div class="modal fade" id="modalForTable" tabindex="-1" role="dialog" aria-labelledby="tableModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -144,7 +115,6 @@
       </div>
     </div>
   </div>
-
 <% counter = 1 %>
 <% db.tables.each do |table| %>
   <% counter += 1 %>
