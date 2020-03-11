@@ -1,3 +1,3 @@
-RailsSocialShareButton.configure do |config|
+SocialShareButton.configure do |config|
   config.allow_sites = %w(facebook twitter reddit linkedin hacker_news email)
 end
