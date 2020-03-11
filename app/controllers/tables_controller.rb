@@ -26,7 +26,7 @@ class TablesController < ApplicationController
 
   private
   def table_params
-    params.require(:table).permit(:name, columns_attributes: Column.attribute_names.map(&:to_sym).push(:_destroy))
+    params.require(:table).permit(:name, :edit, :display, columns_attributes: Column.attribute_names.map(&:to_sym).push(:_destroy))
   end
 
 end

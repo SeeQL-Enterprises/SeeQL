@@ -1,5 +1,7 @@
 <%= simple_form_for [@database, @table] do |f| %>
     <%= f.input :name %>
+    <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
+    <%= f.input :display, :input_html => { :value => true }, as: :hidden %>
     <h3>Columns</h3>
     <div id='columns'>
         <%= f.fields_for :columns do |builder| %>
