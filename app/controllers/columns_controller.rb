@@ -5,7 +5,14 @@ class ColumnsController < ApplicationController
     authorize @column
     @database = @column.table.database
     @column.save!
-    redirect_to database_tables_path(@database)
+    respond_to do |format|
+      format.js {
+        @counter = params[:column_proxy][:counter]
+        @table = @column.table
+        }
+      format.html { redirect_to database_tables_path(@database) }
+    end
+
   end
 
   def destroy
