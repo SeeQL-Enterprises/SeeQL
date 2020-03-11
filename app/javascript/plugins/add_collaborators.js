@@ -4,8 +4,8 @@ const collaboratorForm = document.getElementById("collaborator-form");
 addCollaboratorButton.addEventListener("click", () => {
 
     // Toggle Bootstrap classes to turn from white to red
-    addCollaboratorButton.classList.toggle("btn-light");
-    addCollaboratorButton.classList.toggle("btn-danger");
+    addCollaboratorButton.classList.toggle("btn-treehouse");
+    addCollaboratorButton.classList.toggle("btn-cancel");
 
     // Check inner text and change accordingly
     if (addCollaboratorButton.innerText === "Choose Collaborators") {
