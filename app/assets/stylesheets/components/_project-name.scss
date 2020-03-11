@@ -1,6 +1,18 @@
 .project-name {
   position: absolute;
+  text-align: center;
   left: 50%;
+  height: 75px;
   transform: translate(-50%);
-  margin-top: -60px;
+  margin-top: -90px;
+  background-color: rgba($color: #5bc0be, $alpha: 0.5);
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  h2 {
+    padding: 0;
+    margin: 0;
+  }
 }
