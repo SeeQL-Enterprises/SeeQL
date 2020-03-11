@@ -1,7 +1,7 @@
 <div class="container w-50" style="position: absolute; top: 100px; left: 150px">
   <%= link_to " < Go to project selection", projects_path, style: "display: block; color: white; margin-bottom: 10px;"%>
-  <h2 class="mb-5">Share your <%= @project.name %> project with your team by adding collaborators</h2>
-  <!-- <p>Your Collaborators:</p> -->
+  <h2 class="mb-5">Connect your <%= @project.name %> project to a database and invite collaborators</h2>
+
   <div id="collaborators" class="bg collab border">
       <% if @project.collaborators.blank? %>
 
@@ -18,11 +18,13 @@
   <% end %>
 
   <div class="d-flex justify-content-between">
-    <div class="add-collaborators">
+    <div class="add-collaborators" style="position: relative">
+      <h2 style="position: absolute; top: -20px; left: 100px"><i class="fas fa-user-plus"></i></h2>
       <button type="button" class="btn-treehouse" id="add-collaborator-button">Choose Collaborators</button>
       <%= render 'collaborators/form', project: @project, collaborator: @collaborator %>
     </div>
-    <div class="add-database">
+    <div class="add-database" style="position: relative">
+      <h2 style="position: absolute; top: -20px; left: 72px"><i class="fas fa-database"></i></h2>
       <button type="button" class="btn-treehouse" id="add-database-button">Add Database</button>
       <%= render 'form', new_database: Database.new, project: @project %>
     </div>
