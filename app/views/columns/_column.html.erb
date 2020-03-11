@@ -1,4 +1,4 @@
-<div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>">
+<div class="column text-center <%= 'edit' if column.edit %>" data-column-id="<%= @comment.id %>">
 <div class="comments-list" data-column-id="<%= column.id %>">
   <% unless column.comments.blank? %>
   <% column.comments.each do |comment| %>
