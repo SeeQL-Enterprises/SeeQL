@@ -28,3 +28,14 @@
 .footer-links a:hover {
   opacity: 1;
 }
+
+$size: 24px;
+
+.rails-social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    padding: 22px;
+  }
+}
