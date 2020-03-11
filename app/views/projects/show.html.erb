@@ -1,6 +1,12 @@
 <div class="container w-50" style="position: absolute; top: 100px; left: 150px">
   <%= link_to " < Go to project selection", projects_path, style: "display: block; color: white; margin-bottom: 10px;"%>
-  <h2 class="mb-5">Connect your <%= @project.name %> project to a database and invite collaborators</h2>
+  <h2 class="mb-3">Connect your <%= @project.name %> project to a database and invite collaborators</h2>
+
+  <% @project.databases.each do |database| %>
+    <%= link_to database_path(database) do %>
+      <button class="btn-treehouse" style="margin-bottom: 30px">View: <%= database.name %></button>
+    <% end %>
+  <% end %>
 
   <div id="collaborators" class="bg collab border">
       <% if @project.collaborators.blank? %>
@@ -11,11 +17,6 @@
           <% end %>
       <% end %>
   </div>
-  <% @project.databases.each do |database| %>
-      <%= link_to database_path(database) do %>
-          <button class="btn-treehouse" style="margin-top: 20px">View: <%= database.name %></button>
-      <% end %>
-  <% end %>
 
   <div class="d-flex justify-content-between">
     <div class="add-collaborators" style="position: relative">
