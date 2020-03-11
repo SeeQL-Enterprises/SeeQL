@@ -27,8 +27,8 @@ class ColumnsController < ApplicationController
       end
     else
       respond_to do |format|
-      format.js
-      format.html { redirect_to database_tables_path(@database) }
+        format.js
+        format.html { redirect_to database_tables_path(@database) }
       end
     end
   end
