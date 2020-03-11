@@ -37,7 +37,7 @@
           <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
             <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
             <%= link_to comment_path(comment), method: :delete, remote: true do %>
-            <i class="fa fa-trash" aria-hidden="true"></i>
+            <i class="fas fa-times" aria-hidden="true"></i>
             <% end %>
           </div>
           <% end %>
@@ -64,7 +64,7 @@
             <button type="button" class="plus-button w-100" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
               <p><strong>Add a comment</strong> </p>
             </button>
-         
+
         </div>
         <% counter += 1 %>
         <% end %>

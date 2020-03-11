@@ -5,7 +5,7 @@
   <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
     <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
     <%= link_to comment_path(comment), method: :delete, remote: true do %>
-    <i class="fa fa-trash" aria-hidden="true"></i>
+    <i class="fas fa-times" aria-hidden="true"></i>
     <% end %>
   </div>
   <% end %>
@@ -19,4 +19,17 @@
     <div class="column-comment subheader"> <span class="hidden-text"><%= column.datatype %></span>
     </div>
   </div>
+</div>
+<div class="column comment hidden subheader" data-comment="<%= counter %>" >
+  <div class="text-center mt-3">
+  <p><strong>Edit</strong> this column</p>
+  </div>
+  <div class="text-center">
+  <%= link_to column_path(column), method: :delete, remote: true do %>
+  <p><strong>Delete</strong> this column</p>
+  <% end %>
+  </div>
+    <button type="button" class="plus-button w-100" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
+      <p><strong>Add a comment</strong> </p>
+    </button>
 </div>
