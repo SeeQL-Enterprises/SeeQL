@@ -3,9 +3,8 @@
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
 
-  <% db.tables do |table| %>
-    <% if db.table.display %>
-      <% db.tables.each do |table| %>
+    <% db.tables.each do |table| %>
+      <% if table.display %>
       <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
         <div class="tablecard">
           <div class="top text-center table-name" id="<%= table.name %>">
@@ -55,7 +54,6 @@
         </div>
       </div>
     <% end %>
-  <% end %>
   <% end %>
 
   <% table = Table.new %>
