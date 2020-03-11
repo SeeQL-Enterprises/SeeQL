@@ -1,5 +1,4 @@
 selectAllBtn = document.querySelector('#select_all');
-console.log(selectAllBtn)
 const btnText = document.querySelector('#select_all_text');
 
 buttons = document.querySelectorAll(".form-check");
