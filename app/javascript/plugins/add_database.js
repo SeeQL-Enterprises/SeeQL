@@ -4,7 +4,7 @@ const databaseForm = document.getElementById("database-form");
 if (addDatabaseButton) {
     addDatabaseButton.addEventListener("click", () => {
 
-    // Toggle Bootstrap classes to turn from white to red
+    // Toggle SCSS classes to turn from treehouse to gray
     addDatabaseButton.classList.toggle("btn-treehouse");
     addDatabaseButton.classList.toggle("btn-cancel");
 
