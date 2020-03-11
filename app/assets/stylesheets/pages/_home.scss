@@ -1,7 +1,9 @@
 // Specific CSS for your home-page
 body {
   background-image: image-url("HomeBackground.png");
-  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: #364f6b;
 }
 
 .page_content {
