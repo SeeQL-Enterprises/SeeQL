@@ -21,9 +21,15 @@ class ColumnsController < ApplicationController
     authorize @column
     if @column.edit
       @column.destroy
-      redirect_to database_tables_path(@database)
+      respond_to do |format|
+        format.js
+        format.html { redirect_to database_tables_path(@database) }
+      end
     else
-      redirect_to database_tables_path(@database), flash: { error: "You can only delete columns that are not in your DB" }
+      respond_to do |format|
+      format.js
+      format.html { redirect_to database_tables_path(@database) }
+      end
     end
   end
 

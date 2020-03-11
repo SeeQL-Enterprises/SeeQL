@@ -6,4 +6,6 @@ class Table < ApplicationRecord
   accepts_nested_attributes_for :columns, allow_destroy: true
 
   scope :displayed, -> { where(display: true) }
+
+  DATATYPES = ["serial", "string", "integer", "bigint", "foreign key"]
 end

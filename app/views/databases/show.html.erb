@@ -3,15 +3,14 @@
 
 
     <div class="d-flex align-items-center">
-      <button type="button" id='select_all' class="form-check">
-      </button>
-      <span class="label_select_all" id="select_all_text">Select all</span>
+        <button type="button" id='select_all' class="form-check"></button>
+        <span class="label_select_all" id="select_all_text">Select all</span>
     </div>
 
-  <%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
-    <%= f.input :tables, collection: @database.tables, as: :check_boxes, label_value: :name, input_html: { checked: false, class: "on" }%>
-    <%= f.submit "View Schema", class: "btn-treehouse" %>
-  <% end %>
+    <%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
+        <%= f.input :tables, collection: @database.tables, as: :check_boxes, label_value: :name, input_html: { checked: false, class: "on" }%>
+        <%= f.submit "View Schema", class: "btn-treehouse" %>
+    <% end %>
 
 </div>
 

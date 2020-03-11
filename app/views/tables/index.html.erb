@@ -55,7 +55,7 @@
         <div class="column comment hidden text-center subheader" data-comment="<%= counter %>" >
           <i class="fas fa-edit"></i>
           <%# please add the edit coloumn link here %>
-          <%= link_to column_path(column), method: :delete do %>
+          <%= link_to column_path(column), method: :delete, remote: true do %>
           <i class="fa fa-trash" aria-hidden="true"></i>
           <% end %>
           <%# please add the delete coloumn here %>
@@ -108,7 +108,7 @@
         </div>
         <div class="modal-body">
           <div class= "add-table">
-            <%= render 'tables/form', table: table%> </>
+            <%= render 'tables/form', table: table%>
           </div>
         </div>
         <div class="modal-footer">
