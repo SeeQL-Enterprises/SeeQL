@@ -30,8 +30,8 @@
       <div class="tablecard-columns" data-table-id="<%= table.id %>">
         <% table.columns.each do |column| %>
         <% counter += 1 %>
-        <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>">
-        <div class="comments-list" data-column-id="<%= column.id %>">
+        <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>" data-column-id="<%= column.id %>">
+        <div class="comments-list">
           <% unless column.comments.blank? %>
           <% column.comments.each do |comment| %>
           <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
