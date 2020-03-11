@@ -2,56 +2,62 @@
 <h2 class="project-name"><u><%= @project[0].name.capitalize %></u></h2>
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
-  <% db.tables.each do |table| %>
-  <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
-    <div class="tablecard">
-      <div class="top text-center table-name" id="<%= table.name %>">
-        <h3 class="table-name"><%= table.name.downcase %></h3>
-        <div class="hidden">
-        <%= render 'columns/form', column_proxy: Column.new, table: table, counter: counter %>
-        </div>
-      </div>
-      <div class="tablecard-columns" data-table-id="<%= table.id %>">
-        <% table.columns.each do |column| %>
-        <% counter += 1 %>
-        <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>">
-          <% unless column.comments.blank? %>
-          <% column.comments.each do |comment| %>
-          <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
-            <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-            <%= link_to comment_path(comment), method: :delete, remote: true do %>
-            <i class="fa fa-trash" aria-hidden="true"></i>
+
+  <% db.tables do |table| %>
+    <% if db.table.display %>
+      <% db.tables.each do |table| %>
+      <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
+        <div class="tablecard">
+          <div class="top text-center table-name" id="<%= table.name %>">
+            <h3 class="table-name"><%= table.name.downcase %></h3>
+            <div class="hidden">
+            <%= render 'columns/form', column_proxy: Column.new, table: table, counter: counter %>
+            </div>
+          </div>
+          <div class="tablecard-columns" data-table-id="<%= table.id %>">
+            <% table.columns.each do |column| %>
+            <% counter += 1 %>
+            <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>">
+              <% unless column.comments.blank? %>
+              <% column.comments.each do |comment| %>
+              <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
+                <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
+                <%= link_to comment_path(comment), method: :delete, remote: true do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+                <% end %>
+              </div>
+              <% end %>
+              <% end %>
+              <div class="comment-button" data-commentbutton="<%= counter %>"><i class="fas fa-bars"></i>
+              </div>
+              <div class="d-flex justify-content-between">
+                <div class="column-comment column-name subheader"> <%= column.name %>
+                </div>
+                <div class="column-comment subheader"> <%= column.datatype %>
+                </div>
+              </div>
+            </div>
+            <div class="column comment hidden text-center subheader" data-comment="<%= counter %>" >
+              <i class="fas fa-edit"></i>
+              <%# please add the edit coloumn link here %>
+              <%= link_to column_path(column), method: :delete do %>
+              <i class="fa fa-trash" aria-hidden="true"></i>
+              <% end %>
+              <%# please add the delete coloumn here %>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              <%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
+            </div>
+            <% counter += 1 %>
             <% end %>
           </div>
-          <% end %>
-          <% end %>
-          <div class="comment-button" data-commentbutton="<%= counter %>"><i class="fas fa-bars"></i>
-          </div>
-          <div class="d-flex justify-content-between">
-            <div class="column-comment column-name subheader"> <%= column.name %>
-            </div>
-            <div class="column-comment subheader"> <%= column.datatype %>
-            </div>
-          </div>
         </div>
-        <div class="column comment hidden text-center subheader" data-comment="<%= counter %>" >
-          <i class="fas fa-edit"></i>
-          <%# please add the edit coloumn link here %>
-          <%= link_to column_path(column), method: :delete do %>
-          <i class="fa fa-trash" aria-hidden="true"></i>
-          <% end %>
-          <%# please add the delete coloumn here %>
-          <i class="fa fa-plus" aria-hidden="true"></i>
-          <%= render 'comments/column_form', database: @database, column: column, comment: @comment, counter: counter, table: table %>
+        <div class="bottom">
         </div>
-        <% counter += 1 %>
-        <% end %>
       </div>
-    </div>
-    <div class="bottom">
-    </div>
-  </div>
+    <% end %>
   <% end %>
+  <% end %>
+
   <% table = Table.new %>
   <div class="draggable">
     <div class="tablecard tool-table text-center">
