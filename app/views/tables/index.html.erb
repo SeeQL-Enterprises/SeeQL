@@ -7,7 +7,9 @@
     <div class="tablecard">
       <div class="top text-center table-name" id="<%= table.name %>">
         <h3 class="table-name"><%= table.name.downcase %></h3>
+        <div class="hidden">
         <%= render 'columns/form', column_proxy: Column.new, table: table, counter: counter %>
+        </div>
       </div>
       <div class="tablecard-columns" data-table-id="<%= table.id %>">
         <% table.columns.each do |column| %>
@@ -45,6 +47,8 @@
         <% counter += 1 %>
         <% end %>
       </div>
+    </div>
+    <div class="bottom">
     </div>
   </div>
   <% end %>
