@@ -1,12 +1,16 @@
+const viewDatabaseButton = document.getElementById("view-database-button");
 const addDatabaseButton = document.getElementById("add-database-button");
 const databaseForm = document.getElementById("database-form");
 
 if (addDatabaseButton) {
     addDatabaseButton.addEventListener("click", () => {
 
-    // Toggle Bootstrap classes to turn from white to red
-    addDatabaseButton.classList.toggle("btn-treehouse");
-    addDatabaseButton.classList.toggle("btn-cancel");
+        //Check present classes
+        if (!viewDatabaseButton) {
+            // Toggle SCSS classes to turn from treehouse to gray
+            addDatabaseButton.classList.toggle("btn-treehouse");
+            addDatabaseButton.classList.toggle("btn-cancel");
+        }
 
         // Check inner text and change accordingly
         if (addDatabaseButton.innerText === "Add Database") {
