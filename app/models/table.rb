@@ -13,6 +13,6 @@ class Table < ApplicationRecord
   private
 
   def create_id_column
-    Column.create(name: 'id', datatype: 'bigint', edit: true, table: self)
+    Column.create(name: 'id', datatype: 'bigint', edit: true, table: self) if self.edit
   end
 end
