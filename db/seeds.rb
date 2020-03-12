@@ -20,7 +20,7 @@ user = User.create!({
 puts "Generating project..."
 
 project = Project.new({
-  name: "test"
+  name: "Clone-Nando's"
 })
 
 project.user = user
@@ -43,7 +43,7 @@ emails.each do |email|
   Collaborator.create!(user: other_user, project: project)
 end
 
-database = Database.create!(name: "Yelp", project: project)
+database = Database.create!(name: "Nando's", project: project)
 
 table = Table.create!(database: database, name: "Restaurants")
 
