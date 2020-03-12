@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="A new tool to easily visualise table relations and navigate through your database in an instant.Start now, create your project and invite your team!.">
-    <meta property="og:title" content="Visualisation and navigation for your database project.">
-    <meta property="og:image" content="../../assets/images/SeeQL-logo.png">
 
-    <title>SeeQL - A new way to see databases</title>
-
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
     <%= favicon_link_tag 'favicon.png' %>
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:description" content="Visualisation and navigation for your database project." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
