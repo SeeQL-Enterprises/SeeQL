@@ -80,18 +80,29 @@
   <% end %>
   <% end %>
   <% table = Table.new %>
+
   <div class="draggable">
     <div class="tablecard tool-table text-center">
       <h3 class="table-name">Tools</h3>
-      <div class="comment-toggle subheader text-left">
-        <i class="fas fa-comment"></i>
-        <p class="subheader">Show/ Hide all comments</p>
-      </div>
-      <div class="new-table-toggle subheader">
-        <button id="add-table-button" type="button" data-toggle="modal" data-target="#modalForTable">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-          <p>Add a new Table</p>
-        </button>
+      <div class="container">
+        <div class="row">
+          <div class="new-table-toggle m-2">
+            <button id="add-table-button" type="button" data-toggle="modal" data-target="#modalForTable">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>  
+          <div class="comment-toggle m-2">
+            <i class="fas fa-comment"></i>
+          </div>
+        </div>    
+        <div class="row">
+          <i class="fas fa-route m-2"></i>
+          <i class="fas fa-share m-2"></i>
+        </div>
+        <div class="row">
+          <i class="fas fa-mouse-pointer m-2"></i>
+          <i class="fas fa-question-circle m-2"></i>
+        </div>
       </div>
     </div>
   </div>
