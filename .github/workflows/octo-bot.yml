@@ -1,4 +1,4 @@
- 
+
 name: OctoBot Notification
 on:
   pull_request:
@@ -17,3 +17,4 @@ jobs:
           severity: info
           color: '#ff00aa'
           webhookUrl: ${{ secrets.OCTO_BOT }}
+          channel_id: "687571249337073676"
