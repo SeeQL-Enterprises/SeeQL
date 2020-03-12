@@ -1,10 +1,9 @@
 <% url = "/databases/#{database.id}/tables/#{table.id}/comments" %>
-
-<div>
     <%= simple_form_for(:comment_proxy, url: url, method: :post, remote: true) do |f| %>
         <%= f.input :content %>
         <%= f.input :data_comment,:input_html => { :value => counter }, as: :hidden %>
         <%= f.input :table_id,:input_html => { :value => table.id }, as: :hidden %>
-        <%= f.submit "Add comment" %>
+        <label class="btn btn-treehouse" style="color: white !important">Add comment
+          <span style="display: none"><%= f.submit 'Add comment' %></span>
+        </label>
     <% end %>
-</div>
