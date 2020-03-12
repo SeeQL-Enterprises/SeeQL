@@ -64,17 +64,20 @@ function restorePositions() {
   items.forEach((target) => {
     const id = target.getAttribute("data-id");
 
+    let x = 0;
+    let y = 0;
+    
     if (currentData[id]) {
       const positions = currentData[id].split(":");
-      const x = positions[0];
-      const y = positions[1];
-
-      target.style.webkitTransform = target.style.transform =
-        "translate(" + x + "px, " + y + "px)";
-
-      target.setAttribute("data-x", x);
-      target.setAttribute("data-y", y);
+      x = positions[0];
+      y = positions[1];
     }
+
+    target.style.webkitTransform = target.style.transform =
+      "translate(" + x + "px, " + y + "px)";
+
+    target.setAttribute("data-x", x);
+    target.setAttribute("data-y", y);
   });
 }
 
