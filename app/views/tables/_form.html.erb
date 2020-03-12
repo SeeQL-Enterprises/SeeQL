@@ -1,15 +1,17 @@
 <%= simple_form_for [@database, @table] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
-    <%= f.input :display, :input_html => { :value => true }, as: :hidden %>
-    <h3>Columns</h3>
-    <div id='columns'>
-        <%= f.fields_for :columns do |builder| %>
-            <%= render 'column_fields', :f => builder %>
-        <% end %>
-        <div class='links'>
-            <%= link_to_add_association 'add column', f, :columns,  data: {association_insert_node: '#column', association_insert_method: :append} %>
-        </div>
+<div class="modal-form">
+  <%= f.input :name %>
+  <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
+  <%= f.input :display, :input_html => { :value => true }, as: :hidden %>
+  <h5>Columns</h5>
+  <div id='columns'>
+    <%= f.fields_for :columns do |builder| %>
+    <%= render 'column_fields', :f => builder %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add column', f, :columns,  data: {association_insert_node: '#column', association_insert_method: :append} %>
     </div>
-    <%= f.submit 'Save' %>
-<% end %>
+  </div>
+  <label class="btn btn-treehouse" style="color: white !important">Create table<span style="display: none"><%= f.submit 'Save' %></span></label>
+  <% end %>
+</div>
