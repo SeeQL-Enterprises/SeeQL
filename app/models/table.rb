@@ -8,7 +8,7 @@ class Table < ApplicationRecord
 
   scope :displayed, -> { where(display: true) }
 
-  DATATYPES = ["serial", "string", "integer", "bigint", "foreign key"]
+  DATATYPES = ["string", "integer", "bigint", "foreign key"]
 
   private
 
