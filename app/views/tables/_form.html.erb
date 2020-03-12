@@ -1,5 +1,4 @@
 <%= simple_form_for [@database, @table] do |f| %>
-<div class="modal-form">
   <%= f.input :name %>
   <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
   <%= f.input :display, :input_html => { :value => true }, as: :hidden %>
@@ -12,6 +11,7 @@
       <%= link_to_add_association 'add column', f, :columns,  data: {association_insert_node: '#column', association_insert_method: :append} %>
     </div>
   </div>
-  <label class="btn btn-treehouse" style="color: white !important">Create table<span style="display: none"><%= f.submit 'Save' %></span></label>
+  <label class="btn btn-treehouse" style="color: white !important">Create table
+    <span style="display: none"><%= f.submit 'Save' %></span>
+  </label>
   <% end %>
-</div>
