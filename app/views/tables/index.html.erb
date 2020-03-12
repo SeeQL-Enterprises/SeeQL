@@ -1,6 +1,6 @@
 <% db = @database %>
 <div class="project-name">
-<h2 ><%= db.name.capitalize %></h2>
+<h5 >> <%= db.name.capitalize %></h5>
 </div>
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
   <% counter = 1 %>
@@ -43,7 +43,7 @@
           <% end %>
           <% end %>
           </div>
-          <div class="comment-button text-right" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i></i>
+          <div class="comment-button text-right subheader" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i></i>
           <div class="d-flex justify-content-between">
             <div class="column-comment column-name subheader"> <%= column.name %>
             </div>
@@ -71,7 +71,7 @@
       </div>
     </div>
     <div class="bottom text-center <%= 'edit' if table.edit %>">
-      <button id="btn-for-add-table" class="plus-button text-center"  type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
+      <button id="btn-for-add-table" class="plus-button text-center table-name"  type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
     </div>
