@@ -10,7 +10,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add a Column</h5>
+          <h5 class="modal-title modal-header" id="exampleModalLabel">Add a Column</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -47,13 +47,14 @@
           <div class="d-flex justify-content-between">
             <div class="column-comment column-name subheader"> <%= column.name %>
             </div>
-            <div class="column-comment subheader"> <span class="hidden-text"><%= column.datatype %></span>
+            <div class="column-comment subheader">
             </div>
           </div>
           </div>
         </div>
         <div class="column comment hidden subheader" data-comment="<%= counter %>" data-column-id="<%= column.id %>">
           <div class="text-center mt-3">
+            <p><strong>Datatype: </strong> <span class="hidden-text text-center"><%= column.datatype %></span></p>
           <p><strong>Edit</strong> this column</p>
           </div>
           <div class="text-center">
@@ -101,7 +102,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="tableModalLabel">New table</h5>
+          <h5 class="modal-title modal-header" id="tableModalLabel">New table</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -124,7 +125,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add a Column</h5>
+            <h5 class="modal-title modal-header" id="exampleModalLabel">Add a Column</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
