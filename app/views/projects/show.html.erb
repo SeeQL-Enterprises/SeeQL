@@ -4,7 +4,7 @@
 
   <% @project.databases.each do |database| %>
     <%= link_to database_path(database) do %>
-      <button class="btn-treehouse" style="margin-bottom: 30px" id="view-database-button">Select tables of <%= @project.name %></button>
+      <button class="btn-treehouse" style="margin-bottom: 30px" id="view-database-button">Go to <%= database.name %></button>
     <% end %>
   <% end %>
 
