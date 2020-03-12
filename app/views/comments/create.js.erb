@@ -1,4 +1,4 @@
-var box = document.querySelector('.comments-list[data-column-id="<%= @column.id %>"]')
+var box = document.querySelector('.column[data-column-id="<%= @column.id %>"] .comments-list')
 // box.querySelector('#comment_proxy_content').value = ""
 
 var commentBox = '<div id="comments" class="column comment-content" data-comment-id="<%= @comment.id %>" ><p class="subheader"><strong><%= @comment.user.name %>: </strong><%= @comment.content %></p><%= link_to comment_path(@comment), method: :delete, remote: true do %><<i class="fas fa-times" aria-hidden="true"></i><% end %></div>'
