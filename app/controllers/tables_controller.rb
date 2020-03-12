@@ -16,6 +16,7 @@ class TablesController < ApplicationController
 
   def create
     @table = Table.new(table_params)
+    @table.columns << Column.new(name: 'id', datatype: 'bigint', edit: true)
     authorize @table
     @database = Database.find(params[:database_id])
     @table.database = @database
