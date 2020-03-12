@@ -16,7 +16,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <%= render 'columns/form', column_proxy: Column.new, table: table, counter: counter %>
+          <%= render 'columns/form', column_proxy: Column.new, table: table, counter: @counter %>
         </div>
       </div>
     </div>
@@ -52,7 +52,7 @@
           </div>
           </div>
         </div>
-        <div class="column comment hidden subheader" data-comment="<%= counter %>" >
+        <div class="column comment hidden subheader" data-comment="<%= counter %>" data-column-id="<%= column.id %>">
           <div class="text-center mt-3">
           <p><strong>Edit</strong> this column</p>
           </div>
