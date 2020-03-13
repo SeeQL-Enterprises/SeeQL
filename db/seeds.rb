@@ -20,7 +20,7 @@ user = User.create!({
 puts "Generating project..."
 
 project = Project.new({
-  name: "Clone-Nando's"
+  name: "Yelp Clone"
 })
 
 project.user = user
