@@ -5,6 +5,7 @@
     <div class="database-form" id="database-form">
         <%= f.input :name, label: "DB Nickname", placeholder: "DB nickname" %>
         <%= f.input :host, placeholder: "where is your DB hosted?" %>
+        <%= f.input :port, placeholder: "which port do you want to connect to?", required: false %>
         <%= f.input :db_name, label: "DB Name", placeholder: "the actual name of your DB" %>
         <%= f.input :user, placeholder: "user that will be connecting" %>
         <%= f.input :password, as: :password, placeholder: "we promise we won't save it!" %>

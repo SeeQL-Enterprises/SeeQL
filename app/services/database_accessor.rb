@@ -6,6 +6,7 @@ class DatabaseAccessor
   def initialize(options = {})
     @name = options[:name]
     @host = options[:host]
+    @port = options[:port]
     @db_name = options[:db_name]
     @user = options[:user]
     @password = options[:password]
@@ -14,7 +15,7 @@ class DatabaseAccessor
 
   def call
     begin
-      @connection = PG.connect host: @host, dbname: @db_name, user: @user, password: @password
+      @connection = PG.connect host: @host, port: @port, dbname: @db_name, user: @user, password: @password
 
       # Each table is a hash where the key is "table_name" and the value is the actual name of the table
       tables = @connection.exec "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"
