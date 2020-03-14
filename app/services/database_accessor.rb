@@ -32,7 +32,6 @@ class DatabaseAccessor
   end
 
   def save_database(tables)
-    user = User.first
     project = Project.find(@project_id)
 
     database = Database.new(name: @name, project: project)
