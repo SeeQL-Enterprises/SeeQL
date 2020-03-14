@@ -38,9 +38,9 @@ emails = [
 
 names = %w[Tim Bruno Patrick]
 
-emails.each do |email|
-  other_user = User.create!(email: email, password: "123456")
-  Collaborator.create!(user: other_user, project: project)
+emails.each_with_index do |email, index|
+    other_user = User.create!(name: names[index], email: email, password: "123456")
+    Collaborator.create!(user: other_user, project: project)
 end
 
 database = Database.create!(name: "Nando's", project: project)
