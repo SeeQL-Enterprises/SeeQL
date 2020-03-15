@@ -9,10 +9,10 @@ if (addCollaboratorButton) {
         addCollaboratorButton.classList.toggle("btn-cancel");
 
         // Check inner text and change accordingly
-        if (addCollaboratorButton.innerText === "Choose Collaborators") {
-            addCollaboratorButton.innerText = "Cancel";
+        if (addCollaboratorButton.innerHTML === "<i class=\"fas fa-user-plus\"></i> Choose Collaborators") {
+            addCollaboratorButton.innerHTML = "Cancel";
         } else {
-            addCollaboratorButton.innerText = "Choose Collaborators";
+            addCollaboratorButton.innerHTML = "<i class=\"fas fa-user-plus\"></i> Choose Collaborators";
         }
 
         // Unfocus the button after pressing

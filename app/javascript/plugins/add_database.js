@@ -13,10 +13,10 @@ if (addDatabaseButton) {
         }
 
         // Check inner text and change accordingly
-        if (addDatabaseButton.innerText === "Add Database") {
-            addDatabaseButton.innerText = "Cancel";
+        if (addDatabaseButton.innerHTML === "<i class=\"fas fa-database\"></i> Add Database") {
+            addDatabaseButton.innerHTML = "Cancel";
         } else {
-            addDatabaseButton.innerText = "Add Database";
+            addDatabaseButton.innerHTML = "<i class=\"fas fa-database\"></i> Add Database";
         }
 
         // Unfocus the button after pressing
