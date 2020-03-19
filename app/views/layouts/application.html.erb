@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title><%= meta_title %></title>
-    <meta name="description" content="<%= meta_description %>">
-    <%= favicon_link_tag 'favicon.png' %>
+        <title><%= meta_title %></title>
+        <meta name="description" content="<%= meta_description %>">
+        <%= favicon_link_tag 'favicon.png' %>
 
-    <!-- Facebook Open Graph data -->
-    <meta property="og:title" content="<%= meta_title %>" />
-    <meta property="og:description" content="Visualisation and navigation for your database project." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="<%= request.original_url %>" />
-    <meta property="og:image" content="<%= meta_image %>" />
-    <meta property="og:site_name" content="<%= meta_title %>" />
+        <!-- Facebook Open Graph data -->
+        <meta property="og:title" content="<%= meta_title %>" />
+        <meta property="og:description" content="Visualisation and navigation for your database project." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="<%= request.original_url %>" />
+        <meta property="og:image" content="<%= meta_image %>" />
+        <meta property="og:site_name" content="<%= meta_title %>" />
 
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
+        <%= csrf_meta_tags %>
+        <%= action_cable_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %>
-    <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
-</head>
-<body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+        <%= stylesheet_link_tag 'application', media: 'all' %>
+        <%#= stylesheet_pack_tag 'application', media: 'all' %>
+        <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
+    </head>
+    <body>
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/flashes' %>
 
-    <div class="page-content">
-        <%= yield %>
-    </div>
+        <div class="page-content">
+            <%= yield %>
+        </div>
 
-    <%= render 'shared/footer' %>
+        <%= render 'shared/footer' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-</body>
+        <%= javascript_include_tag 'application' %>
+        <%= javascript_pack_tag 'application' %>
+    </body>
 </html>
