@@ -1,6 +1,4 @@
 <% url = "/projects/#{project.id}/databases" %>
-
-
 <%= simple_form_for(:new_database, url: url, method: :post) do |f| %>
     <div class="database-form" id="database-form">
         <%= f.input :name, label: "DB Nickname", placeholder: "DB nickname" %>
