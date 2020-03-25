@@ -23,16 +23,16 @@
     <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
   </head>
   <body>
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
 
-      <div class="page-content">
-          <%= yield %>
-      </div>
+    <div class="page-content">
+        <%= yield %>
+    </div>
 
-      <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
 
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
