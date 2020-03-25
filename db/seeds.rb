@@ -3,13 +3,13 @@ Column.destroy_all
 Table.destroy_all
 Database.destroy_all
 
-puts "destroying projects..."
+puts "Destroying projects..."
 Project.destroy_all
 
-puts "destroying users..."
+puts "Destroying users..."
 User.destroy_all
 
-puts "generate project owner..."
+puts "Generate project owner..."
 
 user = User.create!({
   email: "finn@gmail.com",
@@ -20,7 +20,7 @@ user = User.create!({
 puts "Generating project..."
 
 project = Project.new({
-  name: "Clone-Nando's"
+  name: "Yelp Clone"
 })
 
 project.user = user
@@ -31,16 +31,16 @@ Collaborator.create!(user: user, project: project)
 puts "generate users to collaborate..."
 
 emails = [
-"tim@gmail.com",
-"bruno@gmail.com",
-"patrick@gmail.com"
+    "tim@gmail.com",
+    "bruno@gmail.com",
+    "patrick@gmail.com"
 ]
 
 names = %w[Tim Bruno Patrick]
 
-emails.each do |email|
-  other_user = User.create!(email: email, password: "123456")
-  Collaborator.create!(user: other_user, project: project)
+emails.each_with_index do |email, index|
+    other_user = User.create!(name: names[index], email: email, password: "123456")
+    Collaborator.create!(user: other_user, project: project)
 end
 
 database = Database.create!(name: "Nando's", project: project)

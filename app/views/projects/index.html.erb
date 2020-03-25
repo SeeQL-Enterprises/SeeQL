@@ -8,7 +8,7 @@
             <% @projects.sort_by! { |project| project.created_at } %>
             <% @projects.each do |project| %>
                 <div class="col-3 mt-5">
-                    <%= link_to project_path(project) do %>
+                    <%= link_to project_path(project), style: "text-decoration: none;" do %>
                         <div class="card bg border text-center projcard">
                             <p class="project_name" ><strong><%= project.name.capitalize %></strong> </p>
                             <div class="collab_list">
@@ -24,4 +24,3 @@
         </div>
     </div>
 </div>
-

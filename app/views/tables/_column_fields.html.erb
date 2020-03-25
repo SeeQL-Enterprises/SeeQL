@@ -2,6 +2,6 @@
     <%= f.input :name %>
     <%= f.input :datatype, collection: Table::DATATYPES%>
     <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
-     <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
+    <%= f.input :edit, :input_html => { :value => true }, as: :hidden %>
     <%= link_to_remove_association "remove column", f %>
 </div>

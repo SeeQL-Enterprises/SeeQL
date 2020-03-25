@@ -1,35 +1,35 @@
 <div class="column text-center <%= 'edit' if column.edit %>" data-column-id="<%= column.id %>">
-<div class="comments-list">
-  <% unless column.comments.blank? %>
-  <% column.comments.each do |comment| %>
-  <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
-    <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-    <%= link_to comment_path(comment), method: :delete, remote: true do %>
-    <i class="fas fa-times" aria-hidden="true"></i>
-    <% end %>
-  </div>
-  <% end %>
-  <% end %>
-  </div>
-  <div class="comment-button text-right" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i></i>
-  <div class="d-flex justify-content-between">
-    <div class="column-comment column-name subheader"> <%= column.name %>
+    <div class="comments-list">
+        <% unless column.comments.blank? %>
+            <% column.comments.each do |comment| %>
+                <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
+                    <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
+                    <%= link_to comment_path(comment), method: :delete, remote: true do %>
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    <% end %>
+                </div>
+            <% end %>
+        <% end %>
     </div>
-    <div class="column-comment subheader"> <span class="hidden-text"><%= column.datatype %></span>
+    <div class="comment-button text-right" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i>
+        <div class="d-flex justify-content-between">
+            <div class="column-comment column-name subheader"> <%= column.name %>
+            </div>
+            <div class="column-comment subheader"> <span class="hidden-text"><%= column.datatype %></span>
+            </div>
+        </div>
     </div>
-  </div>
-  </div>
 </div>
 <div class="column comment hidden subheader" data-comment="<%= counter %>" data-column-id="<%= column.id %>">
-  <div class="text-center mt-3">
-  <p><strong>Edit</strong> this column</p>
-  </div>
-  <div class="text-center">
-  <%= link_to column_path(column), method: :delete, remote: true do %>
-  <p><strong>Delete</strong> this column</p>
-  <% end %>
-  </div>
+    <div class="text-center mt-3">
+        <p><strong>Edit</strong> this column</p>
+    </div>
+    <div class="text-center">
+        <%= link_to column_path(column), method: :delete, remote: true do %>
+            <p><strong>Delete</strong> this column</p>
+        <% end %>
+    </div>
     <button type="button" class="plus-button w-100" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
-      <p><strong>Add a comment</strong> </p>
+        <p><strong>Add a comment</strong> </p>
     </button>
 </div>
