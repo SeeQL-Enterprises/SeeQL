@@ -1,3 +1,18 @@
+.forms-card {
+  padding: 36px 24px;
+  background-color: #0B132B;
+  opacity: 0.7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-width: 600px;
+}
+
+.add-collaborators {
+  min-width: 260px;
+  margin-right: 40px;
+}
+
 #database-form {
   margin-top: 15px;
   max-height: 0;
@@ -5,7 +20,7 @@
   transition: 0.7s;
 
   &.active {
-    max-height: 545px;
+    max-height: 100%;
   }
 }
 
@@ -16,7 +31,7 @@
   transition: 0.7s;
 
   &.active {
-    max-height: 162px;
+    max-height: 100%;
   }
 }
 
@@ -27,3 +42,5 @@
 .simple_form.new_database {
     padding-bottom: 100px;
 }
+
+

@@ -1,6 +1,8 @@
 <% url = "/projects/#{project.id}/databases" %>
+
 <%= simple_form_for(:new_database, url: url, method: :post) do |f| %>
-    <div class="database-form" id="database-form">
+  <div class="database-form" id="database-form">
+    <div class="forms-card">
         <%= f.input :name, label: "DB Nickname", placeholder: "DB nickname" %>
         <%= f.input :host, placeholder: "where is your DB hosted?" %>
         <%= f.input :port, placeholder: "optional port", required: false %>
@@ -10,4 +12,5 @@
         <%= f.input :project_id, :input_html => { :value => project.id }, as: :hidden %>
         <%= f.submit "Connect your Database now!", class: "btn-treehouse" %>
     </div>
+  </div>
 <% end %>
