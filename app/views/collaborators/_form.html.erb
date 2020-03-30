@@ -1,14 +1,7 @@
-<div class="primary-container">
-  <div class="forms-card">
+<%= simple_form_for([ project, collaborator ]) do |form| %>
 
-    <%= simple_form_for([ project, collaborator ]) do |form| %>
-      <%= f.error_notification %>
-      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-      <div class="collaborator-form" id="collaborator-form">
-        <%= form.input :user, label_method: :email, value_method: :id %>
-        <%= form.submit "Add Collaborator", class: "btn-treehouse" %>
-      </div>
-    <% end %>
+  <div class="collaborator-form" id="collaborator-form">
+    <%= form.input :user, label_method: :email, value_method: :id %>
+    <%= form.submit "Add Collaborator", class: "btn-treehouse" %>
   </div>
-</div>
+<% end %>
