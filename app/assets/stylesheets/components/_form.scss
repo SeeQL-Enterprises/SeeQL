@@ -15,7 +15,7 @@
   transition: 0.7s;
 
   &.active {
-    max-height: 580px;
+    max-height: 100%;
   }
 }
 
@@ -26,7 +26,7 @@
   transition: 0.7s;
 
   &.active {
-    max-height: 162px;
+    max-height: 100%;
   }
 }
 
