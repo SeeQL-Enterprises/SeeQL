@@ -1,3 +1,11 @@
+.forms-card {
+  padding: 36px 24px;
+  background-color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 #database-form {
   margin-top: 15px;
   max-height: 0;
@@ -27,3 +35,5 @@
 .simple_form.new_database {
     padding-bottom: 100px;
 }
+
+
