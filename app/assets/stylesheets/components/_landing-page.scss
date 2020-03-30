@@ -1,51 +1,41 @@
-.banner-landing-page {
-    margin-top: 20px;
-    margin-left: -16px;
-    width: 100%;
+section {
+  padding-top: 4.5rem;
+  margin-bottom: 12.0rem;
+}
 
-    img{
-        max-width: 100%;
-    }
+.banner-landing-page {
+  margin-top: 20px;
+  margin-left: -16px;
+  width: 100%;
+  text-align: center;
+
+  img{
+      max-width: 100%;
+  }
 }
 
 .headerlanding-page {
-    margin-top: 500px;
-    text-align: center;
-    font-size: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ffffff
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ffffff
 }
 
+.welcome-content {
+  padding-bottom: 100px;
+}
+
+
+// Very small devices (landscape phones, 576px and up)
 @media (min-width: 100px) and (max-width: 575px) {
-  .headerlanding-page {
-    margin-top: 500px;
+  section {
+    margin-bottom: 12.0rem;
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .headerlanding-page {
-    margin-top: 500px ;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .headerlanding-page {
-    margin-top: 500px;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .headerlanding-page {
-    margin-top: 600px;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .headerlanding-page {
-    margin-top: 700px;
+// XX large devices (widescreen desktops, 2560px and up)
+@media (min-width: 2560px) {
+  section {
+    margin-bottom: 22.0rem;
   }
 }
