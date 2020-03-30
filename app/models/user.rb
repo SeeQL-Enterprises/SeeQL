@@ -5,4 +5,6 @@ class User < ApplicationRecord
 
   has_many :projects
   has_many :comments, as: :commentable
+
+  has_one_attached :avatar
 end
