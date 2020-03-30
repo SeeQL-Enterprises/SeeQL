@@ -1,0 +1,43 @@
+.general-container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .general-container {
+    max-width: 90px;
+  }
+}
+
+@media (min-width: 576px) {
+  .general-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .general-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .general-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .general-container {
+    max-width: 1140px;
+  }
+}
+
+
+
+
+
+
