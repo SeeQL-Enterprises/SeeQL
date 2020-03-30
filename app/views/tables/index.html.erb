@@ -1,152 +1,152 @@
 <% db = @database %>
 <div class="project-name">
-<h5 >> <%= db.name.capitalize %></h5>
+    <h5 >> <%= db.name.capitalize %></h5>
 </div>
 <div class="container d-flex" style="height: calc(100vh - 60px); width: 100%">
-  <% counter = 1 %>
-  <% db.tables.each do |table| %>
-    <!-- Modal -->
-    <div class="modal fade" id="create-column-<%= table.id %>" tabindex="-1" role="dialog" aria-labelledby="createColumn" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title modal-header" id="exampleModalLabel">Add a Column</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <%= render 'columns/form', column_proxy: Column.new, table: table, counter: @counter %>
-        </div>
-      </div>
-    </div>
-  </div>
-  <% if table.display %>
-  <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
-    <div class="tablecard">
-      <div class="top text-center table-name <%= 'edit' if table.edit %>" id="<%= table.name %>">
-        <h3 class="table-name"><%= table.name.downcase %></h3>
-      </div>
-      <div class="tablecard-columns" data-table-id="<%= table.id %>">
-        <% table.columns.each do |column| %>
-        <% counter += 1 %>
-        <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>" data-column-id="<%= column.id %>">
-        <div class="comments-list">
-          <% unless column.comments.blank? %>
-          <% column.comments.each do |comment| %>
-          <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
-            <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
-            <%= link_to comment_path(comment), method: :delete, remote: true do %>
-            <i class="fas fa-times" aria-hidden="true"></i>
-            <% end %>
-          </div>
-          <% end %>
-          <% end %>
-          </div>
-          <div class="comment-button text-right subheader" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i></i>
-          <div class="d-flex justify-content-between">
-            <div class="column-comment column-name subheader"> <%= column.name %>
+    <% counter = 1 %>
+    <% db.tables.each do |table| %>
+        <!-- Modal -->
+        <div class="modal fade" id="create-column-<%= table.id %>" tabindex="-1" role="dialog" aria-labelledby="createColumn" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title modal-header" id="exampleModalLabel">Add a Column</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <%= render 'columns/form', column_proxy: Column.new, table: table, counter: @counter %>
+                    </div>
+                </div>
             </div>
-            <div class="column-comment subheader">
+        </div>
+        <% if table.display %>
+            <div class="draggable" data-id="<%= @project[0].name + "-" + table.name %>" >
+                <div class="tablecard">
+                    <div class="top text-center table-name <%= 'edit' if table.edit %>" id="<%= table.name %>">
+                        <h3 class="table-name"><%= table.name.downcase %></h3>
+                    </div>
+                    <div class="tablecard-columns" data-table-id="<%= table.id %>">
+                        <% table.columns.each do |column| %>
+                            <% counter += 1 %>
+                            <div class="column text-center <%= 'edit' if column.edit %>" data-comment-list="<%= counter %>" data-column-id="<%= column.id %>">
+                                <div class="comments-list">
+                                    <% unless column.comments.blank? %>
+                                        <% column.comments.each do |comment| %>
+                                            <div id="comments" class="column comment-content" data-comment-id="<%= comment.id %>">
+                                                <p class="subheader"><strong><%= comment.user.name %>: </strong><%= comment.content %></p>
+                                                <%= link_to comment_path(comment), method: :delete, remote: true do %>
+                                                    <i class="fas fa-times" aria-hidden="true"></i>
+                                                <% end %>
+                                            </div>
+                                        <% end %>
+                                    <% end %>
+                                </div>
+                                <div class="comment-button text-right subheader" data-commentbutton="<%= counter %>"><i class="fas fa-ellipsis-h"></i></i>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="column-comment column-name subheader"> <%= column.name %>
+                                        </div>
+                                        <div class="column-comment subheader">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column comment hidden subheader" data-comment="<%= counter %>" data-column-id="<%= column.id %>">
+                                <div class="text-center mt-3">
+                                    <p><strong>Datatype: </strong> <span class="hidden-text text-center"><%= column.datatype %></span></p>
+                                    <p><strong>Edit</strong> this column</p>
+                                </div>
+                                <div class="text-center">
+                                    <%= link_to column_path(column), method: :delete, remote: true do %>
+                                        <p><strong>Delete</strong> this column</p>
+                                    <% end %>
+                                </div>
+                                <button type="button" class="plus-button w-100" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
+                                    <p><strong>Add a comment</strong> </p>
+                                </button>
+                            </div>
+                            <% counter += 1 %>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="bottom text-center <%= 'edit' if table.edit %>">
+                    <button id="btn-for-add-table" class="plus-button text-center table-name"  type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
-          </div>
-          </div>
-        </div>
-        <div class="column comment hidden subheader" data-comment="<%= counter %>" data-column-id="<%= column.id %>">
-          <div class="text-center mt-3">
-            <p><strong>Datatype: </strong> <span class="hidden-text text-center"><%= column.datatype %></span></p>
-          <p><strong>Edit</strong> this column</p>
-          </div>
-          <div class="text-center">
-          <%= link_to column_path(column), method: :delete, remote: true do %>
-          <p><strong>Delete</strong> this column</p>
-          <% end %>
-          </div>
-            <button type="button" class="plus-button w-100" data-toggle="modal" data-target="#create-comment-<%= table.id %>-<%= column.id %>">
-              <p><strong>Add a comment</strong> </p>
-            </button>
-
-        </div>
-        <% counter += 1 %>
         <% end %>
-      </div>
+    <% end %>
+    <% table = Table.new %>
+    <div class="draggable">
+        <div class="tablecard tool-table text-center">
+            <h3 class="table-name">Tools</h3>
+            <div class="container">
+                <div class="row">
+                    <div class="new-table-toggle m-2">
+                        <button id="add-table-button" type="button" data-toggle="modal" data-target="#modalForTable">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="comment-toggle m-2">
+                        <i class="fas fa-comment"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <i class="fas fa-route m-2"></i>
+                    <i class="fas fa-share m-2"></i>
+                </div>
+                <div class="row">
+                    <i class="fas fa-mouse-pointer m-2"></i>
+                    <i class="fas fa-question-circle m-2"></i>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="bottom text-center <%= 'edit' if table.edit %>">
-      <button id="btn-for-add-table" class="plus-button text-center table-name"  type="button" data-toggle="modal" data-target="#create-column-<%= table.id %>">
-          <i class="fa fa-plus" aria-hidden="true"></i>
-        </button>
+    <div class="bgimg">
     </div>
-  </div>
-  <% end %>
-  <% end %>
-  <% table = Table.new %>
 
-  <div class="draggable">
-    <div class="tablecard tool-table text-center">
-      <h3 class="table-name">Tools</h3>
-      <div class="container">
-        <div class="row">
-          <div class="new-table-toggle m-2">
-            <button id="add-table-button" type="button" data-toggle="modal" data-target="#modalForTable">
-              <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-          </div>
-          <div class="comment-toggle m-2">
-            <i class="fas fa-comment"></i>
-          </div>
+    <!-- Modal for add table -->
+    <div class="modal fade" id="modalForTable" tabindex="-1" role="dialog" aria-labelledby="tableModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title modal-header" id="tableModalLabel">New table</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class= "add-table">
+                        <%= render 'tables/form', table: Table.new %>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
-          <i class="fas fa-route m-2"></i>
-          <i class="fas fa-share m-2"></i>
-        </div>
-        <div class="row">
-          <i class="fas fa-mouse-pointer m-2"></i>
-          <i class="fas fa-question-circle m-2"></i>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="bgimg">
-  </div>
-  <!-- Modal for add table -->
-  <div class="modal fade" id="modalForTable" tabindex="-1" role="dialog" aria-labelledby="tableModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title modal-header" id="tableModalLabel">New table</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class= "add-table">
-            <%= render 'tables/form', table: Table.new %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<% counter = 1 %>
-<% db.tables.each do |table| %>
-  <% counter += 1 %>
-  <% table.columns.each do |column| %>
-  <% counter += 1 %>
-    <!-- Modal -->
-    <div class="modal fade" id="create-comment-<%= table.id %>-<%= column.id %>" tabindex="-1" role="dialog" aria-labelledby="createColumn" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title modal-header" id="exampleModalLabel">Add a Column</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <%= render 'comments/column_form', database: @database, column: column, comment: Comment.new, counter: counter, table: table %>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% counter += 1 %>
-  <% end %>
-<% end %>
+    <% counter = 1 %>
+    <% db.tables.each do |table| %>
+        <% counter += 1 %>
+        <% table.columns.each do |column| %>
+            <% counter += 1 %>
+
+            <!-- Modal -->
+            <div class="modal fade" id="create-comment-<%= table.id %>-<%= column.id %>" tabindex="-1" role="dialog" aria-labelledby="createColumn" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title modal-header" id="exampleModalLabel">Add a Column</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <%= render 'comments/column_form', database: @database, column: column, comment: Comment.new, counter: counter, table: table %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% counter += 1 %>
+        <% end %>
+    <% end %>

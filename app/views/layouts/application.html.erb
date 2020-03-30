@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title><%= meta_title %></title>
-    <meta name="description" content="<%= meta_description %>">
+
     <%= favicon_link_tag 'favicon.png' %>
 
-    <!-- Facebook Open Graph data -->
-    <meta property="og:title" content="<%= meta_title %>" />
-    <meta property="og:description" content="Visualisation and navigation for your database project." />
+    <meta property="og:title" content="Visualisation and navigation for your database project | www.seeql.dev" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="<%= request.original_url %>" />
-    <meta property="og:image" content="<%= meta_image %>" />
-    <meta property="og:site_name" content="<%= meta_title %>" />
+    <meta property="og:description" content="Database schema visualisation is an essential process when starting a new project. SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park." />
+    <meta property="og:url" content="https://seeql.dev/" />
+    <meta property="og:image" content="https://res.cloudinary.com/tim4boom/image/upload/v1585154545/og_image_beych1.png" />
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -22,8 +21,8 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %>
     <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
 
@@ -35,5 +34,5 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-</body>
+  </body>
 </html>

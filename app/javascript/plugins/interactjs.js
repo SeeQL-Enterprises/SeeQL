@@ -1,9 +1,6 @@
 import interact, { init } from "interactjs";
 import { allLines } from "./leaderlinejs";
-// const restaurants = document.getElementById("Restaurants");
-// const reviews = document.getElementById("Reviews");
-// console.log(allLines());
-// let line = undefined;
+
 let arry = allLines();
 
 // console.log(arry);
@@ -13,13 +10,7 @@ const items = document.querySelectorAll(".draggable");
 interact(".draggable").draggable({
   // enable inertial throwing
   inertia: true,
-  // keep the element within the area of it's parent
-  // modifiers: [
-  //   interact.modifiers.restrictRect({
-  //     restriction: 'parent',
-  //     endOnly: true
-  //   })
-  // ],
+  
   // enable autoScroll
   autoScroll: true,
 
@@ -66,7 +57,7 @@ function restorePositions() {
 
     let x = 0;
     let y = 0;
-    
+
     if (currentData[id]) {
       const positions = currentData[id].split(":");
       x = positions[0];
