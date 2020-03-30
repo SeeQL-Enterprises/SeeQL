@@ -18,7 +18,11 @@
                     <%= link_to "Create Projects", new_project_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item dropdown mt-2">
-                    <%= image_tag "profile.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% if current_user.avatar.attached? %>
+                        <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    <% else %>
+                        <%= image_tag("avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+                    <% end %>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                     </div>
