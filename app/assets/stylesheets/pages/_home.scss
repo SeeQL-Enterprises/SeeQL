@@ -41,7 +41,7 @@ section {
 .how-it-works-path {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 100px;
+  grid-gap: 50px;
   img {
     max-width: 90%;
   }
@@ -50,6 +50,31 @@ section {
 .dotted-lines {
   padding-left: 15%;
   padding-right: 15%;
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .img-step-2 {
+    order: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .text-step-2 {
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .how-it-works-path {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .dotted-lines {
+    display: block;
+  }
 }
 
 
