@@ -2,23 +2,24 @@
 <div class="primary-container">
 
   <div class="banner-content">
-    <%= image_tag "seeql_logo_name.png" %>
+    <%= image_tag "seeql_logo_name.png", class: "seeql_logo" %>
 
     <h1>Quick and easy <div id="typing" class="typing"></div></h1>
     <h5>Start your project and invite your team now!</h5>
     <%= link_to new_project_path do %>
       <button class="btn-treehouse"> Create your Project </button>
     <% end %>
+
+    <p><i class="fas fa-cogs"></i> How it works</p>
+    <div id="arrow-down">
+      <a href="#how-it-works">
+        <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
+      </a>
+    </div>
   </div>
 
-  <div id="arrow-down">
-    <a href="#how-it-works">
-      <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
-    </a>
-  </div>
 
   <section id="how-it-works">
-    <h1 class="headerlanding-page"><i class="fas fa-cogs"></i> How it works</h1>
     <div class="banner-landing-page ">
       <%= image_tag("banner-image.png") %>
     </div>

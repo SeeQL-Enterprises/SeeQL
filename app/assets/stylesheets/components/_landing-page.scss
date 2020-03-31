@@ -24,12 +24,18 @@ section {
 .banner-content {
   padding-bottom: 100px;
   text-align: center;
-  img {
-    width: 500px;
-  }
   h1 {
-    margin-bottom: 4.5rem;
+    font-size: 54px;
+    margin-top: 4.5rem;
+    margin-bottom: 6.5rem;
   }
+  p {
+    margin-top: 14rem;
+  }
+}
+
+.seeql_logo {
+  max-width: 50%;
 }
 
 // Very small devices (landscape phones, 576px and up)
