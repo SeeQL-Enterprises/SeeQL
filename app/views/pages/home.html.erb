@@ -1,22 +1,21 @@
 
 <div class="primary-container">
 
-  <section id="welcome">
-    <div class="welcome-content">
-      <h1 style="font-size: 50px"><u>Welcome to SeeQL</u></h1>
-      <p style="font-size: 20px; margin-top: 50px; margin-bottom: 50px">Visualisation and navigation for your database project.</p>
-      <p class="mt-5" style="font-size: 20px">Create your project and invite your team!</p>
-      <%= link_to new_project_path do %>
-          <button class="btn-treehouse"> Create your Project </button>
-      <% end %>
-    </div>
+  <div class="banner-content">
+    <%= image_tag "seeql_logo_name.png" %>
 
-    <div id="arrow-down">
-      <a href="#how-it-works">
-        <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
-      </a>
-    </div>
-  </section>
+    <h1>Quick and easy <div id="typing" class="typing"></div></h1>
+    <h5>Start your project and invite your team now!</h5>
+    <%= link_to new_project_path do %>
+      <button class="btn-treehouse"> Create your Project </button>
+    <% end %>
+  </div>
+
+  <div id="arrow-down">
+    <a href="#how-it-works">
+      <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
+    </a>
+  </div>
 
   <section id="how-it-works">
     <h1 class="headerlanding-page"><i class="fas fa-cogs"></i> How it works</h1>
@@ -53,3 +52,33 @@
   </section>
 
 </div>
+
+<script>
+    var typeString = ['visualisation.  ', 'navigation.  ', 'collaboration.  '];
+    var  i = 0;
+    var count = 0
+    var selectedText = '';
+    var text = '';
+    (function type() {
+      if (count == typeString.length) {
+        count = 0;
+      }
+      selectedText = typeString[count];
+      text = selectedText.slice(0, ++i);
+      document.getElementById('typing').innerHTML = text;
+      if (text.length === selectedText.length) {
+        count++;
+        i = 0;
+      }
+      setTimeout(type, 250);
+    }());
+
+    function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+        }
+      }
+    }
+  </script>
