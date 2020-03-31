@@ -1,12 +1,72 @@
 // Specific CSS for your home-page
-body {
-  background-image: image-url("Background.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: #364f6b;
+// body {
+//   background-image: image-url("Background.png");
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   background-color: #364f6b;
+// }
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 8px;
 }
 
 .page_content {
   min-height: calc(100vh - 80px - 185px);
   padding-bottom: 80px;
+}
+
+section {
+  padding-top: 4.5rem;
+  margin-bottom: 12.0rem;
+}
+
+.banner-landing-page {
+  margin-top: 20px;
+  margin-left: -16px;
+  width: 100%;
+  text-align: center;
+
+  img{
+      max-width: 100%;
+  }
+}
+
+.headerlanding-page {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ffffff
+}
+
+.banner-content {
+  text-align: center;
+  h1 {
+    font-size: 54px;
+    margin-top: 4.5rem;
+    margin-bottom: 6.5rem;
+  }
+  p {
+    margin-top: 14rem;
+  }
+}
+
+.seeql_logo {
+  max-width: 50%;
+}
+
+// Very small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 575px) {
+  section {
+    margin-bottom: 12.0rem;
+  }
+}
+
+// XX large devices (widescreen desktops, 2560px and up)
+@media (min-width: 2560px) {
+  section {
+    margin-bottom: 22.0rem;
+  }
 }

@@ -1,56 +1,59 @@
+<div class="lp-top">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
+    <div class="primary-container">
+      <div class="banner-content">
+        <%= image_tag "seeql_logo_name.png", class: "seeql_logo" %>
 
-<div class="primary-container">
+        <h1>Quick and easy <div id="typing" class="typing"></div></h1>
+        <h5>Start your project and invite your team now!</h5>
+        <%= link_to new_project_path do %>
+          <button class="btn-treehouse"> Create your Project </button>
+        <% end %>
 
-  <div class="banner-content">
-    <%= image_tag "seeql_logo_name.png", class: "seeql_logo" %>
-
-    <h1>Quick and easy <div id="typing" class="typing"></div></h1>
-    <h5>Start your project and invite your team now!</h5>
-    <%= link_to new_project_path do %>
-      <button class="btn-treehouse"> Create your Project </button>
-    <% end %>
-
-    <p><i class="fas fa-cogs"></i> How it works</p>
-    <div id="arrow-down">
-      <a href="#how-it-works">
-        <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
-      </a>
+        <p><i class="fas fa-cogs"></i> How it works</p>
+        <div id="arrow-down">
+          <a href="#how-it-works">
+            <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
+          </a>
+        </div>
+      </div>
+    <!-- banner closing div -->
     </div>
   </div>
 
 
-  <section id="how-it-works">
-    <div class="banner-landing-page ">
-      <%= image_tag("banner-image.png") %>
-    </div>
-  </section>
-
-  <section id="your-benefits">
-    <h1 class="headerlanding-page"><i class="fas fa-thumbs-up"></i> Your benefits</h1>
-    <div class="container d-flex align-items-center" style="margin-top: 80px">
-      <i class="fa fa-eye" aria-hidden="true" style="font-size: 150px"></i>
-      <div class="text pl-3 ">
-        <h2>Visualisation</h2>
-        <p>Database schema visualisation is an essential process when starting a new project. SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park.</p>
+    <section id="how-it-works">
+      <div class="banner-landing-page ">
+        <%= image_tag("banner-image.png") %>
       </div>
-    </div>
+    </section>
 
-    <div class="container d-flex align-items-center" style="margin-top: 150px">
-      <i class="fas fa-route" aria-hidden="true" style="font-size: 150px"></i>
-      <div class="text pl-4 ">
-        <h2>Navigation</h2>
-        <p>Flexible and intuitive navigation in SeeQL enables easy filtering for those tables and columns that you really need. Find and understand connections through highlighted table relations and immediately get the corresponding SQL query.</p>
+    <section id="your-benefits">
+      <h1 class="headerlanding-page"><i class="fas fa-thumbs-up"></i> Your benefits</h1>
+      <div class="container d-flex align-items-center" style="margin-top: 80px">
+        <i class="fa fa-eye" aria-hidden="true" style="font-size: 150px"></i>
+        <div class="text pl-3 ">
+          <h2>Visualisation</h2>
+          <p>Database schema visualisation is an essential process when starting a new project. SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="container d-flex align-items-center" style="margin-top: 150px; margin-bottom: 50px">
-      <i class="far fa-comment-dots" aria-hidden="true" style="font-size: 150px"></i>
-      <div class="text pl-4 ">
-        <h2>Communication</h2>
-        <p>SeeQL makes visualisation of databases an art, because “a picture says more than 1000 words.” As such, it helps improving clear and efficient communication among DB analysts and developer teams.</p>
+      <div class="container d-flex align-items-center" style="margin-top: 150px">
+        <i class="fas fa-route" aria-hidden="true" style="font-size: 150px"></i>
+        <div class="text pl-4 ">
+          <h2>Navigation</h2>
+          <p>Flexible and intuitive navigation in SeeQL enables easy filtering for those tables and columns that you really need. Find and understand connections through highlighted table relations and immediately get the corresponding SQL query.</p>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div class="container d-flex align-items-center" style="margin-top: 150px; margin-bottom: 50px">
+        <i class="far fa-comment-dots" aria-hidden="true" style="font-size: 150px"></i>
+        <div class="text pl-4 ">
+          <h2>Communication</h2>
+          <p>SeeQL makes visualisation of databases an art, because “a picture says more than 1000 words.” As such, it helps improving clear and efficient communication among DB analysts and developer teams.</p>
+        </div>
+      </div>
+    </section>
 
 </div>
 
