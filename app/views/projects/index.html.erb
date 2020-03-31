@@ -1,26 +1,27 @@
-<div class="container">
-    <h1>Your Projects:</h1>
-    <%= link_to new_project_path do %>
-        <button class="btn-treehouse" style="margin-top: 20px"> <i class="far fa-plus-square"></i> Add Project</button>
+<div class="primary-container">
+  <h1>Your Projects:</h1>
+  <%= link_to new_project_path do %>
+    <button class="btn-treehouse" style="margin-top: 20px"> <i class="far fa-plus-square"></i> Add Project</button>
+  <% end %>
+
+  <div class="row w-100">
+    <% @projects.sort_by! { |project| project.created_at } %>
+    <% @projects.each do |project| %>
+
+      <div class="col-3 mt-5">
+        <%= link_to project_path(project), style: "text-decoration: none;" do %>
+          <div class="card bg border text-center projcard">
+            <p class="project_name" ><strong><%= project.name.capitalize %></strong> </p>
+            <div class="collab_list">
+              <p><strong><u>Collaborators:</u></strong></p>
+
+              <% project.collaborators.each do |collaborator| %>
+                <p><%= collaborator.user.email %></p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-    <div class="container mt-5">
-        <div class="row w-100">
-            <% @projects.sort_by! { |project| project.created_at } %>
-            <% @projects.each do |project| %>
-                <div class="col-3 mt-5">
-                    <%= link_to project_path(project), style: "text-decoration: none;" do %>
-                        <div class="card bg border text-center projcard">
-                            <p class="project_name" ><strong><%= project.name.capitalize %></strong> </p>
-                            <div class="collab_list">
-                                <p><strong><u>Collaborators:</u></strong></p>
-                                <% project.collaborators.each do |collaborator| %>
-                                    <p><%= collaborator.user.email %></p>
-                                <% end %>
-                            </div>
-                        </div>
-                    <% end %>
-                </div>
-            <% end %>
-        </div>
-    </div>
+  </div>
 </div>
