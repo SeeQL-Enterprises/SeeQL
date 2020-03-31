@@ -20,7 +20,11 @@ body {
 
 section {
   padding-top: 4.5rem;
-  padding-bottom: 12.0rem;
+  h1 {
+    color: #0B132B;
+    font-weight: bold;
+    padding-bottom: 4.5rem;
+  }
   h3 {
     color: #0B132B;
     font-weight: bold;
@@ -42,6 +46,12 @@ section {
     max-width: 90%;
   }
 }
+
+.dotted-lines {
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
 
 
 
