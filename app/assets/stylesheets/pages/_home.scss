@@ -49,20 +49,20 @@ section {
 }
 
 .dotted-lines {
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 26%;
+  padding-right: 26%;
   display: none;
 }
 
 @media screen and (max-width: 600px) {
   .img-step-2 {
-    order: 0;
+    order: 1;
   }
 }
 
 @media screen and (max-width: 600px) {
   .text-step-2 {
-    order: 1;
+    order: 0;
   }
 }
 
