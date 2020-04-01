@@ -24,6 +24,10 @@ body {
   }
 }
 
+.seeql_logo {
+  max-width: 50%;
+}
+
 .headerlanding-page {
   text-align: center;
   font-size: 40px;
@@ -85,7 +89,7 @@ section {
 @media screen and (max-width: 694px) {
   section {
     h3 {
-      font-size: 24px;
+      font-size: 22px;
     }
   }
 }
@@ -115,6 +119,12 @@ section {
   .img-step-2 {
     order: 1;
   }
+  .text-step-2 {
+    margin-top: 80px;
+  }
+  .text-step-3 {
+    margin-top: 80px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -135,9 +145,7 @@ section {
   }
 }
 
-.seeql_logo {
-  max-width: 50%;
-}
+
 
 // Very small devices (landscape phones, 576px and up)
 @media (min-width: 100px) and (max-width: 575px) {
