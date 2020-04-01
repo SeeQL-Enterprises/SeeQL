@@ -1,0 +1,58 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 36px;
+}
+
+.banner-landing-page {
+  margin-top: 20px;
+  margin-left: -16px;
+  width: 100%;
+  text-align: center;
+
+  img{
+      max-width: 100%;
+  }
+}
+
+.seeql_logo {
+  max-width: 50%;
+}
+
+.headerlanding-page {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ffffff
+}
+
+.banner-content {
+  text-align: center;
+  h1 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+  }
+
+  .banner-slogan {
+    margin-top: 4.5rem;
+    margin-bottom: 6.5rem;
+  }
+
+  h5 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+
+  p {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  h1 {
+    .typing {
+      display: block;
+      margin-top: 2rem;
+    }
+  }
+}
