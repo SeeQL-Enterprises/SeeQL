@@ -1,22 +1,54 @@
-.navbar-lewagon {
-  height: 80px;
+.navbar {
+  background-color: transparent;
   justify-content: space-between;
-  background: rgba($color: #ffffff, $alpha: 0);
+  transition: 0.5s background-color ease;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-seeql .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  padding: 16px;
-  width: 40px;
-}
+// .navbar-seeql .navbar-brand img {
+//   padding: 16px;
+//   width: 40px;
+// }
+
 * {
   color: #ffffff;
 }
+
 .nav-link {
   padding: 16px;
   color: #ffffff !important;
 }
 
+
+
+
+
+.navbar-seeql-black {
+  background-color: rgba(0,0,0,0.8);
+}
+
+// .navbar-logo {
+//   height: 84px;
+//   margin: 0 20px;
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// }
+
+// .avatar {
+//   height: 54px;
+//   margin: 0 20px;
+//   &:hover {
+//     opacity: 0.8;
+//   }
+// }
+
+// .navbar-nav .dropdown-menu {
+//   position: absolute;
+//   top: 62px;
+//   left: -145px;
+//   float: none;
+// }
