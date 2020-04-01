@@ -1,41 +1,32 @@
 // PRIMARY CONTAINER
 .primary-container {
-  margin: 150px 100px 120px 100px;
+  margin: 0 auto;
+  max-width: 55rem;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
   .primary-container {
-    margin: 150px 20px 100px 20px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .primary-container {
-    margin: 150px 40px 120px 40px;
+    padding-right: 40px;
+    padding-left: 40px;
   }
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .primary-container {
-    margin: 150px 100px 120px 100px;
+    padding-right: 40px;
+    padding-left: 40px;
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .primary-container {
-    margin: 150px 100px 120px 100px;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .primary-container {
-    margin: 150px 100px 120px 100px;
-  }
-}
 
 
 
