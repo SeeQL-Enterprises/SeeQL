@@ -8,12 +8,19 @@
         <circle cx="50" cy="50"></circle>
       </svg>
       <div class="cancel-lines" id="my-cancel-lines">
-        <!-- <div class="center"></div> -->
-        <% if current_user.avatar.attached? %>
-          <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+
+        <% if current_user %>
+          <% if current_user.avatar.attached? %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+          <% else %>
+            <%= image_tag("avatar.svg", class: "avatar") %>
+          <% end %>
         <% else %>
-          <%= image_tag("avatar.svg", class: "avatar") %>
+          <span class="navbar-toggler-icon"></span>
+
         <% end %>
+
+
       </div>
     </label>
   </div>
@@ -22,9 +29,9 @@
   <div id="mySidenav" class="sidenav">
     <div>
       <% if current_user %>
-        <a><%= link_to "Log out", '#', method: :delete, class: "border-bottom" %></a>
+        <a><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %></a>
       <% else %>
-        <a><%= link_to "Login", '#', class: "border-bottom" %></a>
+        <a><%= link_to "Login", new_user_session_path, class: "border-bottom" %></a>
       <% end %>
 
       <% if !current_user %>
@@ -38,6 +45,17 @@
   </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
   <script>
     let menu = document.querySelector( "#mySidenav" );
     let menuIcon = document.querySelector( "#my-cancel-lines" );
@@ -45,7 +63,6 @@
     menuIcon.addEventListener( "click",()=> {
       menu.classList.contains('open') ? menu.classList.remove('open') : menu.classList.add('open');
     });
-
   </script>
 
 </body>

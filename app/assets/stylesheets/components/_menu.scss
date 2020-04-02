@@ -1,7 +1,5 @@
 :root {
   font-size: calc(10px + 1vmin);
-  --primary: hsl(260, 100%, 60%);
-  --softGrey: #9a97a8;
   --bounce: 0.3s cubic-bezier(0.3, -0.1, 0.1, 1.4);
   --ease: 0.2s cubic-bezier(0.3, 0.1, 0.4, 1);
 }
@@ -21,16 +19,19 @@ input[type="checkbox"] {
   border: #0B132B 1px solid;
 }
 
+.navbar-toggler-icon {
+  background-image: url('hamburger-menu.svg');
+  position: fixed;
+  top: 22px;
+  right: 28px;
+}
+
 label {
   --weight: 10%;
   --size: 4em;
   position: fixed;
   top: 13px;
   right: 20px;
-  // display: grid;
-  // place-items: center;
-  // width: var(--size);
-  // height: var(--size);
   cursor: pointer;
 
   circle {
@@ -89,6 +90,10 @@ label {
     display: none;
   }
 
+  .navbar-toggler-icon {
+    display: none;
+  }
+
   svg {
     overflow: inherit;
   }
@@ -108,7 +113,6 @@ label {
     }
   }
 }
-
 
 // SIDEBAR-NAV
  .burger-menu {
