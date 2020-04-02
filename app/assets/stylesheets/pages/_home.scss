@@ -6,70 +6,12 @@ body {
   background-color: #364f6b;
 }
 
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding-top: 100px;
-  padding-bottom: 36px;
-}
-
-.banner-landing-page {
-  margin-top: 20px;
-  margin-left: -16px;
-  width: 100%;
-  text-align: center;
-
-  img{
-      max-width: 100%;
-  }
-}
-
-.seeql_logo {
-  max-width: 50%;
-}
-
-.headerlanding-page {
-  text-align: center;
-  font-size: 40px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ffffff
-}
-
-.banner-content {
-  text-align: center;
-  h1 {
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 32px;
-  }
-
-  .banner-slogan {
-    margin-top: 4.5rem;
-    margin-bottom: 6.5rem;
-  }
-
-  h5 {
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  }
-
-  p {
-    margin-top: 10rem;
-  }
-}
-
-@media screen and (max-width: 512px) {
-  h1 {
-    .typing {
-      display: block;
-      margin-top: 2rem;
-    }
-  }
-}
-
 .page_content {
   min-height: calc(100vh - 80px - 185px);
   padding-bottom: 80px;
 }
 
+// Generally for all sections on lp
 section {
   padding-top: 4.5rem;
   h1 {
@@ -86,14 +28,21 @@ section {
   }
 }
 
-@media screen and (max-width: 694px) {
+// Very small devices (landscape phones, 576px and up)
+@media (min-width: 100px) and (max-width: 575px) {
   section {
-    h3 {
-      font-size: 22px;
-    }
+    margin-bottom: 12.0rem;
   }
 }
 
+// XX large devices (widescreen desktops, 2560px and up)
+@media (min-width: 2560px) {
+  section {
+    margin-bottom: 22.0rem;
+  }
+}
+
+// Specific to how-it-works section on lp
 #how-it-works {
   background-color: #ffffff;
 }
@@ -109,12 +58,36 @@ section {
   }
 }
 
+// Small devices (landscape phones, 600px and lower)
+@media screen and (max-width: 600px) {
+  .how-it-works-path {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 694px and lower)
+@media screen and (max-width: 694px) {
+  .how-it-works-path {
+    h3 {
+      font-size: 22px;
+    }
+  }
+}
+
 .dotted-lines {
   padding-left: 26%;
   padding-right: 26%;
   display: none;
 }
 
+// Small devices (landscape phones, 600px and up)
+@media screen and (min-width: 601px) {
+  .dotted-lines {
+    display: block;
+  }
+}
+
+// Small devices (landscape phones, 600px and lower)
 @media screen and (max-width: 600px) {
   .img-step-2 {
     order: 1;
@@ -127,36 +100,10 @@ section {
   }
 }
 
+// Small devices (landscape phones, 600px and lower)
 @media screen and (max-width: 600px) {
   .text-step-2 {
     order: 0;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .how-it-works-path {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (min-width: 601px) {
-  .dotted-lines {
-    display: block;
-  }
-}
-
-
-
-// Very small devices (landscape phones, 576px and up)
-@media (min-width: 100px) and (max-width: 575px) {
-  section {
-    margin-bottom: 12.0rem;
-  }
-}
-
-// XX large devices (widescreen desktops, 2560px and up)
-@media (min-width: 2560px) {
-  section {
-    margin-bottom: 22.0rem;
-  }
-}
