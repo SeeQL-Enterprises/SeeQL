@@ -1,22 +1,14 @@
-.navbar-lewagon {
-  height: 80px;
+.navbar {
+  background-color: transparent;
   justify-content: space-between;
-  background: rgba($color: #ffffff, $alpha: 0);
+  transition: 0.5s background-color ease;
+  z-index: 1;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-seeql .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  padding: 16px;
-  width: 40px;
+.navbar-seeql-black {
+  background-color: rgba(0,0,0,0.8);
 }
-* {
-  color: #ffffff;
-}
-.nav-link {
-  padding: 16px;
-  color: #ffffff !important;
-}
-
