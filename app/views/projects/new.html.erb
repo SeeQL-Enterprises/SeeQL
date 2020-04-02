@@ -1,7 +1,7 @@
-<div class="container w-50" style="position: absolute; top: 150px; left: 150px">
+<div class="primary-container">
     <h2 class="mb-5">Start now and create a new project<i class="fas fa-project-diagram ml-3"></i></h2>
     <%= simple_form_for @project do |f|%>
-        <%= f.input :name, :label => "Name of your new project:" %>
+        <%= f.input :name, :placeholder => "Name of your new project" %>
         <%= f.submit "Create Project", class: "btn-treehouse" %>
     <% end %>
 </div>
