@@ -28,60 +28,61 @@ input[type="checkbox"] {
 }
 
 // SHIFTING FROM AVATAR/BURGER TO CANCEL ICON
-label {
-  --weight: 10%;
-  --size: 4em;
-  position: fixed;
-  top: 13px;
-  right: 20px;
-  cursor: pointer;
+.sidebar-menu {
+  label {
+    --weight: 10%;
+    --size: 4em;
+    position: fixed;
+    top: 13px;
+    right: 20px;
+    cursor: pointer;
 
-  circle {
-    r: calc(50 - (var(--weight) / 2));
-    width: 100%;
-    fill: none;
-    stroke: #ffffff;
-    stroke-width: calc(var(--weight) * 0.6);
-    stroke-dasharray: 284;
-    stroke-dashoffset: 284;
-    stroke-linecap: round;
-    transition: 0.4s ease;
-  }
-
-  .cancel-lines {
-    position: absolute;
-    display: grid;
-    place-items: center;
-    width: 63%;
-    height: 63%;
-
-    &::before,
-    &::after {
-      --tx: 0;
-      --rt: 0deg;
-      content: "";
-      position: fixed;
-      width: 0;
-      height: 4px;
-      border-radius: 0.3em;
-      background: #ffffff;
-      transform-origin: right;
+    circle {
+      r: calc(50 - (var(--weight) / 2));
+      width: 100%;
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: calc(var(--weight) * 0.6);
+      stroke-dasharray: 284;
+      stroke-dashoffset: 284;
+      stroke-linecap: round;
+      transition: 0.4s ease;
     }
 
-    &::before {
-      top: 17px;
-      right: 25px;
-      transform: translate(var(--tx), 100%) rotate(var(--rt));
-    }
+    .cancel-lines {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 63%;
+      height: 63%;
 
-    &::after {
-      top: 46px;
-      right: 25px;
-      transform: translate(var(--tx), -100%) rotate(var(--rt));
+      &::before,
+      &::after {
+        --tx: 0;
+        --rt: 0deg;
+        content: "";
+        position: fixed;
+        width: 0;
+        height: 4px;
+        border-radius: 0.3em;
+        background: #ffffff;
+        transform-origin: right;
+      }
+
+      &::before {
+        top: 17px;
+        right: 25px;
+        transform: translate(var(--tx), 100%) rotate(var(--rt));
+      }
+
+      &::after {
+        top: 46px;
+        right: 25px;
+        transform: translate(var(--tx), -100%) rotate(var(--rt));
+      }
     }
   }
 }
-
 #toggle:checked ~ label {
   circle {
     stroke-dashoffset: 0;
@@ -117,38 +118,37 @@ label {
 }
 
 // SIDEBAR-MENU
- .sidebar-menu {
-    position: fixed;
-    z-index: 2;
-    right: 2%;
-    top: -4px;
-    cursor:pointer;
+.sidebar-menu {
+  position: fixed;
+  z-index: 2;
+  right: 2%;
+  top: -4px;
+  cursor:pointer;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #0B132B;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 130px;
+
+  a {
+    color: #ffffff !important;
+    padding: 8px 0;
+    margin: 0 25px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    transition: 0.3s;
   }
+}
 
-  .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #0B132B;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 130px;
-
-    a {
-      color: #ffffff !important;
-      padding: 8px 0;
-      margin: 0 25px;
-      text-decoration: none;
-      font-size: 18px;
-      display: block;
-      transition: 0.3s;
-    }
-
-  }
-
-  .open {
-    width: 270px;
-  }
+.open {
+  width: 270px;
+}
