@@ -1,0 +1,149 @@
+:root {
+  font-size: calc(10px + 1vmin);
+  --primary: hsl(260, 100%, 60%);
+  --softGrey: #9a97a8;
+  --bounce: 0.3s cubic-bezier(0.3, -0.1, 0.1, 1.4);
+  --ease: 0.2s cubic-bezier(0.3, 0.1, 0.4, 1);
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0.001;
+}
+
+.avatar {
+  position: fixed;
+  top: 13px;
+  right: 20px;
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: #0B132B 1px solid;
+}
+
+label {
+  --weight: 10%;
+  --size: 4em;
+  position: fixed;
+  top: 13px;
+  right: 20px;
+  // display: grid;
+  // place-items: center;
+  // width: var(--size);
+  // height: var(--size);
+  cursor: pointer;
+
+  circle {
+    r: calc(50 - (var(--weight) / 2));
+    width: 100%;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: calc(var(--weight) * 0.6);
+    stroke-dasharray: 284;
+    stroke-dashoffset: 284;
+    stroke-linecap: round;
+    transition: 0.4s ease;
+  }
+
+  .cancel-lines {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 63%;
+    height: 63%;
+
+    &::before,
+    &::after {
+      --tx: 0;
+      --rt: 0deg;
+      content: "";
+      position: fixed;
+      width: 0;
+      height: 4px;
+      border-radius: 0.3em;
+      background: #ffffff;
+      transform-origin: right;
+    }
+
+    &::before {
+      top: 17px;
+      right: 25px;
+      transform: translate(var(--tx), 100%) rotate(var(--rt));
+    }
+
+    &::after {
+      top: 46px;
+      right: 25px;
+      transform: translate(var(--tx), -100%) rotate(var(--rt));
+    }
+  }
+}
+
+#toggle:checked ~ label {
+  circle {
+    stroke-dashoffset: 0;
+    transition-delay: 0.12s;
+  }
+
+  .avatar{
+    display: none;
+  }
+
+  svg {
+    overflow: inherit;
+  }
+
+  .cancel-lines {
+    &::before,
+    &::after {
+      --tx: -15%;
+      --rt: 45deg;
+      width: 30px;
+      transition: var(--bounce) 0.1s;
+    }
+
+    &::before {
+      --ty: 15%;
+      --rt: -45deg;
+    }
+  }
+}
+
+
+// SIDEBAR-NAV
+ .burger-menu {
+    position: fixed;
+    z-index: 2;
+    right: 2%;
+    top: -4px;
+    cursor:pointer;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #0B132B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 130px;
+
+    a {
+      color: #ffffff !important;
+      padding: 8px 0;
+      margin: 0 25px;
+      text-decoration: none;
+      font-size: 25px;
+      display: block;
+      transition: 0.3s;
+    }
+
+  }
+
+  .open {
+    width: 270px;
+  }
+
