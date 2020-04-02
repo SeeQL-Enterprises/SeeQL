@@ -2,56 +2,13 @@
   background-color: transparent;
   justify-content: space-between;
   transition: 0.5s background-color ease;
-  z-index: 0;
+  z-index: 1;
 }
 
 .navbar-seeql .navbar-collapse {
   flex-grow: 0;
 }
 
-// .navbar-seeql .navbar-brand img {
-//   padding: 16px;
-//   width: 40px;
-// }
-
-* {
-  color: #ffffff;
-}
-
-// .navbar-toggler-icon {
-//   background-image: url('hamburger-menu.svg');
-//   position: fixed;
-//   top: 22px;
-//   right: 28px;
-// }
-
-
-
-
-
 .navbar-seeql-black {
   background-color: rgba(0,0,0,0.8);
 }
-
-// .navbar-logo {
-//   height: 84px;
-//   margin: 0 20px;
-//   &:hover {
-//     opacity: 0.8;
-//   }
-// }
-
-// .avatar {
-//   height: 54px;
-//   margin: 0 20px;
-//   &:hover {
-//     opacity: 0.8;
-//   }
-// }
-
-// .navbar-nav .dropdown-menu {
-//   position: absolute;
-//   top: 62px;
-//   left: -145px;
-//   float: none;
-// }
