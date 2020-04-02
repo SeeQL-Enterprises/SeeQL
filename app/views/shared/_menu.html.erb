@@ -7,6 +7,7 @@
       <svg  viewbox="0 0 100 100" width="40px" height="40px">
         <circle cx="50" cy="50"></circle>
       </svg>
+
       <div class="cancel-lines" id="my-cancel-lines">
 
         <% if current_user %>
@@ -17,9 +18,7 @@
           <% end %>
         <% else %>
           <span class="navbar-toggler-icon"></span>
-
         <% end %>
-
 
       </div>
     </label>
@@ -30,6 +29,8 @@
     <div>
       <% if current_user %>
         <a><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %></a>
+        <a><%= link_to "My Projects", projects_path, class: "border-bottom" %></a>
+        <a><%= link_to "Create Project", new_project_path, class: "border-bottom" %></a>
       <% else %>
         <a><%= link_to "Login", new_user_session_path, class: "border-bottom" %></a>
       <% end %>
@@ -38,8 +39,6 @@
         <a><%= link_to "Create account", '#', class: "border-bottom" %></a>
       <% end %>
 
-      <a><%= link_to "Return item", '#', class: "border-bottom" %></a>
-      <a><%= link_to "Register tag", '#', class: "border-bottom" %></a>
       <a><%= link_to "Home", root_path, class: "border-bottom" %></a>
     </div>
   </div>
