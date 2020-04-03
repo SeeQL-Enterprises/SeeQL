@@ -20,6 +20,10 @@
 
 .modal-header {
     color: black !important;
+
+    .fas.fa-times {
+        color: $red;
+    }
 }
 
 .modal-body {
