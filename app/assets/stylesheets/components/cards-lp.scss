@@ -35,7 +35,7 @@ body {
 .title {
   color: white;
   font-weight: 300;
-  padding: 20px;
+  padding: 10%;
 /*   position: absolute; */
 /*   left: 20px;
   top: 15px; */
@@ -71,11 +71,6 @@ body {
 //   background: linear-gradient(90deg, rgba(91,192,190,1) 0%, rgba(58,80,107,1) 90%);
 //   transition: 0.6s ease-out;
 // }
-
-.card:hover .filledbar {
-  width: 260px;
-  transition: 0.4s ease-out;
-}
 
 .circle {
   position: absolute;
