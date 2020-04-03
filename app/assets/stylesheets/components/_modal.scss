@@ -18,6 +18,18 @@
     }
 }
 
-.modal-body label, .modal-header{
-  color: black !important;
+.modal-header {
+    color: black !important;
+}
+
+.modal-body {
+    label {
+        color: black !important;
+    }
+
+    .form-control.select {
+        option {
+            color: black;
+        }
+    }
 }
