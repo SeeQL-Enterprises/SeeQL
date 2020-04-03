@@ -4,12 +4,13 @@
     <input type="checkbox" id="toggle">
 
     <label for="toggle" >
-      <svg  viewbox="0 0 100 100" width="40px" height="40px">
+      <svg  viewbox="0 0 100 100" width="100%" height="100%">
         <circle cx="50" cy="50"></circle>
       </svg>
 
-      <div class="cancel-lines" id="my-cancel-lines">
-
+      <!-- NEW -->
+      <!-- <div class="cancel-lines" id="my-cancel-lines"> -->
+      <!-- NEW -->
         <% if current_user %>
           <% if current_user.avatar.attached? %>
             <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
@@ -17,10 +18,20 @@
             <%= image_tag("avatar.svg", class: "avatar") %>
           <% end %>
         <% else %>
-          <span class="navbar-toggler-icon"></span>
+
+          <!-- NEW -->
+          <div class="hamburger" id="my-burger-menu">
+            <div class="center"></div>
+          </div>
+          <!-- NEW -->
+
+          <!-- <span class="navbar-toggler-icon"></span> -->
         <% end %>
 
-      </div>
+      <!-- NEW -->
+      <!-- </div> -->
+      <!-- NEW -->
+
     </label>
   </div>
 
@@ -79,3 +90,14 @@
     </div>
   </div>
 </div>
+
+
+<script>
+  let menu = document.querySelector( "#mySidenav" );
+  let menuIcon = document.querySelector( "#my-burger-menu" );
+   let bodyBackground = document.querySelector( "#body" );
+  menuIcon.addEventListener( "click",()=> {
+    menu.classList.contains('open') ? menu.classList.remove('open') : menu.classList.add('open');
+  });
+
+</script>

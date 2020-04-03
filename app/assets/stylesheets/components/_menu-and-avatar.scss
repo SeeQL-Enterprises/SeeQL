@@ -20,26 +20,33 @@ input[type="checkbox"] {
   border: #0B132B 1px solid;
 }
 
-.navbar-toggler-icon {
-  background-image: url('hamburger-menu.svg');
-  position: fixed;
-  top: 22px;
-  right: 28px;
-}
+// NEW
+// .navbar-toggler-icon {
+//   background-image: url('hamburger-menu.svg');
+//   position: fixed;
+//   top: 22px;
+//   right: 28px;
+// }
+// NEW
 
 // SHIFTING FROM AVATAR/BURGER TO CANCEL ICON
 .sidebar-menu {
   label {
     --weight: 10%;
     --size: 4em;
-    position: fixed;
-    top: 13px;
-    right: 20px;
+    position: relative;
+    // NEW
+    display: grid;
+    // NEW
+    place-items: center;
+    width: var(--size);
+    height: var(--size);
     cursor: pointer;
 
     circle {
       r: calc(50 - (var(--weight) / 2));
       width: 100%;
+      height: 100%;
       fill: none;
       stroke: #ffffff;
       stroke-width: calc(var(--weight) * 0.6);
@@ -49,7 +56,11 @@ input[type="checkbox"] {
       transition: 0.4s ease;
     }
 
-    .cancel-lines {
+    // NEW
+    .hamburger {
+    // NEW
+    // .cancel-lines {
+    // NEW
       position: absolute;
       display: grid;
       place-items: center;
@@ -57,27 +68,44 @@ input[type="checkbox"] {
       height: 63%;
 
       &::before,
+      // NEW
+      .center,
+      // NEW
       &::after {
         --tx: 0;
         --rt: 0deg;
         content: "";
-        position: fixed;
-        width: 0;
-        height: 4px;
+        // NEW
+        position: absolute;
+        // NEW
+        // position: fixed;
+        // NEW
+        width: 100%;
+        // NEW
+        // width: 0;
+        // NEW
+        height: var(--weight);
         border-radius: 0.3em;
         background: #ffffff;
         transform-origin: right;
+        transition: var(--bounce) 0.1s;
       }
 
+      // NEW
+      .center {
+        right: 0;
+        transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
+          width var(--ease) 0.15s;
+      }
+      // NEW
+
       &::before {
-        top: 17px;
-        right: 25px;
+        top: 0;
         transform: translate(var(--tx), 100%) rotate(var(--rt));
       }
 
       &::after {
-        top: 46px;
-        right: 25px;
+        bottom: 0;
         transform: translate(var(--tx), -100%) rotate(var(--rt));
       }
     }
@@ -93,20 +121,25 @@ input[type="checkbox"] {
     display: none;
   }
 
-  .navbar-toggler-icon {
-    display: none;
-  }
+  // NEW
+  // .navbar-toggler-icon {
+  //   display: none;
+  // }
 
-  svg {
-    overflow: inherit;
-  }
+  // svg {
+  //   overflow: inherit;
+  // }
+  // NEW
 
-  .cancel-lines {
+  // NEW
+  .hamburger {
+  // NEW
+  // .cancel-lines {
+  // NEW
     &::before,
     &::after {
-      --tx: -15%;
+      --tx: -13%;
       --rt: 45deg;
-      width: 30px;
       transition: var(--bounce) 0.1s;
     }
 
@@ -114,6 +147,14 @@ input[type="checkbox"] {
       --ty: 15%;
       --rt: -45deg;
     }
+
+    // NEW
+    .center {
+      width: 0;
+      right: calc(var(--size) * -0.16);
+      transition: width var(--ease) 0.1s, right var(--bounce);
+    }
+    // NEW
   }
 }
 
@@ -122,7 +163,7 @@ input[type="checkbox"] {
   position: fixed;
   z-index: 2;
   right: 2%;
-  top: -4px;
+  top: 13px;
   cursor:pointer;
 }
 
