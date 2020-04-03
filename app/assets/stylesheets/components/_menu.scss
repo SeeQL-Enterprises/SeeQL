@@ -6,25 +6,7 @@
 
 input[type="checkbox"] {
   position: absolute;
-  opacity: 0.001;
-}
-
-// AVATAR & BURGER MENU
-.avatar {
-  position: fixed;
-  top: 13px;
-  right: 20px;
-  width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: #0B132B 1px solid;
-}
-
-.navbar-toggler-icon {
-  background-image: url('hamburger-menu.svg');
-  position: fixed;
-  top: 22px;
-  right: 28px;
+  opacity: 1;
 }
 
 // SHIFTING FROM AVATAR/BURGER TO CANCEL ICON
@@ -32,14 +14,17 @@ input[type="checkbox"] {
   label {
     --weight: 10%;
     --size: 4em;
-    position: fixed;
-    top: 13px;
-    right: 20px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: var(--size);
+    height: var(--size);
     cursor: pointer;
 
     circle {
       r: calc(50 - (var(--weight) / 2));
       width: 100%;
+      height: 100%;
       fill: none;
       stroke: #ffffff;
       stroke-width: calc(var(--weight) * 0.6);
@@ -49,7 +34,55 @@ input[type="checkbox"] {
       transition: 0.4s ease;
     }
 
-    .cancel-lines {
+    // AVATAR - IF USER HAS ALREADY SIGNED UP
+    .avatar {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 63%;
+      height: 63%;
+
+      img {
+      position: absolute;
+      width: 133%;
+      border-radius: 50%;
+      z-index: 1;
+      }
+
+      &::before,
+      .center,
+      &::after {
+        --tx: 0;
+        --rt: 0deg;
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: var(--weight);
+        border-radius: 0.3em;
+        background: #ffffff;
+        transform-origin: right;
+        transition: var(--bounce) 0.1s;
+        }
+
+        .center {
+          right: 0;
+          transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
+            width var(--ease) 0.15s;
+        }
+
+        &::before {
+          top: 0;
+          transform: translate(var(--tx), 100%) rotate(var(--rt));
+        }
+
+        &::after {
+          bottom: 0;
+          transform: translate(var(--tx), -100%) rotate(var(--rt));
+        }
+      }
+
+    // HAMBURGER MENU - IF NO ACCOUNT
+    .hamburger {
       position: absolute;
       display: grid;
       place-items: center;
@@ -57,62 +90,71 @@ input[type="checkbox"] {
       height: 63%;
 
       &::before,
+      .center,
       &::after {
         --tx: 0;
         --rt: 0deg;
         content: "";
-        position: fixed;
-        width: 0;
-        height: 4px;
+        position: absolute;
+        width: 100%;
+        height: var(--weight);
         border-radius: 0.3em;
         background: #ffffff;
         transform-origin: right;
+        transition: var(--bounce) 0.1s;
+      }
+
+      .center {
+        right: 0;
+        transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
+          width var(--ease) 0.15s;
       }
 
       &::before {
-        top: 17px;
-        right: 25px;
+        top: 0;
         transform: translate(var(--tx), 100%) rotate(var(--rt));
       }
 
       &::after {
-        top: 46px;
-        right: 25px;
+        bottom: 0;
         transform: translate(var(--tx), -100%) rotate(var(--rt));
       }
     }
   }
 }
+
 #toggle:checked ~ label {
   circle {
     stroke-dashoffset: 0;
     transition-delay: 0.12s;
   }
 
-  .avatar{
-    display: none;
+  .avatar {
+    img {
+      display: none;
+    }
   }
 
-  .navbar-toggler-icon {
-    display: none;
-  }
-
-  svg {
-    overflow: inherit;
-  }
-
-  .cancel-lines {
+  .avatar,
+  .hamburger {
     &::before,
     &::after {
-      --tx: -15%;
+      width: 100%;
+      --tx: -13%;
       --rt: 45deg;
-      width: 30px;
       transition: var(--bounce) 0.1s;
     }
 
     &::before {
+      width: 100%;
       --ty: 15%;
       --rt: -45deg;
+    }
+
+    .center {
+      width: 0;
+      right: calc(var(--size) * -0.16);
+      transition: width var(--ease) 0.1s, right var(--bounce);
     }
   }
 }
@@ -122,7 +164,7 @@ input[type="checkbox"] {
   position: fixed;
   z-index: 2;
   right: 2%;
-  top: -4px;
+  top: 13px;
   cursor:pointer;
 }
 
