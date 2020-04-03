@@ -5,7 +5,7 @@
     <label for="toggle" >
         <svg  viewbox="0 0 100 100" width="40px" height="40px">
             <circle cx="50" cy="50"></circle>
-        </svg>        
+        </svg>
         <div class="cancel-lines" id="my-cancel-lines">
             <% if current_user %>
                 <% if current_user.avatar.attached? %>
@@ -33,39 +33,4 @@
         <a class="border-bottom" data-toggle="modal" data-target="#signupModal">Sign Up</a>
     <% end %>
     <%= link_to "Home", root_path, class: "border-bottom" %>
-</div>
-
-
-<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalTitle">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <%= render file: 'devise/sessions/new' %>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Signup Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="signupModalTitle">Sign Up</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <%= render file: 'devise/registrations/new' %>
-            </div>
-        </div>
-    </div>
 </div>
