@@ -7,12 +7,7 @@
     </div>
     <div class="form-actions">
         <div class="modal-footer">
-            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-                <button type="button" class="btn btn-outline-white" data-toggle="modal" data-target="#signupModal">
-                    Sign Up
-                </button>
-            <% end %>
-            <%= f.button :submit, "Log in", class: "btn btn-outline-white" %>
+            <%= f.button :submit, "Log in", class: "btn btn-outline-white btn-sm" %>
         </div>
     </div>
 <% end %>
