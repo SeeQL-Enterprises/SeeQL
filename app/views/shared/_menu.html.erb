@@ -8,29 +8,23 @@
         <circle cx="50" cy="50"></circle>
       </svg>
 
-      <!-- NEW -->
-      <!-- <div class="cancel-lines" id="my-cancel-lines"> -->
-      <!-- NEW -->
         <% if current_user %>
           <% if current_user.avatar.attached? %>
-            <%= cl_image_tag current_user.avatar.key, class: "avatar" %>
+            <div class="avatar" id="my-burger-menu">
+              <%= cl_image_tag current_user.avatar.key %>
+            </div>
           <% else %>
-            <%= image_tag("avatar.svg", class: "avatar") %>
+            <div class="avatar" id="my-burger-menu">
+              <%= image_tag("avatar.svg", id: "my-burger-menu") %>
+            </div>
           <% end %>
         <% else %>
 
-          <!-- NEW -->
           <div class="hamburger" id="my-burger-menu">
             <div class="center"></div>
           </div>
-          <!-- NEW -->
 
-          <!-- <span class="navbar-toggler-icon"></span> -->
         <% end %>
-
-      <!-- NEW -->
-      <!-- </div> -->
-      <!-- NEW -->
 
     </label>
   </div>

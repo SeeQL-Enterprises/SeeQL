@@ -6,28 +6,10 @@
 
 input[type="checkbox"] {
   position: absolute;
-  opacity: 0.001;
+  opacity: 1;
 }
 
 // AVATAR & BURGER MENU
-.avatar {
-  position: fixed;
-  top: 13px;
-  right: 20px;
-  width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: #0B132B 1px solid;
-}
-
-// NEW
-// .navbar-toggler-icon {
-//   background-image: url('hamburger-menu.svg');
-//   position: fixed;
-//   top: 22px;
-//   right: 28px;
-// }
-// NEW
 
 // SHIFTING FROM AVATAR/BURGER TO CANCEL ICON
 .sidebar-menu {
@@ -35,9 +17,7 @@ input[type="checkbox"] {
     --weight: 10%;
     --size: 4em;
     position: relative;
-    // NEW
     display: grid;
-    // NEW
     place-items: center;
     width: var(--size);
     height: var(--size);
@@ -56,11 +36,54 @@ input[type="checkbox"] {
       transition: 0.4s ease;
     }
 
-    // NEW
+    .avatar {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      width: 63%;
+      height: 63%;
+
+      img {
+      position: absolute;
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      border: #0B132B 1px solid;
+      }
+
+      &::before,
+      .center,
+      &::after {
+        --tx: 0;
+        --rt: 0deg;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: var(--weight);
+        border-radius: 0.3em;
+        background: #ffffff;
+        transform-origin: right;
+        transition: var(--bounce) 0.1s;
+        }
+
+        .center {
+          right: 0;
+          transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
+            width var(--ease) 0.15s;
+        }
+
+        &::before {
+          top: 0;
+          transform: translate(var(--tx), 100%) rotate(var(--rt));
+        }
+
+        &::after {
+          bottom: 0;
+          transform: translate(var(--tx), -100%) rotate(var(--rt));
+        }
+      }
+
     .hamburger {
-    // NEW
-    // .cancel-lines {
-    // NEW
       position: absolute;
       display: grid;
       place-items: center;
@@ -68,22 +91,13 @@ input[type="checkbox"] {
       height: 63%;
 
       &::before,
-      // NEW
       .center,
-      // NEW
       &::after {
         --tx: 0;
         --rt: 0deg;
         content: "";
-        // NEW
         position: absolute;
-        // NEW
-        // position: fixed;
-        // NEW
         width: 100%;
-        // NEW
-        // width: 0;
-        // NEW
         height: var(--weight);
         border-radius: 0.3em;
         background: #ffffff;
@@ -91,13 +105,11 @@ input[type="checkbox"] {
         transition: var(--bounce) 0.1s;
       }
 
-      // NEW
       .center {
         right: 0;
         transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
           width var(--ease) 0.15s;
       }
-      // NEW
 
       &::before {
         top: 0;
@@ -111,31 +123,21 @@ input[type="checkbox"] {
     }
   }
 }
+
 #toggle:checked ~ label {
   circle {
     stroke-dashoffset: 0;
     transition-delay: 0.12s;
   }
 
-  .avatar{
-    display: none;
+  .avatar {
+    img {
+      display: none;
+    }
   }
 
-  // NEW
-  // .navbar-toggler-icon {
-  //   display: none;
-  // }
-
-  // svg {
-  //   overflow: inherit;
-  // }
-  // NEW
-
-  // NEW
+  .avatar,
   .hamburger {
-  // NEW
-  // .cancel-lines {
-  // NEW
     &::before,
     &::after {
       --tx: -13%;
