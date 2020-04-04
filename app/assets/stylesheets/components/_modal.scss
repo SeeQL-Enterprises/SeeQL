@@ -17,3 +17,27 @@
         color: black;
     }
 }
+
+.modal-header {
+    color: black !important;
+
+    .fas.fa-times {
+        color: $red;
+    }
+
+    .close {
+        color: $red;
+    }
+}
+
+.modal-body {
+    label {
+        color: black !important;
+    }
+
+    .form-control.select {
+        option {
+            color: black;
+        }
+    }
+}
