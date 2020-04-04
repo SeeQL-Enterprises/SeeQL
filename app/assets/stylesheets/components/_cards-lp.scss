@@ -63,25 +63,39 @@ body {
     transition: 0.6s ease-out;
   }
 
-.circle {
-  position: absolute;
-  top: 150px;
-  left: calc(50% - 60px);
+.card-content {
+  padding: 0%;
+  width: 0%;
+  p {
+    color: #ffffff;
+  }
 }
 
-.stroke {
-  stroke: white;
-  stroke-dasharray: 360;
-  stroke-dashoffset: 360;
+.card:hover .card-content {
+  padding: 10%;
+  width: 100%;
   transition: 0.6s ease-out;
 }
 
-svg {
-  fill: #1C2541;
-  stroke-width: 2px;
-}
+// .circle {
+//   position: absolute;
+//   top: 150px;
+//   left: calc(50% - 60px);
+// }
 
-.card:hover .stroke {
-  stroke-dashoffset: 100;
-  transition: 0.6s ease-out;
-}
+// .stroke {
+//   stroke: white;
+//   stroke-dasharray: 360;
+//   stroke-dashoffset: 360;
+//   transition: 0.6s ease-out;
+// }
+
+// svg {
+//   fill: #1C2541;
+//   stroke-width: 2px;
+// }
+
+// .card:hover .stroke {
+//   stroke-dashoffset: 100;
+//   transition: 0.6s ease-out;
+// }
