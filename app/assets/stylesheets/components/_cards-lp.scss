@@ -52,12 +52,14 @@ body {
   width: 100%;
   height: 100%;
   z-index: 2;
+  -webkit-transition: 0.6s ease-out;
 }
 
 .card:hover .emptybar {
     z-index: 3;
     background: rgb(0,154,217);
     background: linear-gradient(90deg, rgba(91,192,190,1) 0%, rgba(58,80,107,1) 90%);
+    width: 100%;
     transition: 0.6s ease-out;
   }
 
