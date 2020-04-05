@@ -4,37 +4,23 @@ class CommentsController < ApplicationController
         authorize @comment
         @comment.user = current_user
 
-        unless params[:comment_proxy][:column_id]
-            @table = Table.find(params[:comment_proxy][:table_id])
-            @comment.commentable = @table
-
-            if @comment.save
-                respond_to do |format|
-                    format.html { redirect_to database_tables_path(@table.database) }
-                    format.js {
-                        @data_set = params[:comment_proxy][:data_comment]
-                    }
-                end
-            else
-                respond_to do |format|
-                    format.html { redirect_to database_tables_path(@table.database) }
-                    format.js
-                end
-            end
-        else
+        if params[:comment_proxy][:column_id]
             @column = Column.find(params[:comment_proxy][:column_id])
             @comment.commentable = @column
+        else
+            @table = Table.find(params[:comment_proxy][:table_id])
+            @comment.commentable = @table
+        end
 
-            if @comment.save
-                respond_to do |format|
-                    format.html { redirect_to database_tables_path(@table.database) }
-                    format.js  { @data_set = params[:comment_proxy][:data_comment] }
-                end
-            else
-                respond_to do |format|
-                    format.html { redirect_to database_tables_path(@table.database) }
-                    format.js
-                end
+        if @comment.save
+            respond_to do |format|
+                format.html { redirect_to database_tables_path(@table.database) }
+                format.js { @data_set = params[:comment_proxy][:data_comment] }
+            end
+        else
+            respond_to do |format|
+                format.html { redirect_to database_tables_path(@table.database) }
+                format.js
             end
         end
     end
