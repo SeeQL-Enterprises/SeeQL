@@ -1,5 +1,4 @@
 class ColumnsController < ApplicationController
-
     def create
         @column = Column.new(column_params)
         authorize @column
@@ -8,14 +7,13 @@ class ColumnsController < ApplicationController
         @column.save!
 
         respond_to do |format|
-            format.js {
+            format.js do
                 @counter = params[:column_proxy][:counter]
                 @table = @column.table
-            }
+            end
 
             format.html { redirect_to database_tables_path(@database) }
         end
-
     end
 
     def destroy
@@ -23,18 +21,11 @@ class ColumnsController < ApplicationController
         @database = @column.table.database
         authorize @column
 
-        if @column.edit
-            @column.destroy
+        @column.destroy if @column.edit
 
-            respond_to do |format|
-                format.js
-                format.html { redirect_to database_tables_path(@database) }
-            end
-        else
-            respond_to do |format|
-                format.js
-                format.html { redirect_to database_tables_path(@database) }
-            end
+        respond_to do |format|
+            format.js
+            format.html { redirect_to database_tables_path(@database) }
         end
     end
 
