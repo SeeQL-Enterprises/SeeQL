@@ -9,30 +9,20 @@ AllCops:
         - 'tmp/**/*'
         - 'test/**/*'
 
-# --------------- STYLE ---------------
-Style/AsciiComments:
+# --------------- BUNDLER ---------------
+Bundler/OrderedGems:
     Enabled: false
-Style/ConditionalAssignment:
+
+# --------------- LAYOUT ---------------
+Layout/IndentationWidth:
+    Width: 4
+Layout/LineLength:
+    Max: 110
+
+# --------------- LAYOUT ---------------
+Lint/RaiseException:
     Enabled: true
-Style/Documentation:
-    Enabled: true
-Style/EmptyMethod:
-    Enabled: true
-Style/FrozenStringLiteralComment:
-    Enabled: false
-Style/MethodMissingSuper:
-    Enabled: true
-Style/MissingRespondToMissing:
-    Enabled: true
-Style/MutableConstant:
-    Enabled: true
-Style/RedundantReturn:
-    Enabled: true
-Style/SignalException:
-    Enabled: true
-Style/StringLiterals:
-    Enabled: true
-Style/WordArray:
+Lint/StructNewOverride:
     Enabled: true
 
 # --------------- METRICS ---------------
@@ -45,12 +35,34 @@ Metrics/ClassLength:
 Metrics/MethodLength:
     Max: 20
 
-# --------------- LAYOUT ---------------
-Layout/IndentationWidth:
-    Width: 4
-Layout/LineLength:
-    Max: 110
-
-# --------------- BUNDLER ---------------
-Bundler/OrderedGems:
+# --------------- STYLE ---------------
+Style/AsciiComments:
     Enabled: false
+Style/ConditionalAssignment:
+    Enabled: true
+Style/Documentation:
+    Enabled: true
+Style/EmptyMethod:
+    Enabled: true
+Style/FrozenStringLiteralComment:
+    Enabled: false
+Style/HashEachMethods:
+    Enabled: true
+Style/MethodMissingSuper:
+    Enabled: true
+Style/MissingRespondToMissing:
+    Enabled: true
+Style/MutableConstant:
+    Enabled: true
+Style/RedundantReturn:
+    Enabled: true
+Style/SignalException:
+    Enabled: true
+Style/StringLiterals:
+    Enabled: true
+Style/HashTransformKeys:
+    Enabled: true
+Style/HashTransformValues:
+    Enabled: true
+Style/WordArray:
+    Enabled: true
