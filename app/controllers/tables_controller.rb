@@ -20,7 +20,6 @@ class TablesController < ApplicationController
 
         @database = Database.find(params[:database_id])
         @table.database = @database
-        columns_params = table_params[:columns_attributes]
 
         @table.save!
 
@@ -28,8 +27,8 @@ class TablesController < ApplicationController
     end
 
     private
+
     def table_params
         params.require(:table).permit(:name, :edit, :display, columns_attributes: Column.attribute_names.map(&:to_sym).push(:_destroy))
     end
-
 end
