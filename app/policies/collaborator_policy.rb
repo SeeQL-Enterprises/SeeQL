@@ -1,11 +1,11 @@
 class CollaboratorPolicy < ApplicationPolicy
-  class Scope < Scope
-    def resolve
-      scope.all
+    class Scope < Scope
+        def resolve
+            scope.all
+        end
     end
-  end
 
-  def create?
-    return true
-  end
+    def create?
+        true
+    end
 end
