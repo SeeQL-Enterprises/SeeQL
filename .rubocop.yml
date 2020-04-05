@@ -1,43 +1,56 @@
 AllCops:
-  Exclude:
-    - 'bin/**/*'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'node_modules/**/*'
-    - 'script/**/*'
-    - 'support/**/*'
-    - 'tmp/**/*'
-    - 'test/**/*'
+    Exclude:
+        - 'bin/**/*'
+        - 'db/**/*'
+        - 'config/**/*'
+        - 'node_modules/**/*'
+        - 'script/**/*'
+        - 'support/**/*'
+        - 'tmp/**/*'
+        - 'test/**/*'
 
-ConditionalAssignment:
-  Enabled: false
-StringLiterals:
-  Enabled: false
-RedundantReturn:
-  Enabled: false
-Documentation:
-  Enabled: false
-WordArray:
-  Enabled: false
-AbcSize:
-  Enabled: false
-MutableConstant:
-  Enabled: false
-SignalException:
-  Enabled: false
-Casecmp:
-  Enabled: false
-CyclomaticComplexity:
-  Enabled: false
-MissingRespondToMissing:
-  Enabled: false
-MethodMissingSuper:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  Enabled: false
-LineLength:
-  Max: 120
+# --------------- STYLE ---------------
+Style/AsciiComments:
+    Enabled: false
+Style/ConditionalAssignment:
+    Enabled: true
+Style/Documentation:
+    Enabled: true
 Style/EmptyMethod:
-  Enabled: false
+    Enabled: true
+Style/FrozenStringLiteralComment:
+    Enabled: false
+Style/MethodMissingSuper:
+    Enabled: true
+Style/MissingRespondToMissing:
+    Enabled: true
+Style/MutableConstant:
+    Enabled: true
+Style/RedundantReturn:
+    Enabled: true
+Style/SignalException:
+    Enabled: true
+Style/StringLiterals:
+    Enabled: true
+Style/WordArray:
+    Enabled: true
+
+# --------------- METRICS ---------------
+Metrics/AbcSize:
+    Enabled: false
+Metrics/CyclomaticComplexity:
+    Enabled: true
+Metrics/ClassLength:
+    Max: 130
+Metrics/MethodLength:
+    Max: 20
+
+# --------------- LAYOUT ---------------
+Layout/IndentationWidth:
+    Width: 4
+Layout/LineLength:
+    Max: 110
+
+# --------------- BUNDLER ---------------
 Bundler/OrderedGems:
-  Enabled: false
+    Enabled: false
