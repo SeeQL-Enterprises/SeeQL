@@ -1,6 +1,6 @@
 class DatabaseTablePreferencesController < ApplicationController
     def update
-        table_ids = database_params[:tables].reject {|id| id.blank? }.map {|id| id.to_i }
+        table_ids = database_params[:tables].reject(&:blank?).map(&:to_i)
         database = Database.find(params[:id])
         authorize database.project
 
@@ -15,7 +15,7 @@ class DatabaseTablePreferencesController < ApplicationController
     end
 
     private
-    
+
     def database_params
         params.require(:database).permit(tables: [])
     end

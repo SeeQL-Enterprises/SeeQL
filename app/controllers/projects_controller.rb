@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-
     def index
         @projects = policy_scope(Project)
     end
@@ -34,7 +33,7 @@ class ProjectsController < ApplicationController
         params.require(:project).permit(:name)
     end
 
-    def get_project_members
-        @project.collaborators.map {|collaborator| collaborator.user.id }.push(current_user.id)
+    def project_members
+        @project.collaborators.map { |collaborator| collaborator.user.id }.push(current_user.id)
     end
 end
