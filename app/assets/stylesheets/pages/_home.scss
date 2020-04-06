@@ -8,12 +8,13 @@ body {
 
 .page-content {
   min-height: calc(100vh - 60px);
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
 
 // Generally for all sections on lp
 section {
   padding-top: 4.5rem;
+  text-align: center;
   h1 {
     color: #0B132B;
     font-weight: bold;
@@ -28,12 +29,19 @@ section {
   }
 }
 
-// Very small devices (landscape phones, 576px and up)
-@media (min-width: 100px) and (max-width: 575px) {
-  section {
-    margin-bottom: 12.0rem;
-  }
+.section-header {
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 40px;
+  color: white
 }
+
+// // Very small devices (landscape phones, 576px and up)
+// @media (min-width: 100px) and (max-width: 575px) {
+//   section {
+//     margin-bottom: 12.0rem;
+//   }
+// }
 
 // XX large devices (widescreen desktops, 2560px and up)
 @media (min-width: 2560px) {
