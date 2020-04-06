@@ -1,43 +1,94 @@
 AllCops:
-  Exclude:
-    - 'bin/**/*'
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'node_modules/**/*'
-    - 'script/**/*'
-    - 'support/**/*'
-    - 'tmp/**/*'
-    - 'test/**/*'
+    Exclude:
+        - 'bin/**/*'
+        - 'db/**/*'
+        - 'config/**/*'
+        - 'node_modules/**/*'
+        - 'script/**/*'
+        - 'support/**/*'
+        - 'tmp/**/*'
+        - 'test/**/*'
 
-ConditionalAssignment:
-  Enabled: false
-StringLiterals:
-  Enabled: false
-RedundantReturn:
-  Enabled: false
-Documentation:
-  Enabled: false
-WordArray:
-  Enabled: false
-AbcSize:
-  Enabled: false
-MutableConstant:
-  Enabled: false
-SignalException:
-  Enabled: false
-Casecmp:
-  Enabled: false
-CyclomaticComplexity:
-  Enabled: false
-MissingRespondToMissing:
-  Enabled: false
-MethodMissingSuper:
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  Enabled: false
-LineLength:
-  Max: 120
-Style/EmptyMethod:
-  Enabled: false
+# --------------- BUNDLER ---------------
 Bundler/OrderedGems:
-  Enabled: false
+    Enabled: false
+
+# --------------- LAYOUT ---------------
+Layout/IndentationWidth:
+    Width: 4
+Layout/LineLength:
+    Enabled: false
+
+# --------------- LINT ---------------
+Lint/RaiseException:
+    Enabled: true
+Lint/StructNewOverride:
+    Enabled: true
+Lint/UselessAssignment:
+    Enabled: true
+
+# --------------- METRICS ---------------
+Metrics/AbcSize:
+    Enabled: false
+Metrics/CyclomaticComplexity:
+    Enabled: false
+Metrics/ClassLength:
+    Enabled: false
+    Max: 130
+Metrics/MethodLength:
+    Enabled: false
+    Max: 20
+
+# --------------- NAMING ---------------
+Naming/AccessorMethodName:
+    Enabled: true
+Naming/RescuedExceptionsVariableName:
+    Enabled: true
+
+# --------------- STYLE ---------------
+Style/AsciiComments:
+    Enabled: false
+Style/BlockDelimiters:
+    Enabled: true
+Style/ConditionalAssignment:
+    Enabled: true
+Style/Documentation:
+    Enabled: false
+Style/EmptyMethod:
+    Enabled: true
+Style/FrozenStringLiteralComment:
+    Enabled: false
+Style/GuardClause:
+    Enabled: true
+Style/HashEachMethods:
+    Enabled: true
+Style/IdenticalConditionalBranches:
+    Enabled: true
+Style/MethodMissingSuper:
+    Enabled: true
+Style/MissingRespondToMissing:
+    Enabled: true
+Style/MutableConstant:
+    Enabled: true
+Style/RedundantBegin:
+    Enabled: true
+Style/RedundantReturn:
+    Enabled: true
+Style/RedundantSelf:
+    Enabled: true
+Style/SafeNavigation:
+    Enabled: true
+Style/SignalException:
+    Enabled: true
+Style/StringLiterals:
+    Enabled: true
+Style/SymbolArray:
+    Enabled: true
+Style/UnlessElse:
+    Enabled: true
+Style/HashTransformKeys:
+    Enabled: true
+Style/HashTransformValues:
+    Enabled: true
+Style/WordArray:
+    Enabled: true

@@ -3,7 +3,7 @@ class CollaboratorsController < ApplicationController
         @collaborator = Collaborator.new
         authorize @collaborator
         @collaborator.user = set_user
-        
+
         @project = Project.find(params[:project_id])
         @collaborator.project = @project
 
@@ -15,6 +15,7 @@ class CollaboratorsController < ApplicationController
     end
 
     private
+
     def collaborator_params
         params.require(:collaborator).permit(:user)
     end
@@ -22,5 +23,4 @@ class CollaboratorsController < ApplicationController
     def set_user
         User.find_by_email(collaborator_params[:user])
     end
-
 end
