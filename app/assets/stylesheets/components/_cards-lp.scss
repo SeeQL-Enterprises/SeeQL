@@ -7,7 +7,7 @@ body {
 .flip-card {
   background-color: transparent;
   width: 320px;
-  height: 380px;
+  height: 480px;
   margin: 20px auto;
   padding: 0 10px;
   perspective: 1000px;
@@ -59,6 +59,7 @@ body {
 .title {
   color: white;
   font-weight: 300;
+  font-size: xx-large;
   padding: 10%;
 }
 
@@ -74,13 +75,14 @@ body {
 .content {
   padding: 10%;
   width: 100%;
-  height: 100%;
+  height: 360px;
   img {
     padding: 25% 10%;
     width: 70%;
   }
   p {
-    color: #ffffff
+    color: #ffffff;
+    font-size: initial;
   }
 }
 
