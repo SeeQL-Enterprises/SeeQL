@@ -1,0 +1,35 @@
+#who-are-we {
+  background-color: #ffffff;
+  h1 {
+    color: #0B132B;
+  }
+  i {
+    color: #0B132B;
+  }
+  p {
+    color: #1C2541;
+  }
+}
+
+.team {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.member {
+  text-align: center;
+  img {
+    border-radius: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .team {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
