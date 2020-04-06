@@ -14,7 +14,6 @@ body {
 // Generally for all sections on lp
 section {
   padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
   text-align: center;
   h1 {
     color: #0B132B;
@@ -37,12 +36,12 @@ section {
   color: white
 }
 
-// Very small devices (landscape phones, 576px and up)
-@media (min-width: 100px) and (max-width: 575px) {
-  section {
-    margin-bottom: 12.0rem;
-  }
-}
+// // Very small devices (landscape phones, 576px and up)
+// @media (min-width: 100px) and (max-width: 575px) {
+//   section {
+//     margin-bottom: 12.0rem;
+//   }
+// }
 
 // XX large devices (widescreen desktops, 2560px and up)
 @media (min-width: 2560px) {

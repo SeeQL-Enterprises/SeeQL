@@ -11,11 +11,15 @@
   }
 }
 
+.seeql_logo-bottom {
+  max-width: 20%;
+}
+
 .team {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
-  padding: 20px;
+  padding: 4.5rem 20px;
 }
 
 .member {
