@@ -3,102 +3,81 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.card {
-/*   display: flex; */
-  text-align: center;
-  height: 380px;
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
   width: 300px;
-  background-color: #1C2541;
-  border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
-/*   margin-left: -50px; */
-  transition: 0.4s ease-out;
+  height: 380px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
   position: relative;
-  left: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.card:not(:first-child) {
-    // margin-left: -50px;
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-.card:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 15px #1C2541;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
 }
 
-.card:hover ~ .card {
-  position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background: linear-gradient(115deg, rgba(91,192,190,1) 0%, rgba(58,80,107,1) 65%, rgba(28, 37, 65, 1) 100%);
+  color: #ffffff;
+  i {
+    font-size: 800%;
+  }
+}
+
+/* Style the back side */
+.flip-card-back {
+  background: linear-gradient(-115deg, rgba(91,192,190,1) 0%, rgba(58,80,107,1) 65%, rgba(28, 37, 65, 1) 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.bar {
+  background-color: #2e3033;
+  height: 5px;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 2;
+}
+
+.content {
+  padding: 10%;
+  width: 100%;
+  height: 100%;
+  img {
+    padding: 25% 10%;
+    width: 70%;
+  }
+  p {
+    color: #ffffff
+  }
 }
 
 .title {
   color: white;
   font-weight: 300;
   padding: 10%;
-/*   position: absolute; */
-/*   left: 20px;
-  top: 15px; */
 }
-
-.bar {
-  padding: 0 10%;
-  height: 5px;
-  width: 100%;
-}
-
-.emptybar {
-  background-color: #2e3033;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  -webkit-transition: 0.6s ease-out;
-}
-
-.card:hover .emptybar {
-    z-index: 3;
-    background: rgb(0,154,217);
-    background: linear-gradient(90deg, rgba(91,192,190,1) 0%, rgba(58,80,107,1) 90%);
-    width: 100%;
-    transition: 0.6s ease-out;
-  }
-
-.card-content {
-  padding: 10%;
-  width: 100%;
-  height: 100%;
-  i {
-    font-size: 500%;
-    transition: 0.6s ease-out;
-  }
-}
-
-.card:hover .card-content {
-  i {
-    font-size: 0%;
-    transition: 0.6s ease-out;
-  }
-}
-
-// .circle {
-//   position: absolute;
-//   top: 150px;
-//   left: calc(50% - 60px);
-// }
-
-// .stroke {
-//   stroke: white;
-//   stroke-dasharray: 360;
-//   stroke-dashoffset: 360;
-//   transition: 0.6s ease-out;
-// }
-
-// svg {
-//   fill: #1C2541;
-//   stroke-width: 2px;
-// }
-
-// .card:hover .stroke {
-//   stroke-dashoffset: 100;
-//   transition: 0.6s ease-out;
-// }
