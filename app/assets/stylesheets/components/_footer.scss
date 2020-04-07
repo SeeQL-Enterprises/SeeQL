@@ -1,45 +1,94 @@
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    padding: 0px 50px;
-    color: rgba(0,0,0,0.7);
-
-    .footer-links {
-        display: flex;
-        align-items: center;
-
-        a {
-            color: white;
-            opacity: 0.8;
-            text-decoration: none;
-            font-size: 24px;
-            padding: 0px 10px;
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
-
-    .footer-copyright {
-        color: rgba(255,255,255,0.7);
-    }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0px 20px;
+  color: white;
 }
 
-$size: 24px;
+.footer-links {
+  display: -webkit-inline-box;
+  -webkit-box-align: center;
+  width: 285px;
 
-.social-share-button {
+  .fab {
+    color: #277c00 !important;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 28px;
+    padding: 0px 10px;
+    &:hover {
+        opacity: 1;
+    }
+  }
+}
+
+.rails-social-share-button {
   .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-    padding: 22px;
-    margin: 4px 10px 0 10px;
+    background-size: 28px 28px;
+    height: 28px;
+    width: 28px;
+    padding: 10px;
+    margin: 6px 10px 0 0;
+  }
+}
+
+.footer-copyright {
+  color: white;
+  margin-right: 20px;
+}
+
+.show {
+  .footer-links {
+    background-color: white;
+    position: absolute;
+    top: -30px;
+    left: 18px;
+    float: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .show {
+    .footer-links {
+      background-color: transparent;
+      position: absolute;
+      top: -13px;
+      left: 16px;
+      float: none;
+      display: -webkit-inline-box;
+      -webkit-box-align: center;
+      width: 285px;
+
+      a {
+        color: #277c00;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 18px;
+        padding: 0px 15px;
+        &:hover {
+            opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .show {
+    .rails-social-share-button {
+      .ssb-icon {
+        background-size: 28px 28px;
+        height: 28px;
+        width: 28px;
+        padding: 10px;
+        margin: 6px 10px 0 0;
+      }
+    }
   }
 }
