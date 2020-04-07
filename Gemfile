@@ -11,6 +11,7 @@ gem 'redis'
 gem 'json'
 gem 'pundit'
 gem 'social-share-button'
+gem 'bulma-rails', '~> 0.8.0'
 # gem 'bootstrap-toggle-rails'
 
 gem 'autoprefixer-rails'
