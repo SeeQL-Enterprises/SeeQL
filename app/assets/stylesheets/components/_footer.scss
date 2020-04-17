@@ -1,45 +1,58 @@
-.footer {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-    padding: 0px 50px;
-    color: rgba(0,0,0,0.7);
+.show {
+  position: fixed;
+  bottom: 68px;
+  width: 101%;
+}
 
-    .footer-links {
-        display: flex;
-        align-items: center;
+.bg-dark {
+  background-color: black !important;
+}
 
-        a {
-            color: white;
-            opacity: 0.8;
-            text-decoration: none;
-            font-size: 24px;
-            padding: 0px 10px;
+.footer-links {
+  display: -webkit-inline-box;
+  -webkit-box-align: center;
+}
 
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
-
-    .footer-copyright {
-        color: rgba(255,255,255,0.7);
-    }
+.fab {
+  color: #277c00;
+  opacity: 0.8;
+  text-decoration: none;
+  font-size: 27.5px;
+  margin: 2px 14px 0 14px;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 $size: 24px;
 
 .social-share-button {
+  -webkit-box-align: center;
   .ssb-icon {
     background-size: $size $size;
     height: $size;
     width: $size;
-    padding: 22px;
-    margin: 4px 10px 0 10px;
+    // padding: 0 8px;
+    margin: 6.5px 8px 0 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .collapse:not(.show) {
+    display: block;
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+    height: 60px;
+  }
+
+  .p-4 {
+    padding: 0 0 !important;
+  }
+
+  nav.navbar {
+    justify-content: flex-end;
+    z-index: 0;
+    padding: 1.5rem 1rem;
   }
 }
