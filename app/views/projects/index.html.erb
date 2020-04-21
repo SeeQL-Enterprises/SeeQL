@@ -7,21 +7,45 @@
   <div class="row w-100">
     <% @projects.sort_by! { |project| project.created_at } %>
     <% @projects.each do |project| %>
+      <%= link_to project_path(project), style: "text-decoration: none;" do %>
+
+      <div class="card-trip">
+        <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1021&q=80" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= project.name.capitalize %></h2>
+          </div>
+          <div class="project-collab">
+            <% project.collaborators.each do |collaborator| %>
+              <% if collaborator.user.avatar.attached? %>
+                  <div class="card-trip-user">
+                    <%= cl_image_tag collaborator.user.avatar.key %>
+                  </div>
+              <% else %>
+                  <div class="card-trip-user">
+                      <%= image_tag("avatar.svg") %>
+                  </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+
+    <% end %>
+  </div>
+</div>
 
       <div class="col-3 mt-5">
-        <%= link_to project_path(project), style: "text-decoration: none;" do %>
           <div class="card bg border text-center projcard">
             <p class="project_name" ><strong><%= project.name.capitalize %></strong> </p>
             <div class="collab_list">
               <p><strong><u>Collaborators:</u></strong></p>
 
               <% project.collaborators.each do |collaborator| %>
-                <p><%= collaborator.user.email %></p>
+                <p><%= collaborator.user.avatar %></p>
               <% end %>
             </div>
           </div>
         <% end %>
       </div>
-    <% end %>
-  </div>
-</div>
