@@ -17,15 +17,18 @@
           </div>
           <div class="project-collab">
             <% project.collaborators.each do |collaborator| %>
-              <% if collaborator.user.avatar.attached? %>
+              <div class="project-collab-icon">
+                <% if collaborator.user.avatar.attached? %>
                   <div class="card-trip-user">
                     <%= cl_image_tag collaborator.user.avatar.key %>
                   </div>
-              <% else %>
+                <% else %>
                   <div class="card-trip-user">
-                      <%= image_tag("avatar.svg") %>
+                    <%= image_tag("avatar.svg") %>
                   </div>
-              <% end %>
+                <% end %>
+                <%= collaborator.user.name %>
+              </div>
             <% end %>
           </div>
         </div>
