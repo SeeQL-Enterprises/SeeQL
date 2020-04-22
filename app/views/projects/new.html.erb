@@ -3,6 +3,7 @@
     <%= simple_form_for @project do |f|%>
         <%= f.input :name, placeholder: "Name of your new project" %>
         <%= f.input :image, as: :file, required: false %>
+
         <%= f.submit "Create Project", class: "btn-treehouse" %>
     <% end %>
 </div>

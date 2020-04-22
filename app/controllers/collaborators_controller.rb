@@ -7,7 +7,9 @@ class CollaboratorsController < ApplicationController
         @project = Project.find(params[:project_id])
         @collaborator.project = @project
 
-        if @collaborator.save
+        if @project.collaborators.any? { |collaborator| collaborator.user == @collaborator.user }
+            render 'projects/show'
+        elsif @collaborator.save
             redirect_to project_path(@project)
         else
             render 'projects/show'
