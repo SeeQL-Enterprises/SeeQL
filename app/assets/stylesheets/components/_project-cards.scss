@@ -76,10 +76,6 @@
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-
   .project-collab {
     right: 0px;
     top: 10px;
@@ -87,11 +83,13 @@
       .collab-name {
         display: none;
       }
-      img {
-      width: 30px;
-      margin: 0 8px;
-      border-radius: 50%;
-      }
     }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
