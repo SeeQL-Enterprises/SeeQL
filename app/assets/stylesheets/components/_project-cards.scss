@@ -1,0 +1,97 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
+
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.card-image {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 140px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.card-project h2 {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-project-infos {
+  height: 60px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  background-color: #5bc0be;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.project-collab {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  right: 0px;
+  top: -20px;
+  width: 100%;
+  .project-collab-icon {
+    text-align: center;
+  }
+  img {
+    width: 40px;
+    margin: 0 16px;
+    border-radius: 50%;
+  }
+}
+
+.fas.fa-info-circle {
+  font-size: 28px;
+  color: white;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  opacity: 0.8;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+// X small devices (portrait phones, 100 px - 575px)
+@media (min-width: 100px) and (max-width: 575px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-collab {
+    right: 0px;
+    top: 10px;
+    .project-collab-icon {
+      .collab-name {
+        display: none;
+      }
+      img {
+      width: 30px;
+      margin: 0 8px;
+      border-radius: 50%;
+      }
+    }
+  }
+}
