@@ -7,9 +7,9 @@
 	<% end %>
 
 	<div class="row w-100">
-		<% @projects.sort_by! { |project| project.created_at } %> <% @projects.each
-		do |project| %> <%= link_to project_path(project), style: "text-decoration:
-		none;" do %>
+		<% @projects.sort_by! { |project| project.created_at } %>
+    <% @projects.each do |project| %>
+      <%= link_to project_path(project), style: "text-decoration: none;" do %>
 
 		<div class="card-trip">
 			<img
