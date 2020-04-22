@@ -1,4 +1,4 @@
-class DatabaseAccessorPolicy < ApplicationPolicy
+class PostgresAccessorPolicy < ApplicationPolicy
     class Scope < Scope
         def resolve
             scope.all

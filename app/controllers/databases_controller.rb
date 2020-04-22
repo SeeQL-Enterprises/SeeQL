@@ -8,7 +8,7 @@ class DatabasesController < ApplicationController
     end
 
     def create
-        @db_accessor = DatabaseAccessor.new(database_params)
+        @db_accessor = PostgresAccessor.new(database_params)
         authorize @db_accessor
         @db_accessor.call
 

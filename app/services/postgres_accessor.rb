@@ -1,6 +1,6 @@
 require 'pg'
 
-class DatabaseAccessor
+class PostgresAccessor
     # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
     # and converts all tables and its respective columns into a JSON object
     def initialize(options = {})
