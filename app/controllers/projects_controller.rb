@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-        params.require(:project).permit(:name, :image)
+        params.require(:project).permit(:name, :project_image)
     end
 
     def project_members
