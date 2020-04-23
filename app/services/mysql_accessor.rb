@@ -14,52 +14,39 @@ class MySQLAccessor
     end
 
     def call
-        @connection = Mysql2::Client.new(host: @host, port: @port, dbname: @db_name, username: @user, password: @password)
+        @connection = Mysql2::Client.new(host: @host, port: @port, database: @db_name, username: @user, password: @password)
 
-        # Each table is a hash where the key is "table_name" and the value is the actual name of the table
-        tables = @connection.query("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'")
+        # Each table is a hash where the key is "Tables_in_database_name" and the value is the actual name of the table
+        tables = @connection.query('SHOW TABLES;')
 
         save_database(tables)
-    rescue PG::Error => e
+    rescue Mysql2::Error => e
         puts e.message
     ensure
         @connection&.close
     end
 
     def save_database(tables)
-        project = Project.find(@project_id)
+        # project = Project.find(@project_id)
+        project = Project.find(3)
 
         database = Database.new(name: @name, project: project)
 
         return unless save_tables(database, tables)
 
         if database.save
-            puts 'SUCCESS: DB saved'
+            puts 'SUCCESS: MySQL DB saved'
         else
-            puts 'ERROR: DB not saved'
+            puts 'ERROR: MySQL DB not saved'
         end
     end
 
     def save_tables(database, tables)
-        tables.each do |key, _|
-            key.each do |_, value|
-                foreign_keys = @connection.query(
-                    "SELECT
-                        tc.table_name AS from_table,
-                        kcu.column_name AS from_column,
-                        ccu.table_name AS to_table
-                    FROM information_schema.table_constraints AS tc
-                    JOIN information_schema.key_column_usage AS kcu
-                        ON tc.constraint_name = kcu.constraint_name
-                        AND tc.table_schema = kcu.table_schema
-                    JOIN information_schema.constraint_column_usage AS ccu
-                        ON ccu.constraint_name = tc.constraint_name
-                        AND ccu.table_schema = tc.table_schema
-                    WHERE tc.constraint_type = 'FOREIGN KEY'
-                    AND tc.table_name = '#{value}'"
-                )
+        tables.each do |table|
+            table.each do |_, table_name|
+                foreign_keys = { 'not' => 'yet' }
 
-                table = Table.new(name: value, foreign_keys: foreign_keys)
+                table = Table.new(name: table_name, foreign_keys: foreign_keys)
                 table.database = database
 
                 if save_columns(table)
@@ -73,10 +60,10 @@ class MySQLAccessor
     end
 
     def save_columns(table)
-        columns = @connection.query("SELECT column_name, data_type FROM information_schema.columns WHERE table_name = '#{table.name}'")
+        columns = @connection.query("DESCRIBE #{table.name}")
 
         columns.each do |column|
-            column = Column.new(name: column['column_name'], datatype: column['data_type'])
+            column = Column.new(name: column['Field'], datatype: column['Type'])
             column.table = table
 
             column.save ? true : false
