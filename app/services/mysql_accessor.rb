@@ -17,7 +17,7 @@ class MySQLAccessor
         @connection = Mysql2::Client.new(host: @host, port: @port, database: @db_name, username: @user, password: @password)
 
         # Each table is a hash where the key is "Tables_in_database_name" and the value is the actual name of the table
-        tables = @connection.query('SHOW TABLES;')
+        tables = @connection.query("SELECT table_name FROM information_schema.tables WHERE table_schema = '#{@db_name}'")
 
         save_database(tables)
     rescue Mysql2::Error => e
@@ -28,7 +28,7 @@ class MySQLAccessor
 
     def save_database(tables)
         # project = Project.find(@project_id)
-        project = Project.find(3)
+        project = Project.find(2)
 
         database = Database.new(name: @name, project: project)
 
@@ -44,7 +44,17 @@ class MySQLAccessor
     def save_tables(database, tables)
         tables.each do |table|
             table.each do |_, table_name|
-                foreign_keys = { 'not' => 'yet' }
+                foreign_keys = @connection.query("
+                SELECT
+                    referenced_table_name AS from_table,
+                    referenced_column_name AS from_column,
+                    table_name AS to_table
+                FROM
+                    INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+                WHERE
+                    REFERENCED_TABLE_SCHEMA = '#{@db_name}' AND
+                    REFERENCED_TABLE_NAME = '#{table_name}'
+                ")
 
                 table = Table.new(name: table_name, foreign_keys: foreign_keys)
                 table.database = database
@@ -60,10 +70,18 @@ class MySQLAccessor
     end
 
     def save_columns(table)
-        columns = @connection.query("DESCRIBE #{table.name}")
+        columns = @connection.query("
+            SELECT
+                column_name, data_type
+            FROM
+                information_schema.columns
+            WHERE
+                table_schema = '#{@db_name}' AND
+                table_name = '#{table.name}'
+            ")
 
         columns.each do |column|
-            column = Column.new(name: column['Field'], datatype: column['Type'])
+            column = Column.new(name: column['COLUMN_NAME'], datatype: column['DATA_TYPE'])
             column.table = table
 
             column.save ? true : false
