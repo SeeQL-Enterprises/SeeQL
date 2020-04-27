@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
     resources :databases, only: [:show]
-    resources :mysql_databases, only: [:show]
 
     devise_for :users
 
     resources :projects, only: [:new, :create, :show, :index] do
         resources :collaborators, only: [:new, :create]
         resources :databases, only: [:index, :create]
-        resources :mysql_databases, only: [:index, :create]
     end
 
     resources :databases, only: [] do
