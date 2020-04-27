@@ -1,6 +1,6 @@
 require 'mysql2'
 
-class MySQLAccessor
+class MysqlAccessor
     # This Service Object connects to a MySQL database and
     # saves them and their respective columns as objects
     def initialize(options = {})
