@@ -22,6 +22,10 @@
   &.active {
     max-height: 100%;
   }
+
+  .select option {
+      color: black;
+  }
 }
 
 #collaborator-form {
@@ -42,5 +46,3 @@
 .simple_form.new_database {
     padding-bottom: 100px;
 }
-
-
