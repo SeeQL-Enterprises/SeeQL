@@ -30,6 +30,9 @@ Lint/UselessAssignment:
 # --------------- METRICS ---------------
 Metrics/AbcSize:
     Enabled: false
+Metrics/BlockLength:
+    Enabled: true
+    Max: 35
 Metrics/CyclomaticComplexity:
     Enabled: false
 Metrics/ClassLength:
