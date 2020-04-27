@@ -8,7 +8,13 @@ class DatabasesController < ApplicationController
     end
 
     def create
-        @db_accessor = PostgresAccessor.new(database_params)
+        @db_accessor =
+            if params[:db_type] == 'PostgreSQL'
+                PostgresAccessor.new(database_params)
+            else
+                MySQLAccessor.new(database_params)
+            end
+
         authorize @db_accessor
         @db_accessor.call
 
@@ -20,6 +26,6 @@ class DatabasesController < ApplicationController
     private
 
     def database_params
-        params.require(:new_database).permit(:name, :host, :db_name, :user, :password, :project_id)
+        params.require(:new_database).permit(:db_type, :name, :host, :db_name, :user, :password, :project_id)
     end
 end
