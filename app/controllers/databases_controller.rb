@@ -9,7 +9,7 @@ class DatabasesController < ApplicationController
 
     def create
         @db_accessor =
-            if params[:db_type] == 'PostgreSQL'
+            if params[:new_database][:db_type] == 'PostgreSQL'
                 PostgresAccessor.new(database_params)
             else
                 MysqlAccessor.new(database_params)
