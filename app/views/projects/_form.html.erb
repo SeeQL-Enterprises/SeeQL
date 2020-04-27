@@ -3,6 +3,7 @@
 <%= simple_form_for(:new_database, url: url, method: :post) do |f| %>
   <div class="database-form" id="database-form">
     <div class="forms-card">
+        <%= f.input :db_type, as: :select, collection: ['PostgreSQL', 'MySQL'], label: "DB Type", default: 'PostgreSQL' %>
         <%= f.input :name, label: "DB Nickname", placeholder: "DB nickname" %>
         <%= f.input :host, placeholder: "where is your DB hosted?" %>
         <%= f.input :port, placeholder: "optional port", required: false %>
