@@ -1,8 +1,8 @@
 require 'pg'
 
-class DatabaseAccessor
-    # This Service Object takes in a database (of class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
-    # and converts all tables and its respective columns into a JSON object
+class PostgresAccessor
+    # This Service Object connects to a PostgreSQL database and
+    # saves them and their respective columns as objects
     def initialize(options = {})
         @name = options[:name]
         @host = options[:host]
@@ -42,23 +42,30 @@ class DatabaseAccessor
 
     def save_tables(database, tables)
         tables.each do |key, _|
-            key.each do |_, value|
+            key.each do |_, table_name|
                 foreign_keys = @connection.exec "
-        SELECT
-          tc.table_name AS from_table,
-          kcu.column_name AS from_column,
-          ccu.table_name AS to_table
-        FROM information_schema.table_constraints AS tc
-        JOIN information_schema.key_column_usage AS kcu
-          ON tc.constraint_name = kcu.constraint_name
-          AND tc.table_schema = kcu.table_schema
-        JOIN information_schema.constraint_column_usage AS ccu
-          ON ccu.constraint_name = tc.constraint_name
-          AND ccu.table_schema = tc.table_schema
-        WHERE tc.constraint_type = 'FOREIGN KEY'
-        AND tc.table_name = '#{value}'"
+                SELECT
+                    tc.table_name AS from_table,
+                    kcu.column_name AS from_column,
+                    ccu.table_name AS to_table
+                FROM
+                    information_schema.table_constraints AS tc
+                JOIN
+                    information_schema.key_column_usage AS kcu
+                    ON
+                        tc.constraint_name = kcu.constraint_name AND
+                        tc.table_schema = kcu.table_schema
+                JOIN
+                    information_schema.constraint_column_usage AS ccu
+                    ON
+                        ccu.constraint_name = tc.constraint_name AND
+                        ccu.table_schema = tc.table_schema
+                WHERE
+                    tc.constraint_type = 'FOREIGN KEY' AND
+                    tc.table_name = '#{table_name}'
+                "
 
-                table = Table.new(name: value, foreign_keys: foreign_keys)
+                table = Table.new(name: table_name, foreign_keys: foreign_keys)
                 table.database = database
 
                 if save_columns(table)

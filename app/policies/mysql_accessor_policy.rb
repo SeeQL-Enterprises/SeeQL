@@ -1,4 +1,4 @@
-class DatabaseAccessorPolicy < ApplicationPolicy
+class MysqlAccessorPolicy < ApplicationPolicy
     class Scope < Scope
         def resolve
             scope.all

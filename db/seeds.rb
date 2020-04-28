@@ -26,6 +26,13 @@ project = Project.new({
 project.user = user
 project.save!
 
+project2 = Project.new({
+  name: "MySQL"
+})
+
+project2.user = user
+project2.save!
+
 Collaborator.create!(user: user, project: project)
 
 puts "generate users to collaborate..."
