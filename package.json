@@ -7,7 +7,7 @@
     "bulma": "^0.8.1",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
     "interactjs": "^1.8.5",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
