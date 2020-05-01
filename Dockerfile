@@ -3,28 +3,21 @@ ENV BUNDLER_VERSION=2.1.4
 
 RUN apt-get update -qq && apt-get install -y build-essential
 
-RUN apk add --update --no-cache \
+RUN apt-get install -y \
       binutils-gold \
-      build-base \
       curl \
       file \
-      g++ \
-      gcc \
       git \
       less \
-      libstdc++ \
       libffi-dev \
-      libc-dev \
-      linux-headers \
       libxml2-dev \
       libxslt-dev \
       libgcrypt-dev \
-      make \
       netcat-openbsd \
       nodejs \
       openssl \
-      pkgconfig \
-      postgresql-dev \
+      pkg-config \
+      postgresql \
       python \
       tzdata \
       yarn
