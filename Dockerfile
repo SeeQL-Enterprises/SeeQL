@@ -51,7 +51,7 @@ RUN bundle check || bundle install
 
 COPY package.json yarn.lock ./
 
-RUN yarn install --check-files
+RUN yarn install
 
 # Copy the rest of the app
 COPY . /seeql
