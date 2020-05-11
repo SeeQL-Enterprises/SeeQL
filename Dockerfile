@@ -19,8 +19,18 @@ RUN apt-get install -y \
       pkg-config \
       postgresql \
       python \
-      tzdata \
-      yarn
+      tzdata
+
+
+# Fixing Yarn issues
+# RUN sudo apt remove cmdtest
+# RUN sudo apt remove yarn
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+RUN sudo apt-get update
+RUN sudo apt-get install -y yarn
 
 
 # PostgreSQL
