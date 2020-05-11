@@ -23,14 +23,11 @@ RUN apt-get install -y \
 
 
 # Fixing Yarn issues
-# RUN sudo apt remove cmdtest
-# RUN sudo apt remove yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-
-RUN sudo apt-get update
-RUN sudo apt-get install -y yarn
+RUN apt-get update
+RUN apt-get install -y yarn
 
 
 # PostgreSQL
@@ -51,11 +48,11 @@ WORKDIR /seeql
 COPY Gemfile /seeql/Gemfile
 COPY Gemfile.lock /seeql/Gemfile.lock
 
-# Config for Nokogiri
-RUN bundle config build.nokogiri --use-system-libraries
-
 # Check whether the gems are already installed before installing
 RUN bundle check || bundle install
+
+# Config for Nokogiri
+RUN bundle config build.nokogiri --use-system-libraries
 
 # --------------- JS Packages Setup ---------------
 
