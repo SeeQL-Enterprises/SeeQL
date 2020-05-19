@@ -24,4 +24,4 @@ SeeQL makes visualisation of databases an art, because “a picture says more th
 
 ## :hammer_and_wrench: Support
 
-Please [open an issue](https://github.com/Bruncky/SeeQL/issues/new) for support.
+Please [open an issue](https://github.com/SeeQL-Enterprises/SeeQL/issues/new) for support.
