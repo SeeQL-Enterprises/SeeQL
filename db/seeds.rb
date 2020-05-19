@@ -1,4 +1,3 @@
-
 Column.destroy_all
 Table.destroy_all
 Database.destroy_all
