@@ -9,7 +9,7 @@ services:
           - ./tmp/db:/var/lib/postgresql/data
     web:
         build: .
-        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+        command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0' && docker-compose run web rake db:create && docker-compose run web rake db:migrate"
         volumes:
           - .:/seeql
         ports:
