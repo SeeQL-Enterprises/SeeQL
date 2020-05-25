@@ -3,11 +3,11 @@
 ## Visualisation
 Database schema visualisation is an essential process when starting a new project. SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park.
 
+## Collaboration
+SeeQL makes visualisation of databases an art, because “a picture says more than 1000 words.” As such, it helps improving clear and efficient communication among DB analysts and developer teams.
+
 ## Navigation
 Flexible and intuitive navigation in SeeQL enables easy filtering for those tables and columns that you really need. Find and understand connections through highlighted table relations and immediately get the corresponding SQL query.
-
-## Communication
-SeeQL makes visualisation of databases an art, because “a picture says more than 1000 words.” As such, it helps improving clear and efficient communication among DB analysts and developer teams.
 
 ## :books: Table of Contents
 
