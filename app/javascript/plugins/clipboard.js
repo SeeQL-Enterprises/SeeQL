@@ -1,3 +1,5 @@
+const clipboardButton = document.getElementById("clipboard-button")
+
 function copyTextToClipboard(text) {
     // if (!navigator.clipboard) {
     //     fallbackCopyTextToClipboard(text);
@@ -14,8 +16,6 @@ function copyTextToClipboard(text) {
     );
 }
 
-const clipboardButton = document.getElementById("clipboard-button")
-
 clipboardButton.addEventListener("click", function (event) {
-    copyTextToClipboard("Bob");
+    copyTextToClipboard("https://www.seeql.dev/");
 });
