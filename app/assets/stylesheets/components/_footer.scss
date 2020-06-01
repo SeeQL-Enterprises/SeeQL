@@ -15,9 +15,11 @@
     a {
         text-decoration: none;
 
+        $icon-size: 30px;
+
         .fab {
             opacity: 0.6;
-            font-size: 35px;
+            font-size: $icon-size;
             margin-right: 6px;
 
             &:hover {
@@ -35,7 +37,7 @@
 
         .far {
             opacity: 0.6;
-            font-size: 35px;
+            font-size: $icon-size;
             margin-right: 6px;
 
             &:hover {
@@ -46,23 +48,22 @@
                 color: #5BC0BE;
             }
         }
+
+        .fas {
+            opacity: 0.6;
+            font-size: $icon-size;
+            margin-right: 6px;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.fa-link {
+                color: #FFB504;
+            }
+        }
     }
 }
-
-
-
-// $size: 24px;
-//
-// .social-share-button {
-//     -webkit-box-align: center;
-//     .ssb-icon {
-//         background-size: $size $size;
-//         height: $size;
-//         width: $size;
-//         // padding: 0 8px;
-//         margin: 6.5px 8px 0 0;
-//     }
-// }
 
 @media (min-width: 576px) {
     .collapse:not(.show) {
@@ -83,3 +84,16 @@
         padding: 1.5rem 1rem;
     }
 }
+
+// $size: 24px;
+//
+// .social-share-button {
+//     -webkit-box-align: center;
+//     .ssb-icon {
+//         background-size: $size $size;
+//         height: $size;
+//         width: $size;
+//         // padding: 0 8px;
+//         margin: 6.5px 8px 0 0;
+//     }
+// }
