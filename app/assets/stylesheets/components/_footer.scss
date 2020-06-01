@@ -17,9 +17,9 @@
     opacity: 0.6;
     text-decoration: none;
     font-size: 35px;
+    margin-right: 6px;
     // margin-top: 2px;
     // margin-bottom: 2px;
-    margin-right: 6px;
 
     &:hover {
         opacity: 1;
@@ -31,6 +31,21 @@
 
     &.fa-twitter-square {
         color: #1DA1F3;
+    }
+}
+
+.fas {
+    opacity: 0.6;
+    text-decoration: none;
+    font-size: 35px;
+    margin-right: 6px;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.fa-envelope-square {
+        color: #5BC0BE;
     }
 }
 
