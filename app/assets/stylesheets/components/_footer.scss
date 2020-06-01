@@ -11,52 +11,58 @@
 .footer-links {
     display: -webkit-inline-box;
     -webkit-box-align: center;
-}
 
-.fab {
-    opacity: 0.6;
-    font-size: 35px;
-    margin-right: 6px;
+    a {
+        text-decoration: none;
 
-    &:hover {
-        opacity: 1;
-    }
+        .fab {
+            opacity: 0.6;
+            font-size: 35px;
+            margin-right: 6px;
 
-    &.fa-github {
-        margin-left: 20px;
-    }
+            &:hover {
+                opacity: 1;
+            }
 
-    &.fa-twitter {
-        color: #1DA1F3;
-    }
-}
+            &.fa-github {
+                margin-left: 20px;
+            }
 
-.far {
-    opacity: 0.6;
-    font-size: 35px;
-    margin-right: 6px;
+            &.fa-twitter {
+                color: #1DA1F3;
+            }
+        }
 
-    &:hover {
-        opacity: 1;
-    }
+        .far {
+            opacity: 0.6;
+            font-size: 35px;
+            margin-right: 6px;
 
-    &.fa-envelope {
-        color: #5BC0BE;
-    }
-}
+            &:hover {
+                opacity: 1;
+            }
 
-$size: 24px;
-
-.social-share-button {
-    -webkit-box-align: center;
-    .ssb-icon {
-        background-size: $size $size;
-        height: $size;
-        width: $size;
-        // padding: 0 8px;
-        margin: 6.5px 8px 0 0;
+            &.fa-envelope {
+                color: #5BC0BE;
+            }
+        }
     }
 }
+
+
+
+// $size: 24px;
+//
+// .social-share-button {
+//     -webkit-box-align: center;
+//     .ssb-icon {
+//         background-size: $size $size;
+//         height: $size;
+//         width: $size;
+//         // padding: 0 8px;
+//         margin: 6.5px 8px 0 0;
+//     }
+// }
 
 @media (min-width: 576px) {
     .collapse:not(.show) {
