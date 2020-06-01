@@ -12,7 +12,6 @@ gem 'redis'
 gem 'json'
 gem 'pundit'
 gem 'social-share-button'
-# gem 'bootstrap-toggle-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
