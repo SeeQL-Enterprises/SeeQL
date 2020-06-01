@@ -1,57 +1,68 @@
 .show {
-  position: fixed;
-  bottom: 68px;
-  width: 101%;
+    position: fixed;
+    bottom: 68px;
+    width: 101%;
 }
 
 .bg-dark {
-  background-color: black !important;
+    background-color: black !important;
 }
 
 .footer-links {
-  display: -webkit-inline-box;
-  -webkit-box-align: center;
+    display: -webkit-inline-box;
+    -webkit-box-align: center;
 }
 
 .fab {
-  opacity: 0.8;
-  text-decoration: none;
-  font-size: 27.5px;
-  margin: 2px 14px 0 14px;
-  &:hover {
-    opacity: 1;
-  }
+    opacity: 0.6;
+    text-decoration: none;
+    font-size: 35px;
+    // margin-top: 2px;
+    // margin-bottom: 2px;
+    margin-right: 6px;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &.fa-github-square {
+        margin-left: 20px;
+    }
+
+    &.fa-twitter-square {
+        color: #1DA1F3;
+    }
 }
 
 $size: 24px;
 
 .social-share-button {
-  -webkit-box-align: center;
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-    // padding: 0 8px;
-    margin: 6.5px 8px 0 0;
-  }
+    -webkit-box-align: center;
+    .ssb-icon {
+        background-size: $size $size;
+        height: $size;
+        width: $size;
+        // padding: 0 8px;
+        margin: 6.5px 8px 0 0;
+    }
 }
 
 @media (min-width: 576px) {
-  .collapse:not(.show) {
-    display: block;
-    position: fixed;
-    bottom: 0px;
-    z-index: 2;
-    height: 60px;
-  }
+    .collapse:not(.show) {
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        z-index: 2;
+        height: 60px;
+    }
 
-  .p-4 {
-    padding: 0 0 !important;
-  }
+    .p-4 {
+        padding: 0 0 !important;
+    }
 
-  nav.navbar {
-    justify-content: flex-end;
-    z-index: 0;
-    padding: 1.5rem 1rem;
-  }
+    nav.navbar {
+        justify-content: flex-end;
+        z-index: 0;
+        padding: 1.5rem 1rem;
+    }
 }
