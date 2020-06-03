@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.2.2",
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.5.0",
     "bulma": "^0.8.1",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
     "interactjs": "^1.8.5",
