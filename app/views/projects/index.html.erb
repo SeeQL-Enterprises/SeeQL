@@ -19,16 +19,10 @@
           <% if project.project_image.attached? %>
             <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.project_image.key %>')">
     				  <h2><%= project.name.capitalize %></h2>
-              <%= link_to '#' do %>
-                <i class="fas fa-info-circle"></i>
-              <% end %>
             </div>
           <% else %>
             <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
               <h2><%= project.name.capitalize %></h2>
-              <%= link_to '#' do %>
-                <i class="fas fa-info-circle"></i>
-              <% end %>
             </div>
           <% end %>
 
