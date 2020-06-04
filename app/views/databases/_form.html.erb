@@ -1,0 +1,21 @@
+<% url = "/projects/#{@project.id}/databases" %>
+
+<%= simple_form_for(:new_database, url: url, method: :post) do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :db_type, as: :select, collection: ['PostgreSQL', 'MySQL'], label: "DB Type", default: 'PostgreSQL' %>
+    <%= f.input :name, label: "DB Nickname", placeholder: "DB nickname" %>
+    <%= f.input :host, placeholder: "where is your DB hosted?" %>
+    <%= f.input :port, placeholder: "optional port", required: false %>
+    <%= f.input :db_name, label: "DB Name", placeholder: "the actual name of your DB" %>
+    <%= f.input :user, placeholder: "user that will be connecting" %>
+    <%= f.input :password, as: :password, placeholder: "we promise we won't save it!" %>
+    <%= f.input :project_id, :input_html => { :value => @project.id }, as: :hidden %>
+  </div>
+
+  <div class="form-actions">
+    <div class="modal-footer">
+      <%= f.button :submit, "Connect Database!", class: "btn-treehouse" %>
+    </div>
+  </div>
+<% end %>
