@@ -1,18 +1,16 @@
 import { initPopover } from '../plugins/popover';
-initPopover();
 
 const clipboardButton = document.getElementById("clipboard-button")
 
 function copyTextToClipboard(text) {
-    // if (!navigator.clipboard) {
-    //     fallbackCopyTextToClipboard(text);
-    //     return;
-    // }
-
     navigator.clipboard.writeText(text).then(
         function () {
             console.log("Async: Copying to clipboard was successful!");
+
+            initPopover();
             clipboardButton.setAttribute("data-content", "URL has been copied to clipboard!");
+
+            $(clipboardButton).popover("show");
         },
         function (err) {
             console.error("Async: Could not copy text: ", err);
