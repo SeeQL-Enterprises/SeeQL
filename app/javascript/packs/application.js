@@ -12,6 +12,3 @@ import "../plugins/clipboard";
 
 import { initUpdateNavbarOnScroll } from '../plugins/navbar';
 initUpdateNavbarOnScroll();
-
-import { initPopover } from '../plugins/popover';
-initPopover();
