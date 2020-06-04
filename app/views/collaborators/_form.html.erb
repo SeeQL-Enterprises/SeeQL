@@ -1,9 +1,12 @@
 <%= simple_form_for([ @project, @collaborator ]) do |form| %>
 
-  <div class="collaborator-form" id="collaborator-form">
-    <div class="forms-card">
-      <%= form.input :user, label_method: :email, value_method: :id %>
-      <%= form.submit "Add Collaborator", class: "btn-treehouse" %>
+  <div class="form-inputs">
+    <%= form.input :user, label_method: :email, value_method: :id %>
+  </div>
+
+  <div class="form-actions">
+    <div class="modal-footer">
+      <%= form.button :submit, "Add Collaborator", class: "btn-treehouse" %>
     </div>
   </div>
 <% end %>
