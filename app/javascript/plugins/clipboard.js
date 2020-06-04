@@ -14,6 +14,11 @@ function copyTextToClipboard(text) {
         },
         function (err) {
             console.error("Async: Could not copy text: ", err);
+
+            initPopover();
+            clipboardButton.setAttribute("data-content", "URL could not be copied to clipboard!");
+
+            $(clipboardButton).popover("show");
         }
     );
 }
