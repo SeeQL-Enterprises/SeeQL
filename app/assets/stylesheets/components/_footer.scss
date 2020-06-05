@@ -110,6 +110,22 @@
     }
 }
 
+@media (max-width: 375px) {
+    .our-footer {
+        padding: 0px 15px;
+
+        .footer-links {
+            a {
+                .fab {
+                    &.fa-github {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 320px) {
     .our-footer {
         padding: 0px 10px;
