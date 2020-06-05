@@ -13,32 +13,31 @@
       <% end %>
     <% end %>
     <button class="btn-cancel" data-toggle="modal" data-target="#collabModal"><i class="fas fa-user-plus"></i> Add Collaborator</button>
-    <button class="btn-cancel" data-toggle="modal" data-target="#dbModal"><i class="fas fa-user-plus"></i> Add Database</button>
+    <button class="btn-cancel" data-toggle="modal" data-target="#dbModal"><i class="fas fa-database"></i> Add Database</button>
   </div>
 
-  <div class="notification">
-    <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-    <div class="notification-content">
-      <p><small>14th January</small></p>
-      <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-    </div>
+  <% @project.collaborators.each do |collaborator| %>
+    <div class="notification">
+      <% if collaborator.user.avatar.attached? %>
+        <div class="avatar-large">
+          <%= cl_image_tag collaborator.user.avatar.key %>
+        </div>
+      <% else %>
+        <div class="avatar-large">
+          <%= image_tag("avatar.svg") %>
+        </div>
+      <% end %>
 
-    <div class="notification-actions">
-      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-    </div>
-  </div>
 
-  <div class="notification">
-    <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
-    <div class="notification-content">
-      <p><small>9th January</small></p>
-      <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-    </div>
+      <div class="notification-content">
+        <p><small>Added: <%= collaborator.created_at.strftime("%B %d, %Y")%></small></p>
+        <p><%= collaborator.user.email %></p>
+      </div>
 
-    <div class="notification-actions">
-      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+      <div class="notification-actions">
+        <a href="#"><i class="fas fa-pencil-alt"></i> Edit</a>
+        <a href="#"><i class="far fa-trash-alt"></i> Delete</a>
+      </div>
+
     </div>
-  </div>
-</div>
+  <% end %>
