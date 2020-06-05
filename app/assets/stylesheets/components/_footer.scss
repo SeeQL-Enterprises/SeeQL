@@ -109,3 +109,36 @@
         }
     }
 }
+
+@media (max-width: 320px) {
+    .our-footer {
+        padding: 0px 10px;
+
+        .footer-links {
+            $regular-icon: 20px;
+            $small-icon: 17px;
+
+            a {
+                .fab {
+                    font-size: $regular-icon;
+
+                    &.fa-github {
+                        margin-left: 5px;
+                    }
+                }
+
+                .far {
+                    font-size: $regular-icon;
+                }
+
+                .fas {
+                    font-size: $regular-icon;
+
+                    &.fa-link {
+                        font-size: $small-icon;
+                    }
+                }
+            }
+        }
+    }
+}
