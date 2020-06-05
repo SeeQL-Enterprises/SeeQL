@@ -1,0 +1,13 @@
+.popover {
+    background-color: #5BC0BE;
+    max-height: 45px;
+    font-family: "Montserrat", "Helvetica", "sans-serif";
+    font-weight: 500;
+    font-size: 13px;
+    text-align: center;
+
+    .arrow::after {
+        // Color for the arrow of the popover
+        border-top-color: #5BC0BE;
+    }
+}

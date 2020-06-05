@@ -8,6 +8,7 @@ import "../plugins/add_database";
 import "../plugins/add_collaborators";
 import "../plugins/view_database";
 import "../plugins/sidebar-menu";
+import "../plugins/clipboard";
 
 import { initUpdateNavbarOnScroll } from '../plugins/navbar';
 initUpdateNavbarOnScroll();

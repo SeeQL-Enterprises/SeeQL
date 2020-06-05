@@ -1,58 +1,102 @@
 .show {
-  position: fixed;
-  bottom: 68px;
-  width: 101%;
+    position: fixed;
+    bottom: 68px;
+    width: 101%;
 }
 
 .bg-dark {
-  background-color: black !important;
+    background-color: black !important;
 }
 
 .footer-links {
-  display: -webkit-inline-box;
-  -webkit-box-align: center;
-}
+    display: -webkit-inline-box;
+    -webkit-box-align: center;
 
-.fab {
-  color: #277c00;
-  opacity: 0.8;
-  text-decoration: none;
-  font-size: 27.5px;
-  margin: 2px 14px 0 14px;
-  &:hover {
-    opacity: 1;
-  }
-}
+    $regular-icon: 30px;
+    $small-icon: 27px;
 
-$size: 24px;
+    a {
+        text-decoration: none;
 
-.social-share-button {
-  -webkit-box-align: center;
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-    // padding: 0 8px;
-    margin: 6.5px 8px 0 0;
-  }
+        .fab {
+            opacity: 0.6;
+            font-size: $regular-icon;
+            margin-right: 6px;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.fa-github {
+                margin-left: 20px;
+            }
+
+            &.fa-twitter {
+                color: white;
+            }
+        }
+
+        .far {
+            opacity: 0.6;
+            font-size: $regular-icon;
+            margin-right: 6px;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.fa-envelope {
+                color: white;
+            }
+        }
+
+        .fas {
+            opacity: 0.6;
+            font-size: $regular-icon;
+            margin-right: 6px;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.fa-link {
+                font-size: $small-icon;
+                color: white;
+                margin-left: 1px;
+            }
+        }
+    }
 }
 
 @media (min-width: 576px) {
-  .collapse:not(.show) {
-    display: block;
-    position: fixed;
-    bottom: 0px;
-    z-index: 2;
-    height: 60px;
-  }
+    .collapse:not(.show) {
+        display: block;
+        position: fixed;
+        bottom: 0px;
+        z-index: 2;
+        height: 60px;
+    }
 
-  .p-4 {
-    padding: 0 0 !important;
-  }
+    .p-4 {
+        padding: 0 0 !important;
+    }
 
-  nav.navbar {
-    justify-content: flex-end;
-    z-index: 0;
-    padding: 1.5rem 1rem;
-  }
+    nav.navbar {
+        justify-content: flex-end;
+        z-index: 0;
+        padding: 1.5rem 1rem;
+    }
 }
+
+// $size: 24px;
+//
+// .social-share-button {
+//     -webkit-box-align: center;
+//     .ssb-icon {
+//         background-size: $size $size;
+//         height: $size;
+//         width: $size;
+//         // padding: 0 8px;
+//         margin: 6.5px 8px 0 0;
+//     }
+// }
