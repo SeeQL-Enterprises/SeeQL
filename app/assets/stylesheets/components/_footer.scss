@@ -1,3 +1,4 @@
+
 .our-footer {
     position: fixed;
     bottom: 0;
@@ -68,6 +69,41 @@
                     font-size: $small-icon;
                     color: white;
                     margin-left: 1px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 411px) {
+    .our-footer {
+        height: 60px;
+
+        .footer-links {
+            padding-top: 2px;
+
+            $regular-icon: 25px;
+            $small-icon: 22px;
+
+            a {
+                .fab {
+                    font-size: $regular-icon;
+
+                    &.fa-github {
+                        margin-left: -10px;
+                    }
+                }
+
+                .far {
+                    font-size: $regular-icon;
+                }
+
+                .fas {
+                    font-size: $regular-icon;
+
+                    &.fa-link {
+                        font-size: $small-icon;
+                    }
                 }
             }
         }
