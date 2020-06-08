@@ -51,6 +51,10 @@ Rails.application.configure do
         enable_starttls_auto: true
     }
 
+    config.action_mailer.default_options = {
+        from: "support@seeql.dev"
+    }
+
     # Don't care if the mailer can't send.
     config.action_mailer.raise_delivery_errors = true
 
