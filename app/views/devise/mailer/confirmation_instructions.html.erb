@@ -19,9 +19,11 @@
         #outlook a {
             padding:0;
         }
+        
         .ExternalClass {
             width:100%;
         }
+
         .ExternalClass,
         .ExternalClass p,
         .ExternalClass span,
@@ -30,10 +32,12 @@
         .ExternalClass div {
             line-height:100%;
         }
+
         .es-button {
             mso-style-priority:100!important;
             text-decoration:none!important;
         }
+
         a[x-apple-data-detectors] {
             color:inherit!important;
             text-decoration:none!important;
@@ -42,6 +46,7 @@
             font-weight:inherit!important;
             line-height:inherit!important;
         }
+
         .es-desk-hidden {
             display:none;
             float:left;
@@ -50,6 +55,21 @@
             max-height:0;
             line-height:0;
             mso-hide:all;
+        }
+
+        .btn-treehouse {
+          margin: 20px 10px 20px 0;
+          color: white;
+          padding: 8px 25px;
+          border-radius: 6px;
+          font-weight: bold;
+          background: #5BC0BE;
+          opacity: 0.8;
+          justify-content: center;
+
+          &:hover {
+              opacity: 1;
+          }
         }
     </style>
     </head>
@@ -163,7 +183,7 @@
                                                                 <td align="center" style="padding:10px;Margin:0;">
                                                                     <!-- <span class="btn-treehouse"> -->
                                                                     <%= link_to confirmation_url(@resource, confirmation_token: @token) do %>
-                                                                    <button class="btn btn-primary"> Confirm my e-mail </button>
+                                                                        <button class="btn-treehouse"> Confirm my e-mail </button>
                                                                     <% end %>
                                                                     <!-- </span> -->
                                                                 </td>
