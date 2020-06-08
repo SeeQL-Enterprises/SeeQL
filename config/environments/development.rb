@@ -42,9 +42,9 @@ Rails.application.configure do
 
     # Configure some settings
     config.action_mailer.smtp_settings = {
-        user_name: "support@seeql.dev",
-        password: "123456",
-        domain: "localhost:3000",
+        user_name: ENV["EMAIL_ADDRESS"],
+        password: ENV["EMAIL_PASSWORD"],
+        # domain: "localhost:3000",
         address: 'smtp.gmail.com',
         port: '587',
         authentication: :plain,
