@@ -65,10 +65,11 @@ Rails.application.configure do
 
     # Configure some settings
     config.action_mailer.smtp_settings = {
-        address: 'smtp.gmail.com',
-        port: '587',
         user_name: ENV["EMAIL_ADDRESS"],
         password: ENV["EMAIL_PASSWORD"],
+        # domain: "localhost:3000",
+        address: 'smtp.gmail.com',
+        port: '587',
         authentication: :plain,
         enable_starttls_auto: true
     }
@@ -86,12 +87,11 @@ Rails.application.configure do
     # Use GMail's SMTP service for delivery
     config.action_mailer.delivery_method = :smtp
 
-
-    config.action_mailer.perform_caching = false
-
     # Ignore bad email addresses and do not raise email delivery errors.
     # Set this to true and configure the email server for immediate delivery to raise delivery errors.
     config.action_mailer.raise_delivery_errors = true
+
+    config.action_mailer.perform_caching = false
 
     # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
     # the I18n.default_locale when a translation cannot be found).
