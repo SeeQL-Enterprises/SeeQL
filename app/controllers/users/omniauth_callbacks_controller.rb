@@ -1,4 +1,15 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+    # before_action :set_test
+    #
+    # def set_test
+    #     OmniAuth.config.test_mode = true
+    #
+    #     request.env['devise.mapping'] = Devise.mappings[:user] # If using Devise
+    #
+    #     OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({ provider: 'github', uid: '123545', info: { name: 'Bruncky', email: 'bruncky@gmail.com' } })
+    #     request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
+    # end
+
     def github
         @user = User.from_omniauth(request.env['omniauth.auth'])
 
