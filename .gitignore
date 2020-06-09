@@ -40,3 +40,6 @@ yarn-debug.log*
 *.swp
 .DS_Store
 .env*
+
+# Ignore mailer_templates
+/mailer_templates
