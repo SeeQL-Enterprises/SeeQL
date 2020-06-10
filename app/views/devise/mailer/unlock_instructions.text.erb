@@ -1,0 +1,24 @@
+# Hello, <%= @user.name %>!
+
+----------------------------------------------------------------
+
+Your account has been locked due to an excessive number of unsuccessful sign-in attempts. Please click the button below to unlock it.
+
+If this was not caused by you, someone may be trying to get into your account. Unlock your account and then manually change your password, just to be on the safe side.
+
+As always, feel free to contact us at support@seeql.dev if you need anything.
+
+**See you again soon!**
+
+----------------------------------------------------------------
+
+Unlock my account: <%= unlock_url(@resource, unlock_token: @token) %>
+
+----------------------------------------------------------------
+
+Don't be afraid to reach out to us!
+
+GitHub: https://github.com/SeeQL-Enterprises/SeeQL
+Twitter: https://twitter.com/see_ql
+
+Privacy:
