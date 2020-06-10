@@ -1,0 +1,28 @@
+# Hello, <%= @user.name %>!
+
+----------------------------------------------------------------
+
+<% if @resource.try(:unconfirmed_email?) %>
+    I am here to let you know that your e-mail address is being changed to <%= @resource.unconfirmed_email %>.
+
+    Please make sure to check your other inbox to confirm your new account!
+
+    If you have not requested this change, you can safely disregard this e-mail — the changes will not be saved until you confirm your new e-mail address.
+<% else %>
+    I am here to let you know that your e-mail address is being changed to <%= @resource.email %>.
+
+    Please make sure to check your other inbox to confirm your new account!
+
+    If you have not requested this change, you can safely disregard this e-mail — the changes will not be saved until you confirm your new e-mail address.
+<% end %>
+
+**See you again soon!**
+
+----------------------------------------------------------------
+
+Don't be afraid to reach out to us!
+
+GitHub: https://github.com/SeeQL-Enterprises/SeeQL
+Twitter: https://twitter.com/see_ql
+
+Privacy:
