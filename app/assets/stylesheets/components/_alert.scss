@@ -3,4 +3,8 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+
+  button > span {
+      color: red;
+  }
 }
