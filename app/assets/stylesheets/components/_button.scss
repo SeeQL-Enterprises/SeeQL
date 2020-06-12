@@ -13,17 +13,21 @@
 }
 
 .btn-seeql {
-    margin: 25px 0;
-    color: white;
-    padding: 5px 20px;
+    margin: 30px 0;
+    padding: 8px 24px;
     border-radius: 5px;
-    font-weight: bold;
+    border: 0;
     background: $seeql;
-    opacity: 0.8;
     justify-content: center;
+    font-weight: 500;
+    font-size: 22px;
+    color: white;
+    opacity: 0.7;
+    transition: all .2s ease-in-out;
 
     &:hover {
         opacity: 1;
+        transform: scale(1.02);
     }
 }
 
