@@ -9,7 +9,7 @@
   <div class="horizontal-btns">
     <% @project.databases.each do |database| %>
       <%= link_to database_path(database) do %>
-          <button class="btn-treehouse">Go to <%= database.name %></button>
+          <button class="btn-seeql">Go to <%= database.name %></button>
       <% end %>
     <% end %>
     <button class="btn-cancel" data-toggle="modal" data-target="#collabModal"><i class="fas fa-user-plus"></i> Add Collaborator</button>
