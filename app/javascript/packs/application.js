@@ -14,4 +14,3 @@ import { initUpdateNavbarOnScroll } from '../plugins/navbar';
 initUpdateNavbarOnScroll();
 
 import { initTypewriter } from "../plugins/typewriter";
-initTypewriter();
