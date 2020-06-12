@@ -33,8 +33,8 @@ Rails.application.configure do
 
     # Configure some settings
     config.action_mailer.smtp_settings = {
-        user_name: Rails.application.credentials.EMAIL_ADDRESS,
-        password: Rails.application.credentials.EMAIL_PASSWORD,
+        user_name: Rails.application.credentials.gmail[:address],
+        password: Rails.application.credentials.gmail[:password],
         # domain: "localhost:3000",
         address: 'smtp.gmail.com',
         port: '587',
@@ -43,7 +43,7 @@ Rails.application.configure do
     }
 
     config.action_mailer.default_options = {
-        from: "support@seeql.dev"
+        from: "Bruno A. Brunckhorst | SeeQL Admin"
     }
 
     # Make sure that ActionMailer can send e-mails

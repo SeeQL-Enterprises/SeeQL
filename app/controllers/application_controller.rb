@@ -19,8 +19,8 @@ class ApplicationController < ActionController::Base
     private
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: %i[name email password])
-        devise_parameter_sanitizer.permit(:account_update, keys: %i[name email avatar])
+        devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name email password])
+        devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name email avatar])
     end
 
     def skip_pundit?
