@@ -1,48 +1,36 @@
 .banner {
     background-size: cover;
     background-position: center;
-
     padding-bottom: 36px;
-}
 
-.banner-landing-page {
-    margin-top: 20px;
-    margin-left: -16px;
-    width: 100%;
-    text-align: center;
-
-    img{
-        max-width: 100%;
+    .seeql-logo {
+        max-width: 50%;
     }
-}
 
-.seeql_logo {
-    max-width: 50%;
-}
+    .banner-content {
+        text-align: center;
 
-.banner-content {
-    text-align: center;
+        .banner-slogan {
+            margin-top: 6.5rem;
+            margin-bottom: 6.5rem;
+            text-align: left;
 
-    .banner-slogan {
-        margin-top: 6.5rem;
-        margin-bottom: 6.5rem;
-        text-align: left;
-
-        h1 {
-            margin: 0 318px 0 328px;
-            // margin-left: 346px;
-            // margin-right: 354px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-            font-size: 36px;
+            h1 {
+                margin: 0 318px 0 328px;
+                // margin-left: 346px;
+                // margin-right: 354px;
+                text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+                font-size: 36px;
+            }
         }
-    }
 
-    h5 {
-        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    }
+        h5 {
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
 
-    p {
-        margin-top: 10rem;
+        p {
+            margin-top: 10rem;
+        }
     }
 }
 
@@ -54,3 +42,14 @@
         }
     }
 }
+
+// .banner-landing-page {
+//     margin-top: 20px;
+//     margin-left: -16px;
+//     width: 100%;
+//     text-align: center;
+//
+//     img{
+//         max-width: 100%;
+//     }
+// }
