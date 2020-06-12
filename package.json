@@ -11,7 +11,8 @@
     "popover": "^2.4.1",
     "popper.js": "^1.16.1",
     "tailwindcss": "^1.4.6",
-    "tooltip": "^1.6.1"
+    "tooltip": "^1.6.1",
+    "typewriter-effect": "^2.13.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
