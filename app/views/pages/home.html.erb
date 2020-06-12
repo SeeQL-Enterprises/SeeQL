@@ -1,174 +1,175 @@
 <div class="lp-top">
 
-<!-- BANNER -->
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
-    <div class="primary-container">
-      <div class="banner-content">
-        <%= image_tag "seeql_logo_name.png", class: "seeql_logo" %>
+    <!-- BANNER -->
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
+        <div class="primary-container">
+            <div class="banner-content">
+                <%= image_tag "seeql_logo_name.png", class: "seeql_logo" %>
 
-        <div class="banner-slogan">
-          <h1>Quick and easy <div id="typing" class="typing"></div></h1>
+                <div class="banner-slogan">
+                    <h1>Quick and easy <div id="typing" class="typing"></div></h1>
+                </div>
+
+                <h5>Start your project and invite your team now!</h5>
+                <%= link_to new_project_path do %>
+                <button class="btn-treehouse"> Create your Project </button>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 border border-white-700 rounded"> Create your Project </button>
+                <% end %>
+
+                <p><i class="fas fa-cogs"></i> How it works</p>
+                <div id="arrow-down">
+                    <a href="#how-it-works">
+                        <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <h5>Start your project and invite your team now!</h5>
-        <%= link_to new_project_path do %>
-          <button class="btn-treehouse"> Create your Project </button>
-        <% end %>
-
-        <p><i class="fas fa-cogs"></i> How it works</p>
-        <div id="arrow-down">
-          <a href="#how-it-works">
-            <%= image_tag "chevron-down-solid.svg", alt: "alttext" %>
-          </a>
-        </div>
-      </div>
     </div>
-  </div>
 
-<!-- HOW-IT-WORKS-SECTION -->
+    <!-- HOW-IT-WORKS-SECTION -->
     <section id="how-it-works">
 
-      <div class="primary-container">
-          <div class="how-it-works-path">
-            <div class="text-step-1">
-              <h3>1. Sign Up</h3>
-              <p>Sign up at SeeQL. Welcome! 👋</p>
+        <div class="primary-container">
+            <div class="how-it-works-path">
+                <div class="text-step-1">
+                    <h3>1. Sign Up</h3>
+                    <p>Sign up at SeeQL. Welcome! 👋</p>
+                </div>
+                <div class="img-step-1">
+                    <%= image_tag('how-it-works-step-1.png') %>
+                </div>
             </div>
-            <div class="img-step-1">
-              <%= image_tag('how-it-works-step-1.png') %>
+
+            <div class="dotted-lines">
+                <%= image_tag('dotted-line-2.svg') %>
             </div>
-          </div>
 
-          <div class="dotted-lines">
-            <%= image_tag('dotted-line-2.svg') %>
-          </div>
-
-          <div class="how-it-works-path">
-            <div class="img-step-2">
-              <%= image_tag('how-it-works-step-2.png') %>
+            <div class="how-it-works-path">
+                <div class="img-step-2">
+                    <%= image_tag('how-it-works-step-2.png') %>
+                </div>
+                <div class="text-step-2">
+                    <h3>2. Create a project</h3>
+                    <p>Add collaborators to work with or simply create the project for yourself! 🦄</p>
+                </div>
             </div>
-            <div class="text-step-2">
-              <h3>2. Create a project</h3>
-              <p>Add collaborators to work with or simply create the project for yourself! 🦄</p>
+
+            <div class="dotted-lines">
+                <%= image_tag('dotted-line-1.svg') %>
             </div>
-          </div>
 
-          <div class="dotted-lines">
-            <%= image_tag('dotted-line-1.svg') %>
-          </div>
-
-          <div class="how-it-works-path">
-            <div class="text-step-3">
-              <h3>3. Connect your DB</h3>
-              <p>Connect your PostgreSQL or MySQL DB by typing in the necessary credentials. ☁️</p>
+            <div class="how-it-works-path">
+                <div class="text-step-3">
+                    <h3>3. Connect your DB</h3>
+                    <p>Connect your PostgreSQL or MySQL DB by typing in the necessary credentials. ☁️</p>
+                </div>
+                <div class="img-step-3">
+                    <%= image_tag('how-it-works-step-3.png') %>
+                </div>
             </div>
-            <div class="img-step-3">
-              <%= image_tag('how-it-works-step-3.png') %>
-            </div>
-          </div>
 
 
-        <h1 style="text-align: center; padding-top: 6.5rem">DONE ✅</h1>
+            <h1 style="text-align: center; padding-top: 6.5rem">DONE ✅</h1>
 
-      </div>
+        </div>
     </section>
 
     <!-- ANIIMATED BENEFITS -->
     <section class="animated-benefits">
-      <h1 class="section-header">Your benefits <i class="fas fa-thumbs-up"></i></h1>
-      <div class="primary-container">
-        <div class="benefits-container">
+        <h1 class="section-header">Your benefits <i class="fas fa-thumbs-up"></i></h1>
+        <div class="primary-container">
+            <div class="benefits-container">
 
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3 class="title">Visualisation</h3>
-                <div class="bar"></div>
-                <div class="content">
-                  <%= image_tag('visualisation.png') %>
-                </div>
-              </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 class="title">Visualisation</h3>
+                            <div class="bar"></div>
+                            <div class="content">
+                                <%= image_tag('visualisation.png') %>
+                            </div>
+                        </div>
 
-              <div class="flip-card-back">
-                <h3 class="title">Visualisation</h3>
-                <div class="bar"></div>
-                <div class="content">
-                  <em><p>"Visualisation of database schemas is an essential process when starting a new project. <br><br>SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park."</p></em>
+                        <div class="flip-card-back">
+                            <h3 class="title">Visualisation</h3>
+                            <div class="bar"></div>
+                            <div class="content">
+                                <em><p>"Visualisation of database schemas is an essential process when starting a new project. <br><br>SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park."</p></em>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 class="title">Collaboration</h3>
+                            <div class="bar"></div>
+                            <div class="content">
+                                <%= image_tag('collaboration.png') %>
+                            </div>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h3 class="title">Collaboration</h3>
+                            <div class="bar"></div>
+                            <div class="content">
+                                <em><p>"SeeQL makes visualising databases an art, because a picture says more than 1000 words. <br><br>As such, it helps improving clear and efficient communication among DB analysts and developer teams."</p></em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h3 class="title">Navigation</h3>
+                            <div class="bar"></div>
+                            <div class="content">
+                                <%= image_tag('navigation.png') %>
+                            </div>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <h3 class="title">Navigation</h3>
+                            <div class="bar"></div>
+                            <div class="content">
+                                <em><p>"Flexible and intuitive navigation in SeeQL enables easy filtering for those tables and columns that you really need. <br><br>Find and understand connections through highlighted table relations."</p></em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-            <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3 class="title">Collaboration</h3>
-                <div class="bar"></div>
-                <div class="content">
-                  <%= image_tag('collaboration.png') %>
-                </div>
-              </div>
-
-              <div class="flip-card-back">
-                <h3 class="title">Collaboration</h3>
-                <div class="bar"></div>
-                <div class="content">
-                  <em><p>"SeeQL makes visualising databases an art, because a picture says more than 1000 words. <br><br>As such, it helps improving clear and efficient communication among DB analysts and developer teams."</p></em>
-                </div>
-              </div>
-            </div>
-          </div>
-
-            <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <h3 class="title">Navigation</h3>
-                <div class="bar"></div>
-                <div class="content">
-                  <%= image_tag('navigation.png') %>
-                </div>
-              </div>
-
-              <div class="flip-card-back">
-                <h3 class="title">Navigation</h3>
-                <div class="bar"></div>
-                <div class="content">
-                  <em><p>"Flexible and intuitive navigation in SeeQL enables easy filtering for those tables and columns that you really need. <br><br>Find and understand connections through highlighted table relations."</p></em>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
-<!-- WHO-ARE-WE-SECTION -->
+    <!-- WHO-ARE-WE-SECTION -->
     <section id="who-are-we" style="back">
-      <%= image_tag "seeql_logo_name_dark.png", class: "seeql_logo-bottom" %>
-      <div class="primary-container">
-        <div class="who-are-we-container">
-          <h1 class="section-header">Who are we <i class="fas fa-question-circle"></i></h1>
-          <p>We are a young team that has made it its business to help DB analysts and developer teams better understand the complexity of databases and their various relations.</p>
-          <div class="team">
-            <div class="member">
-              <%= image_tag('bruno.png') %>
-              <p>Bruno Brunckhorst</p>
+        <%= image_tag "seeql_logo_name_dark.png", class: "seeql_logo-bottom" %>
+        <div class="primary-container">
+            <div class="who-are-we-container">
+                <h1 class="section-header">Who are we <i class="fas fa-question-circle"></i></h1>
+                <p>We are a young team that has made it its business to help DB analysts and developer teams better understand the complexity of databases and their various relations.</p>
+                <div class="team">
+                    <div class="member">
+                        <%= image_tag('bruno.png') %>
+                        <p>Bruno Brunckhorst</p>
+                    </div>
+                    <div class="member">
+                        <%= image_tag('patrick.png') %>
+                        <p>Patrick Plue</p>
+                    </div>
+                    <div class="member">
+                        <%= image_tag('finn.png') %>
+                        <p>Finn Rueb</p>
+                    </div>
+                    <div class="member">
+                        <%= image_tag('tim.png') %>
+                        <p>Tim Vierboom</p>
+                    </div>
+                </div>
             </div>
-            <div class="member">
-              <%= image_tag('patrick.png') %>
-              <p>Patrick Plue</p>
-            </div>
-            <div class="member">
-              <%= image_tag('finn.png') %>
-              <p>Finn Rueb</p>
-            </div>
-            <div class="member">
-              <%= image_tag('tim.png') %>
-              <p>Tim Vierboom</p>
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
 </div>
@@ -180,26 +181,27 @@
     var count = 0
     var selectedText = '';
     var text = '';
+
     (function type() {
-      if (count == typeString.length) {
-        count = 0;
-      }
-      selectedText = typeString[count];
-      text = selectedText.slice(0, ++i);
-      document.getElementById('typing').innerHTML = text;
-      if (text.length === selectedText.length) {
-        count++;
-        i = 0;
-      }
-      setTimeout(type, 200);
+        if (count == typeString.length) {
+            count = 0;
+        }
+        selectedText = typeString[count];
+        text = selectedText.slice(0, ++i);
+        document.getElementById('typing').innerHTML = text;
+        if (text.length === selectedText.length) {
+            count++;
+            i = 0;
+        }
+        setTimeout(type, 160);
     }());
 
     function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
+        var start = new Date().getTime();
+        for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds){
+                break;
+            }
         }
-      }
     }
-  </script>
+</script>
