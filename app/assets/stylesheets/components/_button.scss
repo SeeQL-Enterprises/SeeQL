@@ -13,53 +13,53 @@
 }
 
 .btn-seeql {
-  margin: 20px 10px 20px 0;
-  color: white;
-  padding: 8px 25px;
-  border-radius: 6px;
-  font-weight: bold;
-  background: $seeql;
-  opacity: 0.8;
-  justify-content: center;
+    margin: 25px 0;
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    background: $seeql;
+    opacity: 0.8;
+    justify-content: center;
 
-  &:hover {
-      opacity: 1;
-  }
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .btn-cancel {
-  margin: 20px 10px 20px 0;
-  color: white;
-  padding: 8px 25px;
-  border-radius: 6px;
-  font-weight: bold;
-  background: darkgrey;
-  opacity: 0.8;
-  justify-content: center;
+    margin: 20px 10px 20px 0;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    background: darkgrey;
+    opacity: 0.8;
+    justify-content: center;
 
-  &:hover {
-      opacity: 1;
-  }
+    &:hover {
+        opacity: 1;
+    }
 }
 
 .horizontal-btns {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
-  .horizontal-btns {
-    margin-bottom: 0;
-  }
+    .horizontal-btns {
+        margin-bottom: 0;
+    }
 }
 
 #add-table-button {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  background-color: rgba($color: #000000, $alpha: 0);
-  border: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-color: rgba($color: #000000, $alpha: 0);
+    border: none;
 }
 .plus-button {
-  background-color: rgba($color: #000000, $alpha: 0);
-  border: none;
+    background-color: rgba($color: #000000, $alpha: 0);
+    border: none;
 }
