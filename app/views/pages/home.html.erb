@@ -7,7 +7,7 @@
                 <%= image_tag "seeql_logo_name.png", class: "seeql_logo" %>
 
                 <div class="banner-slogan">
-                    <h1>Quick and easy <div id="typing" class="typing"></div></h1>
+                    <h1>Quick and easy <div id="typewriter" class="typewriter"></div></h1>
                 </div>
 
                 <h5>Start your project and invite your team now!</h5>
@@ -173,35 +173,3 @@
     </section>
 
 </div>
-
-<!-- TYPING-EFFECT -->
-<script>
-    var typeString = ['visualisation.  ', 'navigation.  ', 'collaboration.  '];
-    var  i = 0;
-    var count = 0
-    var selectedText = '';
-    var text = '';
-
-    (function type() {
-        if (count == typeString.length) {
-            count = 0;
-        }
-        selectedText = typeString[count];
-        text = selectedText.slice(0, ++i);
-        document.getElementById('typing').innerHTML = text;
-        if (text.length === selectedText.length) {
-            count++;
-            i = 0;
-        }
-        setTimeout(type, 160);
-    }());
-
-    function sleep(milliseconds) {
-        var start = new Date().getTime();
-        for (var i = 0; i < 1e7; i++) {
-            if ((new Date().getTime() - start) > milliseconds){
-                break;
-            }
-        }
-    }
-</script>
