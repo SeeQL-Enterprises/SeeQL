@@ -14,3 +14,12 @@ import { initUpdateNavbarOnScroll } from '../plugins/navbar';
 initUpdateNavbarOnScroll();
 
 import { initTypewriter } from "../plugins/typewriter";
+initTypewriter().typeString('visualisation.')
+    .pauseFor(700)
+    .deleteAll(72)
+    .typeString('navigation.')
+    .pauseFor(700)
+    .deleteAll(72)
+    .typeString('collaboration.')
+    .pauseFor(700)
+    .start();
