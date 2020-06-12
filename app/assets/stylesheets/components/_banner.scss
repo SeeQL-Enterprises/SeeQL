@@ -13,12 +13,8 @@
         .banner-slogan {
             margin-top: 6.5rem;
             margin-bottom: 6.5rem;
-            text-align: left;
 
             h1 {
-                margin: 0 318px 0 328px;
-                // margin-left: 346px;
-                // margin-right: 354px;
                 text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
                 font-size: 36px;
             }
@@ -34,11 +30,64 @@
     }
 }
 
-@media screen and (max-width: 512px) {
-    h1 {
-        .typing {
-            display: block;
-            margin-top: 2rem;
+// MEDIA QUERIES
+
+@media (max-width: 528px) {
+    .banner {
+        .banner-content {
+            .banner-slogan {
+                h1 {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 512px) {
+    .banner {
+        .banner-content {
+            .banner-slogan {
+                h1 {
+                    font-size: 28px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 468px) {
+    .banner {
+        .banner-content {
+            .banner-slogan {
+                h1 {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .banner {
+        .banner-content {
+            .banner-slogan {
+                h1 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .banner {
+        .banner-content {
+            .banner-slogan {
+                h1 {
+                    font-size: 21px;
+                }
+            }
         }
     }
 }
