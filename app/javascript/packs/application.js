@@ -1,3 +1,5 @@
+require("stylesheets/application.scss")
+
 import "bootstrap";
 import "../plugins/interactjs";
 import "../plugins/comment";
