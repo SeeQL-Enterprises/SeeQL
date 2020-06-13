@@ -1,5 +1,4 @@
 module.exports = {
-    purge: [],
     theme: {
         fontFamily: {
             display: ['Montserrat', 'sans-serif'],
