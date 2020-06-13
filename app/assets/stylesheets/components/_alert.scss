@@ -1,10 +1,23 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+    position: fixed;
+    bottom: 80px;
+    right: 8px;
+    z-index: 1000;
+    padding: 15px 48px 15px 20px;
+    color: black;
+    opacity: .7;
+    transition: all .2s ease-in-out;
 
-  button > span {
-      color: red;
-  }
+    &:hover {
+        opacity: 1;
+    }
+
+
+    .close {
+        padding: 17px 17px 15px 15px;
+
+        span {
+            color: red;
+        }
+    }
 }
