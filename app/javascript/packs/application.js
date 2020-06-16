@@ -16,7 +16,8 @@ import { initUpdateNavbarOnScroll } from '../plugins/navbar';
 initUpdateNavbarOnScroll();
 
 import { initTypewriter } from "../plugins/typewriter";
-initTypewriter().typeString('visualisation.')
+if (document.getElementById("typewriter")) {
+    initTypewriter().typeString('visualisation.')
     .pauseFor(700)
     .deleteAll(74)
     .typeString('navigation.')
@@ -25,3 +26,4 @@ initTypewriter().typeString('visualisation.')
     .typeString('collaboration.')
     .pauseFor(700)
     .start();
+}
