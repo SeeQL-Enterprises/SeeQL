@@ -42,7 +42,7 @@
     }
 
     .modal-body {
-        padding: 1rem 1rem 0.5rem 1rem;
+        padding: 1rem 2rem 0.5rem 2rem;
 
         .errors {
             font-size: 19px;
@@ -56,29 +56,42 @@
             font-weight: 500;
         }
 
-        .form-control {
-            height: calc(1.5em + 0.75rem);
-            font-size: 18px;
+        .form-group {
+            margin-bottom: 25px;
 
-            &.select{
-                option {
-                    color: black;
+            > label {
+                margin-bottom: 5px;
+            }
+
+            .form-control {
+                height: calc(1.5em + 0.75rem);
+                font-size: 18px;
+
+                &.select {
+                    option {
+                        color: black;
+                    }
+                }
+
+                &::placeholder {
+                    color: #8C8C8C;
+                }
+            }
+
+            .form-check {
+                margin: 0;
+                border: 0.5px solid grey;
+
+                .form-check-label {
+                    padding: 0;
+                    font-size: 18px;
+                    position: relative;
+                    bottom: 9px;
+                    left: 24px;
                 }
             }
         }
 
-        .form-check {
-            margin: 0;
-            border: 0.5px solid grey;
-
-            .form-check-label {
-                padding: 0;
-                font-size: 18px;
-                position: relative;
-                bottom: 9px;
-                left: 24px;
-            }
-        }
 
         #help-list {
             margin-top: 45px;
@@ -109,15 +122,28 @@
     }
 
     .modal-footer {
-        padding: 0 1rem;
+        flex-direction: column;
+        align-items: normal;
+        padding: 25px 2rem;
         border-top: solid 1px #2C2F33;
-        justify-content: space-between;
+
+        .btn-seeql {
+            margin: 3px 0;
+            font-size: 21px;
+        }
 
         a {
-            color: $seeql;
+            margin: 0;
             text-decoration: none;
-            opacity: 0.5;
-            font-size: 20px;
+
+            #GitHub-button {
+                width: 100%;
+            }
+
+            i {
+                font-size: 26px;
+                transform: translate(-1px, 3px);
+            }
 
             &:hover {
                 opacity: 1;
