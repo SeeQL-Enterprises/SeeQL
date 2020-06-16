@@ -8,7 +8,24 @@
                 </button>
             </div>
             <div class="modal-body">
-                <%= render file: "devise/sessions/new.html.erb" %>
+                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                    <div class="form-inputs">
+                        <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" } %>
+                        <%= f.input :password, required: false, input_html: { autocomplete: "current-password" } %>
+                        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                        <%= render "devise/shared/login-links" %>
+                    </div>
+                    <div class="form-actions">
+                        <div class="modal-footer">
+                            <%- if devise_mapping.omniauthable? %>
+                                <%- resource_class.omniauth_providers.each do |provider| %>
+                                    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", user_github_omniauth_authorize_path %><br />
+                                <% end %>
+                            <% end %>
+                            <%= f.button :submit, "Log in", class: "btn btn-outline-white btn-sm" %>
+                        </div>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>
