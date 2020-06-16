@@ -18,36 +18,111 @@
     }
 }
 
-.modal-header {
-    color: black !important;
+.modal-content {
+    background-color: #304052;
 
-    .fas.fa-times {
-        color: $red;
-    }
+    .modal-header {
+        color: $seeql;
+        align-items: normal;
+        justify-content: center;
+        padding: 16px 12px 12px 12px;
+        border-bottom: solid 1px #2C2F33;
+        font-weight: 500;
+        font-size: 26px;
 
-    .close {
-        color: $red;
-    }
-}
+        .modal-title {
+            padding: 0;
+            border: none;
+        }
 
-.modal-body {
-    label {
-        color: black !important;
-    }
-
-    .form-control.select {
-        option {
-            color: black;
+        .fas.fa-times {
+            color: $red;
+            font-size: 28px;
         }
     }
 
-    a {
-        color: black;
-        text-decoration: none;
+    .modal-body {
+        padding: 1rem 1rem 0.5rem 1rem;
 
-        &:hover {
-            color: black;
+        .errors {
+            font-size: 19px;
+            color: red;
+            margin: 0px 10px 20px 10px;
+        }
+
+        label {
+            color: $seeql;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            height: calc(1.5em + 0.75rem);
+            font-size: 18px;
+
+            &.select{
+                option {
+                    color: black;
+                }
+            }
+        }
+
+        .form-check {
+            margin: 0;
+            border: 0.5px solid grey;
+
+            .form-check-label {
+                padding: 0;
+                font-size: 18px;
+                position: relative;
+                bottom: 9px;
+                left: 24px;
+            }
+        }
+
+        #help-list {
+            margin-top: 45px;
+
+            #help-button {
+                font-size: 28px;
+            }
+
+            #help-nested-list {
+                margin-bottom: 12px;
+                max-height: 0;
+                overflow: hidden;
+                transition: 0.8s;
+            }
+        }
+
+        a {
+            color: $seeql;
             text-decoration: none;
+            opacity: 0.5;
+            font-size: 20px;
+
+            &:hover {
+                opacity: 1;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .modal-footer {
+        padding: 0 1rem;
+        border-top: solid 1px #2C2F33;
+        justify-content: space-between;
+
+        a {
+            color: $seeql;
+            text-decoration: none;
+            opacity: 0.5;
+            font-size: 20px;
+
+            &:hover {
+                opacity: 1;
+                text-decoration: none;
+            }
         }
     }
 }
