@@ -46,10 +46,23 @@
             <div class="modal-footer">
                 <%- if devise_mapping.omniauthable? %>
                     <%- resource_class.omniauth_providers.each do |provider| %>
-                        <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", user_github_omniauth_authorize_path %>
+                        <% provider_logo = "" %>
+
+                        <% case provider
+                        when :github %><% provider_logo = "fab fa-github" %>
+                        <% else %>
+                            <% "Invalid provider" %>
+                        <% end %>
+                        <%= link_to user_github_omniauth_authorize_path do %>
+                            <button type="button" class="btn-seeql" id="<%= "#{OmniAuth::Utils.camelize(provider)}" %>-button">
+                                <%= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %>&nbsp;&nbsp;<i class="<%= provider_logo %>"></i>
+                            </button>
+                        <% end %>
                     <% end %>
                 <% end %>
-                <button type="submit" form="login_form" class="btn-seeql">Log in</button>
+                <button type="submit" form="login_form" class="btn-seeql">
+                    Log in
+                </button>
             </div>
         </div>
     </div>
