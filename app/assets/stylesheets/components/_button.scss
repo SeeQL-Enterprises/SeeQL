@@ -27,6 +27,11 @@
 
     &:hover {
         opacity: 1;
+    }
+}
+#create-project-btn {
+    &:hover {
+        opacity: 1;
         transform: scale(1.02);
     }
 }
