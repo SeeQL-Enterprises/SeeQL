@@ -1,2 +1,5 @@
-const errorMessage = document.querySelector('.errors')
-errorMessage.innerHTML = "Incorrect Email/Password. \<br>Please review the errors below:"
+var errorMessage = document.querySelector('.errors') 
+
+if (errorMessage.innerHTML === "") {
+    errorMessage.innerHTML = "Incorrect e-mail or password. \<br>Click help if you forgot your credentials"
+}
