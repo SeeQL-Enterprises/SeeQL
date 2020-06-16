@@ -9,7 +9,7 @@
             </div>
             <div class="modal-body">
                 <div class="errors"></div>
-                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
+                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), remote: true, html: { id: :login_form }) do |f| %>
                     <div class="form-inputs">
                         <%= f.input :email, required: false, autofocus: true, input_html: { autocomplete: "email" }, placeholder: "jane.doe@gmail.com" %>
                         <%= f.input :password, required: false, input_html: { autocomplete: "current-password" }, placeholder: "DatabasesAreAwesome" %>
@@ -40,16 +40,16 @@
                         </ul>
                     </div>
                     <div class="form-actions">
-                        <div class="modal-footer">
-                            <%- if devise_mapping.omniauthable? %>
-                                <%- resource_class.omniauth_providers.each do |provider| %>
-                                    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", user_github_omniauth_authorize_path %><br />
-                                <% end %>
-                            <% end %>
-                            <%= f.button :submit, "Log in", class: "btn btn-outline-white btn-sm" %>
-                        </div>
                     </div>
                 <% end %>
+            </div>
+            <div class="modal-footer">
+                <%- if devise_mapping.omniauthable? %>
+                    <%- resource_class.omniauth_providers.each do |provider| %>
+                        <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", user_github_omniauth_authorize_path %>
+                    <% end %>
+                <% end %>
+                <button type="submit" form="login_form" class="btn-seeql">Log in</button>
             </div>
         </div>
     </div>
