@@ -44,7 +44,13 @@
     .modal-body {
         padding: 1rem 2rem 0.5rem 2rem;
 
-        .errors {
+        .signupErrors {
+            font-size: 19px;
+            color: red;
+            margin: 0px 10px 20px 10px;
+        }
+
+        .loginErrors {
             font-size: 19px;
             color: red;
             margin: 0px 10px 20px 10px;
