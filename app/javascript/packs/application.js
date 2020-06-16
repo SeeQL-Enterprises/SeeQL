@@ -13,6 +13,7 @@ import "../plugins/add_collaborators";
 import "../plugins/view_database";
 import "../plugins/sidebar-menu";
 import "../plugins/clipboard";
+import "../plugins/help_button";
 
 window.$ = window.JQuery = JQuery;
 
