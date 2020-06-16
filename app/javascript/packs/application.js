@@ -1,6 +1,8 @@
 require("stylesheets/application.scss")
 
 import "bootstrap";
+import JQuery from 'jquery';
+import 'bootstrap'
 import "../plugins/interactjs";
 import "../plugins/comment";
 import "../plugins/leaderlinejs";
@@ -11,6 +13,8 @@ import "../plugins/add_collaborators";
 import "../plugins/view_database";
 import "../plugins/sidebar-menu";
 import "../plugins/clipboard";
+
+window.$ = window.JQuery = JQuery;
 
 import { initUpdateNavbarOnScroll } from '../plugins/navbar';
 initUpdateNavbarOnScroll();
