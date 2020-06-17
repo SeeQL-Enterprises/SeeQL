@@ -21,9 +21,6 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-gem 'client_side_validations'
-gem 'client_side_validations-simple_form'
-
 group :development do
     gem 'web-console', '~> 4.0.2'
 end
