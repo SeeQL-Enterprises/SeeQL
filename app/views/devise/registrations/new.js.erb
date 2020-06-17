@@ -1,5 +1,12 @@
-var signupErrorMessage = document.querySelector('.signupErrors')
+var signupErrorsList = document.querySelector('.signupErrorsList');
 
-if (signupErrorMessage.innerHTML === "") {
-    signupErrorMessage.innerHTML = "Please fill in all the fields"
-}
+$(signupErrorsList).empty()
+
+<% resource.errors.full_messages.each do |message| %>
+    <% message.gsub!("can't", 'cannot') %>
+
+    var errorMessage = document.createElement('li')
+    errorMessage.innerHTML = "<%= message %>";
+
+    signupErrorsList.appendChild(errorMessage)
+<% end %>
