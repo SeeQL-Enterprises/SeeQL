@@ -45,9 +45,11 @@
         padding: 1rem 2rem 0.5rem 2rem;
 
         .signupErrors {
-            font-size: 19px;
-            color: red;
             margin: 0px 10px 20px 10px;
+            font-size: 19px;
+            li {
+                color: red;
+            }
         }
 
         .loginErrors {
