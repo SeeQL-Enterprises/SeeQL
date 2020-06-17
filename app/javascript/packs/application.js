@@ -16,6 +16,9 @@ import "../plugins/clipboard";
 import "../plugins/help_button";
 import "../plugins/alert";
 
+import '@client-side-validations/client-side-validations';
+import '@client-side-validations/simple-form/dist/simple-form.bootstrap4'
+
 window.$ = window.JQuery = JQuery;
 
 import { initUpdateNavbarOnScroll } from '../plugins/navbar';
