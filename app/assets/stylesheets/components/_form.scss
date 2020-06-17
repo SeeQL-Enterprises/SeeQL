@@ -1,42 +1,81 @@
-.forms-card {
-  padding: 36px 24px;
-  background-color: #0B132B;
-  opacity: 0.7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  max-width: 600px;
+.form-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #304052;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+    max-width: 600px;
+
+    .form-header {
+        display: flex;
+        align-items: normal;
+        justify-content: center;
+        padding: 20px 12px 16px 12px;
+        border-bottom: solid 1px #2C2F33;
+        font-weight: 500;
+        font-size: 26px;
+
+        .form-title {
+            color: $seeql;
+            padding: 0;
+            border: none;
+        }
+    }
+
+    .form-body {
+        padding: 1.25rem 1.3rem 0.5rem 1.3rem;
+
+        .form-control {
+            height: calc(1.5em + 0.75rem);
+            font-size: 18px;
+
+            &::placeholder {
+                color: #8C8C8C;
+            }
+        }
+
+        label {
+            color: $seeql;
+            font-size: 21px;
+            font-weight: 500;
+        }
+    }
+
+    .form-footer {
+        padding: 25px 2rem;
+    }
 }
 
 .add-collaborators {
-  min-width: 260px;
-  margin-right: 40px;
+    min-width: 260px;
+    margin-right: 40px;
 }
 
 #database-form {
-  margin-top: 15px;
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.7s;
+    margin-top: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.7s;
 
-  &.active {
-    max-height: 100%;
-  }
+    &.active {
+        max-height: 100%;
+    }
 
-  .select option {
-      color: black;
-  }
+    .select option {
+        color: black;
+    }
 }
 
 #collaborator-form {
-  margin-top: 15px;
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.7s;
+    margin-top: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.7s;
 
-  &.active {
-    max-height: 100%;
-  }
+    &.active {
+        max-height: 100%;
+    }
 }
 
 .login-form {
