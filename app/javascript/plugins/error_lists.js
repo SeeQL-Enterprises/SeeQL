@@ -1,13 +1,18 @@
-var signupButton = document.querySelector('#signup-button-sidebar');
 var signupErrors = document.querySelector('.signupErrorsList');
-
-var loginButton = document.querySelector('#login-button-sidebar');
 var loginErrors = document.querySelector('.loginErrors');
 
-signupButton.addEventListener("click", () => {
-    $(signupErrors).empty();
-});
+if (document.querySelector('#signup-button-sidebar')) {
+    var signupButton = document.querySelector('#signup-button-sidebar');
 
-loginButton.addEventListener("click", () => {
-    loginErrors.innerHTML = "";
-});
+    signupButton.addEventListener("click", () => {
+        $(signupErrors).empty();
+    });
+}
+
+if (document.querySelector('#login-button-sidebar')) {
+    var loginButton = document.querySelector('#login-button-sidebar');
+
+    loginButton.addEventListener("click", () => {
+        loginErrors.innerHTML = "";
+    });
+}
