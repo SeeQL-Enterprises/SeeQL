@@ -32,9 +32,9 @@
         <%= link_to "Edit Profile", edit_user_registration_path, class: "border-bottom" %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %>
     <% else %>
-        <a class="border-bottom" data-toggle="modal" data-target="#loginModal">Login</a>
+        <a id="login-button" class="border-bottom" data-toggle="modal" data-target="#loginModal">Login</a>
     <% end %>
     <% if !current_user %>
-        <a class="border-bottom" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+        <a id="signup-button" class="border-bottom" data-toggle="modal" data-target="#signupModal">Sign Up</a>
     <% end %>
 </div>
