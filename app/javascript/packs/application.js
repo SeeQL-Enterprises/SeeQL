@@ -14,6 +14,7 @@ import "../plugins/view_database";
 import "../plugins/sidebar-menu";
 import "../plugins/clipboard";
 import "../plugins/help_button";
+import "../plugins/alert";
 
 window.$ = window.JQuery = JQuery;
 
