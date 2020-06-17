@@ -1,5 +1,9 @@
-var loginModal = document.querySelector('#loginModal');
+// var loginModal = document.querySelector('#loginModal');
 
 $(document).ready(function() {
     $('#loginModal').modal('hide');
+
+    setTimeout(function() {
+        window.location.reload();
+    }, 200);
 })
