@@ -1,45 +1,60 @@
 // PRIMARY CONTAINER
 .primary-container {
-  margin: 0 auto;
-  padding-top: 100px;
-  max-width: 55rem;
+    margin: 0 auto;
+    padding-top: 100px;
+    max-width: 55rem;
 }
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-  .primary-container {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
+    .primary-container {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  .primary-container {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+    .primary-container {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
 
 // BENEFITS CONTAINER LP
 .benefits-container {
-  display: flex;
-  text-align: center;
-  margin-bottom: 4.5rem;
+    display: flex;
+    text-align: center;
+    margin-bottom: 4.5rem;
 }
 
 @media (min-width: 100px) and (max-width: 600px) {
-  .benefits-container {
-    display: block;
-  }
+    .benefits-container {
+        display: block;
+    }
 }
 
 .who-are-we-container {
-  text-align: center;
+    text-align: center;
 }
 
+// DOUBLE CONTAINER
+.double-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-top: 100px;
+    max-width: 56rem;
+}
 
+// X small devices (portrait phones, 100 px - 575px)
+@media (min-width: 100px) and (max-width: 575px) {
+    .double-container {
+    }
+}
 
-
-
-
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .double-container {
+    }
+}
