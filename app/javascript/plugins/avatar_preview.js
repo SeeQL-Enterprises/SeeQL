@@ -1,5 +1,5 @@
-if (document.getElementById("user_avatar")) {
-    var userAvatar = document.getElementById("user_avatar")
+if (document.getElementById("avatar-upload")) {
+    var userAvatar = document.getElementById("avatar-upload")
 
     userAvatar.onchange = function () {
         var reader = new FileReader();
