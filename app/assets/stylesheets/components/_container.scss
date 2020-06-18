@@ -45,6 +45,10 @@
     margin: 0 auto;
     padding-top: 100px;
     max-width: 56rem;
+
+    &.profile-container {
+        max-height: 39rem;
+    }
 }
 
 // X small devices (portrait phones, 100 px - 575px)
