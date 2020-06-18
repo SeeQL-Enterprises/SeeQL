@@ -6,7 +6,7 @@ if (document.getElementById("user_avatar")) {
 
         reader.onload = function (event) {
             // Get loaded data and render a thumbnail
-            document.getElementById("avatar-preview").src = event.target.result;
+            document.getElementById("avatar-preview-image").src = event.target.result;
         };
 
         // Read the image file as a data URL
