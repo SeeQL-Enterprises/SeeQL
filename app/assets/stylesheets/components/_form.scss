@@ -1,6 +1,6 @@
 .container.edit-form-container {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 30px;
+    padding-right: 30px;
 
     .form-content {
     display: flex;
@@ -9,7 +9,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
-    max-width: 600px;
+    max-width: 530px;
 
     &.form-danger {
         width: 100%;
@@ -49,14 +49,27 @@
     }
 
     &.form-avatar {
-        height: fit-content;
+        .form-header {
+            flex-grow: 0;
+        }
 
         .form-body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             padding: 1.25rem 1.3rem 1.25rem 1.3rem;
 
             img {
-                margin-bottom: 29px;
+                object-fit: cover;
+                margin: 29px auto;
+                padding: 15px;
+                height: 465px;
+                width: 465px;
             }
+        }
+
+        .form-footer {
+            flex-grow: 0;
         }
     }
 
