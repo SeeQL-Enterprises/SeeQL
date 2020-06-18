@@ -58,6 +58,7 @@
             flex-direction: column;
             flex-grow: 1;
             padding: 1.25rem 1.3rem 1.25rem 1.3rem;
+            justify-content: center;
 
             img {
                 object-fit: cover;
@@ -70,6 +71,14 @@
 
         .form-footer {
             flex-grow: 0;
+
+            #avatar-upload-button {
+                text-align: center;
+
+                #avatar-upload {
+                    display: none;
+                }
+            }
         }
     }
 
