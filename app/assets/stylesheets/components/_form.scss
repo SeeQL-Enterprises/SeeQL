@@ -1,4 +1,8 @@
-.form-content {
+.container.edit-form-container {
+    padding-left: 0;
+    padding-right: 0;
+
+    .form-content {
     display: flex;
     flex-direction: column;
     background-color: #304052;
@@ -6,6 +10,37 @@
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
     max-width: 600px;
+
+    &.form-danger {
+        width: 100%;
+        height: fit-content;
+
+        .form-body {
+            padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+            font-size: 20px;
+
+            a {
+                text-decoration: none;
+                color: $seeql;
+
+                &:hover {
+                    text-decoration: none;
+                    color: $seeql;
+                }
+            }
+
+            ul {
+                list-style: outside;
+                padding: 0 21px;
+                font-size: 19px;
+
+                li {
+                    margin-bottom: 13px;
+                }
+            }
+        }
+
+    }
 
     .form-header {
         display: flex;
@@ -20,6 +55,10 @@
             color: $seeql;
             padding: 0;
             border: none;
+
+            &.title-danger {
+                color: $seeql-red;
+            }
         }
     }
 
@@ -43,9 +82,38 @@
     }
 
     .form-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: normal;
         padding: 25px 2rem;
+        border-top: solid 1px #2C2F33;
+
+        .btn-seeql {
+            margin: 3px 0;
+            font-size: 21px;
+
+            &.seeql-red {
+                background: $seeql-red;
+            }
+        }
+
+        a {
+            margin: 0;
+            text-decoration: none;
+
+            #back-button-edit {
+                width: 100%;
+            }
+
+            &:hover {
+                // opacity: 1;
+                text-decoration: none;
+            }
+        }
     }
 }
+}
+
 
 .add-collaborators {
     min-width: 260px;
