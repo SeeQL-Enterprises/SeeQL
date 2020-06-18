@@ -13,6 +13,7 @@
 
     &.form-danger {
         width: 100%;
+        max-width: unset;
         height: fit-content;
 
         .form-body {
@@ -40,6 +41,23 @@
             }
         }
 
+        .form-footer {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+    }
+
+    &.form-avatar {
+        height: fit-content;
+
+        .form-body {
+            padding: 1.25rem 1.3rem 1.25rem 1.3rem;
+
+            img {
+                margin-bottom: 29px;
+            }
+        }
     }
 
     .form-header {

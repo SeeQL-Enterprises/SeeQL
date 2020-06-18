@@ -58,3 +58,24 @@
     .double-container {
     }
 }
+
+// WIDE CONTAINER
+.wide-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 45px 0;
+    width: 100%;
+}
+
+// X small devices (portrait phones, 100 px - 575px)
+@media (min-width: 100px) and (max-width: 575px) {
+    .wide-container {
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .wide-container {
+    }
+}
