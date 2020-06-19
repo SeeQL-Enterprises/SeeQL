@@ -52,7 +52,7 @@
                             <% "Invalid provider" %>
                         <% end %>
                         <%= link_to user_github_omniauth_authorize_path do %>
-                            <button type="button" class="btn-seeql" id="<%= "#{OmniAuth::Utils.camelize(provider)}" %>-button">
+                            <button type="button" class="btn-seeql <%= "#{OmniAuth::Utils.camelize(provider)}" %>-button">
                                 <%= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %>&nbsp;&nbsp;<i class="<%= provider_logo %>"></i>
                             </button>
                         <% end %>
