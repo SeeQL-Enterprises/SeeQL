@@ -6,6 +6,8 @@
     "bootstrap": "^4.4.1",
     "bulma": "^0.8.1",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "interactjs": "^1.8.5",
     "jquery": "^3.5.0",
     "popover": "^2.4.1",
