@@ -24,6 +24,7 @@ if (document.getElementById("user_avatar")) {
         reader.onload = function (event) {
             // Get loaded data and render a thumbnail
             document.getElementById("project-preview-image").src = event.target.result;
+            document.getElementById("project-preview-image").style = "object-fit: cover";
         };
 
         // Read the image file as a data URL
