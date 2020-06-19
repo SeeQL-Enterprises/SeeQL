@@ -16,7 +16,7 @@ import "../plugins/clipboard";
 import "../plugins/help_button";
 import "../plugins/alert";
 import "../plugins/error_lists";
-import "../plugins/avatar_preview";
+import "../plugins/image_preview";
 
 window.$ = window.JQuery = JQuery;
 
