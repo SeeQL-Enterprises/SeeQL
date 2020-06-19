@@ -1,15 +1,3 @@
-<div class="primary-container">
-    <h2>Start now and create a new project:</h2>
-    <%= simple_form_for @project do |f|%>
-        <%= f.input :name, placeholder: "Name of your new project" %>
-        <label type="button" class="btn-seeql upload-button">
-            <input class="form-control-file file optional" type="file" name="project[project_image]" id="project_project_image" >
-            Choose project image
-        </label>
-        <%= f.submit "Create Project", class: "btn-seeql upload-button" %>
-    <% end %>
-</div>
-
 <div class="container form-container">
     <div class="wide-container form-content-wide">
         <div class="form-content">
@@ -30,7 +18,7 @@
                         </div>
                         <div class="form-content form-avatar">
                             <div class="project-preview">
-                                <img id="project-preview-image" src="<%= rails_blob_path(@project.project_image, only_path: true) %>" alt="User's current profile image">
+                                <img id="project-preview-image" src="https://res.cloudinary.com/seeql/image/upload/v1592580690/General%20Assets/Project%20Placeholder.png" alt="User's current profile image">
                                 <label type="button" class="btn-seeql upload-button">
                                     <input class="form-control-file file optional" type="file" name="project[project_image]" id="project_project_image" >
                                     Choose project image
