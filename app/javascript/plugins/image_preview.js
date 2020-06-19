@@ -14,9 +14,9 @@ if (document.getElementById("user_avatar")) {
         reader.readAsDataURL(this.files[0]);
 
     }
-} else if (document.getElementById("project_image")) {
+} else if (document.getElementById("project_project_image")) {
 
-    var projectImage = document.getElementById("project_image")
+    var projectImage = document.getElementById("project_project_image")
 
     projectImage.onchange = function () {
         var reader = new FileReader();
