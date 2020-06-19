@@ -1,6 +1,5 @@
 <div class="container edit-form-container">
     <div class="wide-container form-content-wide">
-        <!-- <div class="double-container profile-container"> -->
         <div class="form-content">
             <div class="form-header">
                 <div class="double-container">
@@ -27,21 +26,27 @@
                             </div>
                             <div class="flex flex-wrap -mx-5">
                                 <div class="w-full md:w-1/2 pl-4 pr-2 mb-6 md:mb-0">
-                                    <%= f.input :password, hint: "Leave it blank if you don't want to change it", required: false, class: "form-control appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500", input_html: { autocomplete: "new-password", id: "new-password-edit", placeholder: "•••••••••••••••••••••" } %>
+                                    <%= f.input :password, required: false, class: "form-control appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500", input_html: { autocomplete: "new-password", id: "new-password-edit", placeholder: "•••••••••••••••••••••" } %>
                                 </div>
                                 <div class="w-full md:w-1/2 pl-2 pr-4">
                                     <%= f.input :password_confirmation, required: false, class: "form-control appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500", label: "Confirm password", input_html: { autocomplete: "new-password", id: "password-confirmation-edit", placeholder: "•••••••••••••••••••••" } %>
                                 </div>
+                                <small id="new-password-label" class="form-text text-muted">Leave it blank if you don't want to change it</small>
                             </div>
                             <div class="flex flex-wrap -mx-5">
                                 <div class="w-full px-4">
-                                    <%= f.input :current_password, hint: "we need your current password to confirm your changes", class: "form-control appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500", required: true, input_html: { autocomplete: "current-password" } %>
+                                    <%= f.input :current_password, class: "form-control appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500", required: true, input_html: { autocomplete: "current-password" } %>
+                                    <small id="current-password-label" class="form-text text-muted">We need your current password to confirm your changes</small>
                                 </div>
                             </div>
                         </div>
                         <div class="form-content form-avatar">
                             <div class="avatar-preview">
                                 <img id="avatar-preview-image" src="<%= rails_blob_path(current_user.avatar, only_path: true) %>" alt="User's current profile image">
+                                <label id="avatar-upload-button" type="button" class="btn-seeql">
+                                    <input class="form-control-file file optional" type="file" name="user[avatar]" id="user_avatar" form="edit-form">
+                                    Choose snazzy picture
+                                </label>
                             </div>
                         </div>
                     <% end %>
@@ -50,33 +55,19 @@
             <div class="form-footer">
                 <div class="double-container">
                     <%= link_to :back do %>
-                    <button id="back-button-edit" type="button" class="btn-seeql seeql-red">
-                        Back
-                    </button>
+                        <button id="back-button-edit" type="button" class="btn-seeql seeql-red">
+                            Back
+                        </button>
                     <% end %>
                     <button id="edit-button-form" type="submit" form="edit-form" class="btn-seeql">
                         Confirm
                     </button>
-                    <label id="avatar-upload-button" type="button" class="btn-seeql">
-                        <input class="form-control-file file optional" type="file" name="user[avatar]" id="user_avatar" form="edit-form">
-                        Choose snazzy picture
-                    </label>
                 </div>
             </div>
         </div>
-        <!-- <div class="form-content form-avatar"> -->
-            <!-- <div class="form-body">
-                <div class="avatar-preview">
-                    <img id="avatar-preview-image" src="<%= rails_blob_path(current_user.avatar, only_path: true) %>" alt="User's current profile image">
-                </div>
-            </div> -->
-
-        <!-- </div> -->
-
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <p>Currently awaiting confirmation for: <%= resource.unconfirmed_email %></p>
+            <p>Currently awaiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-    <!-- </div> -->
     </div>
     <div class="wide-container">
         <div class="form-content form-danger">
@@ -109,9 +100,9 @@
             </div>
             <div class="form-footer">
                 <%= link_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
-                <button id="back-button-edit" type="button" class="btn-seeql seeql-red">
-                    Delete my account
-                </button>
+                    <button id="back-button-edit" type="button" class="btn-seeql seeql-red">
+                        Delete my account
+                    </button>
                 <% end %>
             </div>
         </div>
