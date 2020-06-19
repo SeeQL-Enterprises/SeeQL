@@ -9,7 +9,7 @@
             </div>
             <div class="form-body">
                 <div class="double-container">
-                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "flex-form" }) do |f| %>
+                    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "flex-form", id: "edit-form" }) do |f| %>
                         <div class="form-inputs w-1/2 max-w-lg">
                             <div class="flex flex-wrap -mx-5">
                                 <div class="w-full md:w-1/2 pl-4 pr-2 mb-6 md:mb-0">
@@ -42,10 +42,13 @@
                         </div>
                         <div class="form-content form-avatar">
                             <div class="avatar-preview">
-                                <img id="avatar-preview-image" src="<%= rails_blob_path(current_user.avatar, only_path: true) %>" alt="User's current profile image">
+                                <img id="avatar-preview-image" src="<%= current_user.avatar.attached? ? rails_blob_path(current_user.avatar, only_path: true) : image_url("avatar.svg") %>" alt="User's current profile image">
                                 <label id="avatar-preview-button" type="button" class="btn-seeql upload-button">
-                                    <input class="form-control-file file optional" type="file" name="user[avatar]" id="user_avatar" form="edit-form">
+                                    <!-- <input class="form-control-file file optional" type="file" name="user[avatar]" id="user_avatar" form="edit-form"> -->
                                     Choose snazzy picture
+                                    <span style="display: none;">
+                                        <%= f.input :avatar, input_html: { id: "user-avatar" }, as: :file, required: false %>
+                                    </span>
                                 </label>
                             </div>
                         </div>
