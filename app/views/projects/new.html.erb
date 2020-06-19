@@ -2,8 +2,10 @@
     <h2>Start now and create a new project:</h2>
     <%= simple_form_for @project do |f|%>
         <%= f.input :name, placeholder: "Name of your new project" %>
-        <%= f.input :project_image, as: :file, required: false %>
-
-        <%= f.submit "Create Project", class: "btn-seeql" %>
+        <label type="button" class="btn-seeql upload-button">
+            <input class="form-control-file file optional" type="file" name="project[project_image]" id="project_project_image" >
+            Choose project image
+        </label>
+        <%= f.submit "Create Project", class: "btn-seeql upload-button" %>
     <% end %>
 </div>
