@@ -1,21 +1,21 @@
 .container.edit-form-container {
     padding-left: 30px;
     padding-right: 30px;
-    margin-top: 130px;
+    margin-top: 150px;
 
     .wide-container {
         background-color: #304052;
-        text-shadow: 4px 4px 3px rgba(255, 0, 0, 1);
+        text-shadow: 4px 4px 3px rgba(255, 0, 0, .4);
         border-radius: 5px;
         box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 
         .form-content {
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
             // max-width: 700px;
             // box-shadow: none;
             // display: flex;
             // flex-direction: column;
             // background-color: #304052;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
             // border-radius: 5px;
             // box-shadow: 0 0 15px rgba(0, 0, 0, .2);
             // max-width: 530px;
@@ -44,15 +44,25 @@
             }
 
             .form-body {
-                padding: 1.25rem 1.3rem 0.5rem 1.3rem;
+                padding: 1.5rem 1.3rem;
 
                 #edit-form {
                     display: flex;
-                    // justify-content: space-around;
 
                     .form-inputs {
                         padding: 0 20px;
                         margin-left: 40px;
+
+                        #new-password-label {
+                            margin: -15px 0px 5px 35px;
+                            font-size: 17px;
+                        }
+
+                        #current-password-label {
+                            margin-top: -15px;
+                            margin-left: 1px;
+                            font-size: 17px;
+                        }
                     }
 
                     .form-control {
@@ -79,8 +89,14 @@
                 padding: 25px 2rem;
                 border-top: solid 1px #2C2F33;
 
+                .double-container {
+                    flex-direction: column;
+                    margin: 0 340px;
+                }
+
                 .btn-seeql {
                     margin: 3px 0;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
                     font-size: 21px;
 
                     &.seeql-red {
@@ -97,21 +113,39 @@
                     }
 
                     &:hover {
-                        // opacity: 1;
                         text-decoration: none;
                     }
                 }
             }
 
             &.form-avatar {
+                display: flex;
+                flex-direction: column;
                 margin-left: 107px;
 
-                img {
-                    object-fit: cover;
-                    margin: 29px auto;
-                    padding: 15px;
-                    height: 390px;
-                    width: 390px;
+                .avatar-preview {
+                    display: flex;
+                    flex-direction: column;
+
+                    img {
+                        object-fit: cover;
+                        margin: 2px auto 0px auto;
+                        padding: 42px;
+                        height: 390px;
+                        width: 390px;
+                    }
+
+                    #avatar-upload-button {
+                        margin: 0px 40px;
+                        text-align: center;
+                        text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+                        font-size: 21px;
+                        color: white;
+
+                        #user_avatar {
+                            display: none;
+                        }
+                    }
                 }
             }
 
