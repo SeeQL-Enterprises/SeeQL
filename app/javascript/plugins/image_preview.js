@@ -1,6 +1,6 @@
-if (document.getElementById("user_avatar")) {
+if (document.getElementById("user-avatar")) {
 
-    const userAvatar = document.getElementById("user_avatar");
+    const userAvatar = document.getElementById("user-avatar");
 
     userAvatar.onchange = function avatarPreview(userFile) {
 
