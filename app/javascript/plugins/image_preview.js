@@ -1,4 +1,5 @@
 if (document.getElementById("user_avatar")) {
+
     var userAvatar = document.getElementById("user_avatar")
 
     userAvatar.onchange = function () {
@@ -11,5 +12,22 @@ if (document.getElementById("user_avatar")) {
 
         // Read the image file as a data URL
         reader.readAsDataURL(this.files[0]);
+
+    }
+} else if (document.getElementById("project_image")) {
+
+    var projectImage = document.getElementById("project_image")
+
+    projectImage.onchange = function () {
+        var reader = new FileReader();
+
+        reader.onload = function (event) {
+            // Get loaded data and render a thumbnail
+            document.getElementById("project-preview-image").src = event.target.result;
+        };
+
+        // Read the image file as a data URL
+        reader.readAsDataURL(this.files[0]);
+
     }
 }
