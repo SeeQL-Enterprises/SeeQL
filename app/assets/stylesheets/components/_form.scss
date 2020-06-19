@@ -130,11 +130,8 @@
 
             img {
                 object-fit: cover;
-                margin: 2px auto 0px auto;
-                padding: 42px;
-                height: 390px;
-                width: 390px;
-                border-radius: 50%;
+                object-position: center;
+                border-radius: 4px;
             }
         }
     }
