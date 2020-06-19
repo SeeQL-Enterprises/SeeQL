@@ -4,12 +4,16 @@ if (document.getElementById("user_avatar")) {
 
     userAvatar.onchange = function () {
 
+        var avatarPreview = document.getElementById("avatar-preview-image");
+        var previewAvatarButton = document.getElementById("avatar-preview-button");
+        var file = event.srcElement.files[0];
         var reader = new FileReader();
 
         reader.onload = function (event) {
 
             // Get loaded data and render a thumbnail
-            document.getElementById("avatar-preview-image").src = event.target.result;
+            avatarPreview.src = event.target.result;
+            previewAvatarButton.innerHTML = file.name;
 
         };
 
