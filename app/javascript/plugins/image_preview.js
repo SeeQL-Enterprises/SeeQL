@@ -22,9 +22,9 @@ if (document.getElementById("user_avatar")) {
 
     };
 
-} else if (document.getElementById("project_image")) {
+} else if (document.getElementById("project-image")) {
 
-    const projectImage = document.getElementById("project_image");
+    const projectImage = document.getElementById("project-image");
 
     projectImage.onchange = function projectImagePreview(userFile) {
 
