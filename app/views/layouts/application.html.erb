@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title><%= meta_title %></title>
+        <title><%= meta_title %></title>
 
-    <%= favicon_link_tag 'SeeQL_logo.png' %>
+        <%= favicon_link_tag 'SeeQL_logo.png' %>
 
-    <meta property="og:title" content="Visualisation and navigation for your database project | www.seeql.dev" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Database schema visualisation is an essential process when starting a new project. SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park." />
-    <meta property="og:url" content="https://seeql.dev/" />
-    <meta property="og:image" content="https://res.cloudinary.com/tim4boom/image/upload/v1585154545/og_image_beych1.png" />
+        <meta name="description" content="<%= meta_description %>">
 
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
+        <!-- Facebook Open Graph data -->
+        <meta property="og:title" content="<%= meta_title %>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="<%= request.original_url %>" />
+        <meta property="og:image" content="<%= meta_image %>" />
+        <meta property="og:description" content="<%= meta_description %>" />
+        <meta property="og:site_name" content="<%= meta_title %>" />
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %>
-    <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
-  </head>
-  <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/menu' %>
-    <%= render 'shared/flashes' %>
-    <%= render 'shared/login_modal' %>
-    <%= render 'shared/signup_modal' %>
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="<%= DEFAULT_META["twitter_account"] %>">
+        <meta name="twitter:title" content="<%= meta_title %>">
+        <meta name="twitter:description" content="<%= meta_description %>">
+        <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
+        <meta name="twitter:image:src" content="<%= meta_image %>">
 
-    <div class="page-content">
-        <%= yield %>
-    </div>
+        <!-- <meta property="og:title" content="Visualisation and navigation for your database project | www.seeql.dev" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Database schema visualisation is an essential process when starting a new project. SeeQL provides a quick but profound visualisation of relational DBs and makes understanding them a walk in the park." />
+        <meta property="og:url" content="https://seeql.dev/" />
+        <meta property="og:image" content="https://res.cloudinary.com/tim4boom/image/upload/v1585154545/og_image_beych1.png" /> -->
 
-    <%= render 'shared/footer' %>
+        <%= csrf_meta_tags %>
+        <%= action_cable_meta_tag %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
+        <%= stylesheet_link_tag 'application', media: 'all' %>
+        <%= stylesheet_pack_tag 'application', media: 'all' %>
+        <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
+    </head>
+    <body>
+        <%= render 'shared/navbar' %>
+        <%= render 'shared/menu' %>
+        <%= render 'shared/flashes' %>
+
+        <div class="page-content">
+            <%= yield %>
+        </div>
+
+        <%= render 'shared/footer' %>
+
+        <%= javascript_include_tag 'application' %>
+        <%= javascript_pack_tag 'application' %>
+    </body>
 </html>
