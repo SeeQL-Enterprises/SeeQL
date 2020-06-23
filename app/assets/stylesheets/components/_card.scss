@@ -1,71 +1,153 @@
 .draggable {
-  touch-action: none;
-  user-select: none;
-  margin: 3%;
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px);
-  z-index: 100;
+    touch-action: none;
+    user-select: none;
+    margin: 3%;
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    z-index: 100;
 }
 
 .table-name {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 .subheader {
-  font-size: 11px;
-  padding: 0 5px 5px 5px;
+    font-size: 11px;
+    padding: 0 5px 5px 5px;
 }
 
 .top {
-  background-color: rgba($color: #3a506b, $alpha: 0.9);
-  padding: 20px 10px 10px 5px;
-  border-radius: 10px 10px 0 0;
-  border: 1px solid black;
-  box-shadow: inset 0px 1px 0px #2ab7ec;
+    background-color: rgba($color: #3a506b, $alpha: 0.9);
+    padding: 20px 10px 10px 5px;
+    border-radius: 10px 10px 0 0;
+    border: 1px solid black;
+    box-shadow: inset 0px 1px 0px #2ab7ec;
 }
 
 .column {
-  padding: 0 5px 0 5px;
-  white-space: nowrap;
-  background-color: rgba($color: #3a506b, $alpha: 0.9);
-  border: 1px solid black;
-  border-top: 0.5px solid grey;
-  border-bottom: 0.5px solid grey;
-  box-shadow: 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e;
+    padding: 0 5px 0 5px;
+    white-space: nowrap;
+    background-color: rgba($color: #3a506b, $alpha: 0.9);
+    border: 1px solid black;
+    border-top: 0.5px solid grey;
+    border-bottom: 0.5px solid grey;
+    box-shadow: 0px 1px 0px #2ab7ec, 0px 5px 0px 0px #07526e;
 }
 
 .bottom {
-  background-color: rgba($color: #3a506b, $alpha: 0.9);
-  padding: 5px 10px 10px 20px;
-  border-radius: 0 0 10px 10px;
-  border-bottom: 1px solid black;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  box-shadow: 0px 5px 0px 0px #07526e;
+    background-color: rgba($color: #3a506b, $alpha: 0.9);
+    padding: 5px 10px 10px 20px;
+    border-radius: 0 0 10px 10px;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    box-shadow: 0px 5px 0px 0px #07526e;
 }
 
 .comment-content {
-  background-color: #52657c;
+    background-color: #52657c;
 }
 
 .bg {
-  border-radius: 6px;
-  background-color: rgba($color: #fff, $alpha: 0.2);
+    border-radius: 6px;
+    background-color: rgba($color: #fff, $alpha: 0.2);
 }
 
 .project_name {
-  font-size: 25px;
+    font-size: 25px;
 }
 
 .collab_list {
-  padding: 5px;
-  margin: 5px;
-  background-color: rgba($color: #fff, $alpha: 0.4);
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba($color: #fff, $alpha: 0.4);
 }
 
-.projcard a:hover {
-  text-decoration: none;
-  -webkit-box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
-  -moz-box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
-  box-shadow: 0px 0px 60px -19px rgba(255, 255, 255, 0.68);
+// Project Cards
+
+.card-image {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
+
+.card-project h2 {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.card-project-infos {
+    height: 60px;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    background-color: #5bc0be;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.project-collab {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    right: 0px;
+    top: -20px;
+    width: 100%;
+    .project-collab-icon {
+        text-align: center;
+    }
+    img {
+        width: 40px;
+        margin: 0 16px;
+        border-radius: 50%;
+    }
+}
+
+.fas.fa-info-circle {
+    font-size: 28px;
+    color: white;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 0.8;
+    &:hover {
+        color: white;
+        text-decoration: none;
+        opacity: 1;
+    }
+}
+
+// X small devices (portrait phones, 100 px - 575px)
+@media (min-width: 100px) and (max-width: 575px) {
+    .project-collab {
+        right: 0px;
+        top: 10px;
+        .project-collab-icon {
+            .collab-name {
+                display: none;
+            }
+        }
+    }
+}
+
+// // Medium devices (tablets, 768px and up)
+// @media (max-width: 768px) {
+//     .card-grid {
+//         grid-template-columns: 1fr;
+//     }
+// }

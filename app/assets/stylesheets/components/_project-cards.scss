@@ -1,12 +1,3 @@
-.card-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 60px;
-
-    margin-top: 40px;
-    margin-bottom: 60px;
-}
-
 .card-image {
     position: relative;
     background-size: cover;
@@ -87,9 +78,9 @@
     }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (max-width: 768px) {
-    .card-grid {
-        grid-template-columns: 1fr;
-    }
-}
+// // Medium devices (tablets, 768px and up)
+// @media (max-width: 768px) {
+//     .card-grid {
+//         grid-template-columns: 1fr;
+//     }
+// }
