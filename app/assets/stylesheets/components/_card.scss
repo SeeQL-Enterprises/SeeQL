@@ -63,21 +63,18 @@
     background-color: rgba($color: #fff, $alpha: 0.4);
 }
 
-// Project Cards
-
 .card-image {
-    position: relative;
     background-size: cover;
     background-position: center;
     height: 300px;
-    width: 700px;
     display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
+
+// PROJECT CARDS
 
 .card-project h2 {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
