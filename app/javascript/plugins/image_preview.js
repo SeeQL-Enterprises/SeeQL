@@ -5,7 +5,7 @@ if (document.getElementById("user-avatar")) {
     userAvatar.onchange = function avatarPreview(userFile) {
 
         const avatarPreviewImage = document.getElementById("avatar-preview-image");
-        const previewAvatarButton = document.getElementById("avatar-preview-button");
+        const previewAvatarButtonText = document.getElementById("avatar-preview-button-text");
         const fileContent = userFile.srcElement.files[0];
         const reader = new FileReader();
 
@@ -13,7 +13,7 @@ if (document.getElementById("user-avatar")) {
 
             // Get loaded data and render a thumbnail
             avatarPreviewImage.src = event.target.result;
-            previewAvatarButton.innerHTML = fileContent.name;
+            previewAvatarButtonText.innerText = fileContent.name;
 
         };
 
@@ -31,7 +31,7 @@ if (document.getElementById("user-avatar")) {
         // Define the image preview, the button below it,
         // the file that was uploaded and a new FileReader instance
         const previewImage = document.getElementById("project-preview-image");
-        const previewImageButton = document.getElementById("project-image-button");
+        const previewImageButtonText = document.getElementById("project-image-button-text");
         const fileContent = userFile.srcElement.files[0];
         const reader = new FileReader();
 
@@ -40,7 +40,7 @@ if (document.getElementById("user-avatar")) {
             // Get loaded data and render a thumbnail,
             // then set the button's text to the name of the file
             previewImage.src = event.target.result;
-            previewImageButton.innerHTML = fileContent.name;
+            previewImageButtonText.innerHTML = fileContent.name;
             previewImage.style = "object-fit: cover";
 
         };

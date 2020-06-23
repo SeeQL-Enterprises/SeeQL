@@ -20,9 +20,11 @@
                             <div class="project-image-preview">
                                 <img id="project-preview-image" class="card-image" src="https://res.cloudinary.com/seeql/image/upload/v1592580690/General%20Assets/Project%20Placeholder.png" alt="User's current profile image" style="object-fit: contain;">
                                 <label id="project-image-button" type="button" class="btn-seeql upload-button">
-                                    Choose project image
+                                    <span id="project-image-button-text">
+                                        Choose project image
+                                    </span>
                                     <span style="display: none;">
-                                        <%= f.input :project_image, input_html: { id: "project-image" }, as: :file, required: false %>
+                                        <%= f.input :project_image, as: :file, required: false, input_html: { id: "project-image" } %>
                                     </span>
                                 </label>
                             </div>

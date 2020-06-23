@@ -44,10 +44,11 @@
                             <div class="avatar-preview">
                                 <img id="avatar-preview-image" src="<%= current_user.avatar.attached? ? rails_blob_path(current_user.avatar, only_path: true) : image_url("avatar.svg") %>" alt="User's current profile image">
                                 <label id="avatar-preview-button" type="button" class="btn-seeql upload-button">
-                                    <!-- <input class="form-control-file file optional" type="file" name="user[avatar]" id="user_avatar" form="edit-form"> -->
-                                    Choose snazzy picture
+                                    <span id="avatar-preview-button-text">
+                                        Choose snazzy picture
+                                    </span>
                                     <span style="display: none;">
-                                        <%= f.input :avatar, input_html: { id: "user-avatar" }, as: :file, required: false %>
+                                        <%= f.input :avatar, as: :file, required: false, input_html: { id: "user-avatar" } %>
                                     </span>
                                 </label>
                             </div>
