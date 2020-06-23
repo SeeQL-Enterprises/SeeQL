@@ -1,7 +1,5 @@
 const sidebar = document.getElementById( "sidebar" );
 const sidebarIcon = document.getElementById( "sidebar-opener" );
-const bodyBackground = document.querySelector( "#body" );
-
 const signupButtonForm = document.querySelector('#signup-button-form');
 const loginButtonForm = document.querySelector('#login-button-form');
 
