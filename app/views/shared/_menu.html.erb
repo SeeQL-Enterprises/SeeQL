@@ -7,16 +7,16 @@
         </svg>
         <% if current_user %>
             <% if current_user.avatar.attached? %>
-                <div class="avatar" id="burger-menu">
+                <div class="avatar" id="sidebar-opener">
                     <%= cl_image_tag current_user.avatar.key %>
                 </div>
             <% else %>
-                <div class="avatar" id="burger-menu">
-                    <%= image_tag("avatar.svg", id: "burger-menu") %>
+                <div class="avatar" id="sidebar-opener">
+                    <%= image_tag("avatar.svg", id: "sidebar-opener") %>
                 </div>
             <% end %>
         <% else %>
-            <div class="hamburger" id="burger-menu">
+            <div class="hamburger" id="sidebar-opener">
                 <div class="center"></div>
             </div>
         <% end %>
