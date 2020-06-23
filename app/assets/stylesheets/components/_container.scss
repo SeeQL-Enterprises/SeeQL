@@ -1,17 +1,9 @@
-// PRIMARY CONTAINER
+/* ---------- PRIMARY CONTAINER ---------- */
+
 .primary-container {
     margin: 0 auto;
     padding-top: 100px;
     max-width: 55rem;
-
-    &.projects-container {
-        max-width: unset;
-
-        .wide-container {
-            flex-direction: column;
-            align-items: center;
-        }
-    }
 }
 
 // X small devices (portrait phones, 100 px - 575px)
@@ -30,7 +22,9 @@
     }
 }
 
-// BENEFITS CONTAINER LP
+
+/* ---------- BENEFITS CONTAINER LP ---------- */
+
 .benefits-container {
     display: flex;
     text-align: center;
@@ -47,7 +41,9 @@
     text-align: center;
 }
 
-// DOUBLE CONTAINER
+
+/* ---------- DOUBLE CONTAINER ---------- */
+
 .double-container {
     display: flex;
     justify-content: space-between;
@@ -72,7 +68,9 @@
     }
 }
 
-// WIDE CONTAINER
+
+/* ---------- WIDE CONTAINER ---------- */
+
 .wide-container {
     display: flex;
     justify-content: center;
@@ -80,7 +78,7 @@
     // padding: 45px 0;
     width: 100%;
     background-color: #304052;
-    text-shadow: 4px 4px 3px rgba(255, 0, 0, .4);
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, .4);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 }
@@ -97,9 +95,23 @@
     }
 }
 
-// FORM CONTAINER
+
+/* ---------- FORM CONTAINER ---------- */
+
 .form-container {
     padding-left: 30px;
     padding-right: 30px;
     margin-top: 150px;
+}
+
+
+/* ---------- PROJECTS CONTAINER ---------- */
+
+.projects-container {
+    max-width: unset;
+
+    .wide-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
