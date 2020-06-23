@@ -1,5 +1,5 @@
-const menu = document.querySelector( "#my-sidenav" );
-const menuIcon = document.querySelector( "#my-burger-menu" );
+const menu = document.getElementById( "#sidebar" );
+const menuIcon = document.querySelector( "#burger-menu" );
 const bodyBackground = document.querySelector( "#body" );
 
 const signupButtonForm = document.querySelector('#signup-button-form');

@@ -1,196 +1,196 @@
 :root {
-  font-size: calc(10px + 1vmin);
-  --bounce: 0.3s cubic-bezier(0.3, -0.1, 0.1, 1.4);
-  --ease: 0.2s cubic-bezier(0.3, 0.1, 0.4, 1);
+    font-size: calc(10px + 1vmin);
+    --bounce: 0.3s cubic-bezier(0.3, -0.1, 0.1, 1.4);
+    --ease: 0.2s cubic-bezier(0.3, 0.1, 0.4, 1);
 }
 
 input[type="checkbox"] {
-  position: absolute;
-  opacity: 1;
+    position: absolute;
+    opacity: 1;
 }
 
 // SHIFTING FROM AVATAR/BURGER TO CANCEL ICON
 .sidebar-menu {
-  label {
-    --weight: 10%;
-    --size: 4em;
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: var(--size);
-    height: var(--size);
-    cursor: pointer;
+    label {
+        --weight: 10%;
+        --size: 4em;
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: var(--size);
+        height: var(--size);
+        cursor: pointer;
 
-    circle {
-      r: calc(50 - (var(--weight) / 2));
-      width: 100%;
-      height: 100%;
-      fill: none;
-      stroke: #ffffff;
-      stroke-width: calc(var(--weight) * 0.6);
-      stroke-dasharray: 284;
-      stroke-dashoffset: 284;
-      stroke-linecap: round;
-      transition: 0.4s ease;
+        circle {
+            r: calc(50 - (var(--weight) / 2));
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: calc(var(--weight) * 0.6);
+            stroke-dasharray: 284;
+            stroke-dashoffset: 284;
+            stroke-linecap: round;
+            transition: 0.4s ease;
+        }
+
+        // AVATAR - IF USER HAS ALREADY SIGNED UP
+        .avatar {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 63%;
+            height: 63%;
+
+            img {
+                position: absolute;
+                width: 133%;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+            &::before,
+            .center,
+            &::after {
+                --tx: 0;
+                --rt: 0deg;
+                content: "";
+                position: absolute;
+                width: 0%;
+                height: var(--weight);
+                border-radius: 0.3em;
+                background: #ffffff;
+                transform-origin: right;
+                transition: var(--bounce) 0.1s;
+            }
+
+            .center {
+                right: 0;
+                transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
+                width var(--ease) 0.15s;
+            }
+
+            &::before {
+                top: 0;
+                transform: translate(var(--tx), 100%) rotate(var(--rt));
+            }
+
+            &::after {
+                bottom: 0;
+                transform: translate(var(--tx), -100%) rotate(var(--rt));
+            }
+        }
+
+        // HAMBURGER MENU - IF NO ACCOUNT
+        .hamburger {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 63%;
+            height: 63%;
+
+            &::before,
+            .center,
+            &::after {
+                --tx: 0;
+                --rt: 0deg;
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: var(--weight);
+                border-radius: 0.3em;
+                background: #ffffff;
+                transform-origin: right;
+                transition: var(--bounce) 0.1s;
+            }
+
+            .center {
+                right: 0;
+                transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
+                width var(--ease) 0.15s;
+            }
+
+            &::before {
+                top: 0;
+                transform: translate(var(--tx), 100%) rotate(var(--rt));
+            }
+
+            &::after {
+                bottom: 0;
+                transform: translate(var(--tx), -100%) rotate(var(--rt));
+            }
+        }
     }
-
-    // AVATAR - IF USER HAS ALREADY SIGNED UP
-    .avatar {
-      position: absolute;
-      display: grid;
-      place-items: center;
-      width: 63%;
-      height: 63%;
-
-      img {
-      position: absolute;
-      width: 133%;
-      border-radius: 50%;
-      z-index: 1;
-      }
-
-      &::before,
-      .center,
-      &::after {
-        --tx: 0;
-        --rt: 0deg;
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: var(--weight);
-        border-radius: 0.3em;
-        background: #ffffff;
-        transform-origin: right;
-        transition: var(--bounce) 0.1s;
-        }
-
-        .center {
-          right: 0;
-          transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
-            width var(--ease) 0.15s;
-        }
-
-        &::before {
-          top: 0;
-          transform: translate(var(--tx), 100%) rotate(var(--rt));
-        }
-
-        &::after {
-          bottom: 0;
-          transform: translate(var(--tx), -100%) rotate(var(--rt));
-        }
-      }
-
-    // HAMBURGER MENU - IF NO ACCOUNT
-    .hamburger {
-      position: absolute;
-      display: grid;
-      place-items: center;
-      width: 63%;
-      height: 63%;
-
-      &::before,
-      .center,
-      &::after {
-        --tx: 0;
-        --rt: 0deg;
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: var(--weight);
-        border-radius: 0.3em;
-        background: #ffffff;
-        transform-origin: right;
-        transition: var(--bounce) 0.1s;
-      }
-
-      .center {
-        right: 0;
-        transition: 0.2s cubic-bezier(0.3, 1, 0.7, 1.2) 0.34s,
-          width var(--ease) 0.15s;
-      }
-
-      &::before {
-        top: 0;
-        transform: translate(var(--tx), 100%) rotate(var(--rt));
-      }
-
-      &::after {
-        bottom: 0;
-        transform: translate(var(--tx), -100%) rotate(var(--rt));
-      }
-    }
-  }
 }
 
 #toggle:checked ~ label {
-  circle {
-    stroke-dashoffset: 0;
-    transition-delay: 0.12s;
-  }
-
-  .avatar {
-    img {
-      display: none;
-    }
-  }
-
-  .avatar,
-  .hamburger {
-    &::before,
-    &::after {
-      width: 100%;
-      --tx: -13%;
-      --rt: 45deg;
-      transition: var(--bounce) 0.1s;
+    circle {
+        stroke-dashoffset: 0;
+        transition-delay: 0.12s;
     }
 
-    &::before {
-      width: 100%;
-      --ty: 15%;
-      --rt: -45deg;
+    .avatar {
+        img {
+            display: none;
+        }
     }
 
-    .center {
-      width: 0;
-      right: calc(var(--size) * -0.16);
-      transition: width var(--ease) 0.1s, right var(--bounce);
+    .avatar,
+    .hamburger {
+        &::before,
+        &::after {
+            width: 100%;
+            --tx: -13%;
+            --rt: 45deg;
+            transition: var(--bounce) 0.1s;
+        }
+
+        &::before {
+            width: 100%;
+            --ty: 15%;
+            --rt: -45deg;
+        }
+
+        .center {
+            width: 0;
+            right: calc(var(--size) * -0.16);
+            transition: width var(--ease) 0.1s, right var(--bounce);
+        }
     }
-  }
 }
 
 // SIDEBAR-MENU
 .sidebar-menu {
-  position: fixed;
-  z-index: 2;
-  right: 2%;
-  top: 13px;
-  cursor:pointer;
+    position: fixed;
+    z-index: 2;
+    right: 2%;
+    top: 13px;
+    cursor:pointer;
 }
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #0B132B;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 130px;
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #0B132B;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 130px;
 
-  a {
-    color: #ffffff !important;
-    padding: 16px 0;
-    margin: 0 25px;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    transition: 0.3s;
-  }
+    a {
+        color: #ffffff !important;
+        padding: 16px 0;
+        margin: 0 25px;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        transition: 0.3s;
+    }
 }
 
 .open {
-  width: 240px;
+    width: 240px;
 }
