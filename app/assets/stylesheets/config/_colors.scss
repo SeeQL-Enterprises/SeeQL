@@ -1,13 +1,25 @@
 // Define variables for your color scheme
 
-// For example:
+// SeeQL Colors - to see some of them, go to https://coolors.co/5bc0be-52657c-07526e-3a506b-304052
 $seeql: #5BC0BE;
 $seeql-red: #FD1015;
+$seeql-light-blue: #476589;
+$seeql-dark-blue: #1C2541;
+$seeql-grey: #52657C;
+$seeql-darkgrey: #304052;
+$seeql-background-sapphire-blue: #07526E;
+$seeql-background-steel-blue: #3A506B;
+
+// Flip Card gradients
+$flip-card-gradient-1: $seeql;
+$flip-card-gradient-2: $seeql-background-steel-blue;
+$flip-card-gradient-3: $seeql-dark-blue;
+$seeql-gunmetal: #1B2735;
+
+// Basic Colors
 $white: #FFF;
-// $red: #FD1015;
-// $blue: #167FFB;
-// $yellow: #FFC65A;
-// $orange: #E67E22;
-// $green: #1EDD88;
-// $gray: #0E0000;
-// $light-gray: #F4F4F4;
+$black: #000;
+$red: #F00;
+$grey: #808080;
+$light-blue: #2AB7EC;
+$darkgrey: #A9A9A9;
