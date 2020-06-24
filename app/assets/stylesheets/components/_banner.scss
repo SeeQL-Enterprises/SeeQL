@@ -1,6 +1,6 @@
 .banner {
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     padding-bottom: 36px;
 
     .seeql-logo {
@@ -11,17 +11,17 @@
         text-align: center;
 
         .banner-slogan {
-            margin-top: 6.5rem;
             margin-bottom: 6.5rem;
+            margin-top: 6.5rem;
+        }
 
-            h1 {
-                text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-                font-size: 36px;
-            }
+        h1 {
+            font-size: 36px;
+            text-shadow: 1px 1px 3px rgba($black, .2);
         }
 
         h5 {
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 3px rgba($black, .2);
         }
 
         p {
@@ -35,10 +35,8 @@
 @media (max-width: 528px) {
     .banner {
         .banner-content {
-            .banner-slogan {
-                h1 {
-                    font-size: 32px;
-                }
+            h1 {
+                font-size: 32px;
             }
         }
     }
@@ -47,10 +45,8 @@
 @media (max-width: 512px) {
     .banner {
         .banner-content {
-            .banner-slogan {
-                h1 {
-                    font-size: 28px;
-                }
+            h1 {
+                font-size: 28px;
             }
         }
     }
@@ -59,10 +55,8 @@
 @media (max-width: 468px) {
     .banner {
         .banner-content {
-            .banner-slogan {
-                h1 {
-                    font-size: 26px;
-                }
+            h1 {
+                font-size: 26px;
             }
         }
     }
@@ -71,10 +65,8 @@
 @media (max-width: 420px) {
     .banner {
         .banner-content {
-            .banner-slogan {
-                h1 {
-                    font-size: 24px;
-                }
+            h1 {
+                font-size: 24px;
             }
         }
     }
@@ -83,10 +75,8 @@
 @media (max-width: 375px) {
     .banner {
         .banner-content {
-            .banner-slogan {
-                h1 {
-                    font-size: 21px;
-                }
+            h1 {
+                font-size: 21px;
             }
         }
     }
