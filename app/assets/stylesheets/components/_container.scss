@@ -2,23 +2,23 @@
 
 .primary-container {
     margin: 0 auto;
-    padding-top: 100px;
     max-width: 55rem;
+    padding-top: 100px;
 }
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
     .primary-container {
-        padding-right: 20px;
         padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .primary-container {
-        padding-right: 40px;
         padding-left: 40px;
+        padding-right: 40px;
     }
 }
 
@@ -27,8 +27,8 @@
 
 .benefits-container {
     display: flex;
-    text-align: center;
     margin-bottom: 4.5rem;
+    text-align: center;
 }
 
 @media (min-width: 100px) and (max-width: 600px) {
@@ -48,8 +48,8 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    padding-top: 100px;
     max-width: 56rem;
+    padding-top: 100px;
 
     &.profile-container {
         max-height: 40rem;
@@ -58,50 +58,50 @@
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-    .double-container {
-    }
+    // .double-container {
+    // }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    .double-container {
-    }
+    // .double-container {
+    // }
 }
 
 
 /* ---------- WIDE CONTAINER ---------- */
 
 .wide-container {
+    background-color: $seeql-darkgrey;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba($black, .2);
     display: flex;
     justify-content: center;
     margin: 70px auto;
     // padding: 45px 0;
+    text-shadow: 4px 4px 3px rgba($black, .4);
     width: 100%;
-    background-color: #304052;
-    text-shadow: 4px 4px 3px rgba(0, 0, 0, .4);
-    border-radius: 5px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .2);
 }
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-    .wide-container {
-    }
+    // .wide-container {
+    // }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    .wide-container {
-    }
+    // .wide-container {
+    // }
 }
 
 
 /* ---------- FORM CONTAINER ---------- */
 
 .form-container {
+    margin-top: 150px;
     padding-left: 30px;
     padding-right: 30px;
-    margin-top: 150px;
 }
 
 
@@ -111,7 +111,7 @@
     max-width: unset;
 
     .wide-container {
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
     }
 }
