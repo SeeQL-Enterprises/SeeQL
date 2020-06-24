@@ -1,0 +1,7 @@
+scss_files: 'app/assets/stylesheets/**/*.scss'
+
+linters:
+    Indentation:
+        width: 4
+    HexNotation:
+        style: "uppercase"
