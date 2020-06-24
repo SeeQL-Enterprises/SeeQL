@@ -1,5 +1,5 @@
 .form-content {
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
+    text-shadow: 1px 1px 3px rgba($black, .4);
 
     .double-container {
         justify-content: space-evenly;
@@ -8,19 +8,19 @@
 
     .form-header {
         // align-items: normal;
-        padding: 20px 12px 16px 12px;
-        border-bottom: solid 1px #2C2F33;
-        font-weight: 500;
+        border-bottom: solid 1px $seeql-gunmetal;
         font-size: 26px;
+        font-weight: 500;
+        padding: 20px 12px 16px;
 
         .double-container {
             justify-content: space-around;
+        }
 
-            .form-title {
-                color: $seeql;
-                padding: 0;
-                border: none;
-            }
+        .form-title {
+            border: 0;
+            color: $seeql;
+            padding: 0;
         }
     }
 
@@ -29,46 +29,46 @@
 
         .flex-form {
             display: flex;
+        }
 
-            .form-inputs {
-                padding: 0 20px;
-                margin-left: 40px;
+        .form-inputs {
+            margin-left: 40px;
+            padding: 0 20px;
+        }
 
-                #new-password-label {
-                    margin: -15px 0px 5px 35px;
-                    font-size: 17px;
-                }
+        #new-password-label {
+            font-size: 17px;
+            margin: -15px 0 5px 35px;
+        }
 
-                #current-password-label {
-                    margin-top: -15px;
-                    margin-left: 1px;
-                    font-size: 17px;
-                }
-            }
+        #current-password-label {
+            font-size: 17px;
+            margin-left: 1px;
+            margin-top: -15px;
+        }
 
-            .form-control {
-                height: calc(1.5em + 0.75rem);
-                font-size: 18px;
+        .form-control {
+            font-size: 18px;
+            height: calc(1.5em + .75rem);
+        }
 
-                &::placeholder {
-                    color: #8C8C8C;
-                }
-            }
+        .form-control::placeholder {
+            color: $grey;
+        }
 
-            label {
-                color: $seeql;
-                font-size: 21px;
-                font-weight: 500;
-            }
+        label {
+            color: $seeql;
+            font-size: 21px;
+            font-weight: 500;
         }
     }
 
     .form-footer {
+        align-items: normal;
+        border-top: solid 1px $seeql-gunmetal;
         display: flex;
         flex-direction: column;
-        align-items: normal;
         padding: 25px 2rem;
-        border-top: solid 1px #2C2F33;
 
         .double-container {
             flex-direction: column;
@@ -76,26 +76,26 @@
         }
 
         .btn-seeql {
-            margin: 3px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, .4);
             font-size: 21px;
+            margin: 3px 0;
+            text-shadow: 1px 1px 3px rgba($black, .4);
+        }
 
-            &.seeql-red {
-                background: $seeql-red;
-            }
+        .seeql-red {
+            background: $seeql-red;
         }
 
         a {
             margin: 0;
             text-decoration: none;
+        }
 
-            #back-button-edit {
-                width: 100%;
-            }
+        a:hover {
+            text-decoration: none;
+        }
 
-            &:hover {
-                text-decoration: none;
-            }
+        #back-button-edit {
+            width: 100%;
         }
     }
 
@@ -107,15 +107,15 @@
         .avatar-preview {
             display: flex;
             flex-direction: column;
+        }
 
-            img {
-                object-fit: cover;
-                margin: 2px auto 0px auto;
-                padding: 42px;
-                height: 390px;
-                width: 390px;
-                border-radius: 50%;
-            }
+        img {
+            border-radius: 50%;
+            height: 390px;
+            margin: 2px auto 0;
+            object-fit: cover;
+            padding: 42px;
+            width: 390px;
         }
     }
 
@@ -128,84 +128,84 @@
         .project-image-preview {
             display: flex;
             flex-direction: column;
+        }
 
-            img {
-                object-fit: cover;
-                object-position: center;
-                border-radius: 4px;
-            }
+        img {
+            border-radius: 4px;
+            object-fit: cover;
+            object-position: center;
+        }
 
-            label {
-                margin: 40px;
-            }
+        label {
+            margin: 40px;
         }
     }
 
     &.form-danger {
-        width: 100%;
-        max-width: unset;
         height: fit-content;
+        max-width: unset;
+        width: 100%;
 
         .form-header {
             display: flex;
             justify-content: center;
+        }
 
-            .title-danger {
-                color: $seeql-red;
-            }
+        .title-danger {
+            color: $seeql-red;
         }
 
         .form-body {
-            padding: 1.25rem 2.5rem 1.25rem 2.5rem;
             font-size: 20px;
-
-            a {
-                text-decoration: none;
-                color: $seeql;
-
-                &:hover {
-                    text-decoration: none;
-                    color: $seeql;
-                }
-            }
-
-            ul {
-                list-style: outside;
-                padding: 0 21px;
-                font-size: 19px;
-
-                li {
-                    margin-bottom: 13px;
-                }
-            }
+            padding: 1.25rem  2.5rem;
         }
+
+        a {
+            color: $seeql;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $seeql;
+            text-decoration: none;
+        }
+
 
         .form-footer {
             flex-direction: row;
             justify-content: center;
         }
+    }
 
+    ul {
+        font-size: 19px;
+        list-style: outside;
+        padding: 0 21px;
+
+        li {
+            margin-bottom: 13px;
+        }
     }
 }
 
 
 .add-collaborators {
-    min-width: 260px;
     margin-right: 40px;
+    min-width: 260px;
 }
 
 #database-form {
     margin-top: 15px;
     max-height: 0;
     overflow: hidden;
-    transition: 0.7s;
+    transition: .7s;
 
     &.active {
         max-height: 100%;
     }
 
     .select option {
-        color: black;
+        color: $black;
     }
 }
 
@@ -213,7 +213,7 @@
     margin-top: 15px;
     max-height: 0;
     overflow: hidden;
-    transition: 0.7s;
+    transition: .7s;
 
     &.active {
         max-height: 100%;
@@ -221,9 +221,5 @@
 }
 
 .login-form {
-    padding: 45px 580px 0px 25px;
-}
-
-.simple_form.new_database {
-    padding-bottom: 100px;
+    padding: 45px 580px 0 25px;
 }
