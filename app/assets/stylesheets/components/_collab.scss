@@ -1,61 +1,61 @@
-.collab {
-  background-color: rgba(255, 255, 255, 0.3);
-  width: fit-content;
-  padding: 8px;
-  margin-bottom: 40px;
-}
+// .collab {
+//     background-color: rgba($white, .3);
+//     margin-bottom: 40px;
+//     padding: 8px;
+//     width: fit-content;
+// }
 
 .notification {
-  display: flex;
-  align-items: center;
-  min-width: 50%;
-  max-width: 625px;
-  margin-bottom: 20px;
-  background: #3A506B;
-  padding: 8px 16px;
-  border: 1px solid darkgrey;
-  border-radius: 8px;
-}
+    align-items: center;
+    background: $seeql-background-steel-blue;
+    border: 1px solid $darkgrey;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 625px;
+    min-width: 50%;
+    padding: 8px 16px;
 
-.notification .notification-content {
-  flex-grow: 1;
-  padding: 0 24px;
-}
+    &.notification-content {
+        flex-grow: 1;
+        padding: 0 24px;
+    }
 
-.notification p {
-  margin: 0;
-  line-height: 1.4;
-  color: #fff !important;
-}
+    small {
+        color: $white;
+        font-weight: bold;
+    }
 
-.notification small {
-  color: #fff;
-  font-weight: bold;
-}
-.notification .notification-actions {
-  opacity: 1;
-  display: grid;
-  vertical-align: middle;
-  transition: ease .3s;
-}
+    p {
+        color: $white;
+        line-height: 1.4;
+        margin: 0;
+    }
 
-.notification .notification-actions {
-  a, i {
-    color: #fff !important;
-    margin-left: 16px;
-    margin-right: 16px;
-    font-size: 14px;
-  }
+    .notification-actions {
+        display: grid;
+        opacity: 1;
+        transition: ease .3s;
+        vertical-align: middle;
+
+        a, i {
+            color: $seeql-red;
+            font-size: 14px;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+    }
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
-  .notification .notification-content {
-    padding: 0 12px;
-  }
-  .notification .notification-actions {
-    a, i {
-      margin-left: 8px;
-      margin-right: 0;
+    .notification .notification-content {
+        padding: 0 12px;
     }
-  }
+
+    .notification .notification-actions {
+        a, i {
+            margin-left: 8px;
+            margin-right: 0;
+        }
+    }
 }
