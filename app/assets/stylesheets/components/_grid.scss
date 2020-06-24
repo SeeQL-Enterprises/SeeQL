@@ -1,7 +1,7 @@
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 700px));
     grid-gap: 1rem;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 700px));
     margin-bottom: 60px;
+    margin-top: 40px;
 }
