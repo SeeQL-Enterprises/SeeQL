@@ -1,0 +1,97 @@
+/* The flip card container - remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    height: 480px;
+    margin: 20px auto;
+    padding: 0 10px;
+    perspective: 1000px;
+    width: 320px;
+
+    /* This container is needed to position the front and back side */
+    .flip-card-inner {
+        height: 100%;
+        position: relative;
+        text-align: center;
+        transform-style: preserve-3d;
+        transition: transform .8s;
+        width: 100%;
+
+        /* Position the front and back side */
+        .flip-card-front, .flip-card-back {
+            backface-visibility: hidden;
+            border-radius: 6px;
+            box-shadow: 0 0 15px $seeql-dark-blue;
+            height: 100%;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            // -webkit-backface-visibility: hidden; /* Safari */
+        }
+
+        /* Style the front side (fallback if image is missing) */
+        .flip-card-front {
+            background: linear-gradient(115deg, rgba($flip-card-gradient-1, 1) 0%, rgba($flip-card-gradient-2, 1) 65%, rgba($flip-card-gradient-3, 1) 100%);
+            color: $white;
+
+            // i {
+            //     font-size: 800%;
+            // }
+        }
+
+        /* Style the back side */
+        .flip-card-back {
+            background: linear-gradient(-115deg, rgba($flip-card-gradient-1, 1) 0%, rgba($flip-card-gradient-2, 1) 65%, rgba($flip-card-gradient-3, 1) 100%);
+            color: $white;
+            transform: rotateY(180deg);
+        }
+    }
+
+    /* Horizontal flip when moving the mouse over the flip box container */
+    &:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+.title {
+    color: $white;
+    font-size: xx-large;
+    font-weight: 300;
+    padding: 10%;
+}
+
+.bar {
+    background-color: $seeql-gunmetal;
+    height: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    z-index: 2;
+}
+
+.content {
+    height: 360px;
+    padding: 10%;
+    width: 100%;
+
+    img {
+        padding: 25% 10%;
+        width: 70%;
+    }
+
+    p {
+        color: $white;
+        font-size: large;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    .flip-card {
+        h3 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+}
