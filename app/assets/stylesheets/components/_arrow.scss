@@ -1,0 +1,19 @@
+// Animation
+@keyframes jump {
+    0% { top: 0; } 50% { top: 20px; } 100% { top: 0; }
+}
+
+// Button/Arrow on landing page
+
+#arrow-down {
+    animation: jump 3s infinite;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+
+    img:hover {
+
+        opacity: .7;
+        transition: .3s ease-in-out;
+    }
+}
