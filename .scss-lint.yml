@@ -1,7 +1,15 @@
 scss_files: 'app/assets/stylesheets/**/*.scss'
 
 linters:
+    Comment:
+        allowed: '^[/*-]'
+    HexNotation:
+        style: 'uppercase'
+    IdSelector:
+        enabled: false
     Indentation:
         width: 4
-    HexNotation:
-        style: "uppercase"
+    NestingDepth:
+        max_depth: 3
+    SingleLinePerSelector:
+        enabled: false
