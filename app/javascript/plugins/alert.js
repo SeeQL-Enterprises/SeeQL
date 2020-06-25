@@ -1,7 +1,7 @@
 if (document.getElementById("alert")) {
-    var alert = document.getElementById("alert")
+    const alert = document.getElementById("alert");
 
-    setTimeout(function() {
+    setTimeout(function fadeAlert() {
         $(alert).fadeOut();
     }, 5000);
 }
