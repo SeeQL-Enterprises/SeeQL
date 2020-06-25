@@ -5,7 +5,7 @@ const databaseForm = document.getElementById("database-form");
 if (addDatabaseButton) {
     addDatabaseButton.addEventListener("click", () => {
 
-        //Check present classes
+        // Check present classes
         if (!viewDatabaseButton) {
             // Toggle SCSS classes to turn from SeeQL to gray
             addDatabaseButton.classList.toggle("btn-seeql");
