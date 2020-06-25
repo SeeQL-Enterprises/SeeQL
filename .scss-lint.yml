@@ -11,5 +11,7 @@ linters:
         width: 4
     NestingDepth:
         max_depth: 3
+    PropertySpelling:
+        extra_properties: "place-items"
     SingleLinePerSelector:
         enabled: false
