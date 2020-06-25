@@ -1,5 +1,5 @@
 // This makes sure we have imported the initPopover function
-import { initPopover } from './popover';
+import initPopover from './popover';
 
 const clipboardButton = document.getElementById("clipboard-button")
 
