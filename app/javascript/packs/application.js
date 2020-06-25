@@ -32,5 +32,7 @@ if (document.getElementById("typewriter")) {
     .start();
 }
 
-window.$ = window.JQuery = JQuery;
+window.JQuery = JQuery;
+window.$ = window.JQuery;
+
 require('../stylesheets/application.scss')
