@@ -5,7 +5,7 @@
                 <h5 class="modal-title modal-header" id="signupModalTitle">Sign Up</h5>
             </div>
             <div class="modal-body">
-                <div class="signupErrors"><ul class="signupErrorsList"></ul></div>
+                <div class="signup-errors"><ul class="signup-errors-list"></ul></div>
                 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), remote: true, html: { id: :signup_form }) do |f| %>
                     <%= f.error_notification %>
                     <div class="form-inputs">

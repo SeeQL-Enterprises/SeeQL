@@ -1,5 +1,5 @@
 const signupErrors = document.querySelector('.signup-errors-list');
-const loginErrors = document.querySelector('.loginErrors');
+const loginErrors = document.querySelector('.login-errors');
 
 if (document.querySelector('#signup-button-sidebar')) {
     const signupButton = document.querySelector('#signup-button-sidebar');
