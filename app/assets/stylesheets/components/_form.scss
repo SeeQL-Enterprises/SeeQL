@@ -223,3 +223,9 @@
 .login-form {
     padding: 45px 580px 0 25px;
 }
+
+.form-check-input.is-valid {
+    height: 0;
+    visibility: hidden;
+    width: 0;
+}
