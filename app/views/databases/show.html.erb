@@ -1,8 +1,8 @@
 <div class="primary-container">
     <h1>Which tables do you want to display?</h1>
     <div class="d-flex align-items-center">
-        <button type="button" id='select_all' class="form-check"></button>
-        <span class="label-select-all" id="select_all_text">Select all</span>
+        <button type="button" id='select-all' class="form-check"></button>
+        <span class="label-select-all" id="select-all-text">Select all</span>
     </div>
     <%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
         <%= f.input :tables, collection: @database.tables, as: :check_boxes, label_value: :name, input_html: { checked: false, class: "on" }%>
