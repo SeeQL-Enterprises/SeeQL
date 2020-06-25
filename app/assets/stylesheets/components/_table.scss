@@ -1,0 +1,11 @@
+.tool-table {
+    background-color: rgba($seeql-background-steel-blue, $alpha: .9);
+    border: 1px solid $black;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 $light-blue, 0 5px 0 0 $seeql-background-sapphire-blue;
+    padding: 20px 10px 10px 20px;
+}
+
+.edit {
+    background-color: $seeql-light-blue;
+}
