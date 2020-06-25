@@ -1,6 +1,6 @@
 import Typewriter from 'typewriter-effect/dist/core';
 
-export const initTypewriter = () => {
+const initTypewriter = () => {
     const typewriter = new Typewriter('#typewriter', {
         loop: true,
         delay: 92,
@@ -9,3 +9,5 @@ export const initTypewriter = () => {
 
     return typewriter;
 }
+
+export default initTypewriter;
