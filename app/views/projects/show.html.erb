@@ -2,7 +2,9 @@
 <%= render 'shared/db_modal' %>
 
 <div class="primary-container">
-  <%= link_to "< Go to project selection", projects_path, style: "display: block; color: white; margin-bottom: 10px;" %>
+    <div>
+        <%= link_to "< Back to projects", projects_path, style: "display: block; color: white; margin-bottom: 10px;" %>
+    </div>
 
   <h2 class="mb-3">Connect your <%= @project.name %> project to a database and invite collaborators</h2>
 
