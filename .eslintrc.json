@@ -1,6 +1,8 @@
 {
     "env": {"browser": true, "es6": true, "jquery": true},
     "extends": ["airbnb-base", "prettier"],
-    "plugins": ["prettier"],
-    "rules": {}
+    "plugins": ["jquery", "prettier"],
+    "rules": {
+        "eqeqeq": "off"
+    }
 }

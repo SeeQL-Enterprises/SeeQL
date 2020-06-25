@@ -3000,6 +3000,11 @@ eslint-plugin-import@^2.21.2:
     resolve "^1.17.0"
     tsconfig-paths "^3.9.0"
 
+eslint-plugin-jquery@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jquery/-/eslint-plugin-jquery-1.5.1.tgz#d6bac643acf9484ce76394e27e2b07baca06662e"
+  integrity sha512-L7v1eaK5t80C0lvUXPFP9MKnBOqPSKhCOYyzy4LZ0+iK+TJwN8S9gAkzzP1AOhypRIwA88HF6phQ9C7jnOpW8w==
+
 eslint-plugin-jsx-a11y@^6.3.0:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jsx-a11y/-/eslint-plugin-jsx-a11y-6.3.1.tgz#99ef7e97f567cc6a5b8dd5ab95a94a67058a2660"
@@ -4663,6 +4668,11 @@ last-call-webpack-plugin@^3.0.0:
   dependencies:
     lodash "^4.17.5"
     webpack-sources "^1.1.0"
+
+leader-line@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/leader-line/-/leader-line-1.0.5.tgz#691b5e2649ddff30d9e03084fb327503120dc77a"
+  integrity sha512-OHA4YmCO7LcvnQ9u4AWUrmuIzOE1/pxOzA2eHmb0DhtoKlEf0xiBm5aYtv77OmmMeW5xnbE1G6Hayp/vrtMOmw==
 
 leven@^3.1.0:
   version "3.1.0"
