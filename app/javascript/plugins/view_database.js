@@ -1,5 +1,5 @@
 const viewDatabaseButton = document.getElementById("view-database-button");
-const addCollaboratorButton = document.getElementById("add-collaborator-button");
+// const addCollaboratorButton = document.getElementById("add-collaborator-button");
 const addDatabaseButton = document.getElementById("add-database-button");
 
 if (viewDatabaseButton) {
