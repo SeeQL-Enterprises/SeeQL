@@ -15,7 +15,7 @@ import '../plugins/help_button';
 import '../plugins/alert';
 import '../plugins/error_lists';
 import '../plugins/image_preview';
-import { initUpdateNavbarOnScroll } from '../plugins/navbar';
+import initUpdateNavbarOnScroll from '../plugins/navbar';
 import { initTypewriter } from "../plugins/typewriter";
 
 initUpdateNavbarOnScroll();
