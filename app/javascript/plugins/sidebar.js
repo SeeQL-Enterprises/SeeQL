@@ -1,6 +1,6 @@
 const sidebar = document.getElementById( "sidebar" );
 const sidebarIcon = document.getElementById( "sidebar-opener" );
-const sidebarText = document.getElementById("sidebar-text");
+const sidebarText = document.getElementsByClassName("sidebar-text");
 const signupButtonForm = document.querySelector('#signup-button-form');
 const loginButtonForm = document.querySelector('#login-button-form');
 
@@ -8,16 +8,13 @@ sidebarIcon.addEventListener( "click", () => {
 
     if (sidebar.classList.contains('open')) {
 
-        $(sidebarText).addClass("hidden").fadeOut(200);
-
-        setTimeout(() => {
-            sidebar.classList.remove('open');
-        }, 200);
+        $(sidebarText).fadeOut(700);
+        sidebar.classList.remove('open');
 
     } else {
 
         sidebar.classList.add('open');
-        $(sidebarText).removeClass('hidden').fadeIn(200);
+        $(sidebarText).fadeIn(700);
 
     }
 
