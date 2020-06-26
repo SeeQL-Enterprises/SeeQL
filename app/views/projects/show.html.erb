@@ -2,16 +2,22 @@
 <%= render 'shared/db_modal' %>
 
 <div class="primary-container">
-    <div>
-        <%= link_to "< Back to projects", projects_path, style: "display: block; color: white; margin-bottom: 10px;" %>
-    </div>
+    <!-- <div> -->
+        <%= link_to projects_path do %>
+            <button class="btn-seeql" style="display: flex; align-items: center;">
+                <i class="fas fa-caret-left" style="font-size: 28px;"></i>&nbsp;Back to projects
+            </button>
+        <% end %>
+    <!-- </div> -->
 
   <h2 class="mb-3">Connect your <%= @project.name %> project to a database and invite collaborators</h2>
 
   <div class="horizontal-btns">
     <% @project.databases.each do |database| %>
       <%= link_to database_path(database) do %>
-          <button class="btn-seeql">Go to <%= database.name %></button>
+          <button class="btn-seeql">
+              Go to <%= database.name %>
+          </button>
       <% end %>
     <% end %>
     <button class="btn-cancel" data-toggle="modal" data-target="#collabModal"><i class="fas fa-user-plus"></i> Add Collaborator</button>
