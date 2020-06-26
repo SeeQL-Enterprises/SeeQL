@@ -2,36 +2,44 @@
 <%= render 'shared/database_modal' %>
 
 <div class="container">
-    <div class="wide-container content-wide flex-column">
-
-        <h2 class="mb-3">Connect your <%= @project.name %> project to a database and invite collaborators</h2>
-
-        <div class="horizontal-btns">
-            <% @project.databases.each do |database| %>
-                <%= link_to database_path(database) do %>
-                    <button class="btn-seeql btn-seeql-lg">
-                        Go to <%= database.name %>
-                    </button>
-                <% end %>
-            <% end %>
-            <button class="btn-cancel" data-toggle="modal" data-target="#collabModal">
-                <i class="fas fa-user-plus"></i> Add Collaborator
-            </button>
-            <button class="btn-cancel" data-toggle="modal" data-target="#dbModal">
-                <i class="fas fa-database"></i> Add Database
-            </button>
+    <div class="wide-container flex-column">
+        <div style="text-align: center;">
+            <h2 style="margin-top: 100px; font-size: 34px;">
+                Connect your
+                <strong><span style="color: #5BC0BE;">
+                    <%= @project.name %>
+                </span></strong>
+                project to a database and invite collaborators
+            </h2>
         </div>
 
-        <% @project.collaborators.each do |collaborator| %>
+        <div class="content-wide" style="margin-top: 50px;">
+            <div class="horizontal-btns">
+                <% @project.databases.each do |database| %>
+                <%= link_to database_path(database) do %>
+                <button class="btn-seeql">
+                    Go to <%= database.name %>
+                </button>
+                <% end %>
+                <% end %>
+                <button class="btn-seeql btn-seeql-darkgrey" data-toggle="modal" data-target="#collaborator-modal">
+                    <i class="fas fa-user-plus"></i> Add Collaborator
+                </button>
+                <button class="btn-seeql btn-seeql-darkgrey" data-toggle="modal" data-target="#database-modal">
+                    <i class="fas fa-database"></i> Add Database
+                </button>
+            </div>
+
+            <% @project.collaborators.each do |collaborator| %>
             <div class="notification">
                 <% if collaborator.user.avatar.attached? %>
-                    <div class="avatar-large">
-                        <%= cl_image_tag collaborator.user.avatar.key %>
-                    </div>
+                <div class="avatar-large">
+                    <%= cl_image_tag collaborator.user.avatar.key %>
+                </div>
                 <% else %>
-                    <div class="avatar-large">
-                        <%= image_tag("avatar.svg") %>
-                    </div>
+                <div class="avatar-large">
+                    <%= image_tag("avatar.svg") %>
+                </div>
                 <% end %>
 
 
@@ -46,5 +54,8 @@
                 </div>
 
             </div>
-        <% end %>
+            <% end %>
+
+        </div>
     </div>
+</div>
