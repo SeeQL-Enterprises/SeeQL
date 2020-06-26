@@ -20,8 +20,12 @@
           </button>
       <% end %>
     <% end %>
-    <button class="btn-cancel" data-toggle="modal" data-target="#collabModal"><i class="fas fa-user-plus"></i> Add Collaborator</button>
-    <button class="btn-cancel" data-toggle="modal" data-target="#dbModal"><i class="fas fa-database"></i> Add Database</button>
+    <button class="btn-cancel" data-toggle="modal" data-target="#collabModal">
+        <i class="fas fa-user-plus"></i> Add Collaborator
+    </button>
+    <button class="btn-cancel" data-toggle="modal" data-target="#dbModal">
+        <i class="fas fa-database"></i> Add Database
+    </button>
   </div>
 
   <% @project.collaborators.each do |collaborator| %>
