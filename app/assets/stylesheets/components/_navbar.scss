@@ -1,9 +1,22 @@
 .navbar {
     background-color: transparent;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 1.5rem 1rem;
     transition: .5s background-color ease;
     z-index: 0;
+
+    .navbar-back-buttons {
+        margin: 0 0 0 -5px;
+
+        button {
+            margin: 0;
+            padding: 0;
+        }
+
+        i {
+            margin-right: 10px;
+        }
+    }
 }
 
 .navbar-seeql .navbar-collapse {
