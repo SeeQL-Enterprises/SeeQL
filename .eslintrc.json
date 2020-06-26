@@ -1,0 +1,11 @@
+{
+    "env": {"browser": true, "es6": true, "jquery": true},
+    "extends": ["airbnb-base", "prettier"],
+    "plugins": ["jquery", "prettier"],
+    "rules": {
+        "eqeqeq": "off"
+    },
+    "overrides": [
+        "excludedFiles": "*.html.erb"
+    ]
+}

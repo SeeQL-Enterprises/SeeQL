@@ -1,0 +1,209 @@
+:root {
+    --bounce: 0.3s cubic-bezier(0.3, -0.1, 0.1, 1.4);
+    --ease: 0.2s cubic-bezier(0.3, 0.1, 0.4, 1);
+    font-size: calc(10px + 1vmin);
+}
+
+#sidebar-toggle {
+    height: 0;
+    opacity: 1;
+    position: absolute;
+    visibility: hidden;
+    width: 0;
+}
+
+// SHIFTING FROM AVATAR/BURGER TO CANCEL ICON
+.sidebar-menu {
+    cursor: pointer;
+    position: fixed;
+    right: 2%;
+    top: 13px;
+    z-index: 2;
+
+    label {
+        --size: 4em;
+        --weight: 10%;
+        cursor: pointer;
+        display: grid;
+        height: var(--size);
+        place-items: center;
+        position: relative;
+        width: var(--size);
+
+        circle {
+            fill: none;
+            height: 100%;
+            r: calc(50 - (var(--weight) / 2));
+            stroke: $white;
+            stroke-dasharray: 284;
+            stroke-dashoffset: 284;
+            stroke-linecap: round;
+            stroke-width: calc(var(--weight) * .6);
+            transition: .4s ease;
+            width: 100%;
+        }
+    }
+    // AVATAR - IF USER HAS ALREADY SIGNED UP
+    .avatar {
+        display: grid;
+        height: 63%;
+        place-items: center;
+        position: absolute;
+        width: 63%;
+
+        img {
+            border-radius: 50%;
+            position: absolute;
+            width: 133%;
+            z-index: 1;
+        }
+
+        &::before,
+        .center,
+        &::after {
+            --rt: 0deg;
+            --tx: 0;
+            background: $white;
+            border-radius: .3em;
+            content: '';
+            height: var(--weight);
+            position: absolute;
+            transform-origin: right;
+            transition: var(--bounce) .1s;
+            width: 0%;
+        }
+
+        .center {
+            right: 0;
+            transition: .2s cubic-bezier(.3, 1, .7, 1.2) .34s,
+            width var(--ease) .15s;
+        }
+
+        &::before {
+            top: 0;
+            transform: translate(var(--tx), 100%) rotate(var(--rt));
+        }
+
+        &::after {
+            bottom: 0;
+            transform: translate(var(--tx), -100%) rotate(var(--rt));
+        }
+    }
+
+    // HAMBURGER MENU - IF NO ACCOUNT
+    .hamburger {
+        display: grid;
+        height: 63%;
+        place-items: center;
+        position: absolute;
+        width: 63%;
+
+        &::before,
+        .center,
+        &::after {
+            --rt: 0deg;
+            --tx: 0;
+            background: $white;
+            border-radius: .3em;
+            content: '';
+            height: var(--weight);
+            position: absolute;
+            transform-origin: right;
+            transition: var(--bounce) .1s;
+            width: 100%;
+        }
+
+        .center {
+            right: 0;
+            transition: .2s cubic-bezier(.3, 1, .7, 1.2) .34s,
+            width var(--ease) .15s;
+        }
+
+        &::before {
+            top: 0;
+            transform: translate(var(--tx), 100%) rotate(var(--rt));
+        }
+
+        &::after {
+            bottom: 0;
+            transform: translate(var(--tx), -100%) rotate(var(--rt));
+        }
+    }
+}
+
+#sidebar-toggle:checked ~ label {
+    circle {
+        stroke-dashoffset: 0;
+        transition-delay: .12s;
+    }
+
+    .avatar {
+        img {
+            display: none;
+        }
+    }
+
+    .avatar,
+    .hamburger {
+        &::before,
+        &::after {
+            --rt: 45deg;
+            --tx: -13%;
+            transition: var(--bounce) .1s;
+            width: 100%;
+        }
+
+        &::before {
+            --rt: -45deg;
+            --ty: 15%;
+            width: 100%;
+        }
+
+        .center {
+            right: calc(var(--size) * -.16);
+            transition: width var(--ease) .1s, right var(--bounce);
+            width: 0;
+        }
+    }
+}
+
+// SIDEBAR-MENU
+.sidebar {
+    background-color: $oxford-blue;
+    height: 100%;
+    overflow-x: hidden;
+    padding-top: 130px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: .5s;
+    width: 0;
+    z-index: 1;
+
+    a {
+        border-radius: 2px;
+        color: $white;
+        display: block;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 25px;
+        padding: 16px 0 16px 5px;
+        text-decoration: none;
+        transition: .3s;
+
+        &:hover {
+            background: rgba($seeql, .8);
+            // color: $black;
+            padding-left: 14px;
+        }
+    }
+}
+
+.sidebar-text {
+    display: none;
+    white-space: nowrap;
+}
+
+.open {
+    width: 240px;
+}

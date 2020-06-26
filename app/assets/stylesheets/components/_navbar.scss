@@ -1,15 +1,28 @@
 .navbar {
-  background-color: transparent;
-  justify-content: space-between;
-  transition: 0.5s background-color ease;
-  z-index: 1;
-  padding: 1.5rem 1rem;
+    background-color: transparent;
+    justify-content: flex-start;
+    padding: 1.5rem 1rem;
+    transition: .5s background-color ease;
+    z-index: 0;
+
+    .navbar-back-buttons {
+        margin: 0 0 0 -5px;
+
+        button {
+            margin: 0;
+            padding: 0;
+        }
+
+        i {
+            margin-right: 10px;
+        }
+    }
 }
 
 .navbar-seeql .navbar-collapse {
-  flex-grow: 0;
+    flex-grow: 0;
 }
 
 .navbar-seeql-black {
-  background-color: rgba(0,0,0,0.8);
+    background-color: rgba($black, .8);
 }

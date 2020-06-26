@@ -1,18 +1,17 @@
 .hidden-text {
-  display: block;
-  width: 100px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: right;
+    display: block;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
 }
 
 .hidden-text:active {
-  display: block;
-  width: 100px;
-  overflow: visible;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: right;
+    display: block;
+    overflow: visible;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100px;
 }
-

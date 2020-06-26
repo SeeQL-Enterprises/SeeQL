@@ -1,30 +1,31 @@
 // Graphical variables
-@import "config/fonts";
-@import "config/colors";
-@import "config/bootstrap_variables";
+@import 'config/fonts';
+@import 'config/colors';
+@import 'config/bootstrap_variables';
 
 // External libraries
-@import "bootstrap/scss/bootstrap";
-@import "font-awesome-sprockets";
-@import "font-awesome";
+@import 'bootstrap/scss/bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 // *= require bootstrap-toggle
 
 // Your CSS partials
-@import "components/index";
-@import "pages/index";
-@import "components/comment";
-@import "components/collab";
-@import "components/footer";
-@import "components/edit";
-@import "components/hidden-text";
-@import "components/modal";
-@import "components/popover";
+@import 'components/index';
+@import 'pages/index';
 
 * {
-  color: #ffffff
+    color: $white;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 // smooth scroll-effect
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }

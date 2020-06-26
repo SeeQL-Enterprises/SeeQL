@@ -6,13 +6,27 @@
     "bootstrap": "^4.4.1",
     "bulma": "^0.8.1",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
+    "eslint-plugin-jquery": "^1.5.1",
     "interactjs": "^1.8.5",
     "jquery": "^3.5.0",
+    "leader-line": "^1.0.5",
     "popover": "^2.4.1",
     "popper.js": "^1.16.1",
-    "tooltip": "^1.6.1"
+    "tailwindcss": "^1.4.6",
+    "tooltip": "^1.6.1",
+    "typewriter-effect": "^2.13.1"
   },
   "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-airbnb-base": "14.2.0",
+    "eslint-config-defaults": "^9.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "4.0.0",
     "webpack-dev-server": "^3.10.3"
   }
 }

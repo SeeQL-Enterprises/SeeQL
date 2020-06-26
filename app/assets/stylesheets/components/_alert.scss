@@ -1,6 +1,24 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+    bottom: 80px;
+    color: $black;
+    max-width: 500px;
+    opacity: .7;
+    padding: 15px 48px 15px 20px;
+    position: fixed;
+    right: 8px;
+    transition: all .2s ease-in-out;
+    z-index: 1000;
+
+    &:hover {
+        opacity: 1;
+    }
+
+
+    .close {
+        padding: 17px 17px 15px 15px;
+
+        span {
+            color: $seeql-red;
+        }
+    }
 }

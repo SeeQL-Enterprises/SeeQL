@@ -1,39 +1,42 @@
 // Specific CSS for your home-page
 body {
-  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), image-url("Background.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-color: #364f6b;
+    background-color: $seeql-background-blue;
+    background-image: linear-gradient(rgba($black, .5), rgba($black, .5)), image-url('background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .page-content {
-  min-height: calc(100vh - 60px);
-  padding-bottom: 60px;
+    min-height: calc(100vh - 60px);
+    padding-bottom: 60px;
 }
 
 // Generally for all sections on lp
 section {
-  padding-top: 4.5rem;
-  text-align: center;
-  h1 {
-    color: #0B132B;
-    font-weight: bold;
-    padding-bottom: 4.5rem;
-  }
-  h3 {
-    color: #0B132B;
-    font-weight: bold;
-  }
-  p {
-    color: #1C2541;
-  }
+    padding-top: 4.5rem;
+    text-align: center;
+
+    h1 {
+        color: $oxford-blue;
+        font-weight: bold;
+        padding-bottom: 4.5rem;
+    }
+
+    h3 {
+        color: $oxford-blue;
+        font-weight: bold;
+    }
+
+    p {
+        color: $seeql-dark-blue;
+    }
 }
 
 .section-header {
-  text-align: center;
-  font-size: 40px;
-  padding-bottom: 40px;
-  color: white
+    color: $white;
+    font-size: 40px;
+    padding-bottom: 40px;
+    text-align: center;
 }
 
 // // Very small devices (landscape phones, 576px and up)
@@ -45,72 +48,75 @@ section {
 
 // XX large devices (widescreen desktops, 2560px and up)
 @media (min-width: 2560px) {
-  section {
-    margin-bottom: 22.0rem;
-  }
+    section {
+        margin-bottom: 22rem;
+    }
 }
 
 // Specific to how-it-works section on lp
 #how-it-works {
-  background-color: #ffffff;
+    background-color: $white;
 }
 
 .how-it-works-path {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 50px;
-  text-align: center;
-  align-items: center;
-  img {
-    max-width: 90%;
-  }
+    align-items: center;
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+
+    img {
+        max-width: 90%;
+    }
 }
 
 // Small devices (landscape phones, 600px and lower)
 @media screen and (max-width: 600px) {
-  .how-it-works-path {
-    grid-template-columns: 1fr;
-  }
+    .how-it-works-path {
+        grid-template-columns: 1fr;
+    }
 }
 
 // Small devices (landscape phones, 694px and lower)
 @media screen and (max-width: 694px) {
-  .how-it-works-path {
-    h3 {
-      font-size: 22px;
+    .how-it-works-path {
+        h3 {
+            font-size: 22px;
+        }
     }
-  }
 }
 
 .dotted-lines {
-  padding-left: 26%;
-  padding-right: 26%;
-  display: none;
+    display: none;
+    padding-left: 26%;
+    padding-right: 26%;
 }
 
 // Small devices (landscape phones, 600px and up)
 @media screen and (min-width: 601px) {
-  .dotted-lines {
-    display: block;
-  }
+    .dotted-lines {
+        display: block;
+    }
 }
 
 // Small devices (landscape phones, 600px and lower)
 @media screen and (max-width: 600px) {
-  .img-step-2 {
-    order: 1;
-  }
-  .text-step-2 {
-    margin-top: 80px;
-  }
-  .text-step-3 {
-    margin-top: 80px;
-  }
+    .img-step-2 {
+        order: 1;
+    }
+
+    .text-step-2 {
+        margin-top: 80px;
+    }
+
+    .text-step-3 {
+        margin-top: 80px;
+    }
 }
 
 // Small devices (landscape phones, 600px and lower)
 @media screen and (max-width: 600px) {
-  .text-step-2 {
-    order: 0;
-  }
+    .text-step-2 {
+        order: 0;
+    }
 }

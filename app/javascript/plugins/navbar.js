@@ -11,4 +11,4 @@ const initUpdateNavbarOnScroll = () => {
   }
 }
 
-export { initUpdateNavbarOnScroll };
+export default initUpdateNavbarOnScroll;

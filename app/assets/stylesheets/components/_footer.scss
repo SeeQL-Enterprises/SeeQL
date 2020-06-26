@@ -1,76 +1,74 @@
 
 .our-footer {
-    position: fixed;
+    align-items: center;
+    background: $black;
     bottom: 0;
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    padding: 0 30px;
+    position: fixed;
     width: 100%;
 
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    height: 70px;
-    padding: 0px 30px;
-
     .footer-links {
-        display: -webkit-inline-box;
-        -webkit-box-align: center;
+        // align-items: center;
+        // display: -webkit-inline-box;
 
         padding-top: 10px;
 
-        $regular-icon: 28px;
-        $small-icon: 25px;
-
         a {
             text-decoration: none;
+        }
+    }
 
-            .fab {
-                opacity: 0.6;
-                font-size: $regular-icon;
-                margin-right: 6px;
+    $regular-icon: 28px;
+    $small-icon: 25px;
 
-                &:hover {
-                    opacity: 1;
-                }
+    .fab {
+        font-size: $regular-icon;
+        margin-right: 6px;
+        opacity: .6;
 
-                &.fa-github {
-                    margin-left: 20px;
-                }
+        &:hover {
+            opacity: 1;
+        }
 
-                &.fa-twitter {
-                    color: white;
-                }
-            }
+        &.fa-github {
+            margin-left: 20px;
+        }
 
-            .far {
-                opacity: 0.6;
-                font-size: $regular-icon;
-                margin-right: 6px;
+        &.fa-twitter {
+            color: $white;
+        }
+    }
 
-                &:hover {
-                    opacity: 1;
-                }
+    .far {
+        font-size: $regular-icon;
+        margin-right: 6px;
+        opacity: .6;
 
-                &.fa-envelope {
-                    color: white;
-                }
-            }
+        &:hover {
+            opacity: 1;
+        }
 
-            .fas {
-                opacity: 0.6;
-                font-size: $regular-icon;
-                margin-right: 6px;
+        &.fa-envelope {
+            color: $white;
+        }
+    }
 
-                &:hover {
-                    opacity: 1;
-                }
+    .fas {
+        font-size: $regular-icon;
+        margin-right: 6px;
+        opacity: .6;
 
-                &.fa-link {
-                    font-size: $small-icon;
-                    color: white;
-                    margin-left: 1px;
-                }
-            }
+        &:hover {
+            opacity: 1;
+        }
+
+        &.fa-link {
+            color: $white;
+            font-size: $small-icon;
+            margin-left: 1px;
         }
     }
 }
@@ -85,42 +83,37 @@
             $regular-icon: 25px;
             $small-icon: 22px;
 
-            a {
-                .fab {
-                    font-size: $regular-icon;
-
-                    &.fa-github {
-                        margin-left: -10px;
-                    }
-                }
-
-                .far {
-                    font-size: $regular-icon;
-                }
-
-                .fas {
-                    font-size: $regular-icon;
-
-                    &.fa-link {
-                        font-size: $small-icon;
-                    }
-                }
+            .fab {
+                font-size: $regular-icon;
             }
+
+            .fa-github {
+                margin-left: -10px;
+            }
+
+            .far {
+                font-size: $regular-icon;
+            }
+
+            .fas {
+                font-size: $regular-icon;
+            }
+
+            .fa-link {
+                font-size: $small-icon;
+            }
+
         }
     }
 }
 
 @media (max-width: 375px) {
     .our-footer {
-        padding: 0px 15px;
+        padding: 0 15px;
 
         .footer-links {
-            a {
-                .fab {
-                    &.fa-github {
-                        margin-left: 5px;
-                    }
-                }
+            .fa-github {
+                margin-left: 5px;
             }
         }
     }
@@ -128,32 +121,30 @@
 
 @media (max-width: 320px) {
     .our-footer {
-        padding: 0px 10px;
+        padding: 0 10px;
 
         .footer-links {
             $regular-icon: 20px;
             $small-icon: 17px;
 
-            a {
-                .fab {
-                    font-size: $regular-icon;
+            .fab {
+                font-size: $regular-icon;
+            }
 
-                    &.fa-github {
-                        margin-left: 5px;
-                    }
-                }
+            &.fa-github {
+                margin-left: 5px;
+            }
 
-                .far {
-                    font-size: $regular-icon;
-                }
+            .far {
+                font-size: $regular-icon;
+            }
 
-                .fas {
-                    font-size: $regular-icon;
+            .fas {
+                font-size: $regular-icon;
+            }
 
-                    &.fa-link {
-                        font-size: $small-icon;
-                    }
-                }
+            .fa-link {
+                font-size: $small-icon;
             }
         }
     }

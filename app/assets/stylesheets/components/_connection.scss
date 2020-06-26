@@ -1,30 +1,31 @@
 .leader-line {
-  animation: fade-in 0.9s;
+    animation: fade-in .9s;
 }
 
 .draggable {
-  animation: fade-in2 1.2s ease-out;
+    animation: fade-in2 1.2s ease-out;
 }
 
 @keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes fade-in2 {
-  0% {
-    opacity: 0;
-  }
-  59% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+
+    59% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
-
-

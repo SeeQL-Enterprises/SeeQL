@@ -1,43 +1,153 @@
-.add_fields {
-    text-decoration: none;
-    color: black;
+// .add_fields {
+//     color: $black;
+//     text-decoration: none;
+//
+//     &:hover {
+//         color: $black;
+//         text-decoration: none;
+//     }
+// }
 
-    &:hover {
-        text-decoration: none;
-        color: black;
+// .remove_fields {
+//     text-decoration: none;
+//     color: black;
+//
+//     &:hover {
+//         text-decoration: none;
+//         color: black;
+//     }
+// }
+
+.modal-content {
+    background-color: $seeql-darkgrey;
+
+    .modal-header {
+        align-items: normal;
+        border-bottom: solid 1px $seeql-gunmetal;
+        color: $seeql;
+        font-size: 26px;
+        font-weight: 500;
+        justify-content: center;
+        padding: 16px 12px 12px;
+
+        .modal-title {
+            border: 0;
+            padding: 0;
+        }
+
+        .fas.fa-times {
+            color: $seeql;
+            font-size: 28px;
+        }
     }
-}
 
-.remove_fields {
-    text-decoration: none;
-    color: black;
+    .modal-body {
+        padding: 1rem 2rem .5rem;
 
-    &:hover {
-        text-decoration: none;
-        color: black;
+        .signup-errors {
+            color: $seeql-red;
+            font-size: 19px;
+            margin: 0 10px 20px;
+        }
+
+        .login-errors {
+            color: $seeql-red;
+            font-size: 19px;
+            margin: 0 10px 20px;
+        }
+
+        label {
+            color: $seeql;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        #help-button {
+            font-size: 28px;
+        }
+
+        #help-list {
+            margin-top: 45px;
+        }
+
+        #help-nested-list {
+            margin-bottom: 12px;
+            max-height: 0;
+            overflow: hidden;
+            transition: .8s;
+        }
+
+        a {
+            color: $seeql;
+            font-size: 20px;
+            opacity: .5;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 1;
+            text-decoration: none;
+        }
     }
-}
 
-.modal-header {
-    color: black !important;
+    .form-group {
+        margin-bottom: 25px;
 
-    .fas.fa-times {
-        color: $red;
+        > label {
+            margin-bottom: 5px;
+        }
     }
 
-    .close {
-        color: $red;
-    }
-}
+    .form-control {
+        font-size: 18px;
+        height: calc(1.5em + .75rem);
 
-.modal-body {
-    label {
-        color: black !important;
-    }
-
-    .form-control.select {
         option {
-            color: black;
+            color: $black;
+        }
+
+        &::placeholder {
+            color: $grey;
+        }
+    }
+
+    .form-check {
+        border: .5px solid $grey;
+        margin: 0;
+
+        .form-check-label {
+            bottom: 9px;
+            font-size: 18px;
+            left: 24px;
+            padding: 0;
+            position: relative;
+        }
+    }
+
+    .modal-footer {
+        align-items: normal;
+        border-top: solid 1px $seeql-gunmetal;
+        flex-direction: column;
+        padding: 25px 2rem;
+
+        .btn-seeql-lg {
+            font-size: 21px;
+            margin: 3px 0;
+        }
+
+        i {
+            font-size: 26px;
+            transform: translate(-1px, 3px);
+        }
+
+        a {
+            margin: 0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 1;
+            text-decoration: none;
         }
     }
 }

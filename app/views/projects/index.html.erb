@@ -1,54 +1,56 @@
-<div class="primary-container">
-	<h1>Your Projects:</h1>
+<div class="primary-container projects-container">
+	<div class="wide-container content-wide">
+		<h1>Your Projects:</h1>
 
-  <%= link_to new_project_path do %>
-  	<button class="btn-treehouse" style="margin-top: 20px;">
-  		<i class="far fa-plus-square"></i> Add Project
-  	</button>
-	<% end %>
+		<%= link_to new_project_path do %>
+			<button class="btn-seeql btn-seeql-lg" style="margin-top: 20px;">
+				<i class="far fa-plus-square"></i> Add Project
+			</button>
+		<% end %>
 
-	<% @projects.sort_by! { |project| project.created_at } %>
+		<% @projects.sort_by! { |project| project.created_at } %>
 
-  <!-- Project card grid -->
-  <div class="card-grid">
-    <% @projects.each do |project| %>
-      <div class="card-project">
-      <%= link_to project_path(project), style: "text-decoration: none;" do %>
+		<!-- Project card grid -->
+		<div class="card-grid">
+			<% @projects.each do |project| %>
+				<div class="card-project">
+					<%= link_to project_path(project), style: "text-decoration: none;" do %>
 
-          <!-- Project image -->
-          <% if project.project_image.attached? %>
-            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.project_image.key %>')">
-    				  <h2><%= project.name.capitalize %></h2>
-            </div>
-          <% else %>
-            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
-              <h2><%= project.name.capitalize %></h2>
-            </div>
-          <% end %>
+					<!-- Project image -->
+					<% if project.project_image.attached? %>
+						<div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.project_image.key %>')">
+							<h2><%= project.name.capitalize %></h2>
+						</div>
+					<% else %>
+						<div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
+							<h2><%= project.name.capitalize %></h2>
+						</div>
+					<% end %>
 
-          <!-- Project collaborators -->
-          <div class="card-project-infos">
-            <div class="project-collab">
-    					<% project.collaborators.each do |collaborator| %>
-    					<div class="project-collab-icon">
-    						<% if collaborator.user.avatar.attached? %>
-      						<div class="card-project-user">
-      							<%= cl_image_tag collaborator.user.avatar.key %>
-      						</div>
-    						<% else %>
-      						<div class="card-project-user">
-      							<%= image_tag("avatar.svg") %>
-      						</div>
-      					<% end %>
-                <div class="collab-name">
-                  <%= collaborator.user.name %>
-                </div>
-              </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
+					<!-- Project collaborators -->
+					<div class="card-project-infos">
+						<div class="project-collab">
+							<% project.collaborators.each do |collaborator| %>
+								<div class="project-collab-icon">
+									<% if collaborator.user.avatar.attached? %>
+										<div class="card-project-user">
+											<%= cl_image_tag collaborator.user.avatar.key %>
+										</div>
+									<% else %>
+										<div class="card-project-user">
+											<%= image_tag("avatar.svg") %>
+										</div>
+									<% end %>
+									<div class="collab-name">
+										<%= collaborator.user.first_name %>
+									</div>
+								</div>
+							<% end %>
+						</div>
+					</div>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>

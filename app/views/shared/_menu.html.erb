@@ -1,22 +1,22 @@
 <!-- SIDEBAR-MENU -->
 <div class="sidebar-menu">
-    <input type="checkbox" id="toggle">
-    <label for="toggle" >
+    <input type="checkbox" id="sidebar-toggle">
+    <label for="sidebar-toggle" >
         <svg  viewbox="0 0 100 100" width="100%" height="100%">
             <circle cx="50" cy="50"></circle>
         </svg>
         <% if current_user %>
             <% if current_user.avatar.attached? %>
-                <div class="avatar" id="my-burger-menu">
+                <div class="avatar" id="sidebar-opener">
                     <%= cl_image_tag current_user.avatar.key %>
                 </div>
             <% else %>
-                <div class="avatar" id="my-burger-menu">
-                    <%= image_tag("avatar.svg", id: "my-burger-menu") %>
+                <div class="avatar" id="sidebar-opener">
+                    <%= image_tag("avatar.svg", id: "sidebar-opener") %>
                 </div>
             <% end %>
         <% else %>
-            <div class="hamburger" id="my-burger-menu">
+            <div class="hamburger" id="sidebar-opener">
                 <div class="center"></div>
             </div>
         <% end %>
@@ -24,17 +24,23 @@
 </div>
 
 <!-- Sidebar Nav -->
-<div id="mySidenav" class="sidenav">
-    <%= link_to "Home", root_path, class: "border-bottom" %>
-    <% if current_user %>
-        <%= link_to "My Projects", projects_path, class: "border-bottom" %>
-        <%= link_to "Create Project", new_project_path, class: "border-bottom" %>
-        <%= link_to "Edit Profile", edit_user_registration_path, class: "border-bottom" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %>
-    <% else %>
-        <a class="border-bottom" data-toggle="modal" data-target="#loginModal">Login</a>
-    <% end %>
-    <% if !current_user %>
-        <a class="border-bottom" data-toggle="modal" data-target="#signupModal">Sign Up</a>
-    <% end %>
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-text">
+        <%= link_to "Home", root_path, class: "border-bottom" %>
+        <% if current_user %>
+            <%= link_to "My Projects", projects_path, class: "border-bottom" %>
+            <%= link_to "Create Project", new_project_path, class: "border-bottom" %>
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "border-bottom" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "border-bottom" %>
+        <% else %>
+            <a id="login-button-sidebar" class="border-bottom" type="button" data-toggle="modal" data-target="#login-modal">
+                    Login
+            </a>
+        <% end %>
+        <% if !current_user %>
+            <a id="signup-button-sidebar" class="border-bottom" type="button" data-toggle="modal" data-target="#signup-modal">
+                Sign Up
+            </a>
+        <% end %>
+    </div>
 </div>
