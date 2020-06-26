@@ -77,16 +77,15 @@
     margin: 70px auto;
     // padding: 45px 0;
     width: 100%;
-
-    &.content-wide {
-        background-color: rgba($seeql-darkgrey, .9);
-        border-radius: 5px;
-        box-shadow: 0 0 15px rgba($black, .2);
-        margin-top: 150px;
-        text-shadow: 4px 4px 3px rgba($black, .4);
-    }
 }
 
+.content-wide {
+    background-color: rgba($seeql-darkgrey, .9);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba($black, .2);
+    margin-top: 150px;
+    text-shadow: 4px 4px 3px rgba($black, .4);
+}
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
