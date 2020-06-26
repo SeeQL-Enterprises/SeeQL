@@ -181,6 +181,7 @@
     z-index: 1;
 
     a {
+        border-radius: 2px;
         color: $white;
         display: block;
         font-size: 18px;
@@ -193,7 +194,7 @@
         &:hover {
             background: rgba($seeql, .8);
             // color: $black;
-            padding-left: 12px;
+            padding-left: 14px;
         }
     }
 }
