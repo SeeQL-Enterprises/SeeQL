@@ -1,16 +1,18 @@
-.btn {
-    // color: white;
-    border-radius: 6px;
-    font-weight: bold;
-    // background: $seeql;
-    justify-content: center;
-    opacity: .8;
-    padding: 8px 25px;
+// .btn {
+//     // color: white;
+//     border-radius: 6px;
+//     font-weight: bold;
+//     // background: $seeql;
+//     justify-content: center;
+//     opacity: .8;
+//     padding: 8px 25px;
+//
+//     &:hover {
+//         opacity: 1;
+//     }
+// }
 
-    &:hover {
-        opacity: 1;
-    }
-}
+/* ---------- BUTTON TYPES & SIZES ---------- */
 
 .btn-seeql {
     background: $seeql;
@@ -35,31 +37,21 @@
     padding: 8px 24px;
 }
 
-.btn-seeql-red {
-    background: $seeql-red;
-}
 
-#create-project-btn {
-    &:hover {
-        opacity: 1;
-        transform: scale(1.02);
-    }
-}
-
-.btn-cancel {
-    background: $darkgrey;
-    border-radius: 6px;
-    color: $white;
-    font-weight: bold;
-    justify-content: center;
-    margin: 20px 10px 20px 0;
-    opacity: .8;
-    padding: 8px 25px;
-
-    &:hover {
-        opacity: 1;
-    }
-}
+// .btn-cancel {
+//     background: $darkgrey;
+//     border-radius: 6px;
+//     color: $white;
+//     font-weight: bold;
+//     justify-content: center;
+//     margin: 20px 10px 20px 0;
+//     opacity: .8;
+//     padding: 8px 25px;
+//
+//     &:hover {
+//         opacity: 1;
+//     }
+// }
 
 .github-button {
     background: $black;
@@ -85,6 +77,33 @@
 @media (min-width: 100px) and (max-width: 575px) {
     .horizontal-btns {
         margin-bottom: 0;
+    }
+}
+
+/* ---------- BUTTON COLORS ---------- */
+
+.btn-seeql-red {
+    background: $seeql-red;
+}
+
+.btn-seeql-darkgrey {
+    background: $darkgrey;
+}
+
+.btn-seeql-transparent {
+    background: $transparent;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+/* ---------- CUSTOM BUTTONS ---------- */
+
+#create-project-btn {
+    &:hover {
+        opacity: 1;
+        transform: scale(1.02);
     }
 }
 
