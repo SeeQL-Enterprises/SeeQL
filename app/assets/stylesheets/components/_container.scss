@@ -79,7 +79,7 @@
     width: 100%;
 
     &.content-wide {
-        background-color: $seeql-darkgrey;
+        background-color: rgba($seeql-darkgrey, .9);
         border-radius: 5px;
         box-shadow: 0 0 15px rgba($black, .2);
         margin-top: 150px;
