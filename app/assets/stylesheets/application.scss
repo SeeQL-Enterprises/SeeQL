@@ -17,6 +17,14 @@
     color: $white;
 }
 
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 // smooth scroll-effect
 html {
     scroll-behavior: smooth;
