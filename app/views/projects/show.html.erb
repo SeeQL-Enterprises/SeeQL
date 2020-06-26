@@ -4,7 +4,7 @@
 <div class="primary-container">
     <!-- <div> -->
         <%= link_to projects_path do %>
-            <button class="btn-seeql" style="display: flex; align-items: center;">
+            <button class="btn-seeql btn-seeql-lg" style="display: flex; align-items: center;">
                 <i class="fas fa-caret-left" style="font-size: 28px;"></i>&nbsp;Back to projects
             </button>
         <% end %>
@@ -15,7 +15,7 @@
   <div class="horizontal-btns">
     <% @project.databases.each do |database| %>
       <%= link_to database_path(database) do %>
-          <button class="btn-seeql">
+          <button class="btn-seeql btn-seeql-lg">
               Go to <%= database.name %>
           </button>
       <% end %>

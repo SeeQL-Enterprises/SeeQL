@@ -6,6 +6,6 @@
     </div>
     <%= simple_form_for(@database, url: database_table_preference_path(@database)) do |f| %>
         <%= f.input :tables, collection: @database.tables, as: :check_boxes, label_value: :name, input_html: { checked: false, class: "on" }%>
-        <%= f.submit "View Schema", class: "btn-seeql" %>
+        <%= f.submit "View Schema", class: "btn-seeql btn-seeql-lg" %>
     <% end %>
 </div>

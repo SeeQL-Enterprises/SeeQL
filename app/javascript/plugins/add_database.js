@@ -8,7 +8,7 @@ if (addDatabaseButton) {
         // Check present classes
         if (!viewDatabaseButton) {
             // Toggle SCSS classes to turn from SeeQL to gray
-            addDatabaseButton.classList.toggle("btn-seeql");
+            addDatabaseButton.classList.toggle("btn-seeql-lg");
             addDatabaseButton.classList.toggle("btn-cancel");
         }
 

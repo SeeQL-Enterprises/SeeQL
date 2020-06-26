@@ -43,7 +43,7 @@
                         <div class="form-content form-avatar">
                             <div class="avatar-preview">
                                 <img id="avatar-preview-image" src="<%= current_user.avatar.attached? ? rails_blob_path(current_user.avatar, only_path: true) : image_url("avatar.svg") %>" alt="User's current profile image">
-                                <label id="avatar-preview-button" type="button" class="btn-seeql upload-button">
+                                <label id="avatar-preview-button" type="button" class="btn-seeql btn-seeql-lg upload-button">
                                     <span id="avatar-preview-button-text">
                                         Choose snazzy picture
                                     </span>
@@ -59,11 +59,11 @@
             <div class="form-footer">
                 <div class="double-container">
                     <%= link_to :back do %>
-                        <button id="back-button-edit" type="button" class="btn-seeql seeql-red">
+                        <button id="back-button-edit" type="button" class="btn-seeql btn-seeql-lg btn-seeql-red">
                             Back
                         </button>
                     <% end %>
-                    <button type="submit" form="edit-form" class="btn-seeql">
+                    <button type="submit" form="edit-form" class="btn-seeql btn-seeql-lg">
                         Confirm
                     </button>
                 </div>
@@ -104,7 +104,7 @@
             </div>
             <div class="form-footer">
                 <%= link_to registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete do %>
-                    <button id="back-button-edit" type="button" class="btn-seeql seeql-red">
+                    <button id="back-button-edit" type="button" class="btn-seeql btn-seeql-lg btn-seeql-red">
                         Delete my account
                     </button>
                 <% end %>
