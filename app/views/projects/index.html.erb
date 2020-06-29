@@ -35,19 +35,19 @@
 
 							<!-- Project collaborators -->
 							<div class="card-project-infos">
-								<div class="project-collab">
+								<div class="project-collaborators">
 									<% project.collaborators.each do |collaborator| %>
-										<div class="project-collab-icon">
+										<div class="collaborator">
 											<% if collaborator.user.avatar.attached? %>
-												<div class="card-project-user">
+												<div class="collaborator-avatar">
 													<%= cl_image_tag collaborator.user.avatar.key %>
 												</div>
 											<% else %>
-												<div class="card-project-user">
+												<div class="collaborator-avatar">
 													<%= image_tag("avatar.svg") %>
 												</div>
 											<% end %>
-											<div class="collab-name">
+											<div class="collaborator-name">
 												<%= collaborator.user.first_name %>
 											</div>
 										</div>

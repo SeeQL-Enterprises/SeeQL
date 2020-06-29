@@ -116,7 +116,7 @@
 
 
 
-.project-collab {
+.project-collaborators {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -124,7 +124,7 @@
     top: -20px;
     width: 100%;
 
-    .project-collab-icon {
+    .collaborator {
         text-align: center;
     }
 
@@ -154,13 +154,13 @@
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-    .project-collab {
+    .project-collaborators {
         right: 0;
         top: 10px;
 
-        .project-collab-icon {
+        .collaborator {
 
-            .collab-name {
+            .collaborator-name {
                 display: none;
             }
         }
