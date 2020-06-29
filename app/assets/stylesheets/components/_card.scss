@@ -82,6 +82,8 @@
 // PROJECT CARDS
 
 .card-project {
+    position: relative;
+
     .card-image {
         align-items: center;
         background-position: center;
@@ -96,28 +98,31 @@
     }
 
     .card-project-options {
-        align-self: flex-end;
+        align-items: flex-end;
         display: flex;
+        flex-direction: column;
         font-size: 30px;
-        height: 10%;
-        // justify-content: flex-end;
-        // padding: 10px 20px 0 0;
-        position: relative;
-        // width: 100%;
-
-        .project-options-icon {
-            position: absolute;
-            right: 20px;
-            top: 10px;
-        }
+        height: 6.5%;
+        position: absolute;
+        right: 20px;
+        top: 10px;
     }
+
+    .fas.fa-trash {
+        transform: translate(3px, -1px);
+    }
+
+    .seeql-red {
+        color: $seeql-red;
+    }
+
 
     .card-project-title {
         align-items: center;
         display: flex;
         font-size: 24px;
         font-weight: bold;
-        height: 90%;
+        height: 93.5%;
         margin: 0;
         text-shadow: 1px 1px 3px rgba($black, 1);
     }

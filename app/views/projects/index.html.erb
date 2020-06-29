@@ -20,9 +20,19 @@
 			<div class="card-grid">
 				<% @projects.each do |project| %>
 					<div class="card-project">
+
 						<div class="card-project-options">
 							<i class="fas fa-ellipsis-h project-options-icon" type="button"></i>
+							<div class="card-project-options-dropdown">
+								<ul id="card-project-options-dropdown" style="margin-top: -10px; display: none;">
+									<li class="seeql-red">
+										<i class="fas fa-trash seeql-red" type="button" style="font-size: 18px;"></i>
+										<span class="seeql-red" style="font-size: 20px">Delete</span>
+									</li>
+								</ul>
+							</div>
 						</div>
+
 						<%= link_to project_path(project), style: "text-decoration: none;" do %>
 
 							<!-- Project image -->
