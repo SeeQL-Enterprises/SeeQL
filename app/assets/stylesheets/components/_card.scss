@@ -128,6 +128,7 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+        margin: 0 5px;
     }
 
     .collaborator-avatar {
@@ -137,6 +138,7 @@
     }
 
     .collaborator-name {
+        font-size: 21px;
         text-shadow: 1px 1px 3px rgba($black, .5);
     }
 }
