@@ -25,11 +25,21 @@
 							<!-- Project image -->
 							<% if project.project_image.attached? %>
 								<div class="card-image" style="background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('<%= cl_image_path project.project_image.key %>')">
-									<h2><%= project.name.capitalize %></h2>
+									<div class="card-project-options">
+										<i class="fas fa-ellipsis-h"></i>
+									</div>
+									<div class="card-project-title">
+										<h2><%= project.name.capitalize %></h2>
+									</div>
 								</div>
 							<% else %>
 								<div class="card-image" style="background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
-									<h2><%= project.name.capitalize %></h2>
+									<div class="card-project-options">
+										<h2>TEST</h2>
+									</div>
+									<div class="card-project-title">
+										<h2><%= project.name.capitalize %></h2>
+									</div>
 								</div>
 							<% end %>
 

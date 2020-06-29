@@ -82,13 +82,6 @@
 // PROJECT CARDS
 
 .card-project {
-    h2 {
-        font-size: 24px;
-        font-weight: bold;
-        margin: 0;
-        text-shadow: 1px 1px 3px rgba($black, 1);
-    }
-
     .card-image {
         align-items: center;
         background-position: center;
@@ -96,9 +89,25 @@
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
         display: flex;
+        flex-direction: column;
         height: 300px;
         justify-content: center;
         max-width: 700px;
+    }
+
+    .card-project-options {
+        display: flex;
+        height: 50%;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .card-project-title {
+        font-size: 24px;
+        font-weight: bold;
+        height: 50%;
+        margin: 0;
+        text-shadow: 1px 1px 3px rgba($black, 1);
     }
 
     .card-project-infos {
