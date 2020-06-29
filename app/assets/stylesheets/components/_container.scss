@@ -114,8 +114,7 @@
 .projects-container {
     max-width: unset;
 
-    .wide-container {
-        align-items: center;
-        flex-direction: column;
+    .content-wide {
+        margin-top: 75px;
     }
 }
