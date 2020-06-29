@@ -4,8 +4,5 @@
     "plugins": ["jquery", "prettier"],
     "rules": {
         "eqeqeq": "off"
-    },
-    "overrides": [
-        "excludedFiles": "*.html.erb"
-    ]
+    }
 }
