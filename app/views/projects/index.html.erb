@@ -26,7 +26,7 @@
 							<% if project.project_image.attached? %>
 								<div class="card-image" style="background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('<%= cl_image_path project.project_image.key %>')">
 									<div class="card-project-options">
-										<i class="fas fa-ellipsis-h"></i>
+										<i id="project-options-icon" class="fas fa-ellipsis-h"></i>
 									</div>
 									<div class="card-project-title">
 										<h2><%= project.name.capitalize %></h2>
