@@ -6,11 +6,13 @@
 			</h2>
 		</div>
 		<div class="content-wide">
-			<%= link_to new_project_path do %>
-				<button class="btn-seeql btn-seeql-lg" style="margin-top: 20px;">
-					<i class="far fa-plus-square"></i> Add Project
-				</button>
-			<% end %>
+			<div class="d-flex" style="justify-content: center; padding: 20px;">
+				<%= link_to new_project_path do %>
+					<button class="btn-seeql btn-seeql-lg" style="margin-top: 20px;">
+						<i class="far fa-plus-square"></i> Add Project
+					</button>
+				<% end %>
+			</div>
 
 			<% @projects.sort_by! { |project| project.created_at } %>
 
