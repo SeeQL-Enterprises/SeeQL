@@ -1,16 +1,17 @@
 if (document.getElementsByClassName('project-options-icon')) {
 
     const projectOptionsIcons = document.getElementsByClassName('project-options-icon');
-    const projectOptionsDropdown = document.getElementById('card-project-options-dropdown');
+    const projectOptionsDropdowns = document.querySelectorAll('#card-project-options-dropdown');
 
     for(let i = 0; i < projectOptionsIcons.length; i++) {
+        projectOptionsDropdowns[i].id = `card-project-options-dropdown-${[i]}`;
 
-        projectOptionsIcons[i].addEventListener("click", () => {
+        projectOptionsIcons[i].addEventListener('click', () => {
 
-            $(projectOptionsDropdown).fadeToggle(400);
+            $(`#card-project-options-dropdown-${[i]}`).fadeToggle(400);
 
             setTimeout(() => {
-                $(projectOptionsDropdown).fadeOut(500)
+                $(`#card-project-options-dropdown-${[i]}`).fadeOut(500)
             }, 4000);
 
         });
