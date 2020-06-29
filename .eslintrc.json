@@ -3,6 +3,7 @@
     "extends": ["airbnb-base", "prettier"],
     "plugins": ["jquery", "prettier"],
     "rules": {
-        "eqeqeq": "off"
+        "eqeqeq": "off",
+        "no-plusplus": "off"
     }
 }
