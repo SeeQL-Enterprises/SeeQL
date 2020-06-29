@@ -114,6 +114,10 @@
 .projects-container {
     max-width: unset;
 
+    .wide-container {
+        margin: 0 auto;
+    }
+
     .content-wide {
         margin-top: 75px;
     }
