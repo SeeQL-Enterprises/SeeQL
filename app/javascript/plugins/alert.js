@@ -2,6 +2,6 @@ if (document.getElementById("alert")) {
     const alert = document.getElementById("alert");
 
     setTimeout(function fadeAlert() {
-        $(alert).fadeOut();
+        alert.style = "opacity: 0";
     }, 5000);
 }
