@@ -12,7 +12,7 @@ puts "Generate project owner..."
 
 user = User.create!({
   email: "brunobrunckhorst@gmail.com",
-  password: "o2QRCF&L0@#8FH",
+  password: "123123",
   first_name: "Bruno",
   last_name: "A. Brunckhorst"
 })
