@@ -11,70 +11,88 @@ User.destroy_all
 puts "Generate project owner..."
 
 user = User.create!({
-  email: "finn@gmail.com",
-  password: "123456",
-  name: "Finn"
- })
-
-puts "Generating project..."
-
-project = Project.new({
-  name: "Yelp Clone"
+  email: "brunobrunckhorst@gmail.com",
+  password: "123123",
+  first_name: "Bruno",
+  last_name: "A. Brunckhorst"
 })
 
-project.user = user
-project.save!
+puts "Generating collaborators..."
 
-project2 = Project.new({
-  name: "MySQL"
+collaborator1 = User.create!({
+  email: "brunobrunckhorst@hotmail.com",
+  password: "123123",
+  first_name: "Bruno",
+  last_name: "H. Brunckhorst"
 })
 
-project2.user = user
-project2.save!
+collaborator2 = User.create!({
+   email: "bruncky.gg@gmail.com",
+   password: "123123",
+   first_name: "Bruno",
+   last_name: "G. Brunckhorst"
+})
 
-Collaborator.create!(user: user, project: project)
+puts "Generating projects..."
 
-puts "generate users to collaborate..."
-
-emails = [
-    "tim@gmail.com",
-    "bruno@gmail.com",
-    "patrick@gmail.com"
+project_names = [
+    "Blep 1",
+    "Blep 2",
+    "Blep 3",
+    "Blep 4",
+    "Blep 5",
+    "Blep 6",
 ]
 
-names = %w[Tim Bruno Patrick]
+project_names.each do |project_name|
+    project = Project.new(name: project_name)
 
-emails.each_with_index do |email, index|
-    other_user = User.create!(name: names[index], email: email, password: "123456")
-    Collaborator.create!(user: other_user, project: project)
+    project.user = user
+    project.save!
+
+    Collaborator.create!(user: collaborator1, project: project)
+    Collaborator.create!(user: collaborator2, project: project)
 end
-
-database = Database.create!(name: "Nando's", project: project)
-
-table = Table.create!(database: database, name: "Restaurants")
-
-Column.create!(name: "id", datatype: "serial", table: table)
-Column.create!(name: "name", datatype: "string", table: table)
-Column.create!(name: "address", datatype: "string", table: table)
-Column.create!(name: "rating", datatype: "integer", table: table)
-
-table_2 = Table.create!(database: database, name: "Reviews")
-
-Column.create!(name: "id", datatype: "serial", table: table_2)
-Column.create!(name: "rating", datatype: "integer", table: table_2)
-Column.create!(name: "content", datatype: "text", table: table_2)
-Column.create!(name: "restaurant_id", datatype: "foreign key", table: table_2)
-Column.create!(name: "user_id", datatype: "foreign key", table: table_2)
-
-table_3 = Table.create!(database: database, name: "Reservations")
-
-Column.create!(name: "id", datatype: "serial", table: table_3)
-Column.create!(name: "time", datatype: "time", table: table_3)
-Column.create!(name: "restaurant_id", datatype: "foreign key", table: table_3)
-Column.create!(name: "user_id", datatype: "foreign key", table: table_3)
-
-table_4 = Table.create!(database: database, name: "Users")
-
-Column.create!(name: "id", datatype: "serial", table: table_4)
-Column.create!(name: "email", datatype: "string", table: table_4)
-Column.create!(name: "password", datatype: "password", table: table_4)
+#
+# emails = [
+#     "tim@gmail.com",
+#     "bruno@gmail.com",
+#     "patrick@gmail.com"
+# ]
+#
+# names = %w[Tim Bruno Patrick]
+#
+# emails.each_with_index do |email, index|
+#     other_user = User.create!(name: names[index], email: email, password: "123456")
+#     Collaborator.create!(user: other_user, project: project)
+# end
+#
+# database = Database.create!(name: "Nando's", project: project)
+#
+# table = Table.create!(database: database, name: "Restaurants")
+#
+# Column.create!(name: "id", datatype: "serial", table: table)
+# Column.create!(name: "name", datatype: "string", table: table)
+# Column.create!(name: "address", datatype: "string", table: table)
+# Column.create!(name: "rating", datatype: "integer", table: table)
+#
+# table_2 = Table.create!(database: database, name: "Reviews")
+#
+# Column.create!(name: "id", datatype: "serial", table: table_2)
+# Column.create!(name: "rating", datatype: "integer", table: table_2)
+# Column.create!(name: "content", datatype: "text", table: table_2)
+# Column.create!(name: "restaurant_id", datatype: "foreign key", table: table_2)
+# Column.create!(name: "user_id", datatype: "foreign key", table: table_2)
+#
+# table_3 = Table.create!(database: database, name: "Reservations")
+#
+# Column.create!(name: "id", datatype: "serial", table: table_3)
+# Column.create!(name: "time", datatype: "time", table: table_3)
+# Column.create!(name: "restaurant_id", datatype: "foreign key", table: table_3)
+# Column.create!(name: "user_id", datatype: "foreign key", table: table_3)
+#
+# table_4 = Table.create!(database: database, name: "Users")
+#
+# Column.create!(name: "id", datatype: "serial", table: table_4)
+# Column.create!(name: "email", datatype: "string", table: table_4)
+# Column.create!(name: "password", datatype: "password", table: table_4)
