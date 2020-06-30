@@ -96,9 +96,18 @@
         position: absolute;
         right: 20px;
         top: 10px;
+
+        li {
+            line-height: 1;
+        }
     }
 
     .fas.fa-trash {
+        transform: translate(3px, -1px);
+    }
+
+    .fas.fa-edit {
+        margin-right: -4px;
         transform: translate(3px, -1px);
     }
 
@@ -106,6 +115,9 @@
         color: $seeql-red;
     }
 
+    .light-blue {
+        color: $light-blue;
+    }
 
     .card-project-title {
         align-items: center;
