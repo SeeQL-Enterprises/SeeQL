@@ -151,3 +151,13 @@
         }
     }
 }
+
+@media (max-height: 900px) {
+    #login-modal {
+        transform: scale(.85);
+    }
+
+    #signup-modal {
+        transform: scale(.85);
+    }
+}
