@@ -12,10 +12,11 @@ puts "Generate project owner..."
 
 user = User.create!({
   email: "brunobrunckhorst@gmail.com",
-  password: "123123",
+  password: "o2QRCF&L0@#8FH",
   first_name: "Bruno",
   last_name: "A. Brunckhorst"
 })
+user.confirm
 
 puts "Generating collaborators..."
 
@@ -25,6 +26,7 @@ collaborator1 = User.create!({
   first_name: "Bruno",
   last_name: "H. Brunckhorst"
 })
+collaborator1.confirm
 
 collaborator2 = User.create!({
    email: "bruncky.gg@gmail.com",
@@ -32,6 +34,7 @@ collaborator2 = User.create!({
    first_name: "Bruno",
    last_name: "G. Brunckhorst"
 })
+collaborator2.confirm
 
 puts "Generating projects..."
 
@@ -46,9 +49,12 @@ project_names = [
 
 project_names.each do |project_name|
     project = Project.new(name: project_name)
+    project.project_image.attach(io: URI.open('https://res.cloudinary.com/seeql/image/upload/v1593538688/Seed%20Assets/Project%20Image.jpg'), filename: 'image.png')
 
     project.user = user
     project.save!
+
+    puts "#{project.name} generated!"
 
     Collaborator.create!(user: collaborator1, project: project)
     Collaborator.create!(user: collaborator2, project: project)
