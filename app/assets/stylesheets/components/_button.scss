@@ -70,9 +70,14 @@
     }
 }
 
-// .horizontal-btns {
-//     margin-bottom: 50px;
-// }
+.horizontal-btns {
+    display: flex;
+    justify-content: center;
+
+    button {
+        margin: 30px 10px;
+    }
+}
 //
 // @media (min-width: 100px) and (max-width: 575px) {
 //     .horizontal-btns {
