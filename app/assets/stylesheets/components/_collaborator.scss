@@ -5,7 +5,7 @@
 //     width: fit-content;
 // }
 
-.notification {
+.collaborator-card {
     align-items: center;
     background: $seeql-background-steel-blue;
     border: 1px solid $darkgrey;
@@ -16,7 +16,7 @@
     min-width: 50%;
     padding: 8px 16px;
 
-    &.notification-content {
+    &.collaborator-card-content {
         flex-grow: 1;
         padding: 0 24px;
     }
@@ -32,7 +32,7 @@
         margin: 0;
     }
 
-    .notification-actions {
+    .collaborator-card-actions {
         display: grid;
         opacity: 1;
         transition: ease .3s;
@@ -48,11 +48,11 @@
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
-    .notification .notification-content {
+    .collaborator-card .collaborator-card-content {
         padding: 0 12px;
     }
 
-    .notification .notification-actions {
+    .collaborator-card .collaborator-card-actions {
         a, i {
             margin-left: 8px;
             margin-right: 0;
