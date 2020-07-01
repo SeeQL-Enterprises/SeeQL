@@ -46,15 +46,17 @@
     // AVATAR - IF USER HAS ALREADY SIGNED UP
     .avatar {
         display: grid;
-        height: 63%;
+        height: 75%;
         place-items: center;
         position: absolute;
-        width: 63%;
+        width: 75%;
 
         img {
             border-radius: 50%;
+            height: 100%;
+            object-fit: cover;
             position: absolute;
-            width: 133%;
+            width: 100%;
             z-index: 1;
         }
 

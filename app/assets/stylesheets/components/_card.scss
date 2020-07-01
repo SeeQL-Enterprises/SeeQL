@@ -160,9 +160,17 @@
     }
 
     .collaborator-avatar {
-        border-radius: 50%;
-        margin: 0 16px;
-        width: 42px;
+        // border-radius: 50%;
+        // margin: 0 16px;
+        // width: 42px;
+
+        img {
+            border-radius: 50%;
+            height: 40px;
+            margin: auto;
+            object-fit: cover;
+            width: 40px;
+        }
     }
 
     .collaborator-name {
