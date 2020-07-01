@@ -27,11 +27,11 @@
 								<ul id="card-project-options-dropdown" style="margin-top: -10px; display: none;">
 									<li class="seeql-red">
 										<i class="fas fa-trash seeql-red" type="button" style="font-size: 18px;"></i>
-										<span class="seeql-red" style="font-size: 20px">Delete</span>
+										<span class="seeql-red" style="font-size: 20px"><%= link_to "Delete", project_path(project), method: :delete, data: {confirm: "Are you sure you want to delete the project?"} %></span>
 									</li>
 									<li class="seeql-red">
 										<i class="fas fa-edit light-blue" type="button" style="font-size: 18px;"></i>
-										<span class="light-blue" style="font-size: 20px">Edit</span>
+										<span class="light-blue" style="font-size: 20px"><%= link_to "Edit", edit_project_path(project) %></span>
 									</li>
 								</ul>
 							</div>

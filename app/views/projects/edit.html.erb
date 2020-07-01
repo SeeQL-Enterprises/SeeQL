@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="wide-container content-wide">
+        <div class="form-content">
+            <div class="form-header">
+                <div class="double-container">
+                    <h2 class="form-title">Edit project below</h2>
+                </div>
+            </div>
+            <div class="form-body">
+                <div class="double-container">
+                    <%= simple_form_for @project, html: { id: "project-form", class: "flex-form" } do |f| %>
+                        <div class="form-inputs w-1/2 max-w-lg">
+                            <div class="flex flex-wrap -mx-5">
+                                <div class="w-full px-4">
+                                    <%= f.input :name, required: true, class: "form-control appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white", input_html: { id: "name-new-project", placeholder: "Name of your new project" } %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-content form-image">
+                            <div class="project-image-preview">
+                                <img id="project-preview-image" class="card-image" src="https://res.cloudinary.com/seeql/image/upload/v1592580690/General%20Assets/Project%20Placeholder.png" alt="User's current profile image" style="object-fit: contain;">
+                                <label id="project-image-button" type="button" class="btn-seeql btn-seeql-lg upload-button">
+                                    <span id="project-image-button-text">
+                                        Choose project image
+                                    </span>
+                                    <span style="display: none;">
+                                        <%= f.input :project_image, as: :file, required: false, input_html: { id: "project-image" } %>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="form-footer">
+                <div class="double-container">
+                    <%= link_to :back do %>
+                        <button id="back-button-edit" type="button" class="btn-seeql btn-seeql-lg btn-seeql-red">
+                            Back
+                        </button>
+                    <% end %>
+                    <button type="submit" form="project-form" class="btn-seeql btn-seeql-lg">
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
