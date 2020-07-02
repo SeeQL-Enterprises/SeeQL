@@ -29,7 +29,7 @@ class ProjectPolicy < ApplicationPolicy
     end
 
     def update?
-        index?
+        edit?
     end
 
     def destroy?

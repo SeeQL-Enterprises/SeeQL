@@ -7,7 +7,7 @@ Rails.application.routes.draw do
         omniauth_callbacks: 'users/omniauth_callbacks'
     }
 
-    resources :projects, only: [:new, :create, :show, :index] do
+    resources :projects, only: [:new, :create, :show, :index, :edit, :update, :destroy] do
         resources :collaborators, only: [:new, :create]
         resources :databases, only: [:index, :create]
     end
