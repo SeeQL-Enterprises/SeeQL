@@ -51,7 +51,6 @@ class ProjectsController < ApplicationController
         redirect_to projects_path, notice: 'Project has been deleted!'
     end
 
-
     private
 
     def project_params
