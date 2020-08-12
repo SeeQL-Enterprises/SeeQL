@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     }
 
     resources :projects, only: [:new, :create, :show, :index, :edit, :update, :destroy] do
-        resources :collaborators, only: [:new, :create, :destroy]
+        resources :collaborators, only: [:new, :create, :update, :destroy]
         resources :databases, only: [:index, :create]
     end
 
