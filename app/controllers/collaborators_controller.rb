@@ -1,4 +1,6 @@
 class CollaboratorsController < ApplicationController
+    before_action :set_collaborator, only: %i[update destroy]
+
     def create
         @collaborator = Collaborator.new
         authorize @collaborator
@@ -18,7 +20,7 @@ class CollaboratorsController < ApplicationController
 
     def update
         @project = Project.find(params[:project_id])
-        @collaborator = Collaborator.find(params[:id])
+
         authorize @collaborator
         @collaborator.update(user: User.find_by_email(params[:email]))
 
@@ -27,6 +29,15 @@ class CollaboratorsController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def destroy
+        authorize @collaborator
+        @collaborator.destroy
+    end
+
+    def set_collaborator
+        @collaborator = Collaborator.find(params[:id])
     end
 
     private
