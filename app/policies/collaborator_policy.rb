@@ -12,4 +12,8 @@ class CollaboratorPolicy < ApplicationPolicy
     def update?
         create?
     end
+
+    def delete?
+        create?
+    end
 end
