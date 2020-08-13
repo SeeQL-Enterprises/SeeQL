@@ -13,7 +13,7 @@ class CollaboratorPolicy < ApplicationPolicy
         create?
     end
 
-    def delete?
+    def destroy?
         create?
     end
 end
