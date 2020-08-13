@@ -16,6 +16,19 @@ class CollaboratorsController < ApplicationController
         end
     end
 
+    def update
+        @project = Project.find(params[:project_id])
+        @collaborator = Collaborator.find(params[:id])
+        authorize @collaborator
+        @collaborator.update(user: User.find_by_email(params[:email]))
+
+        if @collaborator.save!
+            redirect_to project_path(@project), notice: 'Collaborator successfully updated!'
+        else
+            render :edit
+        end
+    end
+
     private
 
     def collaborator_params
