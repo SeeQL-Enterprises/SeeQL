@@ -1,56 +1,85 @@
 <div class="primary-container projects-container">
-	<div class="wide-container content-wide">
-		<h1>Your Projects:</h1>
+	<div class="wide-container flex-column">
+		<div style="text-align: center;">
+			<h2 style="margin-top: 100px; font-size: 36px;">
+				Your Projects
+			</h2>
+		</div>
+		<div class="content-wide">
+			<div class="d-flex" style="justify-content: center; padding: 35px;">
+				<%= link_to new_project_path do %>
+					<button class="btn-seeql btn-seeql-lg" style="margin-top: 20px;">
+						<i class="fas fa-plus-circle"></i> Add Project
+					</button>
+				<% end %>
+			</div>
 
-		<%= link_to new_project_path do %>
-			<button class="btn-seeql btn-seeql-lg" style="margin-top: 20px;">
-				<i class="far fa-plus-square"></i> Add Project
-			</button>
-		<% end %>
+			<% @projects.sort_by! { |project| project.created_at } %>
 
-		<% @projects.sort_by! { |project| project.created_at } %>
+			<!-- Project card grid -->
+			<div class="card-grid">
+				<% @projects.each do |project| %>
+					<div class="card-project">
 
-		<!-- Project card grid -->
-		<div class="card-grid">
-			<% @projects.each do |project| %>
-				<div class="card-project">
-					<%= link_to project_path(project), style: "text-decoration: none;" do %>
-
-					<!-- Project image -->
-					<% if project.project_image.attached? %>
-						<div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path project.project_image.key %>')">
-							<h2><%= project.name.capitalize %></h2>
+						<div class="card-project-options">
+							<i class="fas fa-ellipsis-h project-options-icon" type="button"></i>
+							<div>
+								<ul id="card-project-options-dropdown" style="margin-top: -10px; display: none;">
+									<li class="seeql-red">
+										<i class="fas fa-trash seeql-red" type="button" style="font-size: 18px;"></i>
+										<span class="seeql-red" style="font-size: 20px"><%= link_to "Delete", project_path(project), method: :delete, data: {confirm: "Are you sure you want to delete the project?"} %></span>
+									</li>
+									<li class="seeql-red">
+										<i class="fas fa-edit light-blue" type="button" style="font-size: 18px;"></i>
+										<span class="light-blue" style="font-size: 20px"><%= link_to "Edit", edit_project_path(project) %></span>
+									</li>
+								</ul>
+							</div>
 						</div>
-					<% else %>
-						<div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
-							<h2><%= project.name.capitalize %></h2>
-						</div>
-					<% end %>
 
-					<!-- Project collaborators -->
-					<div class="card-project-infos">
-						<div class="project-collab">
-							<% project.collaborators.each do |collaborator| %>
-								<div class="project-collab-icon">
-									<% if collaborator.user.avatar.attached? %>
-										<div class="card-project-user">
-											<%= cl_image_tag collaborator.user.avatar.key %>
-										</div>
-									<% else %>
-										<div class="card-project-user">
-											<%= image_tag("avatar.svg") %>
-										</div>
-									<% end %>
-									<div class="collab-name">
-										<%= collaborator.user.first_name %>
+						<%= link_to project_path(project), style: "text-decoration: none;" do %>
+
+							<!-- Project image -->
+							<% if project.project_image.attached? %>
+								<div class="card-image" style="background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('<%= cl_image_path project.project_image.key %>')">
+									<div class="card-project-title">
+										<h2><%= project.name.capitalize %></h2>
+									</div>
+								</div>
+							<% else %>
+								<div class="card-image" style="background-image: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('https://res.cloudinary.com/seeql/image/upload/v1585663675/Background_a0ecgr.png')">
+									<div class="card-project-title">
+										<h2><%= project.name.capitalize %></h2>
 									</div>
 								</div>
 							<% end %>
-						</div>
+
+							<!-- Project collaborators -->
+							<div class="card-project-infos">
+								<div class="project-collaborators">
+									<% project.collaborators.each do |collaborator| %>
+										<div class="collaborator">
+											<% if collaborator.user.avatar.attached? %>
+												<div class="collaborator-avatar">
+													<%= cl_image_tag collaborator.user.avatar.key %>
+												</div>
+											<% else %>
+												<div class="collaborator-avatar">
+													<%= image_tag("avatar.svg") %>
+												</div>
+											<% end %>
+											<div class="collaborator-name">
+												<%= collaborator.user.first_name %>
+												<%= collaborator.user.last_name[0] %>.
+											</div>
+										</div>
+									<% end %>
+								</div>
+							</div>
+						<% end %>
 					</div>
-					<% end %>
-				</div>
-			<% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

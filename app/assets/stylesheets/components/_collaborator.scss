@@ -5,7 +5,7 @@
 //     width: fit-content;
 // }
 
-.notification {
+.collaborator-card {
     align-items: center;
     background: $seeql-background-steel-blue;
     border: 1px solid $darkgrey;
@@ -15,10 +15,11 @@
     max-width: 625px;
     min-width: 50%;
     padding: 8px 16px;
+    text-shadow: 0 0 3px rgba($black, .6);
 
-    &.notification-content {
+    .collaborator-card-content {
         flex-grow: 1;
-        padding: 0 24px;
+        padding: 0 10px;
     }
 
     small {
@@ -32,7 +33,7 @@
         margin: 0;
     }
 
-    .notification-actions {
+    .collaborator-card-actions {
         display: grid;
         opacity: 1;
         transition: ease .3s;
@@ -41,18 +42,22 @@
         a, i {
             color: $seeql-red;
             font-size: 14px;
-            margin-left: 16px;
-            margin-right: 16px;
+            margin-left: 10px;
+            margin-right: 5px;
+        }
+
+        .fa-trash-alt {
+            margin-right: 7px;
         }
     }
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
-    .notification .notification-content {
+    .collaborator-card .collaborator-card-content {
         padding: 0 12px;
     }
 
-    .notification .notification-actions {
+    .collaborator-card .collaborator-card-actions {
         a, i {
             margin-left: 8px;
             margin-right: 0;

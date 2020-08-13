@@ -41,7 +41,7 @@ if (document.getElementById("user-avatar")) {
             // then set the button's text to the name of the file
             previewImage.src = event.target.result;
             previewImageButtonText.innerHTML = fileContent.name;
-            previewImage.style = "object-fit: cover";
+            previewImage.style.objectFit = "cover";
 
         };
 

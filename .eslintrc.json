@@ -3,9 +3,7 @@
     "extends": ["airbnb-base", "prettier"],
     "plugins": ["jquery", "prettier"],
     "rules": {
-        "eqeqeq": "off"
-    },
-    "overrides": [
-        "excludedFiles": "*.html.erb"
-    ]
+        "eqeqeq": "off",
+        "no-plusplus": "off"
+    }
 }

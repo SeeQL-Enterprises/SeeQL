@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-content form-avatar">
+                        <div class="form-content form-avatar w-1/2 max-w-lg">
                             <div class="avatar-preview">
                                 <img id="avatar-preview-image" src="<%= current_user.avatar.attached? ? rails_blob_path(current_user.avatar, only_path: true) : image_url("avatar.svg") %>" alt="User's current profile image">
                                 <label id="avatar-preview-button" type="button" class="btn-seeql btn-seeql-lg upload-button">

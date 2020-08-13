@@ -76,29 +76,57 @@
     display: flex;
     height: 300px;
     justify-content: center;
-    width: 700px;
 }
 
 // PROJECT CARDS
 
 .card-project {
-    h2 {
-        font-size: 20px;
-        font-weight: bold;
-        margin: 0;
-        text-shadow: 1px 1px 3px rgba($black, .2);
-    }
+    position: relative;
 
     .card-image {
-        align-items: center;
-        background-position: center;
-        background-size: cover;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        display: flex;
-        height: 300px;
-        justify-content: center;
         max-width: 700px;
+    }
+
+    .card-project-options {
+        align-items: flex-end;
+        display: flex;
+        flex-direction: column;
+        font-size: 30px;
+        height: 6.5%;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+
+        li {
+            line-height: 1;
+        }
+    }
+
+    .fas.fa-trash {
+        transform: translate(3px, -1px);
+    }
+
+    .fas.fa-edit {
+        margin-right: -4px;
+        transform: translate(3px, -1px);
+    }
+
+    .seeql-red {
+        color: $seeql-red;
+    }
+
+    .light-blue {
+        color: $light-blue;
+    }
+
+    .card-project-title {
+        align-items: center;
+        display: flex;
+        font-size: 24px;
+        font-weight: bold;
+        height: 93.5%;
+        margin: 0;
+        text-shadow: 1px 1px 3px rgba($black, 1);
     }
 
     .card-project-infos {
@@ -116,22 +144,38 @@
 
 
 
-.project-collab {
+.project-collaborators {
     display: flex;
     justify-content: center;
     position: absolute;
     right: 0;
-    top: -20px;
+    top: -23px;
     width: 100%;
 
-    .project-collab-icon {
-        text-align: center;
+    .collaborator {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0 5px;
     }
 
-    img {
-        border-radius: 50%;
-        margin: 0 16px;
-        width: 40px;
+    .collaborator-avatar {
+        // border-radius: 50%;
+        // margin: 0 16px;
+        // width: 42px;
+
+        img {
+            border-radius: 50%;
+            height: 40px;
+            margin: auto;
+            object-fit: cover;
+            width: 40px;
+        }
+    }
+
+    .collaborator-name {
+        font-size: 21px;
+        text-shadow: 1px 1px 3px rgba($black, .5);
     }
 }
 
@@ -154,13 +198,13 @@
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-    .project-collab {
+    .project-collaborators {
         right: 0;
         top: 10px;
 
-        .project-collab-icon {
+        .collaborator {
 
-            .collab-name {
+            .collaborator-name {
                 display: none;
             }
         }

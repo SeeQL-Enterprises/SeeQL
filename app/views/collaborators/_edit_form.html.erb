@@ -1,0 +1,12 @@
+<%= simple_form_for([ @project, @collaborator ]) do |form| %>
+
+  <div class="form-inputs">
+    <%= form.input :user, label_method: :email, value_method: :id %>
+  </div>
+
+  <div class="form-actions">
+    <div class="modal-footer">
+      <%= form.button :submit, "Update Collaborator", class: "btn-seeql btn-seeql-lg" %>
+    </div>
+  </div>
+<% end %>

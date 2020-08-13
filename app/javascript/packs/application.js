@@ -1,20 +1,20 @@
-
 import 'bootstrap';
-import JQuery from 'jquery';
-import '../plugins/interactjs';
-import '../plugins/comment';
-import '../plugins/leaderlinejs';
 import 'cocoon';
-import '../plugins/select_all'
-import '../plugins/add_database';
+import JQuery from 'jquery';
 import '../plugins/add_collaborators';
-import '../plugins/view_database';
-import '../plugins/sidebar';
-import '../plugins/clipboard';
-import '../plugins/help_button';
+import '../plugins/add_database';
 import '../plugins/alert';
+import '../plugins/clipboard';
+import '../plugins/comment';
 import '../plugins/error_lists';
+import '../plugins/help_button';
 import '../plugins/image_preview';
+import '../plugins/interactjs';
+import '../plugins/leaderlinejs';
+import '../plugins/project_options';
+import '../plugins/select_all'
+import '../plugins/sidebar';
+import '../plugins/view_database';
 import initUpdateNavbarOnScroll from '../plugins/navbar';
 import initTypewriter from "../plugins/typewriter";
 

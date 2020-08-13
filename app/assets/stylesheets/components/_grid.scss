@@ -2,6 +2,7 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(400px, 700px));
+    justify-content: center;
     margin-bottom: 60px;
-    margin-top: 40px;
+    // margin-top: 40px;
 }
