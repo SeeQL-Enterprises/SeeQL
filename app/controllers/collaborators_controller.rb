@@ -24,7 +24,7 @@ class CollaboratorsController < ApplicationController
 
         authorize @collaborator
 
-        raise
+        # raise
 
         if @collaborator.update(user: set_user)
             redirect_to project_path(@project), notice: 'Collaborator successfully updated!'
@@ -37,7 +37,7 @@ class CollaboratorsController < ApplicationController
         authorize @collaborator
         @collaborator.destroy
 
-        redirect_to project_path(@project), notice: 'Collaborator successfully updated!'
+        redirect_to project_path(@project), notice: 'Collaborator successfully removed!'
     end
 
     private
