@@ -1,4 +1,5 @@
 <%= render 'shared/collaborator_modal' %>
+<%= render 'shared/collaborator_edit_modal' %>
 <%= render 'shared/database_modal' %>
 
 <div class="container" style="padding: 0 90px;">
@@ -26,29 +27,31 @@
                 <div class="double-container" style="padding-top: 0; padding-bottom: 10px;">
                     <div class="collaborators-container">
                         <% @project.collaborators.each do |collaborator| %>
-                        <div class="collaborator-card">
-                            <% if collaborator.user.avatar.attached? %>
-                                <div class="avatar-large">
-                                    <%= cl_image_tag collaborator.user.avatar.key %>
+                            <div class="collaborator-card">
+                                <% if collaborator.user.avatar.attached? %>
+                                    <div class="avatar-large">
+                                        <%= cl_image_tag collaborator.user.avatar.key %>
+                                    </div>
+                                <% else %>
+                                    <div class="avatar-large">
+                                        <%= image_tag("avatar.svg") %>
+                                    </div>
+                                <% end %>
+
+
+                                <div class="collaborator-card-content">
+                                    <p><small>Added: <%= collaborator.created_at.strftime("%B %d, %Y")%></small></p>
+                                    <p><%= collaborator.user.email %></p>
                                 </div>
-                            <% else %>
-                                <div class="avatar-large">
-                                    <%= image_tag("avatar.svg") %>
+
+                                <div class="collaborator-card-actions">
+                                    <a href="#" data-toggle="modal" data-target="#collaborator-edit-modal"><i class="fas fa-pencil-alt"></i>Edit</a>
+                                    <%= link_to project_collaborator_path(@project, collaborator), method: :delete do %>
+                                        <i class="far fa-trash-alt"></i>Delete
+                                    <% end %>
                                 </div>
-                            <% end %>
 
-
-                            <div class="collaborator-card-content">
-                                <p><small>Added: <%= collaborator.created_at.strftime("%B %d, %Y")%></small></p>
-                                <p><%= collaborator.user.email %></p>
                             </div>
-
-                            <div class="collaborator-card-actions">
-                                <a href="#"><i class="fas fa-pencil-alt"></i>Edit</a>
-                                <a href="#"><i class="far fa-trash-alt"></i>Delete</a>
-                            </div>
-
-                        </div>
                         <% end %>
                     </div>
                     <div class="database-button-container">
