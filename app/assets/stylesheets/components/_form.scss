@@ -225,3 +225,13 @@
     visibility: hidden;
     width: 0;
 }
+
+@media (max-width: 1400px) {
+    .form-content {
+        .form-body {
+            label {
+                font-size: 19px;
+            }
+        }
+    }
+}
