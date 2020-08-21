@@ -5,7 +5,7 @@ if (addCollaboratorButton) {
     addCollaboratorButton.addEventListener("click", () => {
 
         // Toggle Bootstrap classes to turn from white to red
-        addCollaboratorButton.classList.toggle("btn-treehouse");
+        addCollaboratorButton.classList.toggle("btn-seeql-lg");
         addCollaboratorButton.classList.toggle("btn-cancel");
 
         // Check inner text and change accordingly

@@ -1,0 +1,124 @@
+/* ---------- PRIMARY CONTAINER ---------- */
+
+.primary-container {
+    margin: 0 auto;
+    max-width: 55rem;
+    padding-top: 100px;
+}
+
+// X small devices (portrait phones, 100 px - 575px)
+@media (min-width: 100px) and (max-width: 575px) {
+    .primary-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .primary-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+
+/* ---------- BENEFITS CONTAINER LP ---------- */
+
+.benefits-container {
+    display: flex;
+    margin-bottom: 4.5rem;
+    text-align: center;
+}
+
+@media (min-width: 100px) and (max-width: 600px) {
+    .benefits-container {
+        display: block;
+    }
+}
+
+.who-are-we-container {
+    text-align: center;
+}
+
+
+/* ---------- DOUBLE CONTAINER ---------- */
+
+.double-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 56rem;
+    padding-top: 100px;
+
+    &.profile-container {
+        max-height: 40rem;
+    }
+}
+
+// X small devices (portrait phones, 100 px - 575px)
+@media (min-width: 100px) and (max-width: 575px) {
+    // .double-container {
+    // }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    // .double-container {
+    // }
+}
+
+
+/* ---------- WIDE CONTAINER ---------- */
+
+.wide-container {
+    display: flex;
+    justify-content: center;
+    margin: 70px auto;
+    // padding: 45px 0;
+    width: 100%;
+}
+
+.content-wide {
+    background-color: rgba($seeql-darkgrey, .9);
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba($black, .2);
+    margin-top: 150px;
+    text-shadow: 4px 4px 3px rgba($black, .4);
+}
+
+// X small devices (portrait phones, 100 px - 575px)
+@media (min-width: 100px) and (max-width: 575px) {
+    // .wide-container {
+    // }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    // .wide-container {
+    // }
+}
+
+
+/* ---------- FORM CONTAINER ---------- */
+
+// .form-container {
+//     margin-top: 150px;
+//     padding-left: 30px;
+//     padding-right: 30px;
+// }
+
+
+/* ---------- PROJECTS CONTAINER ---------- */
+
+.projects-container {
+    max-width: unset;
+
+    .wide-container {
+        margin: 0 auto;
+    }
+
+    .content-wide {
+        margin-top: 75px;
+    }
+}

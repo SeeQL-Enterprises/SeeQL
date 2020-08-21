@@ -1,39 +1,41 @@
 #who-are-we {
-  background-color: #ffffff;
-  h1 {
-    color: #0B132B;
-  }
-  i {
-    color: #0B132B;
-  }
-  p {
-    color: #1C2541;
-  }
+    background-color: $white;
+
+    h1 {
+        color: $oxford-blue;
+    }
+
+    i {
+        color: $oxford-blue;
+    }
+
+    p {
+        color: $seeql-dark-blue;
+    }
 }
 
-.seeql_logo-bottom {
-  max-width: 20%;
+.seeql-logo-bottom {
+    max-width: 20%;
 }
 
 .team {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 20px;
-  padding: 4.5rem 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 4.5rem 20px;
 }
 
 .member {
-  text-align: center;
-  img {
-    border-radius: 50%;
-    max-width: 50%;
-  }
+    text-align: center;
+
+    img {
+        border-radius: 50%;
+        max-width: 50%;
+    }
 }
 
 @media (max-width: 768px) {
-  .team {
-    grid-template-columns: 1fr 1fr;
-  }
+    .team {
+        grid-template-columns: 1fr 1fr;
+    }
 }
-
-

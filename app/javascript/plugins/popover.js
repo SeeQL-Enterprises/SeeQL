@@ -1,7 +1,7 @@
 const initPopover = () => {
-    $(function () {
+    $(function attachPopover() {
         $('[data-toggle="popover"]').popover()
     })
 }
 
-export { initPopover };
+export default initPopover;

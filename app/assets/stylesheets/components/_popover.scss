@@ -1,13 +1,13 @@
 .popover {
-    background-color: #5BC0BE;
-    max-height: 45px;
-    font-family: "Montserrat", "Helvetica", "sans-serif";
-    font-weight: 500;
+    background-color: $seeql;
+    font-family: 'Montserrat', 'Helvetica', 'sans-serif';
     font-size: 13px;
+    font-weight: 500;
+    max-height: 45px;
     text-align: center;
 
     .arrow::after {
         // Color for the arrow of the popover
-        border-top-color: #5BC0BE;
+        border-top-color: $seeql;
     }
 }

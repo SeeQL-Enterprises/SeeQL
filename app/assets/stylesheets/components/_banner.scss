@@ -1,51 +1,94 @@
 .banner {
-  background-size: cover;
-  background-position: center;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 36px;
 
-  padding-bottom: 36px;
-}
-
-.banner-landing-page {
-  margin-top: 20px;
-  margin-left: -16px;
-  width: 100%;
-  text-align: center;
-
-  img{
-      max-width: 100%;
-  }
-}
-
-.seeql_logo {
-  max-width: 50%;
-}
-
-.banner-content {
-  text-align: center;
-  h1 {
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-    font-size: 32px;
-  }
-
-  .banner-slogan {
-    margin-top: 4.5rem;
-    margin-bottom: 6.5rem;
-  }
-
-  h5 {
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  }
-
-  p {
-    margin-top: 10rem;
-  }
-}
-
-@media screen and (max-width: 512px) {
-  h1 {
-    .typing {
-      display: block;
-      margin-top: 2rem;
+    .seeql-logo {
+        max-width: 50%;
     }
-  }
+
+    .banner-content {
+        text-align: center;
+
+        .banner-slogan {
+            margin-bottom: 6.5rem;
+            margin-top: 6.5rem;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 1px 1px 3px rgba($black, .2);
+        }
+
+        h5 {
+            text-shadow: 1px 1px 3px rgba($black, .2);
+        }
+
+        p {
+            margin-top: 10rem;
+        }
+    }
 }
+
+// MEDIA QUERIES
+
+@media (max-width: 528px) {
+    .banner {
+        .banner-content {
+            h1 {
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+@media (max-width: 512px) {
+    .banner {
+        .banner-content {
+            h1 {
+                font-size: 28px;
+            }
+        }
+    }
+}
+
+@media (max-width: 468px) {
+    .banner {
+        .banner-content {
+            h1 {
+                font-size: 26px;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .banner {
+        .banner-content {
+            h1 {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .banner {
+        .banner-content {
+            h1 {
+                font-size: 21px;
+            }
+        }
+    }
+}
+
+// .banner-landing-page {
+//     margin-top: 20px;
+//     margin-left: -16px;
+//     width: 100%;
+//     text-align: center;
+//
+//     img{
+//         max-width: 100%;
+//     }
+// }

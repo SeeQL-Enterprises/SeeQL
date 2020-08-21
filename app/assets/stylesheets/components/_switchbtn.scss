@@ -1,101 +1,86 @@
-input[type=checkbox] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+#user-remember-me {
+    height: 0;
+    visibility: hidden;
+    width: 0;
 }
 
 .was-validated.form-check-input:valid ~.form-check-label,.form-check-input.is-valid ~.form-check-label {
-  color: #5BC0BE;
+    color: $seeql;
 }
 
 .col-form-label {
-  height: 0;
-  width: 0;
-  visibility: hidden;
+    height: 0;
+    visibility: hidden;
+    width: 0;
 }
 
 .form-check-label {
-  padding-left: 40px;
-  white-space: nowrap;
+    padding-left: 40px;
+    white-space: nowrap;
 }
 
 .form-check {
-  position: relative;
-  margin: 20px 0px 20px 0px;
-  background-color: rgb(100, 100, 100);
-  border-radius: 30px;
-  height: 20px;
-  width: 45px;
-  border: 1px solid grey;
+    background-color: $seeql-gunmetal;
+    border: 1px solid $grey;
+    border-radius: 30px;
+    height: 20px;
+    margin: 20px 0;
+    position: relative;
+    width: 45px;
+
+    &.on {
+        background-color: $seeql;
+    }
 }
 
-.label_select_all {
-  padding-left: 20px;
-  font-weight: bold;
+.label-select-all {
+    font-weight: bold;
+    padding-left: 20px;
 }
 
-.form-check:after {
-  content: "off";
-  font-size: 10px;
-  color: rgb(134, 134, 134);
-  line-height: 18px;
-  text-align: center;
-  position: absolute;
-  top: 0.4px;
-  left: 1px;
-  width: 19px;
-  height: 19px;
-  background: #fff;
-  border-radius: 50%;
-  transition: 0.3s;
-  -webkit-box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
-  box-shadow: inset 2px 0px 4px 1px rgba(0, 0, 0, 0.23);
+.form-check::after {
+    background: $white;
+    border-radius: 50%;
+    box-shadow: inset 2px 0 4px 1px rgba($black, .23);
+    color: $grey;
+    content: 'off';
+    font-size: 10px;
+    height: 19px;
+    left: 1px;
+    line-height: 18px;
+    position: absolute;
+    text-align: center;
+    top: .4px;
+    transition: .3s;
+    width: 19px;
 }
 
-.on:after {
-  content: "on";
-  font-size: 10px;
-  color: black;
-  line-height: 18px;
-  text-align: center;
-  position: absolute;
-  top: 0.4px;
-  left: 25px;
-  width: 19px;
-  height: 19px;
-  background: #fff;
-  border-radius: 50%;
-  transition: 0.3s;
-  -webkit-box-shadow: inset -2px 0px 4px 1px rgba(0, 0, 0, 0.23);
-  -moz-box-shadow: inset -2px 0px 4px 1px rgba(0, 0, 0, 0.23);
-  box-shadow: inset -2px 0px 4px 1px rgba(0, 0, 0, 0.23);
-  -webkit-animation: rotate-center 0.25s linear both;
-  animation: rotate-center 0.25s linear both;
-}
-
-.form-check.on {
-  background-color: #5BC0BE;
-}
-
-@-webkit-keyframes rotate-center {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+.on::after {
+    animation: rotate-center .25s linear both;
+    background: $white;
+    border-radius: 50%;
+    box-shadow: inset -2px 0 4px 1px rgba($black, .23);
+    color: $black;
+    content: 'on';
+    font-size: 10px;
+    height: 19px;
+    left: 25px;
+    line-height: 18px;
+    position: absolute;
+    text-align: center;
+    top: .4px;
+    transition: .3s;
+    width: 19px;
 }
 
 @keyframes rotate-center {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }

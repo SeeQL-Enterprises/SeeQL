@@ -5,10 +5,10 @@ const databaseForm = document.getElementById("database-form");
 if (addDatabaseButton) {
     addDatabaseButton.addEventListener("click", () => {
 
-        //Check present classes
+        // Check present classes
         if (!viewDatabaseButton) {
-            // Toggle SCSS classes to turn from treehouse to gray
-            addDatabaseButton.classList.toggle("btn-treehouse");
+            // Toggle SCSS classes to turn from SeeQL to gray
+            addDatabaseButton.classList.toggle("btn-seeql-lg");
             addDatabaseButton.classList.toggle("btn-cancel");
         }
 
