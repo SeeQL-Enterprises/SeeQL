@@ -16,7 +16,7 @@ import '../plugins/select_all'
 import '../plugins/sidebar';
 import '../plugins/view_database';
 
-import '../../assets/stylesheets/application.scss';
+import '../../assets/stylesheets/tailwind.scss';
 
 import initUpdateNavbarOnScroll from '../plugins/navbar';
 import initTypewriter from "../plugins/typewriter";
