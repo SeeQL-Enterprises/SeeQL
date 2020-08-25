@@ -9,6 +9,10 @@
 @import 'font-awesome';
 // *= require bootstrap-toggle
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 // Your CSS partials
 @import 'components/index';
 @import 'pages/index';
