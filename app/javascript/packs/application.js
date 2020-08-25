@@ -15,6 +15,9 @@ import '../plugins/project_options';
 import '../plugins/select_all'
 import '../plugins/sidebar';
 import '../plugins/view_database';
+
+import '../stylesheets/application.scss';
+
 import initUpdateNavbarOnScroll from '../plugins/navbar';
 import initTypewriter from "../plugins/typewriter";
 
@@ -34,5 +37,3 @@ if (document.getElementById("typewriter")) {
 
 window.JQuery = JQuery;
 window.$ = window.JQuery;
-
-require('../stylesheets/application.scss')
