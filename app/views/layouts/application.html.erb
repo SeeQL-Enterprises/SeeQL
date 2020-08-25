@@ -36,7 +36,7 @@
         <%= csrf_meta_tags %>
         <%= action_cable_meta_tag %>
 
-        <%= stylesheet_link_tag 'application', media: 'all' %>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <script src="https://cdn.jsdelivr.net/npm/leader-line@1.0.5/leader-line.min.js"></script>
     </head>
     <body>
@@ -51,6 +51,6 @@
         <%= render 'shared/footer' %>
 
         <%= javascript_include_tag 'application' %>
-        <%= javascript_pack_tag 'application' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     </body>
 </html>
