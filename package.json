@@ -12,10 +12,10 @@
     "leader-line": "^1.0.5",
     "popover": "^2.4.1",
     "popper.js": "^1.16.1",
+    "serialize-javascript": "3.1.0",
     "tailwindcss": "^1.4.6",
     "tooltip": "^1.6.1",
-    "typewriter-effect": "^2.13.1",
-    "serialize-javascript": "3.1.0"
+    "typewriter-effect": "^2.13.1"
   },
   "devDependencies": {
     "eslint": "6.8.0",
