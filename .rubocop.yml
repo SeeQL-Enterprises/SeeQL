@@ -21,6 +21,8 @@ Layout/LineLength:
     Enabled: false
 
 # --------------- LINT ---------------
+Lint/MissingSuper:
+    Enabled: true
 Lint/RaiseException:
     Enabled: true
 Lint/StructNewOverride:
@@ -69,8 +71,6 @@ Style/GuardClause:
 Style/HashEachMethods:
     Enabled: true
 Style/IdenticalConditionalBranches:
-    Enabled: true
-Style/MethodMissingSuper:
     Enabled: true
 Style/MissingRespondToMissing:
     Enabled: true
