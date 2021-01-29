@@ -1,11 +1,12 @@
 module.exports = {
+    future: {
+        // removeDeprecatedGapUtilities: true,
+        // purgeLayersByDefault: true,
+    },
+    purge: [],
     theme: {
-        fontFamily: {
-            display: ['Montserrat', 'sans-serif'],
-            body: ['Montserrat', 'sans-serif']
-        },
-        colors: {
-            seeql: '#5BC0BE'
-        }
-    }
+        extend: {},
+    },
+    variants: {},
+    plugins: [],
 }
