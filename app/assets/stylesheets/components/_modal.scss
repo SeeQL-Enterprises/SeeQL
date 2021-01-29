@@ -63,17 +63,23 @@
         }
 
         #help-button {
+            background: none;
+            border: 0;
             font-size: 28px;
         }
 
         #help-list {
+            list-style-type: none;
             margin-top: 45px;
+            padding: 0;
         }
 
         #help-nested-list {
+            list-style-type: disc;
             margin-bottom: 12px;
             max-height: 0;
             overflow: hidden;
+            padding: 0 0 0 10px;
             transition: .8s;
         }
 
