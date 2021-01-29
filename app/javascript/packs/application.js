@@ -18,6 +18,8 @@ import '../plugins/view_database';
 import initUpdateNavbarOnScroll from '../plugins/navbar';
 import initTypewriter from "../plugins/typewriter";
 
+import '../stylesheets/application.scss'
+
 initUpdateNavbarOnScroll();
 
 if (document.getElementById("typewriter")) {
@@ -35,4 +37,4 @@ if (document.getElementById("typewriter")) {
 window.JQuery = JQuery;
 window.$ = window.JQuery;
 
-require('../stylesheets/application.scss')
+// require('../stylesheets/application.scss')
