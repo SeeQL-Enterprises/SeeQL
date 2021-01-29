@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "4.2.2",
+    "autoprefixer": "^9.8.6",
     "bootstrap": "^4.4.1",
     "bulma": "^0.8.1",
     "cocoon": "github:nathanvda/cocoon#c24ba53",
@@ -12,6 +13,9 @@
     "leader-line": "^1.0.5",
     "popover": "^2.4.1",
     "popper.js": "^1.16.1",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
     "serialize-javascript": "3.1.0",
     "tailwindcss": "^1.4.6",
     "tooltip": "^1.6.1",
