@@ -1,0 +1,299 @@
+<style>
+    code {
+        font-family: monospace;
+    }
+
+    p {
+        font-size: 21px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    }
+    
+    li {
+        font-size: 21px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
+    }
+</style>
+
+<div class="container">
+    <div class="primary-container flex-column">
+        <h1 class="heading-section medium" style="margin-top: 100px;">
+            Our Company Privacy Policy
+        </h1>
+        <div style="margin-top: 40px">
+            <p>
+                SeeQL is part of SeeQL Enterprises. This privacy
+                policy will explain how our organization uses the personal data
+                we collect from you when you use our website.
+            </p>
+            <br>
+
+            <!-- TOPICS -->
+            <h3 class="heading-section small" style="text-align: left; padding-top: 10px;">Topics</h3>
+            <ol class="list-standard" style="padding-left: 60px;">
+                <li>What data do we collect?</li>
+                <li>How do we collect your data?</li>
+                <li>How will we use your data?</li>
+                <li>How do we store your data?</li>
+                <li>Marketing</li>
+                <li>What are your data protection rights?</li>
+                <li>What are cookies?</li>
+                <li>How do we use cookies?</li>
+                <li>What types of cookies do we use?</li>
+                <li>How to manage your cookies</li>
+                <li>Privacy policies of other websites</li>
+                <li>Changes to our privacy policy</li>
+                <li>How to contact us</li>
+                <li>How to contact the appropriate authorities</li>
+            </ol>
+
+            <!-- WHAT DO WE COLLECT? -->
+            <h3 class="heading-section heading-privacy small">What data do we collect?</h3>
+            <p>SeeQL collects the following data:</p>
+            <ul class="list-standard">
+                <li>
+                    Personal identification information (full name and e-mail address)
+                </li>
+                <li>
+                    Any data that is (strictly) necessary to connect one or more databases to your projects
+                </li>
+                <li>
+                    Any data that is normally sent as part of a basic HTTP request
+                </li>
+            </ul>
+
+            <!-- HOW DO WE COLLECT? -->
+            <h3 class="heading-section heading-privacy small">How do we collect your data?</h3>
+            <p>
+                You directly provide SeeQL with most of the data we collect. 
+                We collect and process data when you sign up for an account, as well as when you connect one or more databases to your projects.
+            </p>
+            <!-- <ul class="list-standard">
+                <li>
+                    Sign up
+                </li>
+                <li>
+                    Voluntarily complete a customer survey or provide feedback
+                    on any of our message boards or via email.
+                </li>
+                <li>Use or view our website via your browser’s cookies.</li>
+                <li>[Add any other ways your company collects data]</li>
+            </ul>
+            <p>
+                SeeQL may also receive your data indirectly from the
+                following sources:
+            </p>
+            <ul class="list-standard">
+                <li>[Add any indirect source of data your company has]</li>
+            </ul> -->
+
+            <!-- HOW DO WE USE DATA? -->
+            <h3 class="heading-section heading-privacy small">How will we use your data?</h3>
+            <p>SeeQL collects your data so that we can:</p>
+            <ul class="list-standard">
+                <li>
+                    Assign created projects to you and manage your account.
+                </li>
+                <li>
+                    Connect one or more databases to your projects
+                </li>
+                <li>
+                    Keep you updated about account information changes (name, e-mail, avatar).
+                </li>
+                <li>
+                    Keep you updated about any changes to this privacy policy.
+                </li>
+            </ul>
+            <p>
+                Our service does not send your data to any third party for marketing and/or analytical purposes. We are strictly against such practices, and make a point 
+                of collecting as little data as possible about you, while being transparent about what we do collect.
+                <br>
+                <br>
+                When you create an account, a project, or connect a database to your project, all relevant data is processed directly within the (Ruby on Rails) app, 
+                which is hosted on a Heroku <em>dyno</em>.
+            </p>
+
+            <!-- WHAT ABOUT DATABASES? -->
+            <h3 class="heading-section heading-privacy small">How do we connect a database to your project? What information do we access?</h3>
+            <p>
+                When you connect a database to your project, you have to provide all the necessary credentials, just as you would when using an app such as DBeaver 
+                or Postico. When you submit the form, we open a connection to the provided database using those credentials. We then read out the structure of your
+                database by accessing an internal <code>schema</code> called <code>information_schema.tables</code>. This <code>schema</code> holds
+                general information about the database, such as table names, column names, and a list of <code>foreign key</code> constraints. After reading
+                out this information, we close the connection right away.
+                <br>
+                <br>
+                With that information in hand, we then create a <code>Database</code> object in our own app's database. This object is connected to several
+                <code>Table</code> objects, which in turn is connected to several <code>Column</code> objects. All of this is then used to generate the table
+                structure that you see in the visualiser.
+            </p>
+
+            <!-- HOW DO WE STORE YOUR DATA -->
+            <h3 class="heading-section heading-privacy small">How do we store your data?</h3>
+            <p>
+                SeeQL is hosted on a Heroku <em>dyno</em>, and securely stores your data on a PostgreSQL database hosted on 
+                <a style="color: #5BC0BE;" href="https://aws.amazon.com/"> AWS (Amazon Web Services)</a>. 
+                <a style="color: #5BC0BE;" href="https://www.heroku.com/">Heroku</a> is a PaaS (Platform as a Service) owned by 
+                <a style="color: #5BC0BE;" href="https://www.salesforce.com/">Salesforce.com, Inc</a>. You can read their privacy policies here:
+            </p>
+            <ul class="list-standard list-privacy">
+                <li>Amazon AWS: <a href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a></li>
+                <li>Heroku/Salesforce: <a href="https://www.salesforce.com/company/privacy/">https://www.salesforce.com/company/privacy/</a></li>
+            </ul>
+            <p>
+                SeeQL will keep all of your data for as long as you have an account on our website. If you decide do delete your account (which can be done from the
+                'Edit Profile' page), your data will be flagged for deletion and kept for a grace period of 30 days, during which you may reactivate your account. After 
+                30 days, all of your data will be completely and irreversably removed from our app.
+            </p>
+            <h3 class="heading-section heading-privacy small">Marketing</h3>
+            <p>
+                SeeQL would like to send you information about products
+                and services of ours that we think you might like, as well as
+                those of our partner companies.
+            </p>
+            <ul class="list-standard">
+                <li>[List organizations that will receive data]</li>
+            </ul>
+            <p>
+                If you have agreed to receive marketing, you may always opt out
+                at a later date.
+            </p>
+            <p>
+                You have the right at any time to stop SeeQL from
+                contacting you for marketing purposes or giving your data to
+                other members of the SeeQL Group.
+            </p>
+            <p>
+                If you no longer wish to be contacted for marketing purposes,
+                please click here.
+            </p>
+            <h3 class="heading-section heading-privacy small">What are your data protection rights?</h3>
+            <p>
+                SeeQL would like to make sure you are fully aware of all
+                of your data protection rights. Every user is entitled to the
+                following:
+            </p>
+            <p>
+                <strong>The right to access</strong> – You have the right to
+                request SeeQL for copies of your personal data. We may
+                charge you a small fee for this service.
+            </p>
+            <p>
+                <strong>The right to rectification</strong> – You have the right
+                to request that SeeQL correct any information you believe
+                is inaccurate. You also have the right to request SeeQL to
+                complete the information you believe is incomplete.
+            </p>
+            <p>
+                <strong>The right to erasure</strong> – You have the right to
+                request that SeeQL erase your personal data, under certain
+                conditions.
+            </p>
+            <p>
+                <strong>The right to restrict processing</strong> – You have the
+                right to request that SeeQL restrict the processing of
+                your personal data, under certain conditions.
+            </p>
+            <p>
+                <strong>The right to object to processing</strong> – You have
+                the right to object to Our Company’s processing of your personal
+                data, under certain conditions.
+            </p>
+            <p>
+                <strong>The right to data portability</strong> – You have the
+                right to request that SeeQL transfer the data that we have
+                collected to another organization, or directly to you, under
+                certain conditions.
+            </p>
+            <p>
+                If you make a request, we have one month to respond to you. If
+                you would like to exercise any of these rights, please contact
+                us at our email:
+            </p>
+            <p>Call us at:</p>
+            <p>Or write to us:</p>
+            <h3 class="heading-section heading-privacy small">Cookies</h3>
+            <p>
+                Cookies are text files placed on your computer to collect
+                standard Internet log information and visitor behavior
+                information. When you visit our websites, we may collect
+                information from you automatically through cookies or similar
+                technology
+            </p>
+            <p>For further information, visit allaboutcookies.org.</p>
+            <h3 class="heading-section heading-privacy small">How do we use cookies?</h3>
+            <p>
+                SeeQL uses cookies in a range of ways to improve your
+                experience on our website, including:
+            </p>
+            <ul class="list-standard">
+                <li>Keeping you signed in</li>
+                <li>Understanding how you use our website</li>
+                <li>[Add any uses your company has for cookies]</li>
+            </ul>
+            <h3 class="heading-section heading-privacy small">What types of cookies do we use?</h3>
+            <p>
+                There are a number of different types of cookies, however, our
+                website uses:
+            </p>
+            <ul class="list-standard">
+                <li>
+                    Functionality – SeeQL uses these cookies so that we
+                    recognize you on our website and remember your previously
+                    selected preferences. These could include what language you
+                    prefer and location you are in. A mix of first-party and
+                    third-party cookies are used.
+                </li>
+                <li>
+                    Advertising – SeeQL uses these cookies to collect
+                    information about your visit to our website, the content you
+                    viewed, the links you followed and information about your
+                    browser, device, and your IP address. SeeQL sometimes
+                    shares some limited aspects of this data with third parties
+                    for advertising purposes. We may also share online data
+                    collected through cookies with our advertising partners.
+                    This means that when you visit another website, you may be
+                    shown advertising based on your browsing patterns on our
+                    website.
+                </li>
+                <li>[Add any other types of cookies your company uses]</li>
+            </ul>
+            <h3 class="heading-section heading-privacy small">How to manage cookies</h3>
+            <p>
+                You can set your browser not to accept cookies, and the above
+                website tells you how to remove cookies from your browser.
+                However, in a few cases, some of our website features may not
+                function as a result.
+            </p>
+            <h3 class="heading-section heading-privacy small">Privacy policies of other websites</h3>
+            <p>
+                The SeeQL website contains links to other websites. Our
+                privacy policy applies only to our website, so if you click on a
+                link to another website, you should read their privacy policy.
+            </p>
+            <h3 class="heading-section heading-privacy small">Changes to our privacy policy</h3>
+            <p>
+                SeeQL keeps its privacy policy under regular review and
+                places any updates on this web page. This privacy policy was
+                last updated on 9 January 2019.
+            </p>
+            <h3 class="heading-section heading-privacy small">How to contact us</h3>
+            <p>
+                If you have any questions about Our Company’s privacy policy,
+                the data we hold on you, or you would like to exercise one of
+                your data protection rights, please do not hesitate to contact
+                us.
+            </p>
+            <p>Email us at:</p>
+            <p>Call us:</p>
+            <p>Or write to us at:</p>
+            <h3 class="heading-section heading-privacy small">How to contact the appropriate authority</h3>
+            <p>
+                Should you wish to report a complaint or if you feel that Our
+                Company has not addressed your concern in a satisfactory manner,
+                you may contact the Information Commissioner’s Office.
+            </p>
+            <p>Email:</p>
+            <p>Address</p>
+        </div>
+    </div>
+</div>
