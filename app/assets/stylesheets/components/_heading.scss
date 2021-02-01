@@ -1,9 +1,14 @@
 .section-heading {
-    font-size: 38px;
+    color: $white;
+    font-size: 40px;
     text-align: center;
 
-    &.small {
+    &.medium {
         font-size: 34px;
+    }
+
+    &.small {
+        font-size: 28px;
     }
 }
 
