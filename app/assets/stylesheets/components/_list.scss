@@ -1,0 +1,11 @@
+.list-standard {
+    list-style: revert;
+    margin: revert;
+    padding: revert;
+
+    &.list-privacy {
+        a {
+            color: $seeql;
+        }
+    }
+}
