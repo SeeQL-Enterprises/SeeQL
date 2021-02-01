@@ -18,13 +18,14 @@ section {
 
     h1 {
         color: $oxford-blue;
-        font-weight: bold;
+        font-weight: 600;
         padding-bottom: 4.5rem;
     }
 
     h3 {
         color: $oxford-blue;
-        font-weight: bold;
+        font-weight: 600;
+        padding-bottom: 10px;
     }
 
     p {
@@ -32,12 +33,12 @@ section {
     }
 }
 
-.section-header {
-    color: $white;
-    font-size: 40px;
-    padding-bottom: 40px;
-    text-align: center;
-}
+// .section-header {
+//     color: $white;
+//     font-size: 38px;
+//     padding-bottom: 40px;
+//     text-align: center;
+// }
 
 // // Very small devices (landscape phones, 576px and up)
 // @media (min-width: 100px) and (max-width: 575px) {
