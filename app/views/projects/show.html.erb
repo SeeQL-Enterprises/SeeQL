@@ -3,7 +3,7 @@
 <%= render 'shared/database_modal' %>
 
 <div class="container" style="padding: 0 90px;">
-    <div class="wide-container flex-column">
+    <div class="container-wide flex-column">
         <div style="text-align: center;">
             <h2 class="heading-form" style="margin-top: 100px;">
                 Connect your
@@ -24,7 +24,7 @@
                 </button>
             </div>
 
-                <div class="double-container" style="padding-top: 0; padding-bottom: 10px;">
+                <div class="container-double" style="padding-top: 0; padding-bottom: 10px;">
                     <div class="collaborators-container">
                         <% @project.collaborators.each do |collaborator| %>
                             <div class="collaborator-card">

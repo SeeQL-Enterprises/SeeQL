@@ -1,13 +1,13 @@
 <div class="container">
-    <div class="wide-container content-wide">
+    <div class="container-wide content-wide">
         <div class="form-content">
             <div class="form-header">
-                <div class="double-container">
+                <div class="container-double">
                     <h2 class="form-title">Create a new project</h2>
                 </div>
             </div>
             <div class="form-body">
-                <div class="double-container">
+                <div class="container-double">
                     <%= simple_form_for @project, html: { id: "project-form", class: "flex-form" } do |f| %>
                         <div class="form-inputs w-1/2 max-w-lg">
                             <div class="flex flex-wrap -mx-5">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="form-footer">
-                <div class="double-container">
+                <div class="container-double">
                     <%= link_to :back do %>
                         <button id="back-button-edit" type="button" class="btn-seeql btn-seeql-lg btn-seeql-red">
                             Back

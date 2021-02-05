@@ -1,14 +1,15 @@
 /* ---------- PRIMARY CONTAINER ---------- */
 
-.primary-container {
+.container-primary {
     margin: 0 auto;
     max-width: 55rem;
+    padding-bottom: 70px;
     padding-top: 100px;
 }
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-    .primary-container {
+    .container-primary {
         padding-left: 20px;
         padding-right: 20px;
     }
@@ -16,7 +17,7 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    .primary-container {
+    .container-primary {
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -25,14 +26,14 @@
 
 /* ---------- BENEFITS CONTAINER LP ---------- */
 
-.benefits-container {
+.container-benefits {
     display: flex;
     margin-bottom: 4.5rem;
     text-align: center;
 }
 
 @media (min-width: 100px) and (max-width: 600px) {
-    .benefits-container {
+    .container-benefits {
         display: block;
     }
 }
@@ -44,7 +45,7 @@
 
 /* ---------- DOUBLE CONTAINER ---------- */
 
-.double-container {
+.container-double {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -58,20 +59,20 @@
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-    // .double-container {
+    // .container-double {
     // }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    // .double-container {
+    // .container-double {
     // }
 }
 
 
 /* ---------- WIDE CONTAINER ---------- */
 
-.wide-container {
+.container-wide {
     display: flex;
     justify-content: center;
     margin: 70px auto;
@@ -89,13 +90,13 @@
 
 // X small devices (portrait phones, 100 px - 575px)
 @media (min-width: 100px) and (max-width: 575px) {
-    // .wide-container {
+    // .container-wide {
     // }
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-    // .wide-container {
+    // .container-wide {
     // }
 }
 
@@ -111,10 +112,10 @@
 
 /* ---------- PROJECTS CONTAINER ---------- */
 
-.projects-container {
+.container-projects {
     max-width: unset;
 
-    .wide-container {
+    .container-wide {
         margin: 0 auto;
     }
 

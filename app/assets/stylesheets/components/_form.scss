@@ -1,7 +1,7 @@
 .form-content {
     text-shadow: 1px 1px 3px rgba($black, .4);
 
-    .double-container {
+    .container-double {
         justify-content: space-evenly;
         padding-top: 0;
     }
@@ -13,7 +13,7 @@
         font-weight: 500;
         padding: 20px 12px 16px;
 
-        .double-container {
+        .container-double {
             justify-content: space-around;
         }
 
@@ -70,7 +70,7 @@
         flex-direction: column;
         padding: 25px 2rem;
 
-        .double-container {
+        .container-double {
             flex-direction: column;
             margin: 0 340px;
         }
