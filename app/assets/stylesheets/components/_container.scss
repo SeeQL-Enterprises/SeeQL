@@ -123,3 +123,13 @@
         margin-top: 75px;
     }
 }
+
+/* ---------- FOOTER CONTAINER ---------- */
+
+.container-footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    padding: 40px 0;
+}
