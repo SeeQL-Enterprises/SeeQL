@@ -1,32 +1,31 @@
 
 .our-footer {
-    align-items: center;
+    // align-items: center;
     background: $black;
     // bottom: 0;
-    display: flex;
-    height: 70px;
-    justify-content: space-between;
+    // display: flex;
+    // height: 70px;
+    // justify-content: space-between;
     padding: 0 30px;
     // position: fixed;
     width: 100%;
 
     .footer-links {
-        // align-items: center;
-        // display: -webkit-inline-box;
-
-        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
 
         a {
             text-decoration: none;
         }
     }
 
-    $regular-icon: 28px;
+    $regular-icon: 40px;
     $small-icon: 25px;
 
     .fab {
         font-size: $regular-icon;
-        margin-right: 6px;
+        margin-right: 20px;
         opacity: .6;
 
         &:hover {
@@ -42,23 +41,23 @@
         }
     }
 
-    .far {
-        font-size: $regular-icon;
-        margin-right: 6px;
-        opacity: .6;
+    // .far {
+    //     font-size: $regular-icon;
+    //     margin-right: 20px;
+    //     opacity: .6;
 
-        &:hover {
-            opacity: 1;
-        }
+    //     &:hover {
+    //         opacity: 1;
+    //     }
 
-        &.fa-envelope {
-            color: $white;
-        }
-    }
+    //     &.fa-envelope {
+    //         color: $white;
+    //     }
+    // }
 
     .fas {
         font-size: $regular-icon;
-        margin-right: 6px;
+        margin-right: 0;
         opacity: .6;
 
         &:hover {
