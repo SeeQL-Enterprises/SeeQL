@@ -30,10 +30,17 @@ class User < ApplicationRecord
             user.email = auth.info.email
             user.password = Devise.friendly_token[0, 20]
 
-            user_avatar = URI.open(auth.info.image)
+            # user_avatar = URI.open(auth.info.image)
+            user_avatar = URI.parse(auth.info.image).open
             user.avatar.attach(io: user_avatar, filename: 'avatar')
 
             user.skip_confirmation!
+        end
+    end
+
+    def self.new_with_session(params, session)
+        super.tap do |user|
+            user.email = data['email'] if data == session['devise.github'] && session['devise.github_data']['extra']['raw_info'] && user.email.blank?
         end
     end
 end
