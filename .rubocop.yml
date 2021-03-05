@@ -8,7 +8,7 @@ AllCops:
         - 'script/**/*'
         - 'support/**/*'
         - 'tmp/**/*'
-        - 'test/**/*'
+        # - 'test/**/*'
 
 # --------------- BUNDLER ---------------
 Bundler/OrderedGems:
@@ -19,6 +19,10 @@ Gemspec/DateAssignment: # (new in 1.10)
     Enabled: true
 
 # --------------- LAYOUT ---------------
+Layout/EmptyLinesAroundBeginBody:
+    Enabled: false
+Layout/EmptyLinesAroundExceptionHandlingKeywords:
+    Enabled: false
 Layout/IndentationWidth:
     Width: 4
 Layout/LineLength:
