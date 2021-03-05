@@ -2,16 +2,15 @@ require 'pg'
 
 begin
 
-    con = PG.connect :dbname => 'thisdb', :user => 'bruncky',
-        :password => '2203'
+    connection = PG.connect dbname: 'thisdb', user: 'bruncky', password: '2203'
 
-    user = con.user
-    db_name = con.db
-    pswd = con.pass
+    user = connection.user
+    db_name = connection.db
+    password = connection.pass
 
     puts "User: #{user}"
     puts "Database name: #{db_name}"
-    puts "Password: #{pswd}"
+    puts "Password: #{password}"
 
 rescue PG::Error => e
 
@@ -19,6 +18,6 @@ rescue PG::Error => e
 
 ensure
 
-    con.close if con
+    connection&.close if connection
 
 end
