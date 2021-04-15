@@ -144,6 +144,8 @@ Style/SafeNavigation:
     Enabled: true
 Style/SignalException:
     Enabled: true
+Style/StringChars:
+    Enabled: true
 Style/StringLiterals:
     Enabled: true
 Style/SwapValues: # (new in 1.1)
