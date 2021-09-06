@@ -2,6 +2,7 @@
     "name": "SeeQL",
     "private": true,
     "dependencies": {
+        "@popperjs/core": "^2.9.2",
         "@rails/webpacker": "^5.4.0",
         "autoprefixer": "~10.0.0",
         "bootstrap": "^5.0.0",
@@ -12,7 +13,6 @@
         "jquery": "^3.5.0",
         "leader-line": "^1.0.5",
         "popover": "^2.4.1",
-        "@popperjs/core": "^2.9.2",
         "postcss": "~8.2.0",
         "postcss-flexbugs-fixes": "^5.0.0",
         "postcss-import": "^14.0.0",
