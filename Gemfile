@@ -6,7 +6,8 @@ gem 'bootsnap', require: false
 gem 'cocoon'
 gem 'cloudinary'
 # gem 'devise'
-gem 'devise', github: 'heartcombo/devise', branch: 'master'    # This temporarily fixes an omniauth issue
+# gem 'devise', github: 'heartcombo/devise', branch: 'master'    # This temporarily fixes an omniauth issue
+gem 'devise'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jbuilder', '~> 2.0'
 gem 'json'
