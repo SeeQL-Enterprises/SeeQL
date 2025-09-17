@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-ruby '2.7.2'
+ruby '3.2.9'
 
 gem 'autoprefixer-rails'
 gem 'bootsnap', require: false
